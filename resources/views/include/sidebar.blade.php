@@ -28,6 +28,11 @@
                         <ul class="nav nav-children">
                             <li class="nav nav-link">
                                 <a class="nav-link" href="index.html">
+                                    Golongan Pendaftaran
+                                </a>
+                            </li>
+                            <li class="nav nav-link">
+                                <a class="nav-link" href="index.html">
                                     Data Pribadi
                                 </a>
                             </li>
@@ -42,7 +47,27 @@
                         <ul class="nav nav-children">
                             <li>
                                 <a class="nav-link" href="pages-signup.html">
+                                    Tambah Dokter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Jadwal Dokter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Pendapatan Dokter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
                                     Dokter Rawat Jalan
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Tipe Poly
                                 </a>
                             </li>
                             
@@ -73,7 +98,21 @@
                                     List Apotik
                                 </a>
                             </li>
-                            
+                            <li>
+                                <a class="nav-link" href="forms-basic.html">
+                                    Suplayer
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="forms-basic.html">
+                                    Racikan Obat
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="forms-basic.html">
+                                    Tipe Obat
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -85,6 +124,20 @@
                             <li>
                             <a class="nav-link" href="{{ route('laboratorium') }}">
                                     List Laboratorium
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-universal-access" a-riahidden="true"></i>
+                            <span>Asuransi</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                            <a class="nav-link" href="{{ route('laboratorium') }}">
+                                    List Asuransi
                                 </a>
                             </li>
                             
@@ -115,7 +168,22 @@
                                     Report Klinik
                                 </a>
                             </li>
-                            
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Pendapatan Dokter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Pendapatan Pasien
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="pages-signup.html">
+                                    Klaim Asuransi
+                                </a>
+                            </li>
+                           
                         </ul>
                     </li>
                     
