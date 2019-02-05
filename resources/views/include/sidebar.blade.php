@@ -23,19 +23,21 @@
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-columns" aria-hidden="true"></i>
-                            <span>Pendaftaran Pasien</span>
+                            <span>Pasien</span>
                         </a>
                         <ul class="nav nav-children">
                             <li class="nav nav-link">
                                 <a class="nav-link" href="index.html">
-                                    Golongan Pendaftaran
+                                    Pendaftaran
                                 </a>
                             </li>
+
                             <li class="nav nav-link">
-                                <a class="nav-link" href="index.html">
-                                    Data Pribadi
+                                <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
+                                    Tipe Pendaftaran
                                 </a>
                             </li>
+                          
                             
                         </ul>
                     </li>
