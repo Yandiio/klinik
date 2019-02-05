@@ -26,4 +26,5 @@ Route::get('tambah/tindakan/laboratorium', 'LaboratoriumController@tambah')->nam
 
 /* Pasien */
 Route::get('pasien/tipe-pendaftaran','PasienController@listPasien')->name('tipe_pendaftaran');
+Route::get('pasien/pendaftaran','PasienController@listPendaftaran')->name('pendaftaran');
 /* pasien */

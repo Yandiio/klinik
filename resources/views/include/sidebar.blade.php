@@ -27,7 +27,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li class="nav nav-link">
-                                <a class="nav-link" href="index.html">
+                                <a class="nav-link" href="{{route('pendaftaran')}}">
                                     Pendaftaran
                                 </a>
                             </li>
@@ -102,7 +102,7 @@
                             </li>
                             <li>
                                 <a class="nav-link" href="forms-basic.html">
-                                    Suplayer
+                                    Supplyer
                                 </a>
                             </li>
                             <li>

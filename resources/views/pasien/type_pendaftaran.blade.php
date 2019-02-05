@@ -61,7 +61,7 @@
 							    <td >2</td>
 							    <td>Pribadi</td>
 							    <td>
-                                    <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
@@ -69,7 +69,7 @@
 							    <td >3</td>
 							    <td>Bpjs</td>
 							    <td>
-                                    <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
