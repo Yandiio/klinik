@@ -128,6 +128,7 @@
 			</aside>
 
 		</section>
+	</section>
         
 		<!-- Vendor -->
     <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
