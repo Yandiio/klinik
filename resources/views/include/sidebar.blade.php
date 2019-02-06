@@ -82,10 +82,15 @@
                         </a>
                         <ul class="nav nav-children">
                             <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
-                            <a class="nav-link" href="{{ route('inventory') }}">
-                                    List Stock Obat
+                            <a class="nav-link" href="{{ route('list_inventory') }}">
+                                    Inventory Stock
                                 </a>
                             </li>
+                            <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
+                                <a class="nav-link" href="{{ route('report_inventory') }}">
+                                        Report Inventory
+                                    </a>
+                                </li>
                             
                         </ul>
                     </li>
@@ -96,7 +101,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="forms-basic.html">
+                            <a class="nav-link" href="{{ route('list_apotik') }}">
                                     List Apotik
                                 </a>
                             </li>
