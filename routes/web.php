@@ -41,3 +41,7 @@ Route::get('dokter/tambah-dokter', 'DokterController@tambahDokter')->name('tamba
 Route::get('dokter/list-dokter', 'DokterController@listDokter')->name('list_dokter');
 Route::get('dokter/edit_dokter', 'DokterController@editDokter')->name('edit_dokter');
 Route::get('dokter/lihat-dokter', 'DokterController@lihatDokter')->name('lihat_dokter');
+
+/* --- Tipe Poli --*/
+Route::get('dokter/tipe-poli', 'PoliController@tipePoli')->name('tipe_poli');
+/* === Tipe Poli ===*/

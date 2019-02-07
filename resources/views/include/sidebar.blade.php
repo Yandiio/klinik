@@ -73,8 +73,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="pages-signup.html">
-                                    Tipe Poly
+                                <a class="nav-link" href="{{ route('tipe_poli') }}">
+                                    Tipe Poli
                                 </a>
                             </li>
                             
