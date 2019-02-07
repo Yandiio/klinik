@@ -40,26 +40,26 @@ KLINIK
         - selesai istirahat
         - pasien maksimal
     - Tambah doktor
-        - foto
-        - kode doktor (manual)
-        - mster poli
-        - Nama lengkap
-        - jenis kelamin
-        - tanggal lahir
-        - tempat lahir
-        - email
-        - nomor telp
-        - nomor pajak
-        - catatan
-        - alamat
-        - negara
-        - propinsi
-        - kabupaten
-        - kecamatan
-        - kelurahan
+        - foto 2
+        - kode doktor (manual) 1 
+        - mster poli poli gigi 1
+        - Nama lengkap 2
+        - jenis kelamin  2
+        - tanggal lahir 2
+        - tempat lahir 2
+        - email 2
+        - nomor telp 2
+        - nomor pajak 1
+        - catatan 3
+        - alamat 3
+        - negara 3
+        - propinsi 3
+        - kabupaten 3
+        - kecamatan 3
+        - kelurahan 3
         - kodepos
-        - external dokter (yes no)
-        - nama departemtn (master)
+        - external dokter (yes no) 1
+        - nama departemtn (master) 1
     - Tambah Penghasilan doktor
         - Tipe Pasien (master)(semua, rawat inap, rawat jalan, rujukan)
         - departemtn(link)

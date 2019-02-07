@@ -103,7 +103,7 @@
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Foto</label>
 												<div class="col-sm-4">
 													<div class="item">
-														<img src="{{asset('assets/img/projects/project-3.jpg')}}" alt="" class="img-thumbnail" style="width:30%">
+														<img src="{{asset('assets/img/projects/project-3.jpg')}}" alt="" class="rounded-circle" style="width:40%">
 													</div>
 											    </div>
 										</div>
@@ -261,7 +261,10 @@
 													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Polis <span class="required">*</span></label>
-											<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
+											<div class="col-sm-4">
+													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
+											</div>
+											
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Hp <span class="required">*</span></label>

@@ -46,9 +46,9 @@
                             <i class="fas fa-stethoscope" aria-hidden="true"></i>
                             <span>Dokter</span>
                         </a>
-                        <ul class="nav nav-children">
+                        <ul class="nav-children">
                             <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            <a class="nav-link" href="{{ route('tambah_dokter') }}">
                                     Tambah Dokter
                                 </a>
                             </li>
