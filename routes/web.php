@@ -35,3 +35,7 @@ Route::get('apotik/tipe-obat', 'ApotikController@listTipeobat')->name('list_tipe
 Route::get('inventory/list-inventory', 'InventoryController@listInventory')->name('list_inventory');
 Route::get('inventory/report-inventory', 'InventoryController@reportInventory')->name('report_inventory');
 /* +++ Inventpry === */
+
+/* --- Dokter ---*/
+Route::get('dokter/tambah-dokter', 'DokterController@tambahDokter')->name('tambah_dokter');
+Route::get('dokter/list-dokter', 'DokterController@listDokter')->name('list_dokter');
