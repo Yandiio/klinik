@@ -10,7 +10,10 @@ class PasienController extends Controller
     public function listPasien(){
         return view ('pasien.type_pendaftaran');
     }
-    public function listPendaftaran(){
+    public function Pendaftaran(){
         return view ('pasien.pendaftaran');
+    }
+    public function listPendaftaran(){
+        return view('pasien.list-pendaftaran');
     }
 }

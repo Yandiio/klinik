@@ -31,6 +31,11 @@
                                     Pendaftaran
                                 </a>
                             </li>
+                            <li class="nav nav-link">
+                                <a class="nav-link" href="{{route('list_pendaftaran')}}">
+                                    List Pendaftaran
+                                </a>
+                            </li>
 
                             <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
