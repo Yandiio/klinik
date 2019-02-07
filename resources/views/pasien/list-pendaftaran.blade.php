@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@yield('title', 'Tipe Pendaftaran')
+@yield('title', 'List Pendaftaran')
 
 @section('content')
 <section role="main" class="content-body">
@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li><span>Pasien</span></li>
-                <li><span>Tipe Pendaftaran</span></li>
+                <li><span>List Pendaftaran</span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -32,13 +32,9 @@
 							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
 						</div>
 						
-						<h2 class="card-title">Tipe Pendaftaran</h2>
+						<h2 class="card-title">List Pendaftaran</h2>
 					</header>
 					<div class="card-body">
-                        <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
-                            Tambah
-                            <i class="fa fa-plus"></i>
-                        </button>
 					<table class="table table-bordered mb-0" id="dataTable">
 						<thead>
 						    <tr>
@@ -48,7 +44,7 @@
                                 <th>Nama</th>
                                 <th>Dokter</th>
                                 <th>Tanggal</th>
-								<th width="12%">Aksi</th>
+								<th width="13%">Aksi</th>
                                 <th>Daftar</th>
 								
 							</tr>
@@ -60,380 +56,123 @@
                                 <td>23432435622</td>
                                 <td>Salahudin</td>
                                 <td>[Gigi] Drs.Khoslis Prtama</td>
-                                <td>12 Desember 2018</td>
+                                <td>12-12-2018</td>
 							    <td>
-                                    <button type="button" href="" class="btn-sm btn-info"  title="Tampil Data !" style="margin-right:5px"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                   
+                                    <a class="btn-sm btn-info modal-sizes" title="Cetak Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
+                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
                                 </td>
                                 <td>
-                                    <button type="button" href="" class="btn-sm btn-success"  title="Pendaftaran ulang !" style="margin-right:5px"><i class="fas fa-plus-square" aria-hidden="true"></i></button>
+                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
                                 </td>
 						    </tr>
                             <tr>
-							    <td >2</td>
-							    <td>Pribadi</td>
+							    <td>D002</td>
+							    <td>Umum</td>
+                                <td>23432435622</td>
+                                <td>Salahudin</td>
+                                <td>[Gigi] Drs.Khoslis Prtama</td>
+                                <td>12-08-2018</td>
 							    <td>
-                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
+                                    <a class="btn-sm btn-info modal-sizes " title="Cetak Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
+                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                </td>
+                                <td>
+                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+                                </td>
 						    </tr>
                             <tr>
-							    <td >3</td>
-							    <td>Bpjs</td>
+							    <td>D003</td>
+							    <td>Umum</td>
+                                <td>23432435622</td>
+                                <td>Salahudin</td>
+                                <td>[Gigi] Drs.Khoslis Prtama</td>
+                                <td>12-12-2018</td>
 							    <td>
-                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
+									<a class="btn-sm btn-info modal-sizes " title="Lihat Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
+                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                </td>
+                                <td>
+                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+                                </td>
 						    </tr>
+                            
                             			
 						</tbody>
 					</table>
 			</div>
 			</section>
 		</div>
-        <!-- bagian body -->
-        <!-- modal tambah -->
-        <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
-			<section class="card">
-				<header class="card-header">
-					<h2 class="card-title">Tambah Tipe Pendaftaran</h2>
-				</header>
-				<div class="card-body">
-					<div class="modal-wrapper">
-					    <div class="modal-text">
-                            <label class="control-label">Tipe Pendaftaran <span class="required">*</span></label>
+
+        <!-- modalllll -->
+            <div id="modalLG" class="modal-block modal-block-lg mfp-hide">
+				<section class="card">
+					<!-- start: page -->
+						<div class="card-body">
+							<div class="invoice">
+								<header class="clearfix">
+									<div class="row">
+										<div class="col-sm-6 mt-3">
+											<h2 class="h2 mt-0 mb-1 text-dark font-weight-bold">Kartu Daftar</h2>
+											<h4 class="h4 m-0 text-dark font-weight-bold">D001/06/20/2017</h4>
+										</div>
+										<div class="col-sm-6 text-right mt-3 mb-3">
+											<address class="ib mr-5">
+												Okler Themes Ltd
+												<br/>
+												123 Porto Street, New York, USA
+												<br/>
+												Phone: +12 3 4567-8901
+												<br/>
+												okler@okler.net
+											</address>
+											<div class="ib">
+												<img src="{{asset('assets/img/invoice-logo.png')}}" alt="OKLER Themes" />
+											</div>
+										</div>
+									</div>
+								</header>
 								
-							 <input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>
-							    
-						</div>
-					</div>
-				    </div>
-				<footer class="card-footer">
-					<div class="row">
-					    <div class="col-md-12 text-right">
-                            <button class="btn btn-default modal-dismiss">Batal</button>
-							<button type="submit" class="btn btn-success modal-confirm">Simpan</button>
-						</div>
-					</div>
-				</footer>
-			</section>
-		</div>
-        <!-- modal tambah -->
-        <!-- modal Edit -->
-        <div id="modalMDEdit" class="modal-block modal-block-lg mfp-hide">
-			<section class="card">
-                <div class="row">
-                    <div class="col-lg-12">
-				<section class="card form-wizard" id="w2">
-					<div class="tabs">
-						<ul class="nav nav-tabs nav-justify">
-							<li class="nav-item active">
-								<a href="#w2-account" data-toggle="tab" class="nav-link text-center">
-								    <span class="badge badge-primary">1</span>
-										Daftar
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#w2-profile" data-toggle="tab" class="nav-link text-center">
-									<span class="badge badge-primary">2</span>
-									Data Pribadi
-								</a>
-							</li>
-							<li class="nav-item">
-								<a href="#w2-confirm" data-toggle="tab" class="nav-link text-center">
-									<span class="badge badge-primary">3</span>
-										Penjamin
-								</a>
-							</li>
-						</ul>
-						<form class="form-horizontal" novalidate="novalidate">
-							<div class="tab-content">
-								<div id="w2-account" class="tab-pane p-3 active">
-									<div class="form-group row">
-										<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Tipe Pendaftaran <span class="required">*</span></label>
-											<div class="col-sm-4">
-												
-												<select name="" id="" class="form-control form-control-sm mb-3">
-													<option value="">Umum</option>
-													<option value="">Pribadi</option>
-													<option value="">BPJS</option>
-													
-												</select>
-											</div>
-                                        <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Tanggal <span class="required">*</span></label>
-											<div class="col-sm-4">
-													<div class="input-group">
-														<span class="input-group-prepend">
-															<span class="input-group-text" style="height:25px">
-																<i class="fas fa-calendar-alt"></i>
-															</span>
-														</span>
-														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
-													</div>
-											</div>
-									</div>
-								<div class="form-group row">
-									<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Pasien Rujukan <span class="required">*</span></label>
-										<div class="col-sm-4">
-											<!-- <input type="password" class="form-control form-control-sm mb-3" name="password" id="w2-password" required minlength="6"> -->
-											<select name="" id="" class="form-control form-control-sm mb-3">
-													<option value="">Bukan Pasie Rujukkan</option>
-													<option value="">Pasien Rujukan</option>		
-											</select>
-										</div>
-										
-                                    	<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Dokter <span class="required">*</span></label>
-										<div class="col-sm-4">
-											<!-- <input type="password" class="form-control form-control-sm mb-3" name="password" id="w2-password" required minlength="6"> -->
-											<select name="" id="" class="form-control form-control-sm mb-3">
-													<option value="">Pilih Dokter</option>
-													<option value="">[GIGI] Drs.Beny Setiawan</option>
-													<option value="">[Gizi] Drs.Khoslis Pratama</option>
-													<option value="">[Lambung] Drs.Yadi Pamungkas</option>			
-											</select>
-										</div>
-										<label class="col-sm-2 control-label text-sm-right pt-1" for="textareaAutosize">Keluhan <span class="required">*</span></label>
-											<div class="col-lg-4">
-												<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
-											</div>
-								</div>
-								</div>
-								    <div id="w2-profile" class="tab-pane p-3">
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Foto</label>
-												<div class="col-sm-4">
-													<div class="item">
-														<img src="{{asset('assets/img/projects/project-3.jpg')}}" alt="" class="rounded-circle" style="width:40%">
-													</div>
-											    </div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name"></label>
-												<div class="col-sm-4">
-													
-													<input type="File" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Telepon <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Agama</option>
-														<option value="">Islam</option>
-														<option value="">Hindu</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Negara <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Negara</option>
-														<option value="">Indonesia</option>
-														<option value="">Singapura</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat Lahir <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="last-name" id="w2-last-name">
-												</div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Jawa Barat</option>
-														<option value="">Jawa Timur</option>
-														<option value="">Jawa Tenggah</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="last-name" id="w2-last-name" min="1" >
-												</div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kabupaten <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Banjar Negara</option>
-														<option value="">Kepulauan Seribu</option>
-														<option value="">Bayumas</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Jenis Kelamin <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Jenis Kelamin</option>
-														<option value="">Laki-laki</option>
-														<option value="">Perempuan</option>		
-													</select>
-												</div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kecamatan <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Kecamatan</option>
-														<option value="">Pondok Melati</option>
-														<option value="">Pondok Unggu</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan Darah <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3" >
-														<option value="">Golongan darah</option>
-														<option value="d">A</option>
-														<option value="d">B</option>	
-														<option value="d">O</option>
-														<option value="d">C</option>			
-													</select>
-												</div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kelurahan <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3" >
-														<option value="h">Harapan Jaya</option>
-														<option value="d">JatiRahayu</option>
-														<option value="d">Pondok Mulia</option>		
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal Lahir <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<div class="input-group">
-														<span class="input-group-prepend">
-															<span class="input-group-text" style="height:25px">
-																<i class="fas fa-calendar-alt"></i>
-															</span>
-														</span>
-														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" >
-													</div>
-												</div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat <span class="required">*</span></label>
-											    <div class="col-sm-4">
-												<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
-												</div>
-										</div>
-									</div>
-									<div id="w2-confirm" class="tab-pane p-3">
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tipe penjamin <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Umum</option>
-														<option value="">Pribadi</option>
-														<option value="">BPJS</option>	
-													</select>
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kode Karyawan<span class="required">*</span></label>
-											    <div class="col-sm-4">
-												<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Telepone <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Polis <span class="required">*</span></label>
-											<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											</div>
+								<table class="table table-bordered mb-0">
+									<thead>
+										<tr class="text-dark">
+                                            <th width="20%">No</th>
+                                            <th>D001</th>
 											
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Hp <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal Akhir Polis <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<div class="input-group">
-														<span class="input-group-prepend">
-															<span class="input-group-text" style="height:25px">
-																<i class="fas fa-calendar-alt"></i>
-															</span>
-														</span>
-														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" >
-													</div>													
-												</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Hubungan <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Hubungan</option>
-														<option value="">Anak</option>
-														<option value="">Istri</option>	
-														<option value="">Dll</option>
-													</select>
-												</div>
-										</div>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											
+										</tr>
+                                            <td width="10%">Nik</td>
+                                            <td>786557376367367673</td>
+                                        <tr>
+                                            <td width="10%">Nama</td>
+                                            <td>Samsudin hairul</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="10%">Alamat</td>
+                                            <td>Jala mekar sari cikayu jakarta timur</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="10%">Keterangan</td>
+                                            <td> </td>
+                                        </tr>
 										
-									
-										<div class="form-group row">
-											<div class="col-sm-2"></div>
-												<div class="col-sm-10">
-													<div class="checkbox-custom">
-														<input type="checkbox" name="terms" id="w2-terms" required>
-														<label for="w2-terms">I agree to the terms of service</label>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-						</form>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="text-right mr-4">
+                                <button class="btn btn-default modal-dismiss">Kembali</button>
+								<a href="pages-invoice-print.html" target="_blank" class="btn btn-primary ml-3"><i class="fas fa-print"></i> Print</a>
+							</div>
+						</div>
 					</div>
-					<div class="card-footer">
-						<ul class="pager">
-							<li class="previous disabled">
-								<a><i class="fas fa-angle-left"></i> Kembali</a>
-							</li>
-							<li class="finish hidden float-right">
-								<a>Selesai</a>
-							</li>
-							<li class="next">
-								<a>Lanjut <i class="fas fa-angle-right"></i></a>
-							</li>
-						</ul>
-					</div>
+					
 				</section>
 			</div>
-        
-                </div>
-			</section>
-		</div>
-        <!-- modal Edit-->
+       
 </section>
 @endsection
 @section('css')

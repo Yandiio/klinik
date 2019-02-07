@@ -16,4 +16,10 @@ class PasienController extends Controller
     public function listPendaftaran(){
         return view('pasien.list-pendaftaran');
     }
+    public function editPendaftaran(){
+        return view('pasien.edit-pendaftaran');
+    }
+    public function tambahPendaftaran(){
+        return view('pasien.tambah-pendaftaran');
+    }
 }

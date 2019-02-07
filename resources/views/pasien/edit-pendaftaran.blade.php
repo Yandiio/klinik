@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@yield('title', 'Tambah Pendaftaran')
+@yield('title', 'Edit Pendaftaran')
 
 @section('content')
 <section role="main" class="content-body">

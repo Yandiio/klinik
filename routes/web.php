@@ -23,6 +23,8 @@ Route::get('tambah/tindakan/laboratorium', 'LaboratoriumController@tambah')->nam
 Route::get('pasien/tipe-pendaftaran','PasienController@listPasien')->name('tipe_pendaftaran');
 Route::get('pasien/pendaftaran','PasienController@Pendaftaran')->name('pendaftaran');
 Route::get('pasien/list-pasien','PasienController@listPendaftaran')->name('list_pendaftaran');
+Route::get('pasien/edit-pendaftaran','PasienController@editPendaftaran')->name('edit_pendaftaran');
+Route::get('pasien/tambah-pendaftaran','PasienController@tambahPendaftaran')->name('tambah_pendaftaran');
 /* pasien */
 
 /* --- Apotik --- */
