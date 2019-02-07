@@ -41,14 +41,14 @@
                             
                         </ul>
                     </li>
-                    <li class="nav-parent {{ Request::is('dokter/tambah-dokter')? 'active': '' }}">
+                    <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-stethoscope" aria-hidden="true"></i>
                             <span>Dokter</span>
                         </a>
-                        <ul class="nav nav-children">
-                            <li class="nav-active nav-link{{ Request::is('dokter/tambah-dokter')? 'active': '' }}">
-                            <a href="{{ route('tambah_dokter') }}">
+                        <ul class="nav-children">
+                            <li>
+                            <a class="nav-link" href="{{ route('tambah_dokter') }}">
                                     Tambah Dokter
                                 </a>
                             </li>
