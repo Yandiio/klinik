@@ -40,3 +40,5 @@ Route::get('inventory/report-inventory', 'InventoryController@reportInventory')-
 /* --- Dokter ---*/
 Route::get('dokter/tambah-dokter', 'DokterController@tambahDokter')->name('tambah_dokter');
 Route::get('dokter/list-dokter', 'DokterController@listDokter')->name('list_dokter');
+Route::get('dokter/edit_dokter', 'DokterController@editDokter')->name('edit_dokter');
+Route::get('dokter/lihat-dokter', 'DokterController@lihatDokter')->name('lihat_dokter');
