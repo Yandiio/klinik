@@ -35,7 +35,7 @@
 						<h2 class="card-title">List Pendaftaran</h2>
 					</header>
 					<div class="card-body">
-					<table class="table table-bordered mb-0" id="dataTable">
+					<table class="table table-responsive-lg table-bordered table-striped table-sm mb-0" id="dataTable">
 						<thead>
 						    <tr>
 							    <th width="5%">No</th>
@@ -44,7 +44,7 @@
                                 <th>Nama</th>
                                 <th>Dokter</th>
                                 <th>Tanggal</th>
-								<th width="13%">Aksi</th>
+								<th width="10%">Aksi</th>
                                 <th>Daftar</th>
 								
 							</tr>
@@ -52,7 +52,7 @@
 						<tbody>
                             <tr>
 							    <td>D001</td>
-							    <td>Umum</td>
+							    <td>BPJS</td>
                                 <td>23432435622</td>
                                 <td>Salahudin</td>
                                 <td>[Gigi] Drs.Khoslis Prtama</td>
@@ -82,7 +82,7 @@
 						    </tr>
                             <tr>
 							    <td>D003</td>
-							    <td>Umum</td>
+							    <td>Pribadi</td>
                                 <td>23432435622</td>
                                 <td>Salahudin</td>
                                 <td>[Gigi] Drs.Khoslis Prtama</td>
