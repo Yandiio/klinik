@@ -18,4 +18,8 @@ class DokterController extends Controller
     {
         return view('dokter.edit');
     }
+    public function lihatDokter()
+    {
+        return view('dokter.lihat');
+    }
 }

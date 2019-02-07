@@ -1,6 +1,6 @@
 KLINIK
 
-- Pendaftaran
+- Pendaftaran (ok)
     - insurer (BPJS, umum, asuransi)  (master)
     - nama lengkap
     - tempat lahir
@@ -39,7 +39,7 @@ KLINIK
         - istirahat jam
         - selesai istirahat
         - pasien maksimal
-    - Tambah doktor
+    - Tambah doktor (ok)
         - foto 2
         - kode doktor (manual) 1 
         - mster poli poli gigi 1
@@ -60,7 +60,7 @@ KLINIK
         - kodepos
         - external dokter (yes no) 1
         - nama departemtn (master) 1
-    - Tambah Penghasilan doktor
+    - Tambah Penghasilan doktor 
         - Tipe Pasien (master)(semua, rawat inap, rawat jalan, rujukan)
         - departemtn(link)
         - jenis pembayaran pasien (link)

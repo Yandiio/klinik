@@ -135,7 +135,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
 												<div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" required>
+													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Negara <span class="required">*</span></label>
 											    <div class="col-sm-4">
@@ -258,7 +258,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Telepone <span class="required">*</span></label>
 												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" required>
+													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Polis <span class="required">*</span></label>
 											<div class="col-sm-4">
@@ -269,7 +269,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Hp <span class="required">*</span></label>
 												<div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" required>
+													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal Akhir Polis <span class="required">*</span></label>
 											    <div class="col-sm-4">
