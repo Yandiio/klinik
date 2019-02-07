@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            <a class="nav-link" href="{{ route('jadwal_dokter') }}">
                                     Jadwal Dokter
                                 </a>
                             </li>

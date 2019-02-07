@@ -37,11 +37,14 @@ Route::get('inventory/report-inventory', 'InventoryController@reportInventory')-
 /* +++ Inventpry === */
 
 /* --- Dokter ---*/
-Route::get('dokter/tambah-dokter', 'DokterController@tambahDokter')->name('tambah_dokter');
-Route::get('dokter/list-dokter', 'DokterController@listDokter')->name('list_dokter');
-Route::get('dokter/edit_dokter', 'DokterController@editDokter')->name('edit_dokter');
-Route::get('dokter/lihat-dokter', 'DokterController@lihatDokter')->name('lihat_dokter');
+Route::get('dokter/tambah-dokter', 'Dokter\DokterController@tambahDokter')->name('tambah_dokter');
+Route::get('dokter/list-dokter', 'Dokter\DokterController@listDokter')->name('list_dokter');
+Route::get('dokter/edit_dokter', 'Dokter\DokterController@editDokter')->name('edit_dokter');
+Route::get('dokter/lihat-dokter', 'Dokter\DokterController@lihatDokter')->name('lihat_dokter');
+
+/* --- Jadwal Dokter --- */
+Route::get('dokter/jadwal-dokter', 'Dokter\JadwalController@jadwalDokter')->name('jadwal_dokter');
 
 /* --- Tipe Poli --*/
-Route::get('dokter/tipe-poli', 'PoliController@tipePoli')->name('tipe_poli');
+Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_poli');
 /* === Tipe Poli ===*/

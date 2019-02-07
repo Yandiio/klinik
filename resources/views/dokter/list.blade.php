@@ -37,7 +37,7 @@
 					</header>
 					<div class="card-body">
                         
-					<table class="table table-bordered mb-0" id="dataTable">
+                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
 						<thead>
 						    <tr>
 							    <th width="5%">No</th>
