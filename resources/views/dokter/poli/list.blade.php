@@ -1,11 +1,11 @@
 @extends('layout.admin')
 
-@yield('title', 'List Apotik')
+@yield('title', 'List Poli')
 
 @section('content')
 <section role="main" class="content-body">
         <header class="page-header">
-        <h2>Inventory</h2>
+        <h2>Dokter</h2>
     
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
@@ -14,8 +14,8 @@
                         <i class="fas fa-home"></i>
                     </a>
                 </li>
-                <li><span>Inventory</span></li>
-                <li><span>List Inventory</span></li>
+                <li><span>Dokter</span></li>
+                <li><span> Tipe Poli </span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -32,34 +32,27 @@
 							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
 						</div>
 						
-						<h2 class="card-title">List Inventory</h2>
+						<h2 class="card-title">List Tipe Poli</h2>
 					</header>
 					<div class="card-body">
                         <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
-                            Tambah Inventory Stock
+                            Tambah
                             <i class="fa fa-plus"></i>
                         </button>
-                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+					<table class="table table-bordered mb-0" id="dataTable">
 						<thead>
 						    <tr>
 							    <th width="5%">No</th>
-                                <th>Kode Obat</th>
-                                <th>Nama Obat</th>
-                                <th>Unit</th>
-                                <th>Harga Jual</th>
-                                <th>Harga Beli</th>
+                                <th>Nama Poli</th>
 								<th width="15%">Aksi</th>
 								
 							</tr>
 					    </thead>
 						<tbody>
                             <tr>
-                                <td >1</td>
-                                <td>IO-001</td>
-                                <td>Panadol</td>
-                                <td>1</td>
-                                <td>10.000</td>
-                                <td>15.0000</td>
+							    <td >1</td>
+                                <td>Poli Kebidanan dan Penyakit Kandungan</td>
+                                
 							    <td>
                                     <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -67,26 +60,19 @@
 						    </tr>
                             <tr>
 							    <td >2</td>
-							    <td>IO-002</td>
-                                <td>Betadine</td>
-                                <td>1</td>
-                                <td>10.000</td>
-                                <td>15.0000</td>
-                                
+                                <td>Poli Anak</td>
+                               
 							    <td>
-                                    <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
                             <tr>
-							    <td >3</td>
-							    <td>IO-003</td>
-                                <td>mixagrip</td>
-                                <td>1</td>
-                                <td>10.000</td>
-                                <td>15.0000</td>
+                                <td >3</td>
+                                <td>Poli Gigi dan Mulut</td>
+							    
 							    <td>
-                                    <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
@@ -101,26 +87,14 @@
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Tambah Inventory Stock</h2>
+					<h2 class="card-title">Tambah Tipe Poli</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Nama Obat <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Nama Obat" required/>  
+                            <label class="control-label">Tipe Poli<span class="required">*</span></label>
+							 <input type="text" name="fullname" class="form-control" placeholder="Tipe Poli" required/>
                         </div>
-                        <div class="modal-text">
-                            <label class="control-label">Unit <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Unit" required/>  
-                        </div>
-                        <div class="modal-text">
-                            <label class="control-label">Harga Jual <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Harga Jual" required/>  
-                        </div>
-                        <div class="modal-text">
-                            <label class="control-label">Harga Beli<span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Harga Beli" required/>  
-						</div>
 					</div>
 				    </div>
 				<footer class="card-footer">
@@ -138,28 +112,18 @@
         <div id="modalMDEdit" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Ubah Inventory Stock</h2>
+					<h2 class="card-title">Ubah Tipe Poli</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Nama Obat <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Nama Obat" required/>  
-                        </div>
-                        <div class="modal-text">
-                            <label class="control-label">Unit <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Unit" required/>  
-                        </div>
-                        <div class="modal-text">
-                            <label class="control-label">Harga Jual <span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Harga Jual" required/>  
-                        </div>
-                        <div class="modal-text">
-                            <label class="control-label">Harga Beli<span class="required">*</span></label>	
-							 <input type="text" name="fullname" class="form-control" placeholder="Harga Beli" required/>  
+                            <label class="control-label">Tipe Poli <span class="required">*</span></label>
+								
+							 <input type="text" name="fullname" value="	Poli Kebidanan dan Penyakit Kandungan" class="form-control" placeholder="Tipe Poli" required/>
+							    
 						</div>
 					</div>
-				    </div>
+				</div>
 				<footer class="card-footer">
 					<div class="row">
 					    <div class="col-md-12 text-right">
