@@ -68,7 +68,7 @@ KLINIK
         - dari tanggal 
         - sampai tanggal
         - CONVERT HTML PDF EXCEL
-    - Dokter rawat jalan
+    - Dokter rawat jalan 
         - nama doktor
         - tanggal
         - (search hasil)

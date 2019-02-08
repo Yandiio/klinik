@@ -73,7 +73,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            <a class="nav-link" href="{{ route('rawat_jalan') }}">
                                     Dokter Rawat Jalan
                                 </a>
                             </li>
@@ -126,7 +126,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="forms-basic.html">
+                                <a class="nav-link" href="{{ route('list_tipeobat')}}">
                                     Tipe Obat
                                 </a>
                             </li>
@@ -153,7 +153,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('laboratorium') }}">
+                            <a class="nav-link" href="{{ route('list_asuransi') }}">
                                     List Asuransi
                                 </a>
                             </li>

@@ -179,15 +179,10 @@
                              </select>
                         </div>
                         <div class="modal-text">
-                            <label class="control-label">Dari Jam<span class="required">*</span></label>
+                            <label class="control-label">Dari s<span class="required">*</span></label>
                             <div class="col-lg-6">
-                                <div class="input-group">
-                                    <span class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="far fa-clock"></i>
-                                        </span>
-                                    </span>
-                                    <input type="text" data-plugin-timepicker class="form-control" data-plugin-options='{ "showMeridian": false }'>
+                                <div class="input-group color" data-plugin-colorpicker>
+                                    <input type="text" id="time" data-dtp="dtp_ez3LM" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -235,6 +230,9 @@
 @endsection
 
 @section('script')
+<script>
+    $('#time').bootstrapMaterialDatePicker({ date: false });
+</script>
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script>
 <script src="{{ asset('assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js') }}"></script>  
