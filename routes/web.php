@@ -39,6 +39,7 @@ Route::get('inventory/list-inventory', 'InventoryController@listInventory')->nam
 Route::get('inventory/report-inventory', 'InventoryController@reportInventory')->name('report_inventory');
 /* +++ Inventpry === */
 
+/* =================================== ROUTE MENU DOKTER =============================================== */
 /* --- Dokter ---*/
 Route::get('dokter/tambah-dokter', 'Dokter\DokterController@tambahDokter')->name('tambah_dokter');
 Route::get('dokter/list-dokter', 'Dokter\DokterController@listDokter')->name('list_dokter');
@@ -54,4 +55,9 @@ Route::get('dokter/dokter-rawat-jalan', 'Dokter\RawatJalanController@cariDokter'
 Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_poli');
 /* === Tipe Poli ===*/
 
+/* =================================== ROUTE MENU DOKTER =============================================== */
+
+/* =================================== ROUTE MENU ASURANSI =============================================== */
+Route::get('asurani/list-asuransi', 'AsuransiController@listAsuransi')->name('list_asuransi');
+/* =================================== ROUTE MENU ASURANSI =============================================== */
 
