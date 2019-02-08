@@ -31,7 +31,7 @@ Route::get('pasien/tambah-pendaftaran','PasienController@tambahPendaftaran')->na
 Route::get('apotik/list-apotik', 'ApotikController@listApotik')->name('list_apotik');
 Route::get('apotik/suplayer', 'ApotikController@listSuplayer')->name('list_suplayer');
 Route::get('apotik/racikan-obat', 'ApotikController@listRacikan')->name('list_racikan');
-Route::get('apotik/tipe-obat', 'ApotikController@listTipeobat')->name('list_tipeobat');
+Route::get('apotik/tipe-obat', 'Apotik\TipeObatController@listTipeobat')->name('list_tipeobat');
 /* === Apotik === */
 
 /* --- Inventory --- */
@@ -48,6 +48,10 @@ Route::get('dokter/lihat-dokter', 'Dokter\DokterController@lihatDokter')->name('
 /* --- Jadwal Dokter --- */
 Route::get('dokter/jadwal-dokter', 'Dokter\JadwalController@jadwalDokter')->name('jadwal_dokter');
 
+/* --- Dokter Rawat Jalan --- */
+Route::get('dokter/dokter-rawat-jalan', 'Dokter\RawatJalanController@cariDokter')->name('rawat_jalan');
 /* --- Tipe Poli --*/
 Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_poli');
 /* === Tipe Poli ===*/
+
+
