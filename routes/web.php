@@ -17,7 +17,12 @@
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
 Route::get('laboratorium', 'LaboratoriumController@list')->name('laboratorium');
+
 Route::get('tambah/tindakan/laboratorium', 'LaboratoriumController@tambah')->name('tambah_lab');
+
+/* Diagnosa */
+Route::get('diagnosa','DiagnosaController@diagnosa')->name('diagnosa');
+/* Diagnosa */
 
 /* Pasien */
 Route::get('pasien/tipe-pendaftaran','PasienController@listPasien')->name('tipe_pendaftaran');

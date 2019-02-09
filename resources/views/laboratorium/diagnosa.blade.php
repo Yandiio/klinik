@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@yield('title', 'Laboratorium')
+@yield('title', 'Diagnosa')
 
 @section('content')
 <section role="main" class="content-body">
@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li><span>Labortorium</span></li>
-                <li><span>Tindakkan Laboratorium</span></li>
+                <li><span>Diagnosa</span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -43,7 +43,7 @@
 						<thead>
 						    <tr>
 							    <th width="5%">No</th>
-								<th>Nama Tindakan Lab</th>
+								<th>Nama Diagnosa</th>
                                 <th>Harga</th>
                                 <th>Keterangan</th>
 								<th width="15%">Aksi</th>
@@ -53,7 +53,7 @@
 						<tbody>
                             <tr>
 							    <td >1</td>
-							    <td>Cek Darah</td>
+							    <td>Demam</td>
                                 <td>Rp.15000</td>
                                 <td>blabla</td>
 							    <td>
@@ -63,7 +63,7 @@
 						    </tr>
                             <tr>
 							    <td >2</td>
-							    <td>Cek janin</td>
+							    <td>Pilek</td>
                                 <td>Rp.200000</td>
                                 <td>bla bla</td>
 							    <td>
@@ -73,7 +73,7 @@
 						    </tr>
                             <tr>
 							    <td >3</td>
-							    <td>Ronsen kaki</td>
+							    <td>Kutu air</td>
                                 <td>Rp.300000</td>
                                 <td>ahsdha</td>
 							    <td>
@@ -93,12 +93,12 @@
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Tindakan Laboratorium</h2>
+					<h2 class="card-title">Diaknosa</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Nama Tindakan Lab <span class="required">*</span></label>	
+                            <label class="control-label">Nama diagnosa <span class="required">*</span></label>	
 							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
 						</div>
                         <br>
@@ -138,12 +138,12 @@
         <div id="modalMDEdit" class="modal-block modal-header-color modal-block-success mfp-hide">
             <section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Tindakan Laboratorium</h2>
+					<h2 class="card-title">Diagnosa</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Nama Tindakan Lab<span class="required">*</span></label>	
+                            <label class="control-label">Nama Diagnosa <span class="required">*</span></label>	
 							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
 						</div>
                         <br>

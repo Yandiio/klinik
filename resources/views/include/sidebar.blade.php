@@ -149,8 +149,13 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('laboratorium') }}">
+                                <a class="nav-link" href="{{ route('laboratorium') }}">
                                     List Laboratorium
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('diagnosa') }}">
+                                    Diagnosa
                                 </a>
                             </li>
                             
