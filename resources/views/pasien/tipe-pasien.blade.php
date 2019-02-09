@@ -142,7 +142,7 @@
 				</footer>
 			</section>
 		</div>
-        <!-- modal Edit-->
+        <!-- modal Edit aja-->
 </section>
 @endsection
 @section('css')
