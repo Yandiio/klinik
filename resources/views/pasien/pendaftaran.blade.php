@@ -277,12 +277,15 @@
 											</div>
 									</div>
 								<div class="form-group row">
-									<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Pasien Rujukan <span class="required">*</span></label>
+									<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Tipe Pasien<span class="required">*</span></label>
 										<div class="col-sm-4">
 											<!-- <input type="password" class="form-control form-control-sm mb-3" name="password" id="w2-password" required minlength="6"> -->
 											<select name="" id="" class="form-control form-control-sm mb-3">
 													<option value="">Bukan Pasie Rujukkan</option>
-													<option value="">Pasien Rujukan</option>		
+													<option value="">Pasien Rujukan</option>
+													<option value="">Rawat Jalan</option>
+													<option value="">Rawat inap</option>
+													<option value="">Dll</option>		
 											</select>
 										</div>
 										

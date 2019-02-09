@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@yield('title', 'Tipe Pendaftaran')
+@yield('title', 'Tipe Pasien')
 
 @section('content')
 <section role="main" class="content-body">
@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li><span>Pasien</span></li>
-                <li><span>Tipe Pendaftaran</span></li>
+                <li><span>Tipe Pasien</span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -32,7 +32,7 @@
 							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
 						</div>
 						
-						<h2 class="card-title">Tipe Pendaftaran</h2>
+						<h2 class="card-title">Tipe Pasien</h2>
 					</header>
 					<div class="card-body">
                         <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
@@ -43,7 +43,7 @@
 						<thead>
 						    <tr>
 							    <th width="5%">No</th>
-								<th>Tipe Pendaftaran</th>
+								<th>Tipe Pasien</th>
 								<th width="15%">Aksi</th>
 								
 							</tr>
@@ -51,7 +51,7 @@
 						<tbody>
                             <tr>
 							    <td >1</td>
-							    <td>Umum</td>
+							    <td>Bukan Rujukan</td>
 							    <td>
                                     <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -59,7 +59,7 @@
 						    </tr>
                             <tr>
 							    <td >2</td>
-							    <td>Pribadi</td>
+							    <td>Rujukan</td>
 							    <td>
                                 <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -67,7 +67,15 @@
 						    </tr>
                             <tr>
 							    <td >3</td>
-							    <td>Bpjs</td>
+							    <td>Rawat inap</td>
+							    <td>
+                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </td>  
+						    </tr>
+                            <tr>
+							    <td >3</td>
+							    <td>Dll</td>
 							    <td>
                                 <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -85,12 +93,12 @@
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Tambah Tipe Pendaftaran</h2>
+					<h2 class="card-title">Tambah Tipe Pasien</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Tipe Pendaftaran <span class="required">*</span></label>
+                            <label class="control-label">Tipe Pasien <span class="required">*</span></label>
 								
 							 <input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>
 							    
@@ -112,12 +120,12 @@
         <div id="modalMDEdit" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Ubah Tipe Pendaftaran</h2>
+					<h2 class="card-title">Ubah Tipe Pasien</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Tipe Pendaftaran <span class="required">*</span></label>
+                            <label class="control-label">Tipe Pasien <span class="required">*</span></label>
 								
 							 <input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>
 							    

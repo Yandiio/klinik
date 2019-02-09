@@ -42,6 +42,16 @@
                                     Tipe Pendaftaran
                                 </a>
                             </li>
+                            <li class="nav nav-link">
+                                <a class="nav-link" href="{{route('tipe_pasien')}}">
+                                    Tipe Pasien
+                                </a>
+                            </li>
+                            <li class="nav nav-link">
+                                <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
+                                    Tipe Penjamin
+                                </a>
+                            </li>
                           
                             
                         </ul>
@@ -68,7 +78,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="pages-signup.html">
+                                <a class="nav-link" href="{{route('pendapatan')}}">
                                     Pendapatan Dokter
                                 </a>
                             </li>

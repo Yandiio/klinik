@@ -21,6 +21,7 @@ Route::get('tambah/tindakan/laboratorium', 'LaboratoriumController@tambah')->nam
 
 /* Pasien */
 Route::get('pasien/tipe-pendaftaran','PasienController@listPasien')->name('tipe_pendaftaran');
+Route::get('pasien/tipe-pasien','PasienController@tipePasien')->name('tipe_pasien');
 Route::get('pasien/pendaftaran','PasienController@Pendaftaran')->name('pendaftaran');
 Route::get('pasien/list-pasien','PasienController@listPendaftaran')->name('list_pendaftaran');
 Route::get('pasien/edit-pendaftaran','PasienController@editPendaftaran')->name('edit_pendaftaran');
@@ -45,6 +46,9 @@ Route::get('dokter/tambah-dokter', 'Dokter\DokterController@tambahDokter')->name
 Route::get('dokter/list-dokter', 'Dokter\DokterController@listDokter')->name('list_dokter');
 Route::get('dokter/edit_dokter', 'Dokter\DokterController@editDokter')->name('edit_dokter');
 Route::get('dokter/lihat-dokter', 'Dokter\DokterController@lihatDokter')->name('lihat_dokter');
+
+
+Route::get('dokter/pendapatan','Dokter\PendapatanController@pendapatan')->name('pendapatan');
 
 /* --- Jadwal Dokter --- */
 Route::get('dokter/jadwal-dokter', 'Dokter\JadwalController@jadwalDokter')->name('jadwal_dokter');

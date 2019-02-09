@@ -2,14 +2,23 @@
 
 @yield('title', 'List Poli')
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/dropzone/basic.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/dropzone/dropzone.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="{{ asset('assets/vendor/summernote/summernote-bs4.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/codemirror/lib/codemirror.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/codemirror/theme/monokai.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery.datetimepicker.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/dropzone/basic.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/dropzone/dropzone.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-markdown/css/bootstrap-markdown.min.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/summernote/summernote-bs4.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/codemirror/lib/codemirror.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/codemirror/theme/monokai.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />   
+<!-- tesss -->
 @stop
 @section('content')
 <section role="main" class="content-body">
@@ -179,12 +188,28 @@
                              </select>
                         </div>
                         <div class="modal-text">
-                            <label class="control-label">Dari s<span class="required">*</span></label>
-                            <div class="col-lg-6">
-                                <div class="input-group color" data-plugin-colorpicker>
-                                    <input type="text" id="time" data-dtp="dtp_ez3LM" class="form-control">
-                                </div>
-                            </div>
+                            <label class="control-label">Jam Masuk <span class="required">*</span></label>  
+                            <div class="input-group ">
+								    <span class="input-group-prepend">
+									    <span class="input-group-text">
+											<i class="far fa-clock"></i>
+										</span>
+									</span>
+									<input type="text" data-plugin-timepicker class="form-control timepicker col-md-2">
+                                    
+							</div>
+                        </div>
+                        <div class="modal-text">
+                            <label class="control-label">Jam Pulang <span class="required">*</span></label>  
+                            <div class="input-group ">
+								    <span class="input-group-prepend">
+									    <span class="input-group-text">
+											<i class="far fa-clock"></i>
+										</span>
+									</span>
+									<input type="text" data-plugin-timepicker class="form-control timepicker col-md-2">
+                                    
+							</div>
                         </div>
 					</div>
 				    </div>
@@ -228,33 +253,25 @@
         <!-- modal Edit-->
 </section>
 @endsection
-
+    
 @section('script')
-<script>
-    $('#time').bootstrapMaterialDatePicker({ date: false });
-</script>
-<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js') }}"></script>  
-<script src="{{ asset('assets/vendor/dropzone/dropzone.js') }}"></script>
-<script src="{{ asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js') }}"></script>
-<script src="{{ asset('assets/vendor/fuelux/js/spinner.js') }}"></script>
-<script src="{{ asset('assets/vendor/dropzone/dropzone.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-markdown/js/markdown.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-markdown/js/to-markdown.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-markdown/js/bootstrap-markdown.js')}}"></script>
-<script src="{{ asset('assets/vendor/codemirror/lib/codemirror.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/addon/selection/active-line.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/addon/edit/matchbrackets.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/mode/javascript/javascript.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/mode/xml/xml.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/mode/htmlmixed/htmlmixed.js') }}"></script>
-<script src="{{ asset('assets/vendor/codemirror/mode/css/css.js') }}"></script>
-<script src="{{ asset('assets/vendor/summernote/summernote-bs4.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js') }}"></script>
-<script src="{{ asset('assets/vendor/ios7-switch/ios7-switch.js') }}"></script>
-<script src="{{ asset('assets/js/examples/examples.advanced.form.js') }}"></script>
+    <script>
+        $(function(){
+            $('.timepicker').timepicker({
+                showInputs: false
+            })
+        });
+    </script>
+       
+    <script src="{{ asset('assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js')}}"></script>
+    <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+    <script src="{{asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
+    <script src="{{asset('assets/vendor/fuelux/js/spinner.js')}}"></script>
+	<script src="{{asset('assets/vendor/dropzone/dropzone.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
+	<script src="{{asset('assets/vendor/ios7-switch/ios7-switch.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.datetimepicker.js') }}"></script>
+        
+
 @stop
