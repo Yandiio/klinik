@@ -132,7 +132,7 @@
                             </li>
                             <li>
                                 <a class="nav-link" href="forms-basic.html">
-                                    Racikan Obat
+                                    Resep
                                 </a>
                             </li>
                             <li>
