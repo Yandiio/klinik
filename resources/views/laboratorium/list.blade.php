@@ -53,31 +53,34 @@
 						<tbody>
                             <tr>
 							    <td >1</td>
-							    <td>Cek Darah</td>
+							    <td>LAB 1</td>
                                 <td>Rp.15000</td>
                                 <td>blabla</td>
 							    <td>
+								<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
                             <tr>
 							    <td >2</td>
-							    <td>Cek janin</td>
+							    <td>LAB 2</td>
                                 <td>Rp.200000</td>
                                 <td>bla bla</td>
 							    <td>
-                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+									<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                	<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
                             <tr>
 							    <td >3</td>
-							    <td>Ronsen kaki</td>
+							    <td>LAB 3</td>
                                 <td>Rp.300000</td>
                                 <td>ahsdha</td>
 							    <td>
-                                <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+									<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                	<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                 </td>  
 						    </tr>
@@ -97,30 +100,67 @@
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
-					    <div class="modal-text">
-                            <label class="control-label">Nama Tindakan Lab <span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
-						</div>
-                        <br>
-                        <div class="modal-text">
-                            <label class="control-label">Harga <span class="required">*</span></label>	
-							<div class="input-group ">
-								<div class="input-group">
-                                    <span class="input-group-append">
-										<span class="input-group-text">
-										Rp	
-										</span>
-									</span>
-									<input type="number" class="form-control" placeholder="Harga">
-										
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="modal-text">
+                            		<label class="control-label">Nama Tindakan Lab<span class="required">*</span></label>	
+									<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
 								</div>
-                            </div>	        
+							</div>
+							<div class="col-lg-6">
+								<div class="modal-text">
+                            		<label class="control-label">Harga<span class="required">*</span></label>	
+									<div class="input-group ">
+										<div class="input-group">
+                                    		<span class="input-group-append">
+												<span class="input-group-text">
+												Rp	
+												</span>
+											</span>
+											<input type="number" class="form-control" placeholder="Harga">
+										</div>
+                            		</div>		    
+								</div>
+							</div>
 						</div>
-                        <br>
+                        
                         <div class="modal-text">
                             <label class="control-label">Keterangan <span class="required">*</span></label>	
 							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
 						</div>
+						<br>
+						<div class="modal-text">
+                            <label class="control-label">Tambah Item <span class="required">*</span></label>	
+							<!-- <input type="submit" name="submit" id="addItem" value="Tambah Item Lab" class="form-control btn-primary col-lg-4" value=""> -->
+							    
+						</div> 
+						
+						<div class="modal-text">
+                            
+							<div class="form-group">
+								<form action="#" name="add_name" id="add_name">
+									<table class="" id="dynamic_field">
+										<tr>
+											<td>
+												<button type = "submit" name="add" id="addItem" class="btn btn-default">+</button>
+											</td>
+											<td width="50%">
+												<input type="Text" class="form-control" placeholder="Nama Item" id="name">
+											</td>
+											<td width="50%">
+												<input type="Text" class="form-control" placeholder="Keterangan" id="name">
+											</td>
+											<td>
+												<button type = "submit" name="add" id="add" class="btn btn-danger">x</button>
+											</td>
+										</tr>
+									</table>
+									
+								</form>
+							</div>	    
+						</div>
+						
+						
 					</div>
 				</div>
 				<footer class="card-footer">
@@ -142,30 +182,67 @@
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
-					    <div class="modal-text">
-                            <label class="control-label">Nama Tindakan Lab<span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
-						</div>
-                        <br>
-                        <div class="modal-text">
-                            <label class="control-label">Harga <span class="required">*</span></label>	
-							<div class="input-group ">
-								<div class="input-group">
-                                    <span class="input-group-append">
-										<span class="input-group-text">
-										Rp	
-										</span>
-									</span>
-									<input type="number" class="form-control" placeholder="Harga">
-										
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="modal-text">
+                            		<label class="control-label">Nama Tindakan Lab<span class="required">*</span></label>	
+									<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
 								</div>
-                            </div>	        
+							</div>
+							<div class="col-lg-6">
+								<div class="modal-text">
+                            		<label class="control-label">Harga<span class="required">*</span></label>	
+									<div class="input-group ">
+										<div class="input-group">
+                                    		<span class="input-group-append">
+												<span class="input-group-text">
+												Rp	
+												</span>
+											</span>
+											<input type="number" class="form-control" placeholder="Harga">
+										</div>
+                            		</div>		    
+								</div>
+							</div>
 						</div>
-                        <br>
+                        
                         <div class="modal-text">
                             <label class="control-label">Keterangan <span class="required">*</span></label>	
 							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
 						</div>
+						<br>
+						<div class="modal-text">
+                            <label class="control-label">Tambah Item <span class="required">*</span></label>	
+							<!-- <input type="submit" name="submit" id="addItem" value="Tambah Item Lab" class="form-control btn-primary col-lg-4" value=""> -->
+							    
+						</div> 
+						
+						<div class="modal-text">
+                            
+							<div class="form-group">
+								<form action="#" name="add_name" id="add_name">
+									<table class="" id="dynamic_field">
+										<tr>
+											<td>
+												<button type = "submit" name="add" id="addItem" class="btn btn-default">+</button>
+											</td>
+											<td width="50%">
+												<input type="Text" class="form-control" placeholder="Nama Item" id="name">
+											</td>
+											<td width="50%">
+												<input type="Text" class="form-control" placeholder="Keterangan" id="name">
+											</td>
+											<td>
+												<button type = "submit" name="add" id="add" class="btn btn-danger">x</button>
+											</td>
+										</tr>
+									</table>
+									
+								</form>
+							</div>	    
+						</div>
+						
+						
 					</div>
 				</div>
 				<footer class="card-footer">
@@ -218,6 +295,24 @@
 		<!-- Examples -->
 		<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
 		<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
+
+		<script>
+			$(document).ready(function(){
+				var i = 1;
+				$(this).on('click','#addItem',function(){
+					i++;
+					
+					$('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
+				});	
+				$(document).on('click','.btn-remove',function(){
+					var button_id = $(this).attr("id");
+					$('#row'+button_id+'').remove();
+
+				});
+
+			});
+		
+		</script>
   
   
 

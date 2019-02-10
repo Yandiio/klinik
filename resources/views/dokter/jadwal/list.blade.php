@@ -17,7 +17,11 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/summernote/summernote-bs4.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/codemirror/lib/codemirror.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/codemirror/theme/monokai.css')}}" />
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />   
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />   
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css')}}" />
+	<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-timepicker/css/bootstrap-timepicker.css')}}" />
 <!-- tesss -->
 @stop
 @section('content')
@@ -127,7 +131,8 @@
 						    </tr>
                             			
 						</tbody>
-					</table>
+                    </table>
+                    
 			</div>
 			</section>
 		</div>
@@ -190,13 +195,12 @@
                         <div class="modal-text">
                             <label class="control-label">Jam Masuk <span class="required">*</span></label>  
                             <div class="input-group ">
-								    <span class="input-group-prepend">
-									    <span class="input-group-text">
-											<i class="far fa-clock"></i>
+								<span class="input-group-prepend">
+									<span class="input-group-text">
+										<i class="far fa-clock"></i>
 										</span>
 									</span>
-									<input type="text" data-plugin-timepicker class="form-control timepicker col-md-2">
-                                    
+									<input type="text" data-plugin-timepicker class="form-control timepicker col-md-2">   
 							</div>
                         </div>
                         <div class="modal-text">
@@ -262,8 +266,20 @@
             })
         });
     </script>
+        
+    <script>
+      $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+     </script>
        
     <script src="{{ asset('assets/vendor/bootstrap-timepicker/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js')}}"></script>
+    <script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('assets/js/examples/examples.advanced.form.js')}}"></script>
+    <script src="{{asset('assets/vendor/fuelux/js/spinner.js')}}"></script>
     <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
     <script src="{{asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js')}}"></script>
     <script src="{{asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>

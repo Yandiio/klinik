@@ -24,4 +24,5 @@ class DokterController extends Controller
     {
         return view('dokter.lihat');
     }
+  
 }

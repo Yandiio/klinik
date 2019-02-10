@@ -22,6 +22,8 @@ Route::get('tambah/tindakan/laboratorium', 'LaboratoriumController@tambah')->nam
 
 /* Diagnosa */
 Route::get('diagnosa','DiagnosaController@diagnosa')->name('diagnosa');
+Route::post('tes-insert','Dokter\DokterController@testTambah')->name('test_tambah');
+
 /* Diagnosa */
 
 /* Pasien */
