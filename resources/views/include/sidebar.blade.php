@@ -108,9 +108,14 @@
                             </li>
                             <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
                                 <a class="nav-link" href="{{ route('report_inventory') }}">
-                                        Report Inventory
-                                    </a>
-                                </li>
+                                    Report Inventory
+                                </a>
+                            </li>
+                            <li>
+                            <a class="nav-link" href="{{ route('list_pemasok') }}">
+                                    Pemasok
+                                </a>
+                            </li>
                             
                         </ul>
                     </li>
@@ -125,11 +130,7 @@
                                     List Apotik
                                 </a>
                             </li>
-                            <li>
-                                <a class="nav-link" href="forms-basic.html">
-                                    Supplyer
-                                </a>
-                            </li>
+                            
                             <li>
                                 <a class="nav-link" href="forms-basic.html">
                                     Resep
