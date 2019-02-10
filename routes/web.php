@@ -38,11 +38,13 @@ Route::get('apotik/list-apotik', 'ApotikController@listApotik')->name('list_apot
 Route::get('apotik/suplayer', 'ApotikController@listSuplayer')->name('list_suplayer');
 Route::get('apotik/racikan-obat', 'ApotikController@listRacikan')->name('list_racikan');
 Route::get('apotik/tipe-obat', 'Apotik\TipeObatController@listTipeobat')->name('list_tipeobat');
+
 /* === Apotik === */
 
 /* --- Inventory --- */
 Route::get('inventory/list-inventory', 'InventoryController@listInventory')->name('list_inventory');
 Route::get('inventory/report-inventory', 'InventoryController@reportInventory')->name('report_inventory');
+Route::get('inventory/list-pemasok', 'Inventory\PemasokController@listPemasok')->name('list_pemasok');
 /* +++ Inventpry === */
 
 /* =================================== ROUTE MENU DOKTER =============================================== */
