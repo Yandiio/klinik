@@ -83,10 +83,15 @@
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('rawat_jalan') }}">
-                                    Dokter Rawat Jalan
+                            <a class="nav-link" href="{{ route('tindakan') }}">
+                                    Buat Tindakan
                                 </a>
                             </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('list_tindakan') }}">
+                                        List Tindakan
+                                    </a>
+                                </li>
                             <li>
                                 <a class="nav-link" href="{{ route('tipe_poli') }}">
                                     Tipe Poli

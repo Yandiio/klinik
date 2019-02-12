@@ -56,14 +56,14 @@ Route::get('dokter/list-dokter', 'Dokter\DokterController@listDokter')->name('li
 Route::get('dokter/edit_dokter', 'Dokter\DokterController@editDokter')->name('edit_dokter');
 Route::get('dokter/lihat-dokter', 'Dokter\DokterController@lihatDokter')->name('lihat_dokter');
 
-
 Route::get('dokter/pendapatan','Dokter\PendapatanController@pendapatan')->name('pendapatan');
 
 /* --- Jadwal Dokter --- */
 Route::get('dokter/jadwal-dokter', 'Dokter\JadwalController@jadwalDokter')->name('jadwal_dokter');
-
-/* --- Dokter Rawat Jalan --- */
-Route::get('dokter/dokter-rawat-jalan', 'Dokter\RawatJalanController@cariDokter')->name('rawat_jalan');
+/* --- Tindakan --- */
+Route::get('dokter/tindakan', 'Dokter\TindakanController@buatTindakan')->name('tindakan');
+Route::get('dokter/list-tindakan', 'Dokter\TindakanController@listTindakan')->name('list_tindakan');
+Route::get('dokter/lihat-tindakan', 'Dokter\TindakanController@lihatTindakan')->name('lihat_tindakan');
 /* --- Tipe Poli --*/
 Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_poli');
 /* === Tipe Poli ===*/

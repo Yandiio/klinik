@@ -27,7 +27,7 @@ KLINIK
     - nomor polis
     - tanggal berakhir polis
     - hubungan dengan karyawan (self, parent, spouse, chiildren) 
-    - DOKTOR
+    - DOKTOR (OK)
         - Jadwal Dokter
         - nama departement (master )
         - nama dokter (master)
@@ -68,14 +68,17 @@ KLINIK
         - dari tanggal 
         - sampai tanggal
         - CONVERT HTML PDF EXCEL
-    - Dokter rawat jalan 
-        - nama doktor
+    - Dokter rawat jalan  (OK)
+        - nama doktor 
         - tanggal
         - (search hasil)
+	
+	- Lab (lab 1 lab 2)
+	- 
 	- Masukan resep 
 		- input resep
 		- jumlah obat
-		- tipe obat (master)
+		- tipe obat (master) tindakan
 		- Dosis 
 		- hari
 		- Tipe Harga (BPJS, Umum, 	Asuransi)
@@ -132,15 +135,22 @@ KLINIK
 			
 			- Lihat Penyesuaian Stock
 				- kode produk
+		- Supplayer 
+			- kode supplier
+			- Nama Supplayer
+			- Alamat
+			- Kota
+			- Provinsi
+			- Negara
+			- Kode Pos
+			- Telepon
+			- Email
+			- Contact Persom
+			- Telepon CP
+			- Catatan
+			- Status (aktif, tidal aktif)
 
 		NOTIFIKASI 
 			- diambil dari inventory
-		
 
-
-
-
-
-
-
-
+cream  caplet
