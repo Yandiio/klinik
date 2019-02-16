@@ -67,7 +67,7 @@
 													<input type="Text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" placeholder="234543452" disabled>
 											    </div>
 										
-                                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Type daftar <span class="required">*</span></label>
+                                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan Pasien <span class="required">*</span></label>
 											    <div class="col-sm-4">
                                                     <input type="Text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" placeholder="BPJS" disabled>
 											    </div>
@@ -149,17 +149,23 @@
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Tindakan <span class="required">*</span></label>
 												<div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
+												<select name="" id="" class="form-control form-control-sm mb-3">
+													    <option value="">Pilih Tindakan</option>
+													    <option value="">Tindakan 1</option>
+													    <option value="">Tindakan 2</option>
+													    <option value="">Tindakan 3</option>			
+											        </select>
 											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Diagnosa<span class="required">*</span></label>
-											    <div class="col-sm-4">
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Laboratorium <span class="required">*</span></label>
+												<div class="col-sm-4">
                                                     <select name="" id="" class="form-control form-control-sm mb-3">
-													    <option value="">Pilih Diagnosa</option>
-													    <option value="">Demam</option>
-													    <option value="">PIlek</option>
-													    <option value="">Masuk angin</option>			
+													    <option value="">Pilih Lab</option>
+													    <option value="">Lab 1</option>
+													    <option value="">Lab 2</option>
+													    <option value="">Lab 3</option>			
 											        </select>
 												</div>
+											
 										</div>
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal Tindakan <span class="required">*</span></label>
@@ -173,15 +179,7 @@
 														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
 													</div>
 											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Laboratorium <span class="required">*</span></label>
-											<div class="col-sm-4">
-                                                    <select name="" id="" class="form-control form-control-sm mb-3">
-													    <option value="">Pilih Lab</option>
-													    <option value="">Lab 1</option>
-													    <option value="">Lab 2</option>
-													    <option value="">Lab 3</option>			
-											        </select>
-											</div>
+											
 											
 										</div>
 										
@@ -214,7 +212,7 @@
                                                     <tr>
                                                         <th></th>
                                                         <th>Nama Obat</th>
-                                                        <th width="5%">Jumlah</th>
+                                                        <th width="5%">Qty</th>
                                                         <th width="15%">Unit</th>
                                                         <th>Dosis</th>
                                                         <th width="10%">Hari</th>
@@ -225,7 +223,8 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>
-												            <button type = "button" name="add" id="addItem" class="btn btn-default">+</button>
+															<a href="#" name="add" id="addItem" class="btn btn-default">+</a>
+												            
 											            </td>
 											            <td>
 												            <input type="Text" class="form-control" placeholder="Nama Obat" id="name">
@@ -247,7 +246,8 @@
 												            <input type="Text" class="form-control" placeholder="Keterangan" id="name">
 											            </td>
 											            <td>
-												            <button type = "submit" name="add" id="add" class="btn btn-danger">x</button>
+															<a href="#" name="add" id="add" class="btn btn-danger">x</a>
+												            
 											            </td>
                                                     </tr>
                                                 </tbody>
@@ -348,7 +348,7 @@
 					i++;
 					
 					// $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
-                    $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "input" name="add" id="addItem" class="btn btn-default">+</button></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name"></td><td><input type="Text" class="form-control" id="name"></td><td><input type="number" class="form-control" placeholder="Sirup" id="name" disabled></td><td><input type="number" class="form-control"  id="name"></td><td><input type="number" class="form-control"  id="name"></td><td><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button type = "submit" name="add" id="add" class="btn btn-danger">x</button></td></tr>');
+                    $('#dynamic_field').append('<tr id="row'+i+'"><td><a href="#" name="add" id="addItem" class="btn btn-default">+</a></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name"></td><td><input type="Text" class="form-control" id="name"></td><td><input type="number" class="form-control" placeholder="Sirup" id="name" disabled></td><td><input type="number" class="form-control"  id="name"></td><td><input type="number" class="form-control"  id="name"></td><td><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><a href="#" name="add" id="'+i+'" class="btn btn-danger btn-remove">x</a></td></tr>');
 				});	
 				$(document).on('click','.btn-remove',function(){
 					var button_id = $(this).attr("id");

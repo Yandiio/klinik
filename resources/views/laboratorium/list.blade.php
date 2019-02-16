@@ -151,7 +151,7 @@
 												<input type="Text" class="form-control" placeholder="Keterangan" id="name">
 											</td>
 											<td>
-												<button type = "submit" name="add" id="add" class="btn btn-danger">x</button>
+												<button type = "submit" name="add" id="" class="btn btn-danger">x</button>
 											</td>
 										</tr>
 									</table>
