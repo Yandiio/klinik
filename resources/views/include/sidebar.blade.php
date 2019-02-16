@@ -107,6 +107,12 @@
                                         </a>
                                     </li>
                                 <li>
+                                <li>
+                                    <a class="nav-link" href="{{ route('list_tindakan') }}">
+                                            Master Tindakan
+                                        </a>
+                                    </li>
+                                <li>
                         </ul>
                     </li>
                     <li class="nav-parent">

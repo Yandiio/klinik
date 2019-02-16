@@ -62,6 +62,7 @@ Route::get('dokter/pendapatan','Dokter\PendapatanController@pendapatan')->name('
 /* --- Jadwal Dokter --- */
 Route::get('dokter/jadwal-dokter', 'Dokter\JadwalController@jadwalDokter')->name('jadwal_dokter');
 /* --- Tindakan --- */
+Route::get('dokter/master-tindakan','Dokter\TindakanController@getMasterTindakan')->nama('get_master_tindakan');
 Route::get('dokter/tindakan', 'Dokter\TindakanController@buatTindakan')->name('tindakan');
 Route::get('dokter/list-tindakan', 'Dokter\TindakanController@listTindakan')->name('list_tindakan');
 Route::get('dokter/lihat-tindakan', 'Dokter\TindakanController@lihatTindakan')->name('lihat_tindakan');

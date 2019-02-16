@@ -19,4 +19,7 @@ class TindakanController extends Controller
     {
         return view('dokter.tindakan.lihat');
     }
+    public function getMasterTindakan(){
+        return view('dokter.tindakan.master-tindakan');
+    }
 }
