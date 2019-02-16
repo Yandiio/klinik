@@ -48,6 +48,7 @@
                                 <th>Unit</th>
                                 <th>Harga Jual</th>
                                 <th>Harga Beli</th>
+                                <th>Tanggal Expired</th>
 								<th width="15%">Aksi</th>
 								
 							</tr>
@@ -60,6 +61,7 @@
                                 <td>1</td>
                                 <td>10.000</td>
                                 <td>15.0000</td>
+                                <td>1 Janurai 2019</td>
 							    <td>
                                     <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -72,6 +74,7 @@
                                 <td>1</td>
                                 <td>10.000</td>
                                 <td>15.0000</td>
+                                <td>30 Maret 2019</td>
                                 
 							    <td>
                                     <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
@@ -85,6 +88,7 @@
                                 <td>1</td>
                                 <td>10.000</td>
                                 <td>15.0000</td>
+                                <td>20 Oktober 2019</td>
 							    <td>
                                     <button type="button" href="" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                     <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -120,6 +124,10 @@
                         <div class="modal-text">
                             <label class="control-label">Harga Beli<span class="required">*</span></label>	
 							 <input type="text" name="fullname" class="form-control" placeholder="Harga Beli" required/>  
+                        </div>
+                        <div class="modal-text">
+                            <label class="control-label">Tanggal Expired<span class="required">*</span></label>	
+                            <input type="text" data-plugin-datepicker class="form-control mb-3" placeholder="01/01/2019">
 						</div>
 					</div>
 				    </div>
@@ -157,6 +165,10 @@
                         <div class="modal-text">
                             <label class="control-label">Harga Beli<span class="required">*</span></label>	
 							 <input type="text" name="fullname" class="form-control" placeholder="Harga Beli" required/>  
+                        </div>
+                        <div class="modal-text">
+                            <label class="control-label">Tanggal Expired<span class="required">*</span></label>	
+                            <input type="text" data-plugin-datepicker class="form-control mb-3" placeholder="01/01/2019">
 						</div>
 					</div>
 				    </div>

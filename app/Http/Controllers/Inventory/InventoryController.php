@@ -16,4 +16,8 @@ class InventoryController extends Controller
     {
         return view('inventory.report');
     }
+    public function listExpired ()
+    {
+        return view('inventory.expired');
+    }
 }

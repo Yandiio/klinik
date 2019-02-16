@@ -82,22 +82,31 @@
                                     Pendapatan Dokter
                                 </a>
                             </li>
-                            <li>
-                            <a class="nav-link" href="{{ route('tindakan') }}">
-                                    Buat Tindakan
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('list_tindakan') }}">
-                                        List Tindakan
-                                    </a>
-                                </li>
-                            <li>
+                            
                                 <a class="nav-link" href="{{ route('tipe_poli') }}">
                                     Tipe Poli
                                 </a>
                             </li>
                             
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-medkit"></i>
+                            <span>Tindakan</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="{{ route('tindakan') }}">
+                                        Buat Tindakan
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="{{ route('list_tindakan') }}">
+                                            List Tindakan
+                                        </a>
+                                    </li>
+                                <li>
                         </ul>
                     </li>
                     <li class="nav-parent">

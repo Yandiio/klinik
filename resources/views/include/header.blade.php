@@ -138,46 +138,25 @@
 
                 <div class="dropdown-menu notification-menu">
                     <div class="notification-title">
-                        <span class="float-right badge badge-default">3</span>
+                        <span class="float-right badge badge-default">1</span>
                         Alerts
                     </div>
 
                     <div class="content">
                         <ul>
                             <li>
-                                <a href="#" class="clearfix">
+                            <a href="{{ route('list_expired') }}" class="clearfix">
                                     <div class="image">
-                                        <i class="fas fa-thumbs-down bg-danger text-light"></i>
+                                        <i class="fas fa-info bg-danger text-light"></i>
                                     </div>
-                                    <span class="title">Server is Down!</span>
-                                    <span class="message">Just now</span>
+                                    <span class="title">Obat Expired !</span>
+                                    <span class="message">Panadol</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#" class="clearfix">
-                                    <div class="image">
-                                        <i class="fas fa-lock bg-warning text-light"></i>
-                                    </div>
-                                    <span class="title">User Locked</span>
-                                    <span class="message">15 minutes ago</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="clearfix">
-                                    <div class="image">
-                                        <i class="fas fa-signal bg-success text-light"></i>
-                                    </div>
-                                    <span class="title">Connection Restaured</span>
-                                    <span class="message">10/10/2017</span>
-                                </a>
-                            </li>
+                            
                         </ul>
 
                         <hr />
-
-                        <div class="text-right">
-                            <a href="#" class="view-more">View All</a>
-                        </div>
                     </div>
                 </div>
             </li>

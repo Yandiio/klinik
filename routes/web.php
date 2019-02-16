@@ -42,14 +42,15 @@ Route::get('apotik/racikan-obat', 'ApotikController@listRacikan')->name('list_ra
 Route::get('apotik/tipe-obat', 'Apotik\TipeObatController@listTipeobat')->name('list_tipeobat');
 
 /* === Apotik === */
-
+/* =================================== ROUTE MENU INVENTORY =============================================== */
 /* --- Inventory --- */
 Route::get('inventory/list-inventory', 'InventoryController@listInventory')->name('list_inventory');
 Route::get('inventory/report-inventory', 'InventoryController@reportInventory')->name('report_inventory');
 Route::get('inventory/list-pemasok', 'Inventory\PemasokController@listPemasok')->name('list_pemasok');
+Route::get('inventory/list-expired', 'InventoryController@listExpired')->name('list_expired');
 /* +++ Inventpry === */
 
-/* =================================== ROUTE MENU DOKTER =============================================== */
+/* =================================== ROUTE MENU INVENTORY =============================================== */
 /* --- Dokter ---*/
 Route::get('dokter/tambah-dokter', 'Dokter\DokterController@tambahDokter')->name('tambah_dokter');
 Route::get('dokter/list-dokter', 'Dokter\DokterController@listDokter')->name('list_dokter');
