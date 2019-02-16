@@ -1,5 +1,27 @@
 KLINIK
-
+# PENDAFTARAN
 	- kode Karyawan -> rubah jadi No BPJS
-	- Golongan pasien
-	- 
+	- Tipe pastine ruba jadi golongan pasien
+	- golongan darah hapus
+	
+	- no print modal gauss
+	- usia otomatis di hitung dari tanggal lahir
+	- uang duduk hilang
+# Dokter 
+	- kode dokter auto generate
+	- ada pilihan haji untuk bpjs
+	
+# Tindakan
+	- Tambah Golongan Pasien
+	- report list tindakan
+
+# Notifikasi Inventory
+	- Notif obat expired kurang dari 1 bulan
+	- Notifikasi Suplayer Udah bayar atar belum
+
+# Asuransi
+	- Report Claim Asuransi	
+
+# Menu Apotik rubs jadi Kasir / Akunting
+
+# Diagnosa hapus
