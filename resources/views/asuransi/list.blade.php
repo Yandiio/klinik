@@ -22,146 +22,71 @@
         </div>
         </header>
         <!-- header atas -->
-        
         <div class="row">
-			<div class="col-lg-12">
-				<section class="card">
-				    <header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-						</div>
-						
-						<h2 class="card-title">List Asuransi</h2>
-					</header>
-					<div class="card-body">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
                         <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
                             Tambah Asuransi
                             <i class="fa fa-plus"></i>
                         </button>
-                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
-						<thead>
-						    <tr>
-							    <th width="5%">No</th>
-                                <th>Nama Asuransi</th>
-								<th width="15%">Aksi</th>
-								
-							</tr>
-					    </thead>
-						<tbody>
-                            <tr>
-							    <td >1</td>
-                                <td>Sinarmas MSIG</td>
-                                
-							    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-						    </tr>
-                            <tr>
-							    <td >2</td>
-                                <td>Sinarmas</td>
-                               
-							    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-						    </tr>
-                            <tr>
-                                <td >3</td>
-                                <td>FWD</td>
-							    
-							    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >4</td>
-                                <td>AIA</td>
-							    
-							    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >5</td>
-                                <td>RELIANCE</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >6</td>
-                                <td>RELIEF</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >7</td>
-                                <td>BINTANG</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >8</td>
-                                <td>MNC LIFE </td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >9</td>
-                                <td>GENERALI</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >10</td>
-                                <td>BPJS KESEHATAN</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >11</td>
-                                <td>WANARTA</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>
-                            <tr>
-                                <td >12</td>
-                                <td>ACA</td>
-                                
-                                <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                    <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                </td>  
-                            </tr>		
-						</tbody>
-					</table>
-			</div>
-			</section>
-		</div>
+                        <h4 class="card-title">Asuransi</h4>
+                        <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                        <div class="table-responsive m-t-40">
+                            <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>No Asuransi</th>
+                                        <th>Nama Asuransi</th>
+                                        <th>No Telp Asuransi</th>
+                                        <th>Alamat Asuransi</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>No Asuransi</th>
+                                        <th>Nama Asuransi</th>
+                                        <th>No Telp Asuransi</th>
+                                        <th>Alamat Asuransi</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td >1</td>
+                                        <td>12312312</td>
+                                        <td>Sinarmas MSIG</td>
+                                        <td>0234234324234</td>
+                                        <td>Jalan Rawa Badung</td>
+                                        <td>
+                                            <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </td>  
+                                    </tr>
+                                    <tr>
+                                        <td >2</td>
+                                        <td>12312312</td>
+                                        <td>BPJS</td>
+                                        <td>0234234324234</td>
+                                        <td>Jalan Cakung Timur</td>
+                                        <td>
+                                            <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </td>  
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+       
         <!-- bagian body -->
         <!-- modal tambah -->
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
@@ -171,12 +96,25 @@
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
+                        <div class="modal-text">
+                            <label class="control-label">No Asuransi<span class="required">*</span></label>
+                                <input type="text" name="fullname" class="form-control" placeholder="Nomor Asuransi" required/>
+                        </div>
 					    <div class="modal-text">
                             <label class="control-label">Nama Asuransi<span class="required">*</span></label>
 							 <input type="text" name="fullname" class="form-control" placeholder="Nama Asuransi" required/>
                         </div>
+                        
+                        <div class="modal-text">
+                            <label class="control-label">No Telepon Asuransi<span class="required">*</span></label>
+                                <input type="text" name="fullname" class="form-control" placeholder="Nama Asuransi" required/>
+                        </div>
+                        <div class="modal-text">
+                            <label class="control-label">Alamat<span class="required">*</span></label>
+                            <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
+                        </div>
 					</div>
-				    </div>
+				</div>
 				<footer class="card-footer">
 					<div class="row">
 					    <div class="col-md-12 text-right">
@@ -196,12 +134,27 @@
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
-					    <div class="modal-text">
-                            <label class="control-label">Nama Asuransi <span class="required">*</span></label>
-								
-							 <input type="text" name="fullname" value="Sinarmas MSIG" class="form-control" required/>
-							    
-						</div>
+                            <div class="card-body">
+                                <div class="modal-wrapper">
+                                    <div class="modal-text">
+                                        <label class="control-label">No Asuransi<span class="required">*</span></label>
+                                            <input type="text" value="12312312	" name="fullname" class="form-control" placeholder="Nomor Asuransi" required/>
+                                    </div>
+                                    <div class="modal-text">
+                                        <label class="control-label">Nama Asuransi<span class="required">*</span></label>
+                                            <input type="text" name="fullname" class="form-control" placeholder="Nama Asuransi" required/>
+                                    </div>
+                                    
+                                    <div class="modal-text">
+                                        <label class="control-label">No Telepon Asuransi<span class="required">*</span></label>
+                                            <input type="text" value="0234234324234" name="fullname" class="form-control" placeholder="Nama Asuransi" required/>
+                                    </div>
+                                    <div class="modal-text">
+                                        <label class="control-label">Alamat<span class="required">*</span></label>
+                                        <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize>Jalan Rawa Badung</textarea>
+                                    </div>
+                                </div>
+                            </div>
 					</div>
 				</div>
 				<footer class="card-footer">
@@ -218,12 +171,70 @@
 </section>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
 
 @stop
 @section('script')
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-  
+ <!-- This is data table -->
+ <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+ <!-- start - This is for export functionality only -->
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+ <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+ <!-- end - This is for export functionality only -->
+ <script>
+ $(function() {
+     $('#myTable').DataTable();
+     $(function() {
+         var table = $('#example').DataTable({
+             "columnDefs": [{
+                 "visible": false,
+                 "targets": 2
+             }],
+             "order": [
+                 [2, 'asc']
+             ],
+             "displayLength": 25,
+             "drawCallback": function(settings) {
+                 var api = this.api();
+                 var rows = api.rows({
+                     page: 'current'
+                 }).nodes();
+                 var last = null;
+                 api.column(2, {
+                     page: 'current'
+                 }).data().each(function(group, i) {
+                     if (last !== group) {
+                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                         last = group;
+                     }
+                 });
+             }
+         });
+         // Order by the grouping
+         $('#example tbody').on('click', 'tr.group', function() {
+             var currentOrder = table.order()[0];
+             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                 table.order([2, 'desc']).draw();
+             } else {
+                 table.order([2, 'asc']).draw();
+             }
+         });
+     });
+ });
+ $('#example23').DataTable({
+     dom: 'Bfrtip',
+     buttons: [
+         'copy', 'csv', 'excel', 'pdf', 'print'
+     ]
+ });
+ $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+ </script> 
 
 @stop

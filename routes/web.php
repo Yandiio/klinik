@@ -27,7 +27,7 @@ Route::post('tes-insert','Dokter\DokterController@testTambah')->name('test_tamba
 /* Diagnosa */
 
 /* Pasien */
-Route::get('pasien/tipe-pendaftaran','PasienController@listPasien')->name('tipe_pendaftaran');
+Route::get('pasien/tipe-penjamin','PasienController@listPasien')->name('tipe_pendaftaran');
 Route::get('pasien/tipe-pasien','PasienController@tipePasien')->name('tipe_pasien');
 Route::get('pasien/pendaftaran','PasienController@Pendaftaran')->name('pendaftaran');
 Route::get('pasien/list-pasien','PasienController@listPendaftaran')->name('list_pendaftaran');

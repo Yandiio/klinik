@@ -82,7 +82,7 @@
                                     Pendapatan Dokter
                                 </a>
                             </li>
-                            
+                            <li>
                                 <a class="nav-link" href="{{ route('tipe_poli') }}">
                                     Tipe Poli
                                 </a>
@@ -112,7 +112,7 @@
                                             Master Tindakan
                                         </a>
                                     </li>
-                                <li>
+                                <li>    
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -133,7 +133,7 @@
                             </li>
                             <li>
                             <a class="nav-link" href="{{ route('list_pemasok') }}">
-                                    Pemasok
+                                    Supplayer
                                 </a>
                             </li>
                             
