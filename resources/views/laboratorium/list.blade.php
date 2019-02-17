@@ -21,7 +21,7 @@
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
         </header>
-        <!-- header atas -->
+        <!-- header atas aja-->
         
         <div class="row">
 			<div class="col-lg-12">
