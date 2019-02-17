@@ -22,78 +22,80 @@
         </div>
         </header>
         <!-- header atas -->
-        
         <div class="row">
-			<div class="col-lg-12">
-				<section class="card">
-				    <header class="card-header">
-						<div class="card-actions">
-                            
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-						</div>
-						
-						<h2 class="card-title">List Dokter</h2>
-					</header>
-					<div class="card-body">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
                         
-                        <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
-						<thead>
-						    <tr>
-							    <th width="5%">No</th>
-                                <th>Kode Dokter</th>
-                                <th>Nama Dokter</th>
-                                <th>Poli</th>
-                                <th>Departemen</th>
-								<th width="15%">Aksi</th>
-								
-							</tr>
-					    </thead>
-						<tbody>
-                            <tr>
-                                <td >1</td>
-                                <td>KD-001</td>
-                                <td>Dr.Agus Setyadi</td>
-                                <td>Poli Umum</td>
-                                <td>Klinik Bina Persada</td>
-							    <td>
-                                    <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                </td>  
-						    </tr>
-                            <tr>
-							    <td >2</td>
-							    <td>KD-002</td>
-                                <td>Drg.Anita</td>
-                                <td>Poli Gigi</td>
-                                <td>Klinik Bina Persada</td>
-                                
-							    <td>
-                                    <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                </td>  
-						    </tr>
-                            <tr>
-							    <td >3</td>
-							    <td>KD-003</td>
-                                <td>Dr.Dilan</td>
-                                <td>Poli Klinik</td>
-                                <td>Klinik Bina Persada</td>
-							    <td>
-                                    <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                    {{-- <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
-                                </td>  
-						    </tr>
-                            			
-						</tbody>
-					</table>
-			</div>
-			</section>
-		</div>
-        <!-- bagian body -->
-        
-        
+                        <h4 class="card-title">List Dokter</h4>
+                        <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                        <div class="table-responsive m-t-40">
+                            <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Dokter</th>
+                                        <th>Nama Dokter</th>
+                                        <th>Poli</th>
+                                        <th>Departemen</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Kode Dokter</th>
+                                        <th>Nama Dokter</th>
+                                        <th>Poli</th>
+                                        <th>Departemen</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td >1</td>
+                                        <td>KD-001</td>
+                                        <td>Dr.Agus Setyadi</td>
+                                        <td>Poli Umum</td>
+                                        <td>Klinik Bina Persada</td>
+                                        <td>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                        </td>  
+                                    </tr>
+                                    <tr>
+                                        <td >2</td>
+                                        <td>KD-002</td>
+                                        <td>Drg.Anita</td>
+                                        <td>Poli Gigi</td>
+                                        <td>Klinik Bina Persada</td>
+                                        
+                                        <td>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                        </td>  
+                                    </tr>
+                                    <tr>
+                                        <td >3</td>
+                                        <td>KD-003</td>
+                                        <td>Dr.Dilan</td>
+                                        <td>Poli Klinik</td>
+                                        <td>Klinik Bina Persada</td>
+                                        <td>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            {{-- <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
+                                        </td>  
+                                    </tr>
+                                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
 </section>
 @endsection
 @section('css')
@@ -103,6 +105,65 @@
 @stop
 @section('script')
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-  
+ <!-- This is data table -->
+ <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+ <!-- start - This is for export functionality only -->
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+ <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+ <!-- end - This is for export functionality only -->
+ <script>
+ $(function() {
+     $('#myTable').DataTable();
+     $(function() {
+         var table = $('#example').DataTable({
+             "columnDefs": [{
+                 "visible": false,
+                 "targets": 2
+             }],
+             "order": [
+                 [2, 'asc']
+             ],
+             "displayLength": 25,
+             "drawCallback": function(settings) {
+                 var api = this.api();
+                 var rows = api.rows({
+                     page: 'current'
+                 }).nodes();
+                 var last = null;
+                 api.column(2, {
+                     page: 'current'
+                 }).data().each(function(group, i) {
+                     if (last !== group) {
+                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                         last = group;
+                     }
+                 });
+             }
+         });
+         // Order by the grouping
+         $('#example tbody').on('click', 'tr.group', function() {
+             var currentOrder = table.order()[0];
+             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                 table.order([2, 'desc']).draw();
+             } else {
+                 table.order([2, 'asc']).draw();
+             }
+         });
+     });
+ });
+ $('#example23').DataTable({
+     dom: 'Bfrtip',
+     buttons: [
+         'copy', 'csv', 'excel', 'pdf', 'print'
+     ]
+ });
+ $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+ </script> 
 
 @stop

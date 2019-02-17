@@ -22,166 +22,158 @@
         </div>
         </header>
         <!-- header atas -->
-        
-        <div class="row">
-			<div class="col-lg-12">
-				<section class="card">
-				    <header class="card-header">
-						<div class="card-actions">
-							<a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-							<a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-						</div>
-						
-						<h2 class="card-title">List Pendaftaran</h2>
-					</header>
-					<div class="card-body">
-					<table class="table table-responsive-lg table-bordered table-striped table-sm mb-0" id="dataTable">
-						<thead>
-						    <tr>
-							    <th width="5%">No</th>
-                                <th>Tipe</th>
-								<th>Nik</th>
-                                <th>Nama</th>
-                                <th>Dokter</th>
-                                <th>Tanggal</th>
-								<th width="10%">Aksi</th>
-                                <th>Daftar</th>
-								
-							</tr>
-					    </thead>
-						<tbody>
-                            <tr>
-							    <td>D001</td>
-							    <td>BPJS</td>
-                                <td>23432435622</td>
-                                <td>Salahudin</td>
-                                <td>[Gigi] Drs.Khoslis Prtama</td>
-                                <td>12-12-2018</td>
-							    <td>
-                                    <a class="btn-sm btn-info modal-sizes" title="Cetak Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                </td>
-                                <td>
-                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
-                                </td>
-						    </tr>
-                            <tr>
-							    <td>D002</td>
-							    <td>Umum</td>
-                                <td>23432435622</td>
-                                <td>Salahudin</td>
-                                <td>[Gigi] Drs.Khoslis Prtama</td>
-                                <td>12-08-2018</td>
-							    <td>
-                                    <a class="btn-sm btn-info modal-sizes " title="Cetak Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                </td>
-                                <td>
-                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
-                                </td>
-						    </tr>
-                            <tr>
-							    <td>D003</td>
-							    <td>Pribadi</td>
-                                <td>23432435622</td>
-                                <td>Salahudin</td>
-                                <td>[Gigi] Drs.Khoslis Prtama</td>
-                                <td>12-12-2018</td>
-							    <td>
-									<a class="btn-sm btn-info modal-sizes " title="Lihat Data !" style="margin-right:5px" href="#modalLG"> <i class="fas fa-file-alt" aria-hidden="true"></i></a>
-                                    <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                </td>
-                                <td>
-                                    <a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
-                                </td>
-						    </tr>
-                            
-                            			
-						</tbody>
-					</table>
-			</div>
-			</section>
-		</div>
-
-        <!-- modalllll -->
-            <div id="modalLG" class="modal-block modal-block-lg mfp-hide">
-				<section class="card">
-					<!-- start: page -->
+		<div class="row">
+				<div class="col-12">
+					<div class="card">
 						<div class="card-body">
-							<div class="invoice">
-								<header class="clearfix">
-									<div class="row">
-										<div class="col-sm-6 mt-3">
-											<h2 class="h2 mt-0 mb-1 text-dark font-weight-bold">Kartu Daftar</h2>
-											<h4 class="h4 m-0 text-dark font-weight-bold">D001/06/20/2017</h4>
-										</div>
-										<div class="col-sm-6 text-right mt-3 mb-3">
-											<address class="ib mr-5">
-												Okler Themes Ltd
-												<br/>
-												123 Porto Street, New York, USA
-												<br/>
-												Phone: +12 3 4567-8901
-												<br/>
-												okler@okler.net
-											</address>
-											<div class="ib">
-												<img src="{{asset('assets/img/invoice-logo.png')}}" alt="OKLER Themes" />
-											</div>
-										</div>
-									</div>
-								</header>
-								
-								<table class="table table-bordered mb-0">
+							
+							<h4 class="card-title">List Pendaftaran</h4>
+							<h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+							<div class="table-responsive m-t-40">
+								<table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 									<thead>
-										<tr class="text-dark">
-                                            <th width="20%">No</th>
-                                            <th>D001</th>
-											
+										<tr>
+											<th>No</th>
+											<th>Tipe</th>
+											<th>Nik</th>
+											<th>Nama</th>
+											<th>Dokter</th>
+											<th>Tanggal</th>
+											<th>Aksi</th>
+											<th>Daftar</th>
 										</tr>
 									</thead>
+									<tfoot>
+										<tr>
+											<th>No</th>
+											<th>Tipe</th>
+											<th>Nik</th>
+											<th>Nama</th>
+											<th>Dokter</th>
+											<th>Tanggal</th>
+											<th>Aksi</th>
+											<th>Daftar</th>
+										</tr>
+									</tfoot>
 									<tbody>
 										<tr>
-											
+											<td>D001</td>
+											<td>BPJS</td>
+											<td>23432435622</td>
+											<td>Salahudin</td>
+											<td>[Gigi] Drs.Khoslis Prtama</td>
+											<td>12-12-2018</td>
+											<td>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+											</td>
+											<td>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+											</td>
 										</tr>
-                                            <td width="10%">Nik</td>
-                                            <td>786557376367367673</td>
-                                        <tr>
-                                            <td width="10%">Nama</td>
-                                            <td>Samsudin hairul</td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">Alamat</td>
-                                            <td>Jala mekar sari cikayu jakarta timur</td>
-                                        </tr>
-                                        <tr>
-                                            <td width="10%">Keterangan</td>
-                                            <td> </td>
-                                        </tr>
-										
+										<tr>
+											<td>D002</td>
+											<td>Umum</td>
+											<td>23432435622</td>
+											<td>Salahudin</td>
+											<td>[Gigi] Drs.Khoslis Prtama</td>
+											<td>12-08-2018</td>
+											<td>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+											</td>
+											<td>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+											</td>
+										</tr>
+										<tr>
+											<td>D003</td>
+											<td>Pribadi</td>
+											<td>23432435622</td>
+											<td>Salahudin</td>
+											<td>[Gigi] Drs.Khoslis Prtama</td>
+											<td>12-12-2018</td>
+											<td>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+											</td>
+											<td>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+											</td>
+										</tr>	
 									</tbody>
 								</table>
 							</div>
-
-							<div class="text-right mr-4">
-                                <button class="btn btn-default modal-dismiss">Kembali</button>
-								<a href="pages-invoice-print.html" target="_blank" class="btn btn-primary ml-3"><i class="fas fa-print"></i> Print</a>
-							</div>
 						</div>
 					</div>
-					
-				</section>
+				
+				</div>
 			</div>
        
 </section>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+
 
 @stop
 @section('script')
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-  
-
+ <!-- This is data table -->
+ <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+ <!-- start - This is for export functionality only -->
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+ <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+ <!-- end - This is for export functionality only -->
+ <script>
+ $(function() {
+     $('#myTable').DataTable();
+     $(function() {
+         var table = $('#example').DataTable({
+             "columnDefs": [{
+                 "visible": false,
+                 "targets": 2
+             }],
+             "order": [
+                 [2, 'asc']
+             ],
+             "displayLength": 25,
+             "drawCallback": function(settings) {
+                 var api = this.api();
+                 var rows = api.rows({
+                     page: 'current'
+                 }).nodes();
+                 var last = null;
+                 api.column(2, {
+                     page: 'current'
+                 }).data().each(function(group, i) {
+                     if (last !== group) {
+                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                         last = group;
+                     }
+                 });
+             }
+         });
+         // Order by the grouping
+         $('#example tbody').on('click', 'tr.group', function() {
+             var currentOrder = table.order()[0];
+             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                 table.order([2, 'desc']).draw();
+             } else {
+                 table.order([2, 'asc']).draw();
+             }
+         });
+     });
+ });
+ $('#example23').DataTable({
+     dom: 'Bfrtip',
+     buttons: [
+         'copy', 'csv', 'excel', 'pdf', 'print'
+     ]
+ });
+ $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+ </script> 
 @stop

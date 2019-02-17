@@ -21,7 +21,7 @@
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
         </header>
-        <!-- header atas -->
+        <!-- header atas aja-->
         
         <div class="row">
 			<div class="col-lg-12">
@@ -151,7 +151,7 @@
 												<input type="Text" class="form-control" placeholder="Keterangan" id="name">
 											</td>
 											<td>
-												<button type = "submit" name="add" id="" class="btn btn-danger">x</button>
+												<button type = "submit" name="add" id="add" class="btn btn-danger">x</button>
 											</td>
 										</tr>
 									</table>
