@@ -116,6 +116,20 @@
                         </ul>
                     </li>
                     <li class="nav-parent">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calculator"></i>
+                            <span>Akutansi</span>
+                        </a>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="">
+                                        List Akutansi
+                                    </a>
+                                </li>
+                              
+                        </ul>
+                    </li>
+                    <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
                             <span>Inventory</span>
