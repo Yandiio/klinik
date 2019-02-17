@@ -113,7 +113,7 @@
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia <span class="required">*</span></label>
 											    <div class="col-sm-4">
-													<input type="number" class="form-control form-control-sm mb-3" name="last-name" id="w2-last-name" min="1" >
+													<input type="number" class="form-control form-control-sm mb-3" name="last-name" id="umur" min="1" >
 												</div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kabupaten <span class="required">*</span></label>
 											    <div class="col-sm-4">
@@ -171,7 +171,7 @@
 																<i class="fas fa-calendar-alt"></i>
 															</span>
 														</span>
-														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" >
+														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" id="tglLahir" >
 													</div>
 												</div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat <span class="required">*</span></label>
@@ -398,6 +398,18 @@
 		<!-- Examples -->
 		<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
 		<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
+		<script>
+			$(document).ready(function(){
+						$('#tglLahir').on('change',function(){
+							console.log('ok');
+								var dob = new Date(this.value);
+                var today = new Date();
+                var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+                $('#umur').val(age);
+						})
+			});
+		
+		</script>
   
 
 @stop
