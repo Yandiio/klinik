@@ -118,12 +118,20 @@
                     <li class="nav-parent">
                         <a href="#" class="nav-link">
                             <i class="fas fa-calculator"></i>
-                            <span>Akutansi</span>
+                            <span>Transaksi</span>
                         </a>
                         <ul class="nav nav-children">
                             <li>
                                 <a class="nav-link" href="">
-                                        List Akutansi
+                                        Rawat Jalan
+                                    </a>
+                                </li>
+                              
+                        </ul>
+                        <ul class="nav nav-children">
+                            <li>
+                                <a class="nav-link" href="">
+                                        Rawat Inap
                                     </a>
                                 </li>
                               
