@@ -147,14 +147,16 @@
 												</div>
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Tindakan <span class="required">*</span></label>
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal Tindakan <span class="required">*</span></label>
 												<div class="col-sm-4">
-												<select name="" id="" class="form-control form-control-sm mb-3">
-													    <option value="">Pilih Tindakan</option>
-													    <option value="">Tindakan 1</option>
-													    <option value="">Tindakan 2</option>
-													    <option value="">Tindakan 3</option>			
-											        </select>
+                                                    <div class="input-group">
+														<span class="input-group-prepend">
+															<span class="input-group-text" style="height:25px">
+																<i class="fas fa-calendar-alt"></i>
+															</span>
+														</span>
+														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
+													</div>
 											    </div>
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Laboratorium <span class="required">*</span></label>
 												<div class="col-sm-4">
@@ -168,37 +170,62 @@
 											
 										</div>
 										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal Tindakan <span class="required">*</span></label>
+											
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Tindakan <span class="required">*</span></label>
 												<div class="col-sm-4">
-                                                    <div class="input-group">
-														<span class="input-group-prepend">
-															<span class="input-group-text" style="height:25px">
-																<i class="fas fa-calendar-alt"></i>
-															</span>
-														</span>
-														<input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
-													</div>
+													<select name="" id="" class="form-control form-control-sm mb-3">
+													    <option value="">Pilih Tindakan</option>
+													    <option value="">Tindakan 1</option>
+													    <option value="">Tindakan 2</option>
+													    <option value="">Tindakan 3</option>			
+											        </select>
+											    </div>
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan <span class="required">*</span></label>
+												<div class="col-sm-4">
+                                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
 											    </div>
 											
 											
 										</div>
 										
 										<div class="form-group row">
-
-                                            <!-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Hubungan <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Hubungan</option>
-														<option value="">Anak</option>
-														<option value="">Istri</option>	
-														<option value="">Dll</option>
-													</select>
-												</div> -->
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan <span class="required">*</span></label>
-												<div class="col-sm-4">
-                                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
-											    </div>
+										<div class="card-body">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="mb-3">
+											<a href="#" id="tindakanTambah" class="btn btn-primary">Tambah Tindakan <i class="fas fa-plus"></i></a>
 											
+										</div>
+									</div>
+								</div>
+								<table class="table table-bordered table-striped mb-0" id="datatable-editable">
+									<thead>
+										<tr>
+											<th>*</th>
+											<th>Tipe Tindakan</th>
+											<th>Harga</th>
+											<th>Qty</th>
+											<th>Aksi</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Tindakan 1</td>
+											<td>43.000</td>
+											<td>1</td>
+											<td class="actions">
+												<a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+												<a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+												<a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+												<a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+											</td>
+										</tr>
+										
+									
+									</tbody>
+								</table>
+							</div>
 										</div>
 										
 								</div>
@@ -309,6 +336,7 @@
 		<!-- caresolul -->
 		<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/vendor/datatables/media/css/dataTables.bootstrap4.css')}}" />
 
 @stop
 @section('script')
@@ -341,14 +369,37 @@
 
 		<!-- Examples -->
 		<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
-		<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script><script>
+		<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
+		<!-- <script src="{{asset('assets/js/examples/examples.datatables.editable.js')}}"></script>
+		<script src="{{asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script> -->
+		<script>
 			$(document).ready(function(){
 				var i = 1;
 				$(this).on('click','#addItem',function(){
 					i++;
 					
 					// $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
-                    $('#dynamic_field').append('<tr id="row'+i+'"><td><a href="#" name="add" id="addItem" class="btn btn-default">+</a></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name"></td><td><input type="Text" class="form-control" id="name"></td><td><input type="number" class="form-control" placeholder="Sirup" id="name" disabled></td><td><input type="number" class="form-control"  id="name"></td><td><input type="number" class="form-control"  id="name"></td><td><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><a href="#" name="add" id="'+i+'" class="btn btn-danger btn-remove">x</a></td></tr>');
+                    $('#dynamic_field').append('<tr id="row'+i+'"><td><a href="#" name="add" id="addItem" class="btn btn-default">+</a></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name" ></td><td><input type="Text" class="form-control" id="name"></td><td><input type="number" class="form-control" placeholder="Sirup" id="name" disabled></td><td><input type="number" class="form-control"  id="name"></td><td><input type="number" class="form-control"  id="name"></td><td><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><a href="#" name="add" id="'+i+'" class="btn btn-danger btn-remove">x</a></td></tr>');
+				});	
+				$(document).on('click','.btn-remove',function(){
+					var button_id = $(this).attr("id");
+					$('#row'+button_id+'').remove();
+
+				});
+				$(this).on('click','#tindakanTambah',function(){
+					
+					i++;
+					
+					
+					// $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
+                 $('#datatable-editable').append('<tr id="row'+i+'"><td></td><td><input type="Text" class="form-control" placeholder="tindakan" id="name" name=field'+i+' autofocus></td><td><input type="Text" class="form-control" placeholder="akan" id="name" name=""></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name"></td><td class="actions"><a href="#" class="on-editing save-row"><i class="fas fa-save"></i></a><a href="#" class=" on-editing cancel-row"><i class="fas fa-times"></i></a></td></tr>');
+				 $('input[name="aa"'+i+']').focus();
+					
+					console.log(tess);
+					$('#row'+i+'').focus();
+					function setFocus(){
+
+					}
 				});	
 				$(document).on('click','.btn-remove',function(){
 					var button_id = $(this).attr("id");
