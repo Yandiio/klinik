@@ -117,26 +117,25 @@
                     </li>
                     <li class="nav-parent">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-calculator"></i>
+                            <i class="fas fa-medkit"></i>
                             <span>Transaksi</span>
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="">
+                                <a class="nav-link" href="{{route('list_rawat_jalan')}}">
                                         Rawat Jalan
                                     </a>
                                 </li>
-                              
-                        </ul>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a class="nav-link" href="">
-                                        Rawat Inap
-                                    </a>
-                                </li>
-                              
+                                <li>
+                                    <a class="nav-link" href="">
+                                        Rawat inap
+                                        </a>
+                                    </li>
+                                <li>
+                                
                         </ul>
                     </li>
+                   
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-tasks" aria-hidden="true"></i>

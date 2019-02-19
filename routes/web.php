@@ -69,6 +69,10 @@ Route::get('dokter/lihat-tindakan', 'Dokter\TindakanController@lihatTindakan')->
 /* --- Tipe Poli --*/
 Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_poli');
 /* === Tipe Poli ===*/
+/* ==========================Transaksi ========================== */
+Route::get('transaksi/rawat-jalan','Transaksi\TransaksiController@listRawatJalan')->name('list_rawat_jalan');
+Route::get('transaksi/rawat-inap','Traansaksi\TransaksiController@listRawatInap')->name('list_rawat_inap');
+/* ==========================Transaksi ========================== */
 
 /* =================================== ROUTE MENU DOKTER =============================================== */
 
