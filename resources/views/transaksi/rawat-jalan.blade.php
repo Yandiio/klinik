@@ -53,53 +53,55 @@
                                                 cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>*</th>
-                                                        <th>Pasien</th>
-                                                        <th>Pasien</th>
-                                                        <th>Tipe Asuransi</th>
-                                                        <th>No Kwitansi</th>
-                                                        <th>Tagihan</th>
-                                                        <th>Diskon</th>
-                                                        <th>Total Bayar</th>
-                                                        <th>Aksi</th>
+                                                        <th><small>*</small></th>
+                                                        <th><small>Pasien</small></th>
+                                                        <th><small>Pasien</small></th>
+                                                        <th><small>Tipe Asuransi</small></th>
+                                                        <th><small>No Kwitansi</small></th>
+                                                        <th><small>Tagihan</small></th>
+                                                        <th><small>Diskon</small></th>
+                                                        <th><small>Total Bayar</small></th>
+                                                        <th><small>Aksi</small></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>
-                                                            No Daftar : BBH-10298
+                                                        <td><small>1</small></td>
+                                                        <td><small>
+                                                            No Daftar : BBH-10298 , <br>
                                                             tgl Regist : 19-02-2019 21:30
+                                                        </small>
                                                         </td>
-                                                        <td>
-                                                            Helmay Cahyadi
-                                                            No RKM : BHB-20198
+                                                        <td><small>
+                                                            Helmay Cahyadi <br>
+                                                            No RKM : BHB-20198 <br>
                                                             Tgl lahir : 19-04-1098
-
+                                                            </small>
                                                         </td>
-                                                        <td>Bpjs</td>
-                                                        <td>BHB-1092 : 19-02-2018</td>
-                                                        <td>2.590000</td>
-                                                        <td>2500</td>
-                                                        <td>345929278</td>
-                                                        <td>
+                                                        <td><small>Bpjs</small></td>
+                                                        <td><small>NK213 : 19-02-2018</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>345929278</small></td>
+                                                        <td><small>
                                                             <a href="{{route('invoice')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-warning"
                                                                 title="" style="margin-right:5px"><i class="fa fa-eye"
                                                                     aria-hidden="true"></i> Bayar</a>
-                                                            
+                                                        </small>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>2</td>
-                                                        <td>Pribadi</td>
-                                                        <td>
+                                                        <td><small>2</small></td>
+                                                        <td><small>Pribadi</small></td>
+                                                        <td><small>
                                                             <button type="button" class="btn-sm btn-warning modal-sizes"
                                                                 title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i
                                                                     class="fa fa-edit" aria-hidden="true"></i></button>
                                                             <button type="button" href="" class="btn-sm btn-danger"
                                                                 title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash"
                                                                     aria-hidden="true"></i></button>
-                                                        </td>
+                                                                <small>
+                                                            </td>
                                                     </tr>
                                                     <tr>
                                                         <td>3</td>
