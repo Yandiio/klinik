@@ -72,7 +72,8 @@ Route::get('dokter/tipe-poli', 'Dokter\PoliController@tipePoli')->name('tipe_pol
 /* ==========================Transaksi ========================== */
 Route::get('transaksi/rawat-jalan','Transaksi\TransaksiController@listRawatJalan')->name('list_rawat_jalan');
 Route::get('transaksi/rawat-inap','Traansaksi\TransaksiController@listRawatInap')->name('list_rawat_inap');
-Route::get('transaksi/invoice','Transaksi\TransaksiController@invoice')->name('invoice');
+Route::get('transaksi/pembayaran','Transaksi\TransaksiController@pembayaran')->name('pembayaran');
+Route::get('transaksi/page-invoice','Transaksi\TransaksiController@invoice')->name('invoice');
 /* ==========================Transaksi ========================== */
 
 /* =================================== ROUTE MENU DOKTER =============================================== */

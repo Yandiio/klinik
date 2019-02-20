@@ -14,5 +14,8 @@ class TransaksiController extends Controller
     public function invoice(){
         return view ('transaksi.invoice');
     }
+    public function pembayaran(){
+        return view ('transaksi.pembayaran');
+    }
     
 }

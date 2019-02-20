@@ -68,14 +68,14 @@
                                                     <tr>
                                                         <td><small>1</small></td>
                                                         <td><small>
-                                                            No Daftar : BBH-10298 , <br>
-                                                            tgl Regist : 19-02-2019 21:30
-                                                        </small>
+                                                                No Daftar : BBH-10298 , <br>
+                                                                tgl Regist : 19-02-2019 21:30
+                                                            </small>
                                                         </td>
                                                         <td><small>
-                                                            Helmay Cahyadi <br>
-                                                            No RKM : BHB-20198 <br>
-                                                            Tgl lahir : 19-04-1098
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198 <br>
+                                                                Tgl lahir : 19-04-1098
                                                             </small>
                                                         </td>
                                                         <td><small>Bpjs</small></td>
@@ -83,39 +83,70 @@
                                                         <td><small>2.590000</small></td>
                                                         <td><small>2500</small></td>
                                                         <td><small>345929278</small></td>
-                                                        <td><small>
-                                                            <a href="{{route('invoice')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-warning"
-                                                                title="" style="margin-right:5px"><i class="fa fa-eye"
-                                                                    aria-hidden="true"></i> Bayar</a>
-                                                        </small>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><small>2</small></td>
-                                                        <td><small>Pribadi</small></td>
-                                                        <td><small>
-                                                            <button type="button" class="btn-sm btn-warning modal-sizes"
-                                                                title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i
-                                                                    class="fa fa-edit" aria-hidden="true"></i></button>
-                                                            <button type="button" href="" class="btn-sm btn-danger"
-                                                                title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash"
-                                                                    aria-hidden="true"></i></button>
-                                                                <small>
-                                                            </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>3</td>
-                                                        <td>Bpjs</td>
                                                         <td>
-                                                            <button type="button" class="btn-sm btn-warning modal-sizes"
-                                                                title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i
-                                                                    class="fa fa-edit" aria-hidden="true"></i></button>
-                                                            <button type="button" href="" class="btn-sm btn-danger"
-                                                                title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash"
-                                                                    aria-hidden="true"></i></button>
+                                                            <small>
+                                                            <a href="{{route('pembayaran')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-warning"
+                                                                    title="" style="margin-right:5px"><i class="fa fa-eye"
+                                                                        aria-hidden="true"></i> Bayar</a>
+                                                            </small>
+                                                            
                                                         </td>
                                                     </tr>
-
+                                                    <tr>
+                                                        <td><small>1</small></td>
+                                                        <td><small>
+                                                                No Daftar : BBH-10298 , <br>
+                                                                tgl Regist : 19-02-2019 21:30
+                                                            </small>
+                                                        </td>
+                                                        <td><small>
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198 <br>
+                                                                Tgl lahir : 19-04-1098
+                                                            </small>
+                                                        </td>
+                                                        <td><small>Bpjs</small></td>
+                                                        <td><small>NK213 : 19-02-2018</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>345929278</small></td>
+                                                        <td>
+                                                            <small>
+                                                            <a href="{{route('pembayaran')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-warning"
+                                                                    title="" style="margin-right:5px"><i class="fa fa-eye"
+                                                                        aria-hidden="true"></i> Bayar</a>
+                                                            </small>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><small>1</small></td>
+                                                        <td><small>
+                                                                No Daftar : BBH-10298 , <br>
+                                                                tgl Regist : 19-02-2019 21:30
+                                                            </small>
+                                                        </td>
+                                                        <td><small>
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198 <br>
+                                                                Tgl lahir : 19-04-1098
+                                                            </small>
+                                                        </td>
+                                                        <td><small>Bpjs</small></td>
+                                                        <td><small>NK213 : 19-02-2018</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>345929278</small></td>
+                                                        <td>
+                                                            <small>
+                                                            <a href="{{route('pembayaran')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-warning"
+                                                                    title="" style="margin-right:5px"><i class="fa fa-eye"
+                                                                        aria-hidden="true"></i> Bayar</a>
+                                                            </small>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                   
                                                 </tbody>
                                             </table>
                                         </div>
@@ -124,28 +155,118 @@
 
 
                             </div>
-                            <!-- modal Transaksi -->
                            
-                            <!-- modal Transaksi -->
                             <!-- kontent tabb 1 -->
                             <div id="w2-profile" class="tab-pane p-3">
-                                <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik
-                                        <span class="required">*</span></label>
-                                    <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name">
-                                    </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tipe
-                                        penjamin <span class="required">*</span></label>
-                                    <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Umum</option>
-                                            <option value="">Pribadi</option>
-                                            <option value="">BPJS</option>
-                                        </select>
-                                    </div>
-                                </div>
+                            <h4 class="card-title">Data Export</h4>
+                                        <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                                        <div class="table-responsive m-t-40">
+                                            <table id="example23" class="display nowrap table table-hover table-striped table-bordered"
+                                                cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th><small>*</small></th>
+                                                        <th><small>Tanggal/Kuitansi</small></th>
+                                                        <th><small>Pasien</small></th>
+                                                        <th><small>Golongan Pasien</small></th>
+                                                        <th><small>Total</small></th>
+                                                        <th><small>Diskon</small></th>
+                                                        <th><small>Tunai</small></th>
+                                                        <th><small>Petugas</small></th>
+                                                        <th><small>Aksi</small></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><small>1</small></td>
+                                                        <td><small>
+                                                                19-02-2019 21:30
+                                                                 <br>
+                                                                No kwn : BHB-20199
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>Pribadi</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>5000</small></td>
+                                                        <td><small>kasir</small></td>
+                                                        <td>
+                                                            <small>
+                                                            <a href="{{route('invoice')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-info"
+                                                                    title="" style="margin-right:5px">invoice</a>
+                                                            </small>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><small>2</small></td>
+                                                        <td><small>
+                                                                19-02-2019 21:30
+                                                                 <br>
+                                                                No kwn : BHB-20199
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>Pribadi</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>5000</small></td>
+                                                        <td><small>kasir</small></td>
+                                                        <td>
+                                                            <small>
+                                                            <a href="{{route('invoice')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-info"
+                                                                    title="" style="margin-right:5px">invoice</a>
+                                                            </small>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><small>3</small></td>
+                                                        <td><small>
+                                                                19-02-2019 21:30
+                                                                 <br>
+                                                                No kwn : BHB-20199
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>
+                                                                Helmay Cahyadi <br>
+                                                                No RKM : BHB-20198
+                                                            </small>
+                                                        </td>
+                                                        
+                                                        <td><small>Pribadi</small></td>
+                                                        <td><small>2.590000</small></td>
+                                                        <td><small>2500</small></td>
+                                                        <td><small>5000</small></td>
+                                                        <td><small>kasir</small></td>
+                                                        <td>
+                                                            <small>
+                                                            <a href="{{route('invoice')}}" class="mb-1 mt-1 mr-1 btn btn-xs btn-info"
+                                                                    title="" style="margin-right:5px">invoice</a>
+                                                            </small>
+                                                            
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                    
+                                                   
+                                                </tbody>
+                                            </table>
+                                        </div>
 
 
                             </div>
@@ -157,7 +278,7 @@
                         </div>
                     </form>
                 </div>
-
+                
             </section>
         </div>
     </div>
