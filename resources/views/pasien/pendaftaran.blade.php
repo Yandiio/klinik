@@ -174,7 +174,7 @@
 												<div class="col-sm-4">
 													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan Pasien <span class="required">*</span></label>
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Goolongan Pasien <span class="required">*</span></label>
 											    <div class="col-sm-4">
 													<select name="" id="" class="form-control form-control-sm mb-3">
 														<option value="">Umum</option>
