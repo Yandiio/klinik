@@ -82,20 +82,7 @@
 													</select>
 												</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
-												<div class="col-sm-4">
-													<input type="text" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
-											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Negara <span class="required">*</span></label>
-											    <div class="col-sm-4">
-													<select name="" id="" class="form-control form-control-sm mb-3">
-														<option value="">Negara</option>
-														<option value="">Indonesia</option>
-														<option value="">Singapura</option>		
-													</select>
-												</div>
-										</div>
+										
 										<div class="form-group row">
 											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat Lahir <span class="required">*</span></label>
 											    <div class="col-sm-4">
@@ -187,7 +174,7 @@
 												<div class="col-sm-4">
 													<input type="number" class="form-control form-control-sm mb-3" name="first-name" id="w2-first-name" >
 											    </div>
-											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tipe penjamin <span class="required">*</span></label>
+											<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan Pasien <span class="required">*</span></label>
 											    <div class="col-sm-4">
 													<select name="" id="" class="form-control form-control-sm mb-3">
 														<option value="">Umum</option>
@@ -254,7 +241,7 @@
                                 <!-- kontent tab 2 -->
 							    <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-										<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Tipe Pendaftaran <span class="required">*</span></label>
+										<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Golongan Pasien<span class="required">*</span></label>
 											<div class="col-sm-4">
 												
 												<select name="" id="" class="form-control form-control-sm mb-3">
