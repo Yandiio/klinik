@@ -82,3 +82,6 @@ Route::get('transaksi/page-invoice','Transaksi\TransaksiController@invoice')->na
 Route::get('asurani/list-asuransi', 'AsuransiController@listAsuransi')->name('list_asuransi');
 /* =================================== ROUTE MENU ASURANSI =============================================== */
 
+/* =================================== ROUTE MENU REPORT ============================================ */
+
+Route::get('report/report-klinik', 'ReportController@datareportPasien')->name('report-klinik');

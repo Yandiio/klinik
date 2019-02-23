@@ -172,11 +172,11 @@
                                 </a>
                             </li>
                             
-                            <li>
+                            {{-- <li>
                                 <a class="nav-link" href="forms-basic.html">
                                     Resep
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a class="nav-link" href="{{ route('list_tipeobat')}}">
                                     Tipe Obat
@@ -238,25 +238,25 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="maps-google-maps.html">
+                            <a class="nav-link" href="{{ route('report-klinik') }}">
                                     Report Klinik
                                 </a>
                             </li>
-                            <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            {{-- <li>
+                                <a class="nav-link" href="">
                                     Pendapatan Dokter
                                 </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            </li> --}}
+                            {{-- <li>
+                                <a class="nav-link" href="">
                                     Pendapatan Pasien
                                 </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="pages-signup.html">
+                            </li> --}}
+                            {{-- <li>
+                                <a class="nav-link" href="">
                                     Klaim Asuransi
                                 </a>
-                            </li>
+                            </li> --}}
                            
                         </ul>
                     </li>

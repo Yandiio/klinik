@@ -135,7 +135,8 @@
          var table = $('#example').DataTable({
              "columnDefs": [{
                  "visible": false,
-                 "targets": 2
+                 "targets": 2,
+				 
              }],
              "order": [
                  [2, 'asc']
