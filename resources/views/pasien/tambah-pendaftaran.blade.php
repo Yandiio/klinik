@@ -342,7 +342,7 @@
 		<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
-		<!-- Specific Page Vendor CSS -->
+		<!-- Specific Page Vendorccc CSS -->
 		<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
 
 		<!-- Theme CSS -->
