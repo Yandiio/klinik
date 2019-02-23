@@ -44,7 +44,7 @@
                             </li>
                             <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pasien')}}">
-                                    Tipe Pasien
+                                    Golongan Pasien
                                 </a>
                             </li>
                             <li class="nav nav-link">
