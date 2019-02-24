@@ -1,96 +1,17 @@
-KLINIK
-# PENDAFTARAN
-	- kode Karyawan -> rubah jadi No BPJS
-	- Tipe pastine ruba jadi golongan pasien
-	- golongan darah hapus
-	
-	- no print modal gauss
-	- usia otomatis di hitung dari tanggal lahir
-	- uang duduk hilang
-# Dokter 
-	- kode dokter auto generate
-	- ada pilihan haji untuk bpjs
-	
-# Tindakan
-	- Tambah Golongan Pasien
-	- report list tindakan
+Report
+- poli gigi
+- poli kebidanan
+- poli lab
+- pengeluaran obat
+Dalam grafik ada convert excel setelah di filter
 
-# Notifikasi Inventory
-	- Notif obat expired kurang dari 1 bulan
-	- Notifikasi Suplayer Udah bayar atar belum
+report nya dibuat 1 menu
 
-# Asuransi
-	- Report Claim Asuransi	
+fee dokter
+- uang duduk -> manual
+- uang makan ->manual
+- persenan obat paten ->auto
+- pasien bpjs ->manual
+- pasien asuransi dan umum ->manual 
 
-# Menu Apotik rubs jadi Kasir / Akunting
-
-# Diagnosa hapus
-
-
-dokter
-tidak perlu
--no pajak ga pake
--departemnet gausah
--negara
--dari tanggal
--sampai tanggal
--istrahat ga usahhh
--Gp atau perbulan
-
-
-kabupaten
-tambah
--alamat okter
-
-Tindakan
-tambah
--suhu badan (derajat celcilus)
--tekanan darah (mmHg)
--berat badan (kg)
--tinggi badan(cm)
-resep
--print tom berapa x sehari 
--nama
--no rekam medis
--tgl
--sesudah makan
--sebelum makan
--keterangan
-tindakan cancel
-
-Transakssi
-Tindakan tambah cacel
-tindakan lab cancel
-
-
-Traif konsultasi dokter masuk ke tindakan dan biling dan invoice
-
-invoice 
-obat cancel detail
-total harga obat2 obatan
-
-supplayer h -3
-obat 1 bulan
-
-stock adjustment
-
-penambahan obat 
-jumah obat baru, penyusaian stock,
- tanggal input obat baru
-tambah supplayer -> tambah data samakan dengan di list
-
-alamat di supplayer
-
-penambahan PO untuk supplayer
-
-kode bintang hapus yang gak prlu
-
-diagnosa hapus
-diagnosa untuk kwitansi input manual
-
-no asuransi hapus
-
-report transaksi tangg
-
-- nama penyakit
 
