@@ -10,4 +10,8 @@ class AsuransiController extends Controller
     {
         return view('asuransi.list');
     }
+    public function masterAsuransi()
+    {
+        return view('asuransi.masterasuransi');
+    }
 }

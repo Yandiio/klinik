@@ -1,11 +1,11 @@
 @extends('layout.admin')
 
-@yield('title', 'List Asuransi')
+@yield('title', 'Master Asuransi')
 
 @section('content')
 <section role="main" class="content-body">
         <header class="page-header">
-        <h2>Asuransi</h2>
+        <h2>Master Asuransi</h2>
     
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li><span>Apotik</span></li>
-                <li><span> Claim Asuransi </span></li>
+                <li><span> Master Asuransi </span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -27,10 +27,10 @@
                 <div class="card">
                     <div class="card-body">
                         <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
-                            Tambah Asuransi
+                            Tambah Master Asuransi
                             <i class="fa fa-plus"></i>
                         </button>
-                        <h4 class="card-title">Asuransi</h4>
+                        <h4 class="card-title">Master Asuransi</h4>
                         <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                         <div class="table-responsive m-t-40">
                             <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -88,7 +88,7 @@
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Tambah Asuransi</h2>
+					<h2 class="card-title">Tambah Master Asuransi</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
@@ -123,7 +123,7 @@
         <div id="modalMDEdit" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Ubah Asuransi</h2>
+					<h2 class="card-title">Ubah Master Asuransi</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">

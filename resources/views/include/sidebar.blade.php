@@ -215,8 +215,13 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('list_asuransi') }}">
-                                    List Asuransi
+                                <a class="nav-link" href="{{ route('list_asuransi') }}">
+                                    Claim Asuransi
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('master_asuransi') }}">
+                                    Master Asuransi
                                 </a>
                             </li>
                             

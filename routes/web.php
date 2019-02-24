@@ -79,7 +79,8 @@ Route::get('transaksi/page-invoice','Transaksi\TransaksiController@invoice')->na
 /* =================================== ROUTE MENU DOKTER =============================================== */
 
 /* =================================== ROUTE MENU ASURANSI =============================================== */
-Route::get('asurani/list-asuransi', 'AsuransiController@listAsuransi')->name('list_asuransi');
+Route::get('asuransi/list-asuransi', 'AsuransiController@listAsuransi')->name('list_asuransi');
+Route::get('asuransi/master-asuransi', 'AsuransiController@masterAsuransi')->name('master_asuransi');
 /* =================================== ROUTE MENU ASURANSI =============================================== */
 
 /* =================================== ROUTE MENU REPORT ============================================ */
