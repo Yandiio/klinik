@@ -242,22 +242,26 @@
                                     Report Klinik
                                 </a>
                             </li>
-                            {{-- <li>
-                                <a class="nav-link" href="">
-                                    Pendapatan Dokter
+                            <li>
+                            <a class="nav-link" href="{{ route('report-poligigi') }}">
+                                    Report Poli Gigi
                                 </a>
-                            </li> --}}
-                            {{-- <li>
-                                <a class="nav-link" href="">
-                                    Pendapatan Pasien
+                            </li>
+                            <li>
+                            <a class="nav-link" href="{{ route('report-polikebidanan') }}">
+                                    Report Poli Kebidanan
                                 </a>
-                            </li> --}}
-                            {{-- <li>
-                                <a class="nav-link" href="">
-                                    Klaim Asuransi
+                            </li>
+                            <li>
+                            <a class="nav-link" href="{{ route('report-polilab') }}">
+                                    Report Poli Lab
                                 </a>
-                            </li> --}}
-                           
+                            </li>
+                            <li>
+                            <a class="nav-link" href="{{ route('report-obat') }}">
+                                    Report Pengeluaran Obat
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     

@@ -85,3 +85,7 @@ Route::get('asurani/list-asuransi', 'AsuransiController@listAsuransi')->name('li
 /* =================================== ROUTE MENU REPORT ============================================ */
 
 Route::get('report/report-klinik', 'ReportController@datareportPasien')->name('report-klinik');
+Route::get('report/report-poli-gigi', 'ReportController@reportpoligigi')->name('report-poligigi');
+Route::get('report/report-poli-kebidanan', 'ReportController@reportpolikebidanan')->name('report-polikebidanan');
+Route::get('report/report-poli-lab', 'ReportController@reportpolilab')->name('report-polilab');
+Route::get('report/report-pengeluaran-obat', 'ReportController@obatKeluar')->name('report-obat');
