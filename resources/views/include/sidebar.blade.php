@@ -154,6 +154,11 @@
                             </li>
                             <li>
                             <a class="nav-link" href="{{ route('list_pemasok') }}">
+                                    Stock Adjustment
+                                </a>
+                            </li>
+                            <li>
+                            <a class="nav-link" href="{{ route('list_pemasok') }}">
                                     Supplayer
                                 </a>
                             </li>
@@ -195,11 +200,11 @@
                                     List Laboratorium
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('diagnosa') }}">
                                     Diagnosa
                                 </a>
-                            </li>
+                            </li> -->
                             
                         </ul>
                     </li>

@@ -64,7 +64,7 @@
                     <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
                         <thead>
                             <tr>
-                                <th>*</th>
+                                <th style="width:5%">*</th>
                                 <th>
                                     Pendahtaran
                                     
@@ -92,12 +92,69 @@
                     <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
                         <thead>
                             <tr>
-                                <th>*</th>
+                                <th style="width:5%">*</th>
                                 <th>
-                                    Tindakan
+                                    Diagnosa
                                     <small>
                                         <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" title="Tambah Tindakan !">Tambah</button>
                                         <small>
+                                </th>
+                                <th style="width:12%">Harga</th>
+                                <th style="width:5%"></th>
+                                <th style="width:12%">Total</th>
+                                <th style="width:10%">Aksi</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Perut Kembung</td>
+                                <td><input type="text" placeholder="0000"></td>
+                                <td></td>
+                                <td>40000</td>
+                                <td>
+                                    <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" title="Hapus Tindakan !">Hapus</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width:5%">*</th>
+                                <th>
+                                    Konsultasi Dokter
+                                    <small>
+                                        <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" title="Tambah Tindakan !">Tambah</button>
+                                        <small>
+                                </th>
+                                <th style="width:12%">Harga</th>
+                                <th style="width:5%"></th>
+                                <th style="width:12%">Total</th>
+                                <th style="width:10%">Aksi</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Tanyya 1</td>
+                                <td><input type="text" placeholder="0000"></td>
+                                <td></td>
+                                <td>40000</td>
+                                <td>
+                                    <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" title="Hapus Tindakan !">Hapus</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width:5%">*</th>
+                                <th>
+                                    Tindakan
                                 </th>
                                 <th style="width:12%">Harga</th>
                                 <th style="width:5%">qty</th>
@@ -131,12 +188,9 @@
                     <table class="table table-responsive-lg table-bordered table-striped table-sm mb-0">
                         <thead>
                             <tr>
-                                <th>*</th>
+                                <th style="width:5%">*</th>
                                 <th>
                                     Laboratorium
-                                    <small>
-                                        <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" title="Tambah Tindakan !">Tambah</button>
-                                        <small>
                                 </th>
                                 <th style="width:12%">Harga</th>
                                 <th style="width:5%">qty</th>
