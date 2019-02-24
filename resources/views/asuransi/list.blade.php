@@ -26,11 +26,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
+                        {{-- <button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
                             Tambah Asuransi
                             <i class="fa fa-plus"></i>
-                        </button>
-                        <h4 class="card-title">Asuransi</h4>
+                        </button> --}}
+                        <h4 class="card-title">Claim Asuransi</h4>
                         <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                         <div class="table-responsive m-t-40">
                             <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -38,8 +38,11 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Asuransi</th>
-                                        <th>No Telp Asuransi</th>
-                                        <th>Alamat Asuransi</th>
+                                        <th>Total Kunjungan </th>
+                                        <th>
+                                                Pendapatan
+                                                <small>(pendaftaran+resep+h.obat paten)</small>
+                                        </th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -47,8 +50,8 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Asuransi</th>
-                                        <th>No Telp Asuransi</th>
-                                        <th>Alamat Asuransi</th>
+                                        <th>Total Kunjungan </th>
+                                        <th>Pendapatan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>
@@ -56,20 +59,20 @@
                                     <tr>
                                         <td >1</td>
                                         <td>Sinarmas MSIG</td>
-                                        <td>0234234324234</td>
-                                        <td>Jalan Rawa Badung</td>
+                                        <td>23</td>
+                                        <td>Rp.300.000</td>
                                         <td>
-                                            <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                            {{-- <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button> --}}
                                             <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
                                     <tr>
                                         <td >2</td>
                                         <td>BPJS</td>
-                                        <td>0234234324234</td>
-                                        <td>Jalan Cakung Timur</td>
+                                        <td>44</td>
+                                        <td>Rp.400.000</td>
                                         <td>
-                                            <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                                            {{-- <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button> --}}
                                             <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
