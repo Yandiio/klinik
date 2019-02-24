@@ -174,7 +174,35 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group row">
+								<div class="form-group row">
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                                        Suhu Badan  <span class="required">*</span></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                            id="w2-first-name" placeholder="suhu">
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tekanan darah
+                                        <span class="required">*</span></label>
+                                    <div class="col-sm-4">
+										<input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                            id="w2-first-name" placeholder="Tekanan Darah">
+                                    </div>
+                                </div>
+								<div class="form-group row">
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                                        Berat Badan  <span class="required">*</span></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                            id="w2-first-name" placeholder="Berat Badan">
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tinngi badan
+                                        <span class="required">*</span></label>
+                                    <div class="col-sm-4">
+										<input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                            id="w2-first-name" placeholder="Tinngi badan">
+                                    </div>
+                                </div>
+								<div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal
                                         Tindakan <span class="required">*</span></label>
                                     <div class="col-sm-4">
@@ -187,138 +215,217 @@
                                             <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
                                         </div>
                                     </div>
-
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan
+									<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize"
                                             data-plugin-textarea-autosize></textarea>
                                     </div>
-
-
-
                                 </div>
 
-                            </div>
+                                <div class="form-group row">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <!-- <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
+                                                        Tindakan <i class="fas fa-plus"></i></a>
 
-                            <div class="form-group row">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="mb-3">
-                                                <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah Tindakan
-                                                    <i class="fas fa-plus"></i></a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th>*</th>
+                                                    <th>Konsultasi Dokter</th>
+                                                    <th>Harga</th>
+                                                    <th>Qty</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Konsultasi 1</td>
+                                                    <td>43.000</td>
+                                                    <td>1</td>
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group row">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
+                                                        Tindakan <i class="fas fa-plus"></i></a>
+
+                                                </div>
                                             </div>
                                         </div>
+                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th>*</th>
+                                                    <th>Tipe Tindakan</th>
+                                                    <th>Harga</th>
+                                                    <th>Qty</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Tindakan 1</td>
+                                                    <td>43.000</td>
+                                                    <td>1</td>
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                        <thead>
-                                            <tr>
-                                                <th>*</th>
-                                                <th>Tipe Tindakan</th>
-                                                <th>Harga</th>
-                                                <th>Qty</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Tindakan 1</td>
-                                                <td>43.000</td>
-                                                <td>1</td>
-                                                <td class="actions">
-                                                    <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                                    <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                                    <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                                                </td>
-                                            </tr>
+                                </div>
+								<div class="form-group row">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
+                                                        Laboratrorium <i class="fas fa-plus"></i></a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th>*</th>
+                                                    <th>Nama Lab</th>
+                                                    <th>Harga</th>
+                                                    <th>Qty</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Lab 1</td>
+                                                    <td>43.000</td>
+                                                    <td>1</td>
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
 
 
-                                        </tbody>
-                                    </table>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- kontent tab 2 -->
+                            <div id="w2-confirm" class="tab-pane p-3">
+                                <div class="form-group row">
+                                    <form>
+                                        <table class="" id="dynamic_field">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Nama Obat</th>
+                                                    <th width="5%">Qty</th>
+                                                    <th width="15%">Unit</th>
+                                                    <th>Dosis</th>
+                                                    <th width="10%">Hari</th>
+                                                    <th>Keterangan</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" name="add" id="addItem" class="btn btn-default">+</a>
+
+                                                    </td>
+                                                    <td>
+                                                        <input type="Text" class="form-control" placeholder="Nama Obat"
+                                                            id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="Text" class="form-control" id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" placeholder="Sirup"
+                                                            id="name" disabled>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="name">
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="Text" class="form-control" placeholder="Keterangan"
+                                                            id="name">
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" name="add" id="add" class="btn btn-danger">x</a>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </form>
+
+                                </div>
+								<div class="mb-3">
+                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Resep Print </a>
+
                                 </div>
                             </div>
-
                         </div>
-                        <!-- kontent tab 2 -->
-                        <div id="w2-confirm" class="tab-pane p-3">
-                            <div class="form-group row">
-
-                                <form>
-                                    <table class="" id="dynamic_field">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Nama Obat</th>
-                                                <th width="5%">Qty</th>
-                                                <th width="15%">Unit</th>
-                                                <th>Dosis</th>
-                                                <th width="10%">Hari</th>
-                                                <th>Keterangan</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <a href="#" name="add" id="addItem" class="btn btn-default">+</a>
-
-                                                </td>
-                                                <td>
-                                                    <input type="Text" class="form-control" placeholder="Nama Obat" id="name">
-                                                </td>
-                                                <td>
-                                                    <input type="Text" class="form-control" id="name">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" placeholder="Sirup" id="name"
-                                                        disabled>
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" id="name">
-                                                </td>
-                                                <td>
-                                                    <input type="number" class="form-control" id="name">
-                                                </td>
-
-                                                <td>
-                                                    <input type="Text" class="form-control" placeholder="Keterangan" id="name">
-                                                </td>
-                                                <td>
-                                                    <a href="#" name="add" id="add" class="btn btn-danger">x</a>
-
-                                                </td>
-                                            </tr>
-                                        </tbody>
-
-                                    </table>
-                                </form>
-
-                            </div>
-
-                        </div>
+                    </form>
                 </div>
-                </form>
+                <div class="card-footer">
+                    <ul class="pager">
+                        <li class="previous disabled">
+                            <a><i class="fas fa-angle-left"></i> Previous</a>
+                        </li>
+                        <li class="finish hidden float-right">
+                            <a>Finish</a>
+                        </li>
+                        <li class="next">
+                            <a>Next <i class="fas fa-angle-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </div>
-        <div class="card-footer">
-            <ul class="pager">
-                <li class="previous disabled">
-                    <a><i class="fas fa-angle-left"></i> Previous</a>
-                </li>
-                <li class="finish hidden float-right">
-                    <a>Finish</a>
-                </li>
-                <li class="next">
-                    <a>Next <i class="fas fa-angle-right"></i></a>
-                </li>
-            </ul>
-        </div>
-</section>
-</div>
-</div>
+    </div>
 
 
 </section>

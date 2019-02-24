@@ -81,7 +81,7 @@
                 <thead>
                     <tr class="text-dark">
                         <th id="cell-id" class="font-weight-semibold" style="width:5%">#</th>
-                        <th id="cell-item" class="font-weight-semibold" style="width:15%">Jenis Tindakan</th>
+                        <th id="cell-item" class="font-weight-semibold" style="width:15%">Nama Item</th>
 						<th id="cell-item" class="font-weight-semibold" style="width:10%">Obat</th>
                         <th id="cell-desc" class="font-weight-semibold" style="width:5%">Qty</th>
 						<th id="cell-desc" class="font-weight-semibold" style="width:7%">satuan</th>
@@ -90,6 +90,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>*</td>
+                        <td class="font-weight-semibold text-dark">Konsultasi 1</td>
+                        <td></td>
+						<td>1</td>
+						<td></td>
+                        <td class="text-center">15000</td>
+                        <td class="text-center">200000</td>
+                        
+                    </tr>
                     <tr>
                         <td>*</td>
                         <td class="font-weight-semibold text-dark">Tindakan 1</td>
@@ -102,7 +112,17 @@
                     </tr>
 					<tr>
                         <td>*</td>
-                        <td class="font-weight-semibold text-dark">Tindakan 1</td>
+                        <td class="font-weight-semibold text-dark">Tindakan 2</td>
+                        <td></td>
+						<td>1</td>
+						<td></td>
+                        <td class="text-center">15000</td>
+                        <td class="text-center">200000</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>*</td>
+                        <td class="font-weight-semibold text-dark">Laboratorium 1</td>
                         <td></td>
 						<td>1</td>
 						<td></td>
@@ -113,43 +133,14 @@
 					<tr>
                         <td>*</td>
                         <td class="font-weight-semibold text-dark"></td>
-                        <td class="font-weight-semibold text-dark">Parasetamol</td>
-						<td>1</td>
-						<td>Tablet</td>
+                        <td class="font-weight-semibold text-dark">Obat Obatan</td>
+						<td></td>
+						<td></td>
                         <td class="text-center">15000</td>
                         <td class="text-center">200000</td>
                         
                     </tr>
-					<tr>
-                        <td>*</td>
-                        <td class="font-weight-semibold text-dark"></td>
-                        <td class="font-weight-semibold text-dark">Betadine</td>
-						<td>1</td>
-						<td>Tablet</td>
-                        <td class="text-center">15000</td>
-                        <td class="text-center">200000</td>
-                        
-                    </tr>
-					<tr>
-                        <td>*</td>
-                        <td class="font-weight-semibold text-dark"></td>
-                        <td class="font-weight-semibold text-dark">Betadine</td>
-						<td>1</td>
-						<td>Tablet</td>
-                        <td class="text-center">15000</td>
-                        <td class="text-center">200000</td>
-                        
-                    </tr>
-					<tr>
-                        <td>*</td>
-                        <td class="font-weight-semibold text-dark"></td>
-                        <td class="font-weight-semibold text-dark">Betadine</td>
-						<td>1</td>
-						<td>Tablet</td>
-                        <td class="text-center">15000</td>
-                        <td class="text-center">200000</td>
-                        
-                    </tr>
+					
 					
                 </tbody>
             </table>
