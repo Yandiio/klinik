@@ -159,9 +159,11 @@
 				<div class="card-body">
 					<div class="modal-wrapper">
 					    <div class="modal-text">
-                            <label class="control-label">Departement<span class="required">*</span></label>
+                            <label class="control-label">Poli<span class="required">*</span></label>
 							 <select class="form-control form-control-sm mb-2" name="" id="">
-                                 <option value="">Klinik Bina Persada</option>
+                                 <option value="">Poli Gigi</option>
+                                 <option value="">Poli</option>
+                                 <option value="">Poli</option>
                              </select>
                         </div>
                         <div class="modal-text">
@@ -171,7 +173,7 @@
                                  <option value="">dr. Dian Hananto, Sp.PD</option>
                              </select>
                         </div>
-                        <div class="modal-text">
+                        <!-- <div class="modal-text">
                             <label class="control-label">Dari Tanggal<span class="required">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-prepend">
@@ -192,7 +194,7 @@
                                 </span>
                                 <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" placeholder="01/01/2019">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="modal-text">
                             <label class="control-label">Hari<span class="required">*</span></label>
 							 <select class="form-control form-control-sm mb-2" name="" id="">

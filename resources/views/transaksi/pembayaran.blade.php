@@ -79,7 +79,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Daftar</td>
+                                <td>Administrasi</td>
                                 <td><input type="text" placeholder="0000"></td>
                                 <td></td>
                                 <td>40000</td>

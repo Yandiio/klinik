@@ -27,7 +27,7 @@
             <header class="clearfix">
                 <div class="row">
                     <div class="col-sm-6 mt-3">
-                        <h2 class="h2 mt-0 mb-1 text-dark font-weight-bold">INVOICE</h2>
+                        <h2 class="h2 mt-0 mb-1 text-dark font-weight-bold">Kwintasi</h2>
                         <h4 class="h4 m-0 text-dark font-weight-bold">#76598345</h4>
                     </div>
                     <div class="col-sm-6 text-right mt-3 mb-3">

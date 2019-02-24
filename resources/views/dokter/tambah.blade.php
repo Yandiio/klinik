@@ -70,12 +70,7 @@
                                                     </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="">
-                                                    No. Pajak <span class="required">*</span>
-                                                </label>
-                                                    <div class="col-sm-4">
-                                                        <input type="text" class="form-control form-control-sm mb-3" placeholder="No Pajak" name="nopajak"  >
-                                                    </div>
+                                              
                                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="">
                                                         External Dokter <span class="required">*</span>
                                                     </label>
@@ -86,18 +81,7 @@
                                                         </select>
                                                     </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">
-                                                    Departement <span class="required">*</span>
-                                                </label>
-                                                    <div class="col-sm-4">
-                                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                                            <option value="">Klinik Bina Persada 1</option>
-                                                            <option value="">Klinik Bina Persada 2</option>
-                                                        </select>
-                                                    </div>
-                                                    
-                                            </div>
+                                        
                                             
                                         </div>
                                         <div id="w2-profile" class="tab-pane p-3">
@@ -172,12 +156,7 @@
                                         </div>
                                         <div id="w2-confirm" class="tab-pane p-3">
                                             <div class="form-group row">
-                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Negara</label>
-                                                <div class="col-sm-4">
-                                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                                            <option value="">Indonesia</option>
-                                                        </select>
-                                                </div>
+                                                
                                                 <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Provinsi</label>
                                                 <div class="col-sm-4">
                                                         <select class="form-control form-control-sm mb-3" name="" id="">

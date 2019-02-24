@@ -145,7 +145,14 @@
                              </select>	 
 						</div>
                         <div class="modal-text">
-                            <label class="control-label">Obat <span class="required">*</span></label>
+                            <label class="control-label">Gaji Pokok <span class="required">*</span></label>
+                            <div class="input-group ">
+								<div class="input-group">
+									<input type="number" class="form-control col-md-2 form-control-sm mb-2" placeholder="">
+										
+								</div>
+                            </div>	
+							<label class="control-label">Obat <span class="required">*</span></label>
                             <div class="input-group ">
 								<div class="input-group">
 									<input type="number" class="form-control col-md-2 form-control-sm mb-2" placeholder="Persen">
@@ -156,7 +163,6 @@
 										</span>
 								</div>
                             </div>	
-							 	    
 						</div>
                         <div class="modal-text">
                             <label class="control-label">Duduk <span class="required">*</span></label>	
@@ -235,6 +241,17 @@
 								</select>	 
 						</div>
 						<div class="modal-text">
+							<label class="control-label">Gaji Pokok <span class="required">*</span></label>
+							<div class="input-group ">
+								<div class="input-group">
+									<input type="number" value="10" class="form-control col-md-2 form-control-sm mb-2" placeholder="Persen">
+										<span class="input-group-append">
+											<span class="input-group-text" style="height:25px">
+												%
+											</span>
+										</span>
+								</div>
+							</div>	
 							<label class="control-label">Obat <span class="required">*</span></label>
 							<div class="input-group ">
 								<div class="input-group">
