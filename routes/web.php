@@ -48,6 +48,7 @@ Route::get('inventory/list-inventory', 'InventoryController@listInventory')->nam
 Route::get('inventory/report-inventory', 'InventoryController@reportInventory')->name('report_inventory');
 Route::get('inventory/list-pemasok', 'Inventory\PemasokController@listPemasok')->name('list_pemasok');
 Route::get('inventory/list-expired', 'InventoryController@listExpired')->name('list_expired');
+Route::get('inventory/tambah-stock', 'Inventory\InventoryController@tambahStok')->name('tambah_stok');
 /* +++ Inventpry === */
 
 /* =================================== ROUTE MENU INVENTORY =============================================== */

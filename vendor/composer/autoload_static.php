@@ -443,6 +443,8 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'App\\Http\\Controllers\\Inventory\\PemasokController' => __DIR__ . '/../..' . '/app/Http/Controllers/Inventory/PemasokController.php',
         'App\\Http\\Controllers\\LaboratoriumController' => __DIR__ . '/../..' . '/app/Http/Controllers/LaboratoriumController.php',
         'App\\Http\\Controllers\\PasienController' => __DIR__ . '/../..' . '/app/Http/Controllers/PasienController.php',
+        'App\\Http\\Controllers\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReportController.php',
+        'App\\Http\\Controllers\\Transaksi\\TransaksiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Transaksi/TransaksiController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

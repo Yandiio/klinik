@@ -20,4 +20,8 @@ class InventoryController extends Controller
     {
         return view('inventory.expired');
     }
+    public function tambahStok()
+    {
+        return view('inventory.tambahstok');
+    }
 }

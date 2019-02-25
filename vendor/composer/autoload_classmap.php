@@ -29,6 +29,8 @@ return array(
     'App\\Http\\Controllers\\Inventory\\PemasokController' => $baseDir . '/app/Http/Controllers/Inventory/PemasokController.php',
     'App\\Http\\Controllers\\LaboratoriumController' => $baseDir . '/app/Http/Controllers/LaboratoriumController.php',
     'App\\Http\\Controllers\\PasienController' => $baseDir . '/app/Http/Controllers/PasienController.php',
+    'App\\Http\\Controllers\\ReportController' => $baseDir . '/app/Http/Controllers/ReportController.php',
+    'App\\Http\\Controllers\\Transaksi\\TransaksiController' => $baseDir . '/app/Http/Controllers/Transaksi/TransaksiController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

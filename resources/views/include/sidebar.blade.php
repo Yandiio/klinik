@@ -147,13 +147,13 @@
                                     Inventory Stock
                                 </a>
                             </li>
-                            <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
+                            <!-- <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
                                 <a class="nav-link" href="{{ route('report_inventory') }}">
                                     Report Inventory
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
-                            <a class="nav-link" href="{{ route('list_pemasok') }}">
+                            <a class="nav-link" href="{{ route('tambah_stok') }}">
                                     Stock Adjustment
                                 </a>
                             </li>
