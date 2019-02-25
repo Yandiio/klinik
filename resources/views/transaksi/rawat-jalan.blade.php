@@ -57,10 +57,10 @@
                                                         <th><small>Pasien</small></th>
                                                         <th><small>Pasien</small></th>
                                                         <th><small>Tipe Asuransi</small></th>
-                                                        <th><small>No Kwitansi</small></th>
-                                                        <th><small>Tagihan</small></th>
-                                                        <th><small>Diskon</small></th>
-                                                        <th><small>Total Bayar</small></th>
+                                                        <th><small>Rekam Medis</small></th>
+                                                        <th><small>Tipe Poli</small></th>
+                                                        <th><small>Tanggal</small></th>
+                                                        <th><small>Tagihan</small></th> 
                                                         <th><small>Aksi</small></th>
                                                     </tr>
                                                 </thead>
@@ -80,8 +80,8 @@
                                                         </td>
                                                         <td><small>Bpjs</small></td>
                                                         <td><small>NK213 : 19-02-2018</small></td>
-                                                        <td><small>2.590000</small></td>
-                                                        <td><small>2500</small></td>
+                                                        <td><small>Gigi</small></td>
+                                                        <td><small>30-09-2019</small></td>
                                                         <td><small>345929278</small></td>
                                                         <td>
                                                             <small>
@@ -107,8 +107,8 @@
                                                         </td>
                                                         <td><small>Bpjs</small></td>
                                                         <td><small>NK213 : 19-02-2018</small></td>
-                                                        <td><small>2.590000</small></td>
-                                                        <td><small>2500</small></td>
+                                                        <td><small>Kebinanan</small></td>
+                                                        <td><small>30-09-2019</small></td>
                                                         <td><small>345929278</small></td>
                                                         <td>
                                                             <small>
@@ -134,8 +134,8 @@
                                                         </td>
                                                         <td><small>Bpjs</small></td>
                                                         <td><small>NK213 : 19-02-2018</small></td>
-                                                        <td><small>2.590000</small></td>
-                                                        <td><small>2500</small></td>
+                                                        <td><small>Umum</small></td>
+                                                        <td><small>30-09-2019</small></td>
                                                         <td><small>345929278</small></td>
                                                         <td>
                                                             <small>

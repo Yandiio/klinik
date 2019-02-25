@@ -174,35 +174,37 @@
                                         </select>
                                     </div>
                                 </div>
-								<div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
-                                        Suhu Badan  <span class="required">*</span></label>
+                                        Suhu Badan <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="suhu">
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tekanan darah
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tekanan
+                                        darah
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-										<input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Tekanan Darah">
                                     </div>
                                 </div>
-								<div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
-                                        Berat Badan  <span class="required">*</span></label>
+                                        Berat Badan <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Berat Badan">
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tinngi badan
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tinngi
+                                        badan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-										<input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Tinngi badan">
                                     </div>
                                 </div>
-								<div class="form-group row">
+                                <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal
                                         Tindakan <span class="required">*</span></label>
                                     <div class="col-sm-4">
@@ -215,38 +217,81 @@
                                             <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
                                         </div>
                                     </div>
-									<label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize"
                                             data-plugin-textarea-autosize></textarea>
                                     </div>
                                 </div>
-
-                                <div class="form-group row">
+                                <div class="form-group row" style="padding-button:20px">
                                     <div class="card-body">
-                                        <div class="row">
-                                            <!-- <div class="col-sm-6">
+                                        <!-- <div class="row">
+                                            <div class="col-sm-6">
                                                 <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
-                                                        Tindakan <i class="fas fa-plus"></i></a>
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                        Diagnosa <i class="fas fa-plus"></i></a>
 
                                                 </div>
-                                            </div> -->
-                                        </div>
+                                            </div>
+                                        </div> -->
                                         <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                                             <thead>
                                                 <tr>
-                                                    <th>*</th>
-                                                    <th>Konsultasi Dokter</th>
-                                                    <th>Harga</th>
-                                                    <th>Qty</th>
-                                                    <th>Aksi</th>
+                                                    <th style="width:5%">*</th>
+                                                    <th>Nama Diagnosa</th>
+                                                    <th>Hasil Diagnosa</th>
+                                                    <th style="width:5%">Qty</th>
+                                                    <th style="width:10%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
+                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
+                                                    <td>Perut Kembung</td>
+                                                    <td>Hipermint</td>
                                                     <td>1</td>
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="card-body">
+                                        <!-- <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="mb-3">
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                        konsultasi <i class="fas fa-plus"></i></a>
+
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:5%">*</th>
+                                                    <th>Konsultasi Dokter
+
+                                                    </th>
+                                                    <th style="width:10%">Harga</th>
+                                                    <th style="width:5%">Qty</th>
+                                                    <th style="width:10%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
                                                     <td>Konsultasi 1</td>
                                                     <td>43.000</td>
                                                     <td>1</td>
@@ -263,31 +308,34 @@
                                         </table>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group row">
                                     <div class="card-body">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
                                                         Tindakan <i class="fas fa-plus"></i></a>
 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                                             <thead>
                                                 <tr>
-                                                    <th>*</th>
-                                                    <th>Tipe Tindakan</th>
-                                                    <th>Harga</th>
-                                                    <th>Qty</th>
-                                                    <th>Aksi</th>
+                                                    <th style="width:5%">*</th>
+                                                    <th>Tipe Tindakan
+
+                                                    </th>
+                                                    <th style="width:10%">Harga</th>
+                                                    <th style="width:5%">Qty</th>
+                                                    <th style="width:10%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>1</td>
+                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
                                                     <td>Tindakan 1</td>
                                                     <td>43.000</td>
                                                     <td>1</td>
@@ -304,30 +352,31 @@
                                         </table>
                                     </div>
                                 </div>
-								<div class="form-group row">
+                                <div class="form-group row">
                                     <div class="card-body">
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Tambah
-                                                        Laboratrorium <i class="fas fa-plus"></i></a>
+                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                        Laboratorium <i class="fas fa-plus"></i></a>
 
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                                             <thead>
                                                 <tr>
-                                                    <th>*</th>
+                                                    <th style="width:5%">*</th>
                                                     <th>Nama Lab</th>
-                                                    <th>Harga</th>
-                                                    <th>Qty</th>
-                                                    <th>Aksi</th>
+                                                    <th style="width:10%">Harga</th>
+                                                    <th style="width:5%">Qty</th>
+                                                    <th style="width:10%">Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>1</td>
+                                                    <td> <a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
                                                     <td>Lab 1</td>
                                                     <td>43.000</td>
                                                     <td>1</td>
@@ -402,7 +451,7 @@
                                     </form>
 
                                 </div>
-								<div class="mb-3">
+                                <div class="mb-3">
                                     <a href="#" id="tindakanTambah" class="btn btn-primary">Resep Print </a>
 
                                 </div>

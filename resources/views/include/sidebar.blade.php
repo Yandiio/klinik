@@ -1,10 +1,11 @@
 <aside id="sidebar-left" class="sidebar-left">
-				
+
     <div class="sidebar-header">
         <div class="sidebar-title">
             Navigation
         </div>
-        <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+        <div class="sidebar-toggle d-none d-md-block" data-toggle-class="sidebar-left-collapsed" data-target="html"
+            data-fire-event="sidebar-left-toggle">
             <i class="fas fa-bars" aria-label="Toggle sidebar"></i>
         </div>
     </div>
@@ -12,13 +13,13 @@
     <div class="nano">
         <div class="nano-content">
             <nav id="menu" class="nav-main" role="navigation">
-            
+
                 <ul class="nav nav-main">
                     <li class="nav-parent nav-expanded nav-active">
                         <a class="nav-link" href="{{route('dashboard')}}">
                             <i class="fas fa-home" aria-hidden="true"></i>
                             <span>Dashboard</span>
-                        </a>                        
+                        </a>
                     </li>
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
@@ -37,11 +38,11 @@
                                 </a>
                             </li>
 
-                            <li class="nav nav-link">
+                            <!-- <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
                                     Tipe Pendaftaran
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pasien')}}">
                                     Golongan Pasien
@@ -52,8 +53,8 @@
                                     Tipe Penjamin
                                 </a>
                             </li>
-                          
-                            
+
+
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -63,7 +64,7 @@
                         </a>
                         <ul class="nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('tambah_dokter') }}">
+                                <a class="nav-link" href="{{ route('tambah_dokter') }}">
                                     Tambah Dokter
                                 </a>
                             </li>
@@ -73,7 +74,7 @@
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('jadwal_dokter') }}">
+                                <a class="nav-link" href="{{ route('jadwal_dokter') }}">
                                     Jadwal Dokter
                                 </a>
                             </li>
@@ -87,7 +88,7 @@
                                     Tipe Poli
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -96,23 +97,28 @@
                             <span>Tindakan</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('tindakan') }}">
-                                        Buat Tindakan
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" href="{{ route('list_tindakan') }}">
-                                            List Tindakan
-                                        </a>
-                                    </li>
-                                <li>
-                                <li>
-                                    <a class="nav-link" href="{{ route('get_master_tindakan') }}">
-                                            Master Tindakan
-                                        </a>
-                                    </li>
-                                <li>    
+                                    Buat Tindakan
+                                </a>
+                            </li> -->
+                            <li>
+                                <a class="nav-link" href="{{ route('list_tindakan') }}">
+                                    List Tindakan
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a class="nav-link" href="{{ route('get_master_tindakan') }}">
+                                    Master Tindakan
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('diagnosa') }}">
+                                    Master Diagnosa
+                                </a>
+                            </li>
+                            
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -124,18 +130,18 @@
                             <li>
                                 <a class="nav-link" href="{{route('list_rawat_jalan')}}">
                                     List transaksi
-                                    </a>
-                                </li>
-                                <!-- <li>
+                                </a>
+                            </li>
+                            <!-- <li>
                                     <a class="nav-link" href="">
                                         Rawat inap
                                         </a>
                                     </li>
                                 <li> -->
-                                
+
                         </ul>
                     </li>
-                   
+
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
@@ -143,7 +149,7 @@
                         </a>
                         <ul class="nav nav-children">
                             <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
-                            <a class="nav-link" href="{{ route('list_inventory') }}">
+                                <a class="nav-link" href="{{ route('list_inventory') }}">
                                     Inventory Stock
                                 </a>
                             </li>
@@ -153,16 +159,16 @@
                                 </a>
                             </li> -->
                             <li>
-                            <a class="nav-link" href="{{ route('tambah_stok') }}">
+                                <a class="nav-link" href="{{ route('tambah_stok') }}">
                                     Stock Adjustment
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('list_pemasok') }}">
+                                <a class="nav-link" href="{{ route('list_pemasok') }}">
                                     Supplayer
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -172,11 +178,11 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('list_apotik') }}">
+                                <a class="nav-link" href="{{ route('list_apotik') }}">
                                     List Apotik
                                 </a>
                             </li>
-                            
+
                             {{-- <li>
                                 <a class="nav-link" href="forms-basic.html">
                                     Resep
@@ -205,7 +211,7 @@
                                     Diagnosa
                                 </a>
                             </li> -->
-                            
+
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -224,7 +230,7 @@
                                     Master Asuransi
                                 </a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -240,7 +246,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-file" aria-hidden="true"></i>
@@ -248,38 +254,38 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                            <a class="nav-link" href="{{ route('report-klinik') }}">
+                                <a class="nav-link" href="{{ route('report-klinik') }}">
                                     Report Klinik
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('report-poligigi') }}">
+                                <a class="nav-link" href="{{ route('report-poligigi') }}">
                                     Report Poli Gigi
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('report-polikebidanan') }}">
+                                <a class="nav-link" href="{{ route('report-polikebidanan') }}">
                                     Report Poli Kebidanan
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('report-polilab') }}">
+                                <a class="nav-link" href="{{ route('report-polilab') }}">
                                     Report Poli Lab
                                 </a>
                             </li>
                             <li>
-                            <a class="nav-link" href="{{ route('report-obat') }}">
+                                <a class="nav-link" href="{{ route('report-obat') }}">
                                     Report Pengeluaran Obat
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    
+
 
                 </ul>
             </nav>
 
-           
+
         </div>
 
         <script>
@@ -288,12 +294,13 @@
                 if (localStorage.getItem('sidebar-left-position') !== null) {
                     var initialPosition = localStorage.getItem('sidebar-left-position'),
                         sidebarLeft = document.querySelector('#sidebar-left .nano-content');
-                    
+
                     sidebarLeft.scrollTop = initialPosition;
                 }
             }
+
         </script>
-        
+
 
     </div>
 

@@ -45,11 +45,11 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Rekam Medis</th>
                                             <th>Tanggal</th>
                                             <th>Nama Pasien</th>
                                             <th>Nama Dokter</th>
                                             <th>Poli</th>
-                                            <th>Departemen</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -58,10 +58,10 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Tanggal</th>
+                                            <th>Rekam Medis</th>
                                             <th>Nama Pasien</th>
                                             <th>Nama Dokter</th>
                                             <th>Poli</th>
-                                            <th>Departemen</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -69,11 +69,12 @@
                                     <tbody>
                                         <tr style="text-align:center">
                                             <td >1</td>
+                                            <td>RM-001</td>
                                             <td>01 Februari 2019</td>
                                             <td>Helmay</td>
                                             <td>Dr.Agus Setyadi</td>
                                             <td>Poli Umum</td>
-                                            <td>Klinik Bina Persada</td>
+                                            
                                             <td>
                                                 <span class="badge badge-danger">Pending</span>
                                             </td>
@@ -84,11 +85,12 @@
                                         </tr>
                                         <tr style="text-align:center">
                                             <td >2</td>
+                                            <td>RM-001</td>
                                             <td>20 Januari 2019</td>
                                             <td>Anto</td>
                                             <td>Drg.Anita</td>
                                             <td>Poli Gigi</td>
-                                            <td>Klinik Bina Persada</td>
+                                            
                                             <td>
                                                 <span class="badge badge-danger">Pending</span>
                                             </td>
@@ -100,15 +102,17 @@
                                         <tr>
                                             <td style="text-align:center">3</td>
                                             <td style="text-align:center">19 Januari 2019</td>
+                                            <td>RM-001</td>
                                             <td style="text-align:center">Milea</td>
                                             <td style="text-align:center">Dr.Dilan</td>
                                             <td style="text-align:center">Poli Klinik</td>
-                                            <td style="text-align:center">Klinik Bina Persada</td>
+                                            
                                             <td style="text-align:center">
                                                 <span class="badge badge-success">Complete</span>
                                             </td>
                                             <td>
-                                                <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{ route('lihat_tindakan') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{ route('lihat_tindakan') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{ route('tindakan') }}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
                                                 
                                             </td>  
                                         </tr>

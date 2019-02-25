@@ -48,7 +48,7 @@
                                         <tr>
 											<th width="5%">No</th>
 											<th>Nama Diagnosa</th>
-											<th>Harga</th>
+											<th>Hasil Diagnosa</th>
 											<th>Keterangan</th>
 											<th width="15%">Aksi</th>
                                         </tr>
@@ -57,7 +57,7 @@
                                         <tr>
 											<th>No</th>
 											<th>Nama Diagnosa</th>
-											<th>Harga</th>
+											<th>Hasil Diagnosa</th>
 											<th>Keterangan</th>
 											<th>Aksi</th>
                                         </tr>
@@ -66,7 +66,7 @@
 											<tr>
 												<td >1</td>
 												<td>Demam</td>
-												<td>Rp.15000</td>
+												<td>Beayukugan</td>
 												<td>blabla</td>
 												<td>
 													<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
@@ -76,7 +76,7 @@
 											<tr>
 												<td >2</td>
 												<td>Pilek</td>
-												<td>Rp.200000</td>
+												<td>awakening</td>
 												<td>bla bla</td>
 												<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
@@ -86,7 +86,7 @@
 											<tr>
 												<td >3</td>
 												<td>Kutu air</td>
-												<td>Rp.300000</td>
+												<td>amaterasu</td>
 												<td>ahsdha</td>
 												<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
@@ -106,32 +106,22 @@
         <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
 			<section class="card">
 				<header class="card-header">
-					<h2 class="card-title">Diaknosa</h2>
+					<h2 class="card-title">Diagnosa</h2>
 				</header>
 				<div class="card-body">
 					<div class="modal-wrapper">
 						<div class="modal-text">
 							<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
+							<input type="text" name="fullname" class="form-control" placeholder="Nama Diagnosa" required/>	    
 						</div>
 						<br>
 						<div class="modal-text">
-							<label class="control-label">Harga <span class="required">*</span></label>	
-							<div class="input-group ">
-								<div class="input-group">
-									<span class="input-group-append">
-										<span class="input-group-text">
-										Rp	
-										</span>
-									</span>
-									<input type="number" class="form-control" placeholder="Harga">
-										
-								</div>
-							</div>	        
+							<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
+							<input type="text" name="fullname" class="form-control" placeholder="Hasil diagnosa" required/>
 						</div>
 						<br>
 						<div class="modal-text">
-							<label class="control-label">Keterangan <span class="required">*</span></label>	
+							<label class="control-label">Keterangan <span class="required"></span></label>	
 							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
 						</div>
 					</div>

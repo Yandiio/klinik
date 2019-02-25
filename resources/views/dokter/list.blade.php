@@ -37,7 +37,7 @@
                                         <th>Kode Dokter</th>
                                         <th>Nama Dokter</th>
                                         <th>Poli</th>
-                                        <th>Departemen</th>
+                                        <th>Tlp</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -47,7 +47,7 @@
                                         <th>Kode Dokter</th>
                                         <th>Nama Dokter</th>
                                         <th>Poli</th>
-                                        <th>Departemen</th>
+                                        <th>Tlp</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </tfoot>
@@ -57,10 +57,11 @@
                                         <td>KD-001</td>
                                         <td>Dr.Agus Setyadi</td>
                                         <td>Poli Umum</td>
-                                        <td>Klinik Bina Persada</td>
+                                        <td>081235252</td>
                                         <td>
                                             <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
                                     <tr>
@@ -68,11 +69,12 @@
                                         <td>KD-002</td>
                                         <td>Drg.Anita</td>
                                         <td>Poli Gigi</td>
-                                        <td>Klinik Bina Persada</td>
+                                        <td>241353727</td>
                                         
                                         <td>
                                             <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
                                     <tr>
@@ -80,11 +82,11 @@
                                         <td>KD-003</td>
                                         <td>Dr.Dilan</td>
                                         <td>Poli Klinik</td>
-                                        <td>Klinik Bina Persada</td>
+                                        <td>3535535</td>
                                         <td>
                                             <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
                                             <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                            {{-- <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button> --}}
+                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
                                                 
