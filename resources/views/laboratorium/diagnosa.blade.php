@@ -150,7 +150,7 @@
 							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
 						</div>
 						<br>
-						<div class="modal-text">
+						<!-- <div class="modal-text">
 							<label class="control-label">Harga <span class="required">*</span></label>	
 							<div class="input-group ">
 								<div class="input-group">
@@ -164,7 +164,7 @@
 								</div>
 							</div>	        
 						</div>
-						<br>
+						<br> -->
 						<div class="modal-text">
 							<label class="control-label">Keterangan <span class="required">*</span></label>	
 							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    

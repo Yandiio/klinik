@@ -54,7 +54,7 @@
                             <tbody>
                                 <tr>
                                     <td >1</td>
-                                    <td>Umum</td>
+                                    <td>Avrist</td>
                                     <td>
                                         <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
                                         <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>

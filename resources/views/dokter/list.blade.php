@@ -26,7 +26,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        
+                        <a href="{{ route('tambah_dokter') }}" class="btn btn-success "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
+                            
                         <h4 class="card-title">List Dokter</h4>
                         <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
                         <div class="table-responsive m-t-40">

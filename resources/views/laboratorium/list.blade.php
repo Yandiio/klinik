@@ -120,7 +120,7 @@
 								</div>
 							</div>
 							<div class="col-lg-6">
-								<div class="modal-text">
+								<!-- <div class="modal-text">
 									<label class="control-label">Harga<span class="required">*</span></label>	
 									<div class="input-group ">
 										<div class="input-group">
@@ -132,7 +132,7 @@
 											<input type="number" class="form-control" placeholder="Harga">
 										</div>
 									</div>		    
-								</div>
+								</div> -->
 							</div>
 						</div>
 						

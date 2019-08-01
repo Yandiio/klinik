@@ -43,14 +43,14 @@
                                     Tipe Pendaftaran
                                 </a>
                             </li> -->
-                            <li class="nav nav-link">
+                            <!-- <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pasien')}}">
                                     Golongan Pasien
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
-                                    Tipe Penjamin
+                                    Tipe Ansuransi
                                 </a>
                             </li>
 
@@ -63,17 +63,17 @@
                             <span>Dokter</span>
                         </a>
                         <ul class="nav-children">
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('tambah_dokter') }}">
                                     Tambah Dokter
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="nav-link" href="{{ route('list_dokter') }}">
                                     List Dokter
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('jadwal_dokter') }}">
                                     Jadwal Dokter
                                 </a>
@@ -82,7 +82,7 @@
                                 <a class="nav-link" href="{{route('pendapatan')}}">
                                     Pendapatan Dokter
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="nav-link" href="{{ route('tipe_poli') }}">
                                     Tipe Poli
@@ -94,7 +94,7 @@
                     <li class="nav-parent">
                         <a href="#" class="nav-link">
                             <i class="fas fa-medkit"></i>
-                            <span>Tindakan</span>
+                            <span>Rekam Medis</span>
                         </a>
                         <ul class="nav nav-children">
                             <!-- <li>
@@ -104,24 +104,29 @@
                             </li> -->
                             <li>
                                 <a class="nav-link" href="{{ route('list_tindakan') }}">
-                                    List Tindakan
+                                    List Rekam Medis
                                 </a>
                             </li>
                             
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('get_master_tindakan') }}">
                                     Master Tindakan
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a class="nav-link" href="{{ route('diagnosa') }}">
-                                    Master Diagnosa
+                                    Diagnosa
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('laboratorium') }}">
+                                    Laboratorium
                                 </a>
                             </li>
                             
                         </ul>
                     </li>
-                    <li class="nav-parent">
+                    <!-- <li class="nav-parent">
                         <a href="#" class="nav-link">
                             <i class="fas fa-calculator"></i>
                             <span>Transaksi</span>
@@ -132,17 +137,17 @@
                                     List transaksi
                                 </a>
                             </li>
-                            <!-- <li>
+                            <li>
                                     <a class="nav-link" href="">
                                         Rawat inap
                                         </a>
                                     </li>
-                                <li> -->
+                                <li>
 
                         </ul>
-                    </li>
+                    </li>  -->
 
-                    <li class="nav-parent">
+                    <!-- <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
                             <span>Inventory</span>
@@ -153,11 +158,11 @@
                                     Inventory Stock
                                 </a>
                             </li>
-                            <!-- <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
+                            <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
                                 <a class="nav-link" href="{{ route('report_inventory') }}">
                                     Report Inventory
                                 </a>
-                            </li> -->
+                            </li>
                             <li>
                                 <a class="nav-link" href="{{ route('tambah_stok') }}">
                                     Stock Adjustment
@@ -170,8 +175,8 @@
                             </li>
 
                         </ul>
-                    </li>
-                    <li class="nav-parent">
+                    </li> -->
+                    <!-- <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-hospital" aria-hidden="true"></i>
                             <span>Apotik</span>
@@ -194,8 +199,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-parent">
+                    </li> -->
+                    <!-- <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-thermometer-three-quarters" aria-hidden="true"></i>
                             <span>Laboratorium</span>
@@ -206,15 +211,15 @@
                                     List Laboratorium
                                 </a>
                             </li>
-                            <!-- <li>
+                            <li>
                                 <a class="nav-link" href="{{ route('diagnosa') }}">
                                     Diagnosa
                                 </a>
-                            </li> -->
+                            </li>
 
                         </ul>
-                    </li>
-                    <li class="nav-parent">
+                    </li> -->
+                    <!-- <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-universal-access" a-riahidden="true"></i>
                             <span>Asuransi</span>
@@ -232,7 +237,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-wrench" aria-hidden="true"></i>
@@ -254,6 +259,16 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
+                                <a class="nav-link" href="{{ route('report-klinik') }}">
+                                    Pendaftaran pasien
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('report-klinik') }}">
+                                    Rekam Medis
+                                </a>
+                            </li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('report-klinik') }}">
                                     Report Klinik
                                 </a>
@@ -278,7 +293,7 @@
                                     Report Pengeluaran Obat
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
 
 
