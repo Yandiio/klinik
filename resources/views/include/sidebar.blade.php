@@ -27,11 +27,11 @@
                             <span>Pasien</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li class="nav nav-link">
+                            <!-- <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('pendaftaran')}}">
                                     Pendaftaran
                                 </a>
-                            </li>
+                            </li> -->
                             <li class="nav nav-link">
                                 <a class="nav-link" href="{{route('list_pendaftaran')}}">
                                     List Pendaftaran

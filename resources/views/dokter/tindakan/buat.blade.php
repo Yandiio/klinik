@@ -36,13 +36,13 @@
                         <li class="nav-item">
                             <a href="#w2-profile" data-toggle="tab" class="nav-link text-center">
                                 <span class="badge badge-primary">2</span>
-                                Tindakan
+                                Rekam Medis
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#w2-confirm" data-toggle="tab" class="nav-link text-center">
                                 <span class="badge badge-primary">3</span>
-                                Resep
+                                Tindakan
                             </a>
                         </li>
                     </ul>
@@ -223,182 +223,12 @@
                                         <textarea class="form-control" rows="3" id="textareaAutosize"
                                             data-plugin-textarea-autosize></textarea>
                                     </div>
-                                </div>
-                                <div class="form-group row" style="padding-button:20px">
-                                    <div class="card-body">
-                                        <!-- <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                        Diagnosa <i class="fas fa-plus"></i></a>
-
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:5%">*</th>
-                                                    <th>Nama Diagnosa</th>
-                                                    <th>Hasil Diagnosa</th>
-                                                    <th style="width:5%">Qty</th>
-                                                    <th style="width:10%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                            <i class="fas fa-plus"></i></a></td>
-                                                    <td>Perut Kembung</td>
-                                                    <td>Hipermint</td>
-                                                    <td>1</td>
-                                                    <td class="actions">
-                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="card-body">
-                                        <!-- <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                        konsultasi <i class="fas fa-plus"></i></a>
-
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:5%">*</th>
-                                                    <th>Konsultasi Dokter
-
-                                                    </th>
-                                                    <th style="width:10%">Harga</th>
-                                                    <th style="width:5%">Qty</th>
-                                                    <th style="width:10%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                            <i class="fas fa-plus"></i></a></td>
-                                                    <td>Konsultasi 1</td>
-                                                    <td>43.000</td>
-                                                    <td>1</td>
-                                                    <td class="actions">
-                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <div class="card-body">
-                                        <!-- <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                        Tindakan <i class="fas fa-plus"></i></a>
-
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:5%">*</th>
-                                                    <th>Tipe Tindakan
-
-                                                    </th>
-                                                    <th style="width:10%">Harga</th>
-                                                    <th style="width:5%">Qty</th>
-                                                    <th style="width:10%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                            <i class="fas fa-plus"></i></a></td>
-                                                    <td>Tindakan 1</td>
-                                                    <td>43.000</td>
-                                                    <td>1</td>
-                                                    <td class="actions">
-                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="card-body">
-                                        <!-- <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb-3">
-                                                    <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                        Laboratorium <i class="fas fa-plus"></i></a>
-
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                            <thead>
-                                                <tr>
-                                                    <th style="width:5%">*</th>
-                                                    <th>Nama Lab</th>
-                                                    <th style="width:10%">Harga</th>
-                                                    <th style="width:5%">Qty</th>
-                                                    <th style="width:10%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td> <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                            <i class="fas fa-plus"></i></a></td>
-                                                    <td>Lab 1</td>
-                                                    <td>43.000</td>
-                                                    <td>1</td>
-                                                    <td class="actions">
-                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
-                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
-                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
-                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
+                                </div>  
                             </div>
                             <!-- kontent tab 2 -->
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <form>
+                                    <!-- <form>
                                         <table class="" id="dynamic_field">
                                             <thead>
                                                 <tr>
@@ -448,13 +278,66 @@
                                             </tbody>
 
                                         </table>
-                                    </form>
+                                    </form> -->
+                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:5%">*</th>
+                                                    <th>Nama Diagnosa</th>
+                                                    <th>Hasil Diagnosa</th>
+                                                    
+                                                    <th style="width:10%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
+                                                    <td>Perut Kembung</td>
+                                                    <td>Hipermint</td>
+                                                    
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                    </table>
+                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:5%">*</th>
+                                                    <th>Nama Lab</th>
+                                                    
+                                                    <th>Keterangan</th>
+                                                    <th style="width:10%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> <a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                            <i class="fas fa-plus"></i></a></td>
+                                                    <td>Lab 1</td>
+                                                    
+                                                    <td>Cek Darah,Cek urine</td>
+                                                    <td class="actions">
+                                                        <a href="#" class="hidden on-editing save-row"><i class="fas fa-save"></i></a>
+                                                        <a href="#" class="hidden on-editing cancel-row"><i class="fas fa-times"></i></a>
+                                                        <a href="#" class="on-default edit-row"><i class="fas fa-pencil-alt"></i></a>
+                                                        <a href="#" class="on-default remove-row"><i class="far fa-trash-alt"></i></a>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
 
                                 </div>
-                                <div class="mb-3">
-                                    <a href="#" id="tindakanTambah" class="btn btn-primary">Resep Print </a>
-
-                                </div>
+                                
                             </div>
                         </div>
                     </form>

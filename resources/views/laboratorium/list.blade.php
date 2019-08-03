@@ -34,67 +34,62 @@
                     </header>
                     <div class="card">
                         <div class="card-body">
-							<button type="button"  href="#modalMD" class="btn btn-success modal-sizes "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
+							<button type="button"  href="#modalMD" class="btn btn-success modal-sizes float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
 								Tambah
 								<i class="fa fa-plus"></i>
 							</button>
                             
-                            <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                            
                             <div class="table-responsive m-t-40">
                                 <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
 											<th width="5%">No</th>
-											<th>Nama Tindakan Lab</th>
-											<th>Harga</th>
+											<th>Laboratorium</th>
 											<th>Keterangan</th>
 											<th width="15%">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-											<th width="5%">No</th>
-											<th>Nama Tindakan Lab</th>
-											<th>Harga</th>
-											<th>Keterangan</th>
-											<th width="15%">Aksi</th>
-                                        </tr>
-                                    </tfoot>
+                                  
                                     <tbody>
                                         
                                         <tr>
 											<td >1</td>
 											<td>LAB 1</td>
-											<td>Rp.15000</td>
-											<td>blabla</td>
+											<td>Cek Darah dll</td>
 											<td>
-											<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>  
 										</tr>
 										<tr>
-											<td >2</td>
-											<td>LAB 2</td>
-											<td>Rp.200000</td>
-											<td>bla bla</td>
-											<td>
-												<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
-												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-											</td>  
-										</tr>
-										<tr>
-											<td >3</td>
+											<td >1</td>
 											<td>LAB 3</td>
-											<td>Rp.300000</td>
-											<td>ahsdha</td>
+											<td>Cek Darah dll</td>
 											<td>
-												<a class="btn-sm btn-info" title="Lihat Data !" style="margin-right:5px" href=""> <i class="fa fa-eye" aria-hidden="true"></i></a>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>  
 										</tr>
+										<tr>
+											<td >1</td>
+											<td>LAB 1</td>
+											<td>Cek Darah dll</td>
+											<td>
+												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
+											</td>  
+										</tr>
+										<tr>
+											<td >1</td>
+											<td>LAB 2</td>
+											<td>Cek Darah dll</td>
+											<td>
+												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
+												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
+											</td>  
+										</tr>
+										
                                                 
                                     </tbody>
                                 </table>
@@ -342,13 +337,7 @@
          });
      });
  });
- $('#example23').DataTable({
-     dom: 'Bfrtip',
-     buttons: [
-         'copy', 'csv', 'excel', 'pdf', 'print'
-     ]
- });
- $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+ 
  </script> 
 
 @stop

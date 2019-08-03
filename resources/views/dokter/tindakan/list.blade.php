@@ -39,7 +39,7 @@
                     <div class="card">
                         <div class="card-body">
                             
-                            <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+                            
                             <div class="table-responsive m-t-40">
                                 <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
@@ -187,13 +187,7 @@
          });
      });
  });
- $('#example23').DataTable({
-     dom: 'Bfrtip',
-     buttons: [
-         'copy', 'csv', 'excel', 'pdf', 'print'
-     ]
- });
- $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+
  </script> 
 
 @stop

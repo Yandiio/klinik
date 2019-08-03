@@ -28,7 +28,9 @@
 						<div class="card-body">
 							
 							<h4 class="card-title">List Pendaftaran</h4>
-							<h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6>
+							<!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
+							<a href="{{route('pendaftaran')}}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Daftar <i class="fa fa-plus"></i></a>
+							<br>
 							<div class="table-responsive m-t-40">
 								<table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 									<thead>
@@ -169,12 +171,12 @@
          });
      });
  });
- $('#example23').DataTable({
-     dom: 'Bfrtip',
-     buttons: [
-         'copy', 'csv', 'excel', 'pdf', 'print'
-     ]
- });
- $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
+//  $('#example23').DataTable({
+//      dom: 'Bfrtip',
+//      buttons: [
+//          'copy', 'csv', 'excel', 'pdf', 'print'
+//      ]
+//  });
+//  $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
  </script> 
 @stop

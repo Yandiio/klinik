@@ -86,7 +86,7 @@
                                         </div>
                                         <div class="widget-summary-col">
                                             <div class="summary">
-                                                <h4 class="title">Total Supplayer</h4>
+                                                <h4 class="title">Total Rekam Medis</h4>
                                                 <div class="info">
                                                     <strong class="amount">38</strong>
                                                 </div>
