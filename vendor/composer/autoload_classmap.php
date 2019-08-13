@@ -24,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\Dokter\\PendapatanController' => $baseDir . '/app/Http/Controllers/Dokter/PendapatanController.php',
     'App\\Http\\Controllers\\Dokter\\PoliController' => $baseDir . '/app/Http/Controllers/Dokter/PoliController.php',
     'App\\Http\\Controllers\\Dokter\\TindakanController' => $baseDir . '/app/Http/Controllers/Dokter/TindakanController.php',
+    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\InventoryController' => $baseDir . '/app/Http/Controllers/InventoryController.php',
     'App\\Http\\Controllers\\Inventory\\InventoryController' => $baseDir . '/app/Http/Controllers/Inventory/InventoryController.php',
     'App\\Http\\Controllers\\Inventory\\PemasokController' => $baseDir . '/app/Http/Controllers/Inventory/PemasokController.php',

@@ -438,6 +438,7 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'App\\Http\\Controllers\\Dokter\\PendapatanController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dokter/PendapatanController.php',
         'App\\Http\\Controllers\\Dokter\\PoliController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dokter/PoliController.php',
         'App\\Http\\Controllers\\Dokter\\TindakanController' => __DIR__ . '/../..' . '/app/Http/Controllers/Dokter/TindakanController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InventoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/InventoryController.php',
         'App\\Http\\Controllers\\Inventory\\InventoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Inventory/InventoryController.php',
         'App\\Http\\Controllers\\Inventory\\PemasokController' => __DIR__ . '/../..' . '/app/Http/Controllers/Inventory/PemasokController.php',
