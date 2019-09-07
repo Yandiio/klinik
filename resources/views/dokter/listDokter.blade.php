@@ -26,7 +26,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ route('tambah_dokter') }}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
+                        <a href="{{ url('dokter/tambah-dokter') }}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
                             
                         <h4 class="card-title">List Dokter</h4>
                         
@@ -60,8 +60,8 @@
                                         <td>Poli Umum</td>
                                         <td>081235252</td>
                                         <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/edit-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
                                             <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
@@ -73,8 +73,8 @@
                                         <td>241353727</td>
                                         
                                         <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/edit-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
                                             <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>
@@ -85,8 +85,8 @@
                                         <td>Poli Klinik</td>
                                         <td>3535535</td>
                                         <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ route('lihat_dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/tambah-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
                                             <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
                                         </td>  
                                     </tr>

@@ -29,7 +29,7 @@
 							
 							<h4 class="card-title">List Pendaftaran</h4>
 							<!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
-							<a href="{{route('pendaftaran')}}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Daftar <i class="fa fa-plus"></i></a>
+							<a href="{{url('pasien/tambah-pendaftaran')}}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Daftar <i class="fa fa-plus"></i></a>
 							<br>
 							<div class="table-responsive m-t-40">
 								<table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
@@ -66,10 +66,10 @@
 											<td>[Gigi] Drs.Khoslis Prtama</td>
 											<td>12-12-2018</td>
 											<td>
-												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
 											</td>
 											<td>
-												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
 											</td>
 										</tr>
 										<tr>
@@ -80,10 +80,10 @@
 											<td>[Gigi] Drs.Khoslis Prtama</td>
 											<td>12-08-2018</td>
 											<td>
-												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
 											</td>
 											<td>
-												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
 											</td>
 										</tr>
 										<tr>
@@ -94,10 +94,10 @@
 											<td>[Gigi] Drs.Khoslis Prtama</td>
 											<td>12-12-2018</td>
 											<td>
-												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ route('edit_pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
+												<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
 											</td>
 											<td>
-												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ route('tambah_pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
+												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
 											</td>
 										</tr>	
 									</tbody>

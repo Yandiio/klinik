@@ -1,6 +1,6 @@
 <header class="header">
     <div class="logo-container">
-    <a href="{{ route('dashboard') }}" class="logo">
+    <a href="{{url('/')}}" class="logo">
             <img src="{{ asset('assets/img/logo.png') }}" width="75" height="35" alt="Porto Admin" />
         </a>
         <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
@@ -31,7 +31,7 @@
                     <div class="content">
                         <ul>
                             <li>
-                                <a href="{{ route('list_expired') }}" class="clearfix">
+                                <a href="" class="clearfix">
                                     <div class="image">
                                         <i class="fas fa-info bg-danger text-light"></i>
                                     </div>
@@ -40,7 +40,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('list_expired') }}" class="clearfix">
+                                <a href="" class="clearfix">
                                     <div class="image">
                                         <i class="fas fa-info bg-danger text-light"></i>
                                     </div>

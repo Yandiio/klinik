@@ -16,7 +16,7 @@
 
                 <ul class="nav nav-main">
                     <li class="nav-parent nav-expanded nav-active">
-                        <a class="nav-link" href="{{route('dashboard')}}">
+                        <a class="nav-link" href="">
                             <i class="fas fa-home" aria-hidden="true"></i>
                             <span>Dashboard</span>
                         </a>
@@ -27,29 +27,13 @@
                             <span>Pasien</span>
                         </a>
                         <ul class="nav nav-children">
-                            <!-- <li class="nav nav-link">
-                                <a class="nav-link" href="{{route('pendaftaran')}}">
-                                    Pendaftaran
-                                </a>
-                            </li> -->
                             <li class="nav nav-link">
-                                <a class="nav-link" href="{{route('list_pendaftaran')}}">
+                                <a class="nav-link" href="{{url('pasien/list-pendaftaran')}}">
                                     List Pendaftaran
                                 </a>
                             </li>
-
-                            <!-- <li class="nav nav-link">
-                                <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
-                                    Tipe Pendaftaran
-                                </a>
-                            </li> -->
-                            <!-- <li class="nav nav-link">
-                                <a class="nav-link" href="{{route('tipe_pasien')}}">
-                                    Golongan Pasien
-                                </a>
-                            </li> -->
                             <li class="nav nav-link">
-                                <a class="nav-link" href="{{route('tipe_pendaftaran')}}">
+                                <a class="nav-link" href="{{ url('pasien/tipe-asuransi')}}">
                                     Tipe Ansuransi
                                 </a>
                             </li>
@@ -63,32 +47,16 @@
                             <span>Dokter</span>
                         </a>
                         <ul class="nav-children">
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('tambah_dokter') }}">
-                                    Tambah Dokter
-                                </a>
-                            </li> -->
                             <li>
-                                <a class="nav-link" href="{{ route('list_dokter') }}">
+                                <a class="nav-link" href="{{url('dokter/list-dokter')}}">
                                     List Dokter
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('jadwal_dokter') }}">
-                                    Jadwal Dokter
-                                </a>
-                            </li>
                             <li>
-                                <a class="nav-link" href="{{route('pendapatan')}}">
-                                    Pendapatan Dokter
-                                </a>
-                            </li> -->
-                            <li>
-                                <a class="nav-link" href="{{ route('tipe_poli') }}">
+                                <a class="nav-link" href="{{url('dokter/tipe-poli')}}">
                                     Tipe Poli
                                 </a>
                             </li>
-
                         </ul>
                     </li>
                     <li class="nav-parent">
@@ -97,147 +65,23 @@
                             <span>Rekam Medis</span>
                         </a>
                         <ul class="nav nav-children">
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('tindakan') }}">
-                                    Buat Tindakan
-                                </a>
-                            </li> -->
                             <li>
-                                <a class="nav-link" href="{{ route('list_tindakan') }}">
+                                <a class="nav-link" href="{{url('rekam-medis/list-rekam-medis')}}">
                                     List Rekam Medis
                                 </a>
                             </li>
-                            
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('get_master_tindakan') }}">
-                                    Master Tindakan
-                                </a>
-                            </li> -->
                             <li>
-                                <a class="nav-link" href="{{ route('diagnosa') }}">
+                                <a class="nav-link" href="{{url('rekam-medis/diagnosa')}}">
                                     Diagnosa
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route('laboratorium') }}">
+                                <a class="nav-link" href="{{url('rekam-medis/laboratorium')}}">
                                     Laboratorium
                                 </a>
                             </li>
-                            
                         </ul>
                     </li>
-                    <!-- <li class="nav-parent">
-                        <a href="#" class="nav-link">
-                            <i class="fas fa-calculator"></i>
-                            <span>Transaksi</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a class="nav-link" href="{{route('list_rawat_jalan')}}">
-                                    List transaksi
-                                </a>
-                            </li>
-                            <li>
-                                    <a class="nav-link" href="">
-                                        Rawat inap
-                                        </a>
-                                    </li>
-                                <li>
-
-                        </ul>
-                    </li>  -->
-
-                    <!-- <li class="nav-parent">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-tasks" aria-hidden="true"></i>
-                            <span>Inventory</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
-                                <a class="nav-link" href="{{ route('list_inventory') }}">
-                                    Inventory Stock
-                                </a>
-                            </li>
-                            <li {{ (Request::is('inventory') ? 'class=active' : '') }}>
-                                <a class="nav-link" href="{{ route('report_inventory') }}">
-                                    Report Inventory
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('tambah_stok') }}">
-                                    Stock Adjustment
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('list_pemasok') }}">
-                                    Supplayer
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li> -->
-                    <!-- <li class="nav-parent">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-hospital" aria-hidden="true"></i>
-                            <span>Apotik</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a class="nav-link" href="{{ route('list_apotik') }}">
-                                    List Apotik
-                                </a>
-                            </li>
-
-                            {{-- <li>
-                                <a class="nav-link" href="forms-basic.html">
-                                    Resep
-                                </a>
-                            </li> --}}
-                            <li>
-                                <a class="nav-link" href="{{ route('list_tipeobat')}}">
-                                    Tipe Obat
-                                </a>
-                            </li>
-                        </ul>
-                    </li> -->
-                    <!-- <li class="nav-parent">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-thermometer-three-quarters" aria-hidden="true"></i>
-                            <span>Laboratorium</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a class="nav-link" href="{{ route('laboratorium') }}">
-                                    List Laboratorium
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('diagnosa') }}">
-                                    Diagnosa
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li> -->
-                    <!-- <li class="nav-parent">
-                        <a class="nav-link" href="#">
-                            <i class="fas fa-universal-access" a-riahidden="true"></i>
-                            <span>Asuransi</span>
-                        </a>
-                        <ul class="nav nav-children">
-                            <li>
-                                <a class="nav-link" href="{{ route('list_asuransi') }}">
-                                    Claim Asuransi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('master_asuransi') }}">
-                                    Master Asuransi
-                                </a>
-                            </li>
-
-                        </ul>
-                    </li> -->
                     <li class="nav-parent">
                         <a class="nav-link" href="#">
                             <i class="fas fa-wrench" aria-hidden="true"></i>
@@ -247,6 +91,11 @@
                             <li>
                                 <a class="nav-link" href="tables-basic.html">
                                     List User
+                                </a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="tables-basic.html">
+                                    Role User
                                 </a>
                             </li>
                         </ul>
@@ -259,48 +108,19 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="{{ route('report-klinik') }}">
+                                <a class="nav-link" href="">
                                     Pendaftaran pasien
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{ route('report-klinik') }}">
+                                <a class="nav-link" href="">
                                     Rekam Medis
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('report-klinik') }}">
-                                    Report Klinik
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('report-poligigi') }}">
-                                    Report Poli Gigi
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('report-polikebidanan') }}">
-                                    Report Poli Kebidanan
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('report-polilab') }}">
-                                    Report Poli Lab
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ route('report-obat') }}">
-                                    Report Pengeluaran Obat
-                                </a>
-                            </li>
-                        </ul> -->
+                        </ul>
                     </li>
-
-
                 </ul>
             </nav>
-
-
         </div>
 
         <script>

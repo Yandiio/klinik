@@ -79,8 +79,8 @@
                                                 <span class="badge badge-danger">Pending</span>
                                             </td>
                                             <td>
-                                                <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{ route('lihat_tindakan') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{ route('tindakan') }}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
+                                                <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{url('rekam-medis/detail-rekam-medis')}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{url('rekam-medis/tambah-rekam-medis')}}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
                                             </td>  
                                         </tr>
                                         <tr style="text-align:center">
@@ -95,8 +95,8 @@
                                                 <span class="badge badge-danger">Pending</span>
                                             </td>
                                             <td>
-                                                <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{ route('lihat_tindakan') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{ route('tindakan') }}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
+                                                <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{url('rekam-medis/detail-rekam-medis')}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{url('rekam-medis/tambah-rekam-medis')}}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
                                             </td>  
                                         </tr>
                                         <tr>
@@ -111,8 +111,8 @@
                                                 <span class="badge badge-success">Complete</span>
                                             </td>
                                             <td>
-                                            <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{ route('lihat_tindakan') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{ route('tindakan') }}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
+                                            <a class="btn-sm btn-success" title="Lihat Tindakan !" style="margin-right:5px" href="{{url('rekam-medis/detail-rekam-medis')}}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a class="btn-sm btn-warning" title="Buat Tindakan!" style="margin-right:5px" href="{{url('rekam-medis/tambah-rekam-medis')}}"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>
                                                 
                                             </td>  
                                         </tr>
