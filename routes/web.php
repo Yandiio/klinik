@@ -88,9 +88,19 @@ route::get('rekam-medis/laboratorium',function(){
 /* =========================================== Rekam Medis===================================== */
 
 /* =========================================== Setting===================================== */
+route::get('setting/role',function(){
+    return view('setting.role');
+});
+route::get('setting/user',function(){
+    return view('setting.user');
+});
+
+
 /* =========================================== Setting===================================== */
 
-
+route::get('report/user',function(){
+    return view('report');
+});
 
 
 

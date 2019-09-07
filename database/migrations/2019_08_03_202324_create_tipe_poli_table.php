@@ -15,7 +15,7 @@ class CreateTipePoliTable extends Migration
     {
         Schema::create('tipe_poli', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama_poli');
+            $table->string('nama');
             $table->timestamps();
         });
     }

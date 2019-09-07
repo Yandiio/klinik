@@ -432,6 +432,10 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\InventoryModel' => __DIR__ . '/../..' . '/app/InventoryModel.php',
+        'App\\Model\\diagnosa' => __DIR__ . '/../..' . '/app/Model/diagnosa.php',
+        'App\\Model\\laboratorium' => __DIR__ . '/../..' . '/app/Model/laboratorium.php',
+        'App\\Model\\tipeAsuransi' => __DIR__ . '/../..' . '/app/Model/tipeAsuransi.php',
+        'App\\Model\\tipePoli' => __DIR__ . '/../..' . '/app/Model/tipePoli.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -4093,6 +4097,8 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'Zend\\Diactoros\\Stream' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Stream.php',
         'Zend\\Diactoros\\UploadedFile' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/UploadedFile.php',
         'Zend\\Diactoros\\Uri' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/Uri.php',
+        'diagnosaSeeder' => __DIR__ . '/../..' . '/database/seeds/diagnosaSeeder.php',
+        'laboratoriumSeeder' => __DIR__ . '/../..' . '/database/seeds/laboratoriumSeeder.php',
         'phpDocumentor\\Reflection\\DocBlock' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlock.php',
         'phpDocumentor\\Reflection\\DocBlockFactory' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
         'phpDocumentor\\Reflection\\DocBlockFactoryInterface' => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
@@ -4161,6 +4167,8 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'tipeAsuransiSeeder' => __DIR__ . '/../..' . '/database/seeds/tipeAsuransiSeeder.php',
+        'tipePoliSeeder' => __DIR__ . '/../..' . '/database/seeds/tipePoliSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipePenjaminTable extends Migration
+class CreateTipeAsuransiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTipePenjaminTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipe_penjamin', function (Blueprint $table) {
+        Schema::create('tipe_asuransi', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTipePenjaminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipe_penjamin');
+        Schema::dropIfExists('tipe_asuransi');
     }
 }

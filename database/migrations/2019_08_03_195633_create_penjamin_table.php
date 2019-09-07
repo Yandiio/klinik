@@ -15,7 +15,7 @@ class CreatePenjaminTable extends Migration
     {
         Schema::create('penjamin', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_tipe_penjamin')->unsigned();
+            $table->integer('id_tipe_asuransi')->unsigned();
             $table->integer('id_hubungan')->unsigned();
             $table->string('nik');
             $table->string('nama_lengkap');
@@ -27,7 +27,7 @@ class CreatePenjaminTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('id_tipe_penjamin')->references('id')->on('tipe_penjamin');
+            $table->foreign('id_tipe_asuransi')->references('id')->on('tipe_asuransi');
             $table->foreign('id_hubungan')->references('id')->on('hubungan');
         });
     }

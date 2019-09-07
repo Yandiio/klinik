@@ -89,12 +89,12 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="tables-basic.html">
-                                    List User
+                                <a class="nav-link" href="{{url('setting/user')}}">
+                                    User
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="tables-basic.html">
+                                <a class="nav-link" href="{{url('setting/role')}}">
                                     Role User
                                 </a>
                             </li>
