@@ -395,6 +395,11 @@
 		<!-- Examples -->
 		<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
 		<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
-  
+		<script>
+
+
+
+			
+		</script>
 
 @stop

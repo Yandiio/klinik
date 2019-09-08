@@ -26,13 +26,12 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-body">
-							
 							<h4 class="card-title">List Pendaftaran</h4>
 							<!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
 							<a href="{{url('pasien/tambah-pendaftaran')}}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Daftar <i class="fa fa-plus"></i></a>
 							<br>
 							<div class="table-responsive m-t-40">
-								<table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+								<table id="tableAjaxListPendaftaran" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 											<th>No</th>
@@ -45,7 +44,7 @@
 											<th>Daftar</th>
 										</tr>
 									</thead>
-									<tfoot>
+									{{-- <tfoot>
 										<tr>
 											<th>No</th>
 											<th>Tipe</th>
@@ -100,7 +99,7 @@
 												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
 											</td>
 										</tr>	
-									</tbody>
+									</tbody> --}}
 								</table>
 							</div>
 						</div>
@@ -131,46 +130,49 @@
  <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
  <!-- end - This is for export functionality only -->
  <script>
- $(function() {
-     $('#myTable').DataTable();
-     $(function() {
-         var table = $('#example').DataTable({
-             "columnDefs": [{
-                 "visible": false,
-                 "targets": 2,
-				 
-             }],
-             "order": [
-                 [2, 'asc']
-             ],
-             "displayLength": 25,
-             "drawCallback": function(settings) {
-                 var api = this.api();
-                 var rows = api.rows({
-                     page: 'current'
-                 }).nodes();
-                 var last = null;
-                 api.column(2, {
-                     page: 'current'
-                 }).data().each(function(group, i) {
-                     if (last !== group) {
-                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                         last = group;
-                     }
-                 });
-             }
-         });
-         // Order by the grouping
-         $('#example tbody').on('click', 'tr.group', function() {
-             var currentOrder = table.order()[0];
-             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                 table.order([2, 'desc']).draw();
-             } else {
-                 table.order([2, 'asc']).draw();
-             }
-         });
-     });
- });
+
+$(document).ready(function(){
+	
+});
+// $(function() {
+//     $('#myTable').DataTable();
+//     $(function() {
+// 		var table = $('#example').DataTable({
+// 			"columnDefs": [{
+// 				"visible": false,
+// 				"targets": 2,
+// 			}],
+// 			"order": [
+// 				[2, 'asc']
+// 			],
+// 			"displayLength": 25,
+// 			"drawCallback": function(settings) {
+// 				var api = this.api();
+// 				var rows = api.rows({
+// 					page: 'current'
+// 				}).nodes();
+// 				var last = null;
+// 				api.column(2, {
+// 					page: 'current'
+// 				}).data().each(function(group, i) {
+// 					if (last !== group) {
+// 						$(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+// 						last = group;
+// 					}
+// 				});
+// 			}
+// 		});
+// 		// Order by the grouping
+// 		$('#example tbody').on('click', 'tr.group', function() {
+// 			var currentOrder = table.order()[0];
+// 			if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+// 				table.order([2, 'desc']).draw();
+// 			} else {
+// 				table.order([2, 'asc']).draw();
+// 			}
+// 		});
+// 	});
+// });
 //  $('#example23').DataTable({
 //      dom: 'Bfrtip',
 //      buttons: [

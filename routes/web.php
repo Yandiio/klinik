@@ -29,6 +29,9 @@ route::get('/',function(){
 route::get('pasien/list-pendaftaran',function(){
     return view('pasien.listPendaftaran');
 });
+
+Route::get('/pasien/list-pendaftara/list', 'PasienController@getPasien_List')->name('Pasien_getList');
+
 route::get('pasien/tambah-pendaftaran',function(){
     return view('pasien.tambahPendaftaran');
 });
