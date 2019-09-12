@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Pasien;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\tipeAsuransi;
+use App\Model\tipeAsuransi;
+use Yajra\Datatables\Datatables;
 
 class TipeAsuransiController extends Controller
 {
@@ -14,7 +15,7 @@ class TipeAsuransiController extends Controller
 
         $tipeAsuransi = tipeAsuransi::all();
 
-        return response()->json($tipeAsuransi);
+        return Datatables::of($tipeAsuransi)->make(true);
     }
 
 
