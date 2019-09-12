@@ -29,6 +29,10 @@ route::get('/',function(){
 route::get('pasien/list-pendaftaran',function(){
     return view('pasien.listPendaftaran');
 });
+
+
+
+
 route::get('pasien/tambah-pendaftaran',function(){
     return view('pasien.tambahPendaftaran');
 });
@@ -38,6 +42,8 @@ route::get('pasien/edit-pendaftaran',function(){
 route::get('pasien/tipe-asuransi',function(){
     return view('pasien.tipeAsuransi');
 });
+
+route::get('pasien/tipe-asuransi/list','Pasien\TipeAsuransiController@tipeAsuransiList')->name('list_tipe_asuransi');
 
 /* =========================================== pasien ===================================== */
 

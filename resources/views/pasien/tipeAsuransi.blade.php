@@ -36,7 +36,7 @@
                     <h4 class="card-title">List Asuransi</h4>
                     <br>
                     <div class="table-responsive m-t-40">
-                        <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="tableTipeAsuransi" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -51,7 +51,7 @@
                                     <th>Aksi</th>
                                 </tr>
                             </tfoot>
-                            <tbody>
+                            <!-- <tbody>
                                 <tr>
                                     <td >1</td>
                                     <td>Avrist</td>
@@ -77,7 +77,7 @@
                                     </td> 
                                 </tr>
                                 
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>
