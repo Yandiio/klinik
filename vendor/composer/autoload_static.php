@@ -233,19 +233,11 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Contracts\\Translation\\' => 
-<<<<<<< HEAD
         array (
             0 => __DIR__ . '/..' . '/symfony/translation-contracts',
         ),
         'Symfony\\Contracts\\Service\\' => 
         array (
-=======
-        array (
-            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
-        ),
-        'Symfony\\Contracts\\Service\\' => 
-        array (
->>>>>>> fc5c8d49aae277cb95628d2ed964752fc42e3ebe
             0 => __DIR__ . '/..' . '/symfony/service-contracts',
         ),
         'Symfony\\Contracts\\EventDispatcher\\' => 
@@ -482,6 +474,7 @@ class ComposerStaticInitd203c42ec99fa3461c0e48d270162a89
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\PasienController' => __DIR__ . '/../..' . '/app/Http/Controllers/PasienController.php',
+        'App\\Http\\Controllers\\Pasien\\TipeAsuransiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Pasien/TipeAsuransiController.php',
         'App\\Http\\Controllers\\tipePoliController' => __DIR__ . '/../..' . '/app/Http/Controllers/tipePoliController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',

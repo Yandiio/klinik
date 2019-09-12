@@ -49,7 +49,7 @@
 											<th>Aksi</th>
 										</tr>
 									</thead>
-									{{-- <tfoot>
+									<tfoot>
 										<tr>
 											<th>No</th>
 											<th>Nama Poli</th>
@@ -58,31 +58,28 @@
 									</tfoot>
 									<tbody>
 										<tr>
-											<td >1</td>
-											<td>Poli Kebidanan dan Penyakit Kandungan</td>
+											<td ></td>
+											<td></td>
+											<td></td>  
+										</tr>
+										{{-- <tr>
+											<td ></td>
+											<td></td>
 											<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>  
 										</tr>
 										<tr>
-											<td >2</td>
-											<td>Poli Anak</td>
-											<td>
-												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-											</td>  
-										</tr>
-										<tr>
-											<td >3</td>
-											<td>Poli Gigi dan Mulut</td>
+											<td ></td>
+											<td></td>
 											
 											<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>  
-										</tr>
-									</tbody> --}}
+										</tr> --}}
+									</tbody>
 								</table>
 							</div>
 						</div>
@@ -163,60 +160,70 @@
  <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
  <!-- end - This is for export functionality only -->
  <script>
-	var oTabletipePoliList;
+	var oTable;
 
 	$(document).ready(function(){
-		oTabletipePoliList = $('#tabelAjaxtipePoliList').DataTable({
-			responsive : true,
-			processing : true,
-			serverSide : true,
-			ajax : "{{route('tipePoli_getList')}}"
-			columns: [
-				{ data: 'id', name: 'id' },
-				{ data: 'nama', name: 'nama'}
-			]
-		});
+		oTable = $('#tabelAjaxtipePoliList').DataTable({
+        responsive: true,
+        processing: true,
+        serverSide: true,
+        ajax: "{{route('tipePoli_getList')}}",
+        columns: [
+			{ data: 'id', name: 'id'},
+            { data: 'nama', name: 'nama' },
+            { data: 'id', //primary key dari tabel
+            render: function(data, type, row)
+                {
+                // console.log(type);
+                //let buttonEdit = '<button type="button" class="btn-sm btn-inverse-primary mr-2" data-toggle="modal" data-target="#exampleModal" onclick="buttonEdit(\''+data+'\');"><i class="fa fa-edit"></i></button>'
+				
+				let buttonEdit = '<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" data-target="#modalMDEdit" onclick="buttonEdit(\''+data+'\');"><i class="fa fa-edit" aria-hidden="true"></i></button>'
+				} 
+            }
+        ]
+    });
+	// 	$(function() {
+	// 		$('#tabelAjaxtipePoliList').DataTable();
+	// 		$(function() {
+	// 			var oTable = $('#tabelAjaxtipePoliList').DataTable({
+	// 				"ajax" : "{{route('tipePoli_getList')}}",
+	// 				"columnDefs": [{
+	// 					"visible": false,
+	// 					"targets": 2
+	// 				}],
+	// 				"order": [
+	// 					[2, 'asc']
+	// 				],
+	// 				"displayLength": 25,
+	// 				"drawCallback": function(settings) {
+	// 					var api = this.api();
+	// 					var rows = api.rows({
+	// 						page: 'current'
+	// 					}).nodes();
+	// 					var last = null;
+	// 					api.column(2, {
+	// 						page: 'current'
+	// 					}).data().each(function(group, i) {
+	// 						if (last !== group) {
+	// 							$(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+	// 							last = group;
+	// 						}
+	// 					});
+	// 				}
+	// 			});
+	// 			// Order by the grouping
+	// 			$('#tabelAjaxtipePoliList tbody').on('click', 'tr.group', function() {
+	// 				var currentOrder = table.order()[0];
+	// 				if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+	// 					table.order([2, 'desc']).draw();
+	// 				} else {
+	// 					table.order([2, 'asc']).draw();
+	// 				}
+	// 			});
+	// 		});
+	// 	});
 	});
-//  $(function() {
-//      $('#myTable').DataTable();
-//      $(function() {
-//          var table = $('#example').DataTable({
-//              "columnDefs": [{
-//                  "visible": false,
-//                  "targets": 2
-//              }],
-//              "order": [
-//                  [2, 'asc']
-//              ],
-//              "displayLength": 25,
-//              "drawCallback": function(settings) {
-//                  var api = this.api();
-//                  var rows = api.rows({
-//                      page: 'current'
-//                  }).nodes();
-//                  var last = null;
-//                  api.column(2, {
-//                      page: 'current'
-//                  }).data().each(function(group, i) {
-//                      if (last !== group) {
-//                          $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-//                          last = group;
-//                      }
-//                  });
-//              }
-//          });
-//          // Order by the grouping
-//          $('#example tbody').on('click', 'tr.group', function() {
-//              var currentOrder = table.order()[0];
-//              if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-//                  table.order([2, 'desc']).draw();
-//              } else {
-//                  table.order([2, 'asc']).draw();
-//              }
-//          });
-//      });
-//  });
 
- </script> 
+</script> 
 
 @stop
