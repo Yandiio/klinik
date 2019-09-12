@@ -30,12 +30,6 @@ route::get('pasien/list-pendaftaran',function(){
     return view('pasien.listPendaftaran');
 });
 
-<<<<<<< HEAD
-// Route::get('/pasien/list-pendaftara/list', 'PasienController@getPasien_List')->name('Pasien_getList');
-=======
-
-
->>>>>>> fc5c8d49aae277cb95628d2ed964752fc42e3ebe
 
 route::get('pasien/tambah-pendaftaran',function(){
     return view('pasien.tambahPendaftaran');
@@ -73,6 +67,7 @@ route::get('dokter/tipe-poli',function(){
 });
 
 route::get('dokter/tipe-poli/list', 'tipePoliController@gettipePoli_List')->name('tipePoli_getList');
+
 /* =========================================== Dokter ===================================== */
 
 
