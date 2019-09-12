@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use validator;
 use Illuminate\Http\Request;
 use App\Model\pasien;
 use App\Model\penjamin;

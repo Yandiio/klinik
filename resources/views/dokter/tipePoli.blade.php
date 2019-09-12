@@ -40,10 +40,8 @@
 								Tambah
 								<i class="fa fa-plus"></i>
 							</button>
-							
-							
 							<div class="table-responsive m-t-40">
-								<table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+								<table id="tabelAjaxtipePoliList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
 									<thead>
 										<tr>
 											<th>No</th>
@@ -51,7 +49,7 @@
 											<th>Aksi</th>
 										</tr>
 									</thead>
-									<tfoot>
+									{{-- <tfoot>
 										<tr>
 											<th>No</th>
 											<th>Nama Poli</th>
@@ -62,7 +60,6 @@
 										<tr>
 											<td >1</td>
 											<td>Poli Kebidanan dan Penyakit Kandungan</td>
-											
 											<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -71,7 +68,6 @@
 										<tr>
 											<td >2</td>
 											<td>Poli Anak</td>
-										
 											<td>
 												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -86,8 +82,7 @@
 												<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
 											</td>  
 										</tr>
-													
-									</tbody>
+									</tbody> --}}
 								</table>
 							</div>
 						</div>
@@ -168,45 +163,59 @@
  <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
  <!-- end - This is for export functionality only -->
  <script>
- $(function() {
-     $('#myTable').DataTable();
-     $(function() {
-         var table = $('#example').DataTable({
-             "columnDefs": [{
-                 "visible": false,
-                 "targets": 2
-             }],
-             "order": [
-                 [2, 'asc']
-             ],
-             "displayLength": 25,
-             "drawCallback": function(settings) {
-                 var api = this.api();
-                 var rows = api.rows({
-                     page: 'current'
-                 }).nodes();
-                 var last = null;
-                 api.column(2, {
-                     page: 'current'
-                 }).data().each(function(group, i) {
-                     if (last !== group) {
-                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                         last = group;
-                     }
-                 });
-             }
-         });
-         // Order by the grouping
-         $('#example tbody').on('click', 'tr.group', function() {
-             var currentOrder = table.order()[0];
-             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                 table.order([2, 'desc']).draw();
-             } else {
-                 table.order([2, 'asc']).draw();
-             }
-         });
-     });
- });
+	var oTabletipePoliList;
+
+	$(document).ready(function(){
+		oTabletipePoliList = $('#tabelAjaxtipePoliList').DataTable({
+			responsive : true,
+			processing : true,
+			serverSide : true,
+			ajax : "{{route('tipePoli_getList')}}"
+			columns: [
+				{ data: 'id', name: 'id' },
+				{ data: 'nama', name: 'nama'}
+			]
+		});
+	});
+//  $(function() {
+//      $('#myTable').DataTable();
+//      $(function() {
+//          var table = $('#example').DataTable({
+//              "columnDefs": [{
+//                  "visible": false,
+//                  "targets": 2
+//              }],
+//              "order": [
+//                  [2, 'asc']
+//              ],
+//              "displayLength": 25,
+//              "drawCallback": function(settings) {
+//                  var api = this.api();
+//                  var rows = api.rows({
+//                      page: 'current'
+//                  }).nodes();
+//                  var last = null;
+//                  api.column(2, {
+//                      page: 'current'
+//                  }).data().each(function(group, i) {
+//                      if (last !== group) {
+//                          $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+//                          last = group;
+//                      }
+//                  });
+//              }
+//          });
+//          // Order by the grouping
+//          $('#example tbody').on('click', 'tr.group', function() {
+//              var currentOrder = table.order()[0];
+//              if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+//                  table.order([2, 'desc']).draw();
+//              } else {
+//                  table.order([2, 'asc']).draw();
+//              }
+//          });
+//      });
+//  });
 
  </script> 
 
