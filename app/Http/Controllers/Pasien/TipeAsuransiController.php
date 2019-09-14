@@ -38,6 +38,11 @@ class TipeAsuransiController extends Controller
 
         return response()->json($asuransi);
     }
+    public function deleteTipeAsuransi(Request $request){
+        
+        $asuransi = tipeAsuransi::find($request->id);
+        $asuransi->delete();
+    }
 
 
 }
