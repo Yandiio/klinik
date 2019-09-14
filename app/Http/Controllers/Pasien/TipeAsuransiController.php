@@ -17,6 +17,27 @@ class TipeAsuransiController extends Controller
 
         return Datatables::of($tipeAsuransi)->make(true);
     }
+    public function postTipeAsuransi(Request $request){
+
+        //dd($request);
+        $asuransi = new tipeAsuransi;
+        $asuransi->nama = $request->input('name');
+        $asuransi->save();
+    }
+    public function editTipeAsuransi(Request $request){
+        //dd($request);
+        $asuransi = tipeAsuransi::find($request->id);
+
+        return response()->json($asuransi);
+    }
+    public function updateTipeAsuransi(Request $request){
+        //dd($request);
+        $asuransi = tipeAsuransi::find($request->id);
+        $asuransi->nama = $request->input('name');
+        $asuransi->save();
+
+        return response()->json($asuransi);
+    }
 
 
 }
