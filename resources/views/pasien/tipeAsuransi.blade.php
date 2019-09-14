@@ -4,6 +4,7 @@
 
 @section('css')
 <link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
 @stop
 @section('content')
 <section role="main" class="content-body">
@@ -114,7 +115,12 @@
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
 <!-- start - This is for export functionality only -->
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+<script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
+<script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
+
+
 <!-- end - This is for export functionality only -->
+
 <script>
 
 
@@ -128,16 +134,15 @@
     function closeModal(){
         $('#closeModal').click();
         $('#formTambah').trigger("reset");
-        oTable.ajax.reload();
-        
-
     }
     function editTombol(){
         $('#ubah').show();
         $('#simpan').hide();
-        
-
     }
+    $('#closeModal').on("click",function(){
+        $('#formTambah').trigger("reset");
+    });
+
 
     
     $(document).ready(function () {
@@ -167,7 +172,7 @@
                             '<button type="button" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" onclick="buttonEdit('+data+');"><i class="fa fa-edit" aria-hidden="true"></i></button>';
                             // '<button type="button" href="#modalEdit" class="btn btn-success modal-sizes float-right" style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah<i class="fa fa-plus"></i>';
                         let buttonHapus =
-                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonEdit('+data+');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete('+data+');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
 
                         // let buttonEdit = '<button type="button" class="btn-sm btn-info" data-toggle="modal" data-target="#showModalUpdate" style="margin-right:5px;" onclick="buttonEdit(\''+data+'\');">Update</button>';
                         // let buttonHapus = '<button type="button" class="btn-sm btn-danger" onclick="buttonDelete(\''+data+'\');" >Delete</button>';
@@ -196,6 +201,12 @@
             data: $(this).serialize(),
             success: function (response) {
                closeModal();
+               new PNotify({
+			title: 'Regular Notice',
+			text: 'Check me out! I\'m a notice.',
+			type: 'success'
+		});
+		
                
             }
         });
@@ -229,6 +240,7 @@
         });
 
     }
+
     /* ======================= EDIT========================= */
     /* ======================= UPDaTE========================= */
     $('#ubah').on("click",function(){
@@ -242,12 +254,44 @@
             url: "{{route('update_tipe_asuransi')}}",
             data: $('#formTambah').serialize(),
             success: function (data) {
-                console.log(data);
-                closeModal();
+                //console.log(data);
+                oTable.ajax.reload();
+                
                 
             }
         });
-    })
+    });
     /* ======================= UPDate========================= */
+
+    /* ======================= Delete========================= */
+    function buttonDelete(idDelete){
+        console.log(idDelete);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
+        $.ajax({
+            type: "GET",
+            url: "{{route('delete_tipe_asuransi')}}",
+            data: {
+                id:idDelete
+            },
+            success: function (data) {
+                //console.log(data);
+               oTable.ajax.reload();
+               new PNotify({
+			title: 'Hapus',
+			text: 'Berhasil hapus',
+			type: 'danger'
+		    });
+               
+            }
+        });
+
+    }
+
+    /* ======================= Delete========================= */
 </script>
 @stop
