@@ -45,7 +45,7 @@
                             Tambah
                             <i class="fa fa-plus"></i>
                         </button>
-                        
+
                         <div class="table-responsive">
                             <table id="tableTipeAsuransi" class="table table-hover table-striped table-bordered"
                                 cellspacing="0">
@@ -77,36 +77,38 @@
                     <h2 class="card-title" id="judul">Tambah Tipe Asuransi</h2>
                 </header>
                 <form action="" id="formTambah" method="POST">
-                    <input type="hidden" value="{{ csrf_token() }}" name="_token"/>
+                    <input type="hidden" value="{{ csrf_token() }}" name="_token" />
                     @csrf
-                <div class="card-body">
-                    <div class="modal-wrapper">
-                        <div class="modal-text">
-                            <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
-                            <input id="name" type="text" name="name" class="form-control" placeholder="Tipe Asuransi" required />
-                            <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi" required />
+                    <div class="card-body">
+                        <div class="modal-wrapper">
+                            <div class="modal-text">
+                                <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
+                                <input id="name" type="text" name="name" class="form-control"
+                                    placeholder="Tipe Asuransi" required />
+                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi"
+                                    required />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <footer class="card-footer">
-                    <div class="row">
-                        <div class="col-md-12 text-right">
-                            <button id="closeModal" class="btn btn-default modal-dismiss">Batal</button>
-                            <button type="submit" class="btn btn-success" id="simpan">Simpan</button>
-                            <button type="submit" class="btn btn-success" id="ubah">Ubah</button>
+                    <footer class="card-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button id="closeModal" class="btn btn-default modal-dismiss">Batal</button>
+                                <button type="submit" class="btn btn-success" id="simpan">Simpan</button>
+                                <button type="submit" class="btn btn-success" id="ubah">Ubah</button>
+                            </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer>
                 </form>
             </section>
         </div>
         <!-- modal tambah -->
         <!-- modal Edit -->
-       
+
     </div>
 
-        
-        <!-- modal Edit-->
+
+    <!-- modal Edit-->
 </section>
 @endsection
 @section('script')
@@ -117,6 +119,7 @@
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
+<script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
 
 
 <!-- end - This is for export functionality only -->
@@ -128,23 +131,24 @@
 
 
 <script>
-
-    var  oTable;
+    var oTable;
     $('#ubah').hide();
-    function closeModal(){
+
+    function closeModal() {
         $('#closeModal').click();
         $('#formTambah').trigger("reset");
     }
-    function editTombol(){
+
+    function editTombol() {
         $('#ubah').show();
         $('#simpan').hide();
     }
-    $('#closeModal').on("click",function(){
+    $('#closeModal').on("click", function () {
         $('#formTambah').trigger("reset");
     });
 
 
-    
+
     $(document).ready(function () {
         closeModal();
         oTable = $('#tableTipeAsuransi').DataTable({
@@ -169,10 +173,13 @@
                     render: function (data, type, row) {
                         // console.log(type);
                         let buttonEdit =
-                            '<button type="button" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" onclick="buttonEdit('+data+');"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-                            // '<button type="button" href="#modalEdit" class="btn btn-success modal-sizes float-right" style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah<i class="fa fa-plus"></i>';
+                            '<button type="button" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" onclick="buttonEdit(' +
+                            data + ');"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+                        // '<button type="button" href="#modalEdit" class="btn btn-success modal-sizes float-right" style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah<i class="fa fa-plus"></i>';
                         let buttonHapus =
-                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete('+data+');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
+                            data +
+                            ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
 
                         // let buttonEdit = '<button type="button" class="btn-sm btn-info" data-toggle="modal" data-target="#showModalUpdate" style="margin-right:5px;" onclick="buttonEdit(\''+data+'\');">Update</button>';
                         // let buttonHapus = '<button type="button" class="btn-sm btn-danger" onclick="buttonDelete(\''+data+'\');" >Delete</button>';
@@ -183,7 +190,7 @@
         });
 
     });
-    
+
 
     $('#formTambah').on('submit', function (e) {
         $('#closeModal').click();
@@ -194,26 +201,26 @@
                 'X-CSRF-TOKEN': $("input[name='_token']").val()
             }
         });
-        
+
         $.ajax({
             type: "POST",
             url: "{{ route('post_tipe_asuransi')}}",
             data: $(this).serialize(),
             success: function (response) {
-               closeModal();
-               new PNotify({
-			title: 'Regular Notice',
-			text: 'Check me out! I\'m a notice.',
-			type: 'success'
-		});
-		
-               
+                closeModal();
+                new PNotify({
+                    title: 'Regular Notice',
+                    text: 'Check me out! I\'m a notice.',
+                    type: 'success'
+                });
+
+
             }
         });
     });
 
     /* ======================= EDIT========================= */
-    function buttonEdit(idEdit){
+    function buttonEdit(idEdit) {
         //console.log(idEdit);
         $('#judul').text("Ubah Tipe Asuransi");
         editTombol();
@@ -223,19 +230,19 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        
+
         $.ajax({
             type: "GET",
             url: "{{route('edit_tipe_asuransi')}}",
             data: {
-                id:idEdit
+                id: idEdit
             },
             success: function (data) {
                 //console.log(data);
-               oTable.ajax.reload();
-               $("#formTambah").attr('formEdit');
-               $('#name').val(data.nama);
-               $('#id').val(data.id);
+                oTable.ajax.reload();
+                $("#formTambah").attr('formEdit');
+                $('#name').val(data.nama);
+                $('#id').val(data.id);
             }
         });
 
@@ -243,7 +250,7 @@
 
     /* ======================= EDIT========================= */
     /* ======================= UPDaTE========================= */
-    $('#ubah').on("click",function(){
+    $('#ubah').on("click", function () {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -256,42 +263,61 @@
             success: function (data) {
                 //console.log(data);
                 oTable.ajax.reload();
-                
-                
+
+
             }
         });
     });
     /* ======================= UPDate========================= */
 
     /* ======================= Delete========================= */
-    function buttonDelete(idDelete){
+    function buttonDelete(idDelete) {
         console.log(idDelete);
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        
-        $.ajax({
-            type: "GET",
-            url: "{{route('delete_tipe_asuransi')}}",
-            data: {
-                id:idDelete
+        bootbox.confirm({
+            message: "Apakah anda yakin ingin menghapus ?",
+            buttons: {
+                confirm: {
+                    label: 'Ya, Saya ingin menghapus',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'Tidak',
+                    className: 'btn-danger'
+                }
             },
-            success: function (data) {
-                //console.log(data);
-               oTable.ajax.reload();
-               new PNotify({
-			title: 'Hapus',
-			text: 'Berhasil hapus',
-			type: 'danger'
-		    });
-               
+            callback: function (result) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: "{{route('delete_tipe_asuransi')}}",
+                    data: {
+                        id: idDelete
+                    },
+                    success: function (data) {
+                        //console.log(data);
+                        oTable.ajax.reload();
+                        new PNotify({
+                            title: 'Hapus',
+                            text: 'Berhasil hapus',
+                            type: 'success',
+                        });
+
+                    }
+                });
             }
         });
+
+
+
 
     }
 
     /* ======================= Delete========================= */
+
 </script>
 @stop
