@@ -44,7 +44,7 @@
 											<th>Daftar</th>
 										</tr>
 									</thead>
-									{{-- <tfoot>
+									<tfoot>
 										<tr>
 											<th>No</th>
 											<th>Tipe</th>
@@ -99,7 +99,7 @@
 												<a class="btn-sm btn-success" title="Pendaftaran ulang !" style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
 											</td>
 										</tr>	
-									</tbody> --}}
+									</tbody>
 								</table>
 							</div>
 						</div>

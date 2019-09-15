@@ -41,6 +41,10 @@ route::get('pasien/tipe-asuransi',function(){
 });
 
 route::get('pasien/tipe-asuransi/list','Pasien\TipeAsuransiController@tipeAsuransiList')->name('list_tipe_asuransi');
+route::post('pasien/tipe-asuransi/tambah','Pasien\TipeAsuransiController@postTipeAsuransi')->name('post_tipe_asuransi');
+route::get('pasien/tipe-asuransi/edit','Pasien\TipeAsuransiController@editTipeAsuransi')->name('edit_tipe_asuransi');
+route::post('pasien/tipe-asuransi/update','Pasien\TipeAsuransiController@updateTipeAsuransi')->name('update_tipe_asuransi');
+route::get('pasien/tipe-asuransi/delete','Pasien\TipeAsuransiController@deleteTipeAsuransi')->name('delete_tipe_asuransi');
 
 /* =========================================== pasien ===================================== */
 
