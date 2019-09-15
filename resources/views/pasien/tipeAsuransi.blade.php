@@ -40,12 +40,11 @@
                 </header>
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" href="#modalTambah" class="btn btn-success modal-sizes float-right"
-                            style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !" id="modalForm">
-                            Tambah
-                            <i class="fa fa-plus"></i>
-                        </button>
-
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-bottom: 10px">
+                                
+                                    Tambah
+                                    <i class="fa fa-plus"></i>
+                            </button>
                         <div class="table-responsive">
                             <table id="tableTipeAsuransi" class="table table-hover table-striped table-bordered"
                                 cellspacing="0">
@@ -71,15 +70,17 @@
         </div>
         <!-- bagian body -->
         <!-- modal tambah -->
-        <div id="modalTambah" class="modal-block modal-header-color modal-block-success mfp-hide">
-            <section class="card">
-                <header class="card-header">
-                    <h2 class="card-title" id="judul">Tambah Tipe Asuransi</h2>
-                </header>
-                <form action="" id="formTambah" method="POST">
-                    <input type="hidden" value="{{ csrf_token() }}" name="_token" />
-                    @csrf
-                    <div class="card-body">
+        <div class="modal" id="modalTambah">
+            <div class="modal-dialog modal-block">
+                <div class="modal-content  ">
+                    <!-- Modal Header -->
+                    <div class="modal-header card-header">
+                        <h2 class="card-title" id="judul">Tambah Asuransi</h2>
+                        <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+                    </div>
+                    <form method="POST" id="formTambah">
+                        @csrf
+                    <div class="modal-body">
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
@@ -89,26 +90,60 @@
                                     required />
                             </div>
                         </div>
+                        
                     </div>
-                    <footer class="card-footer">
+                    <div class="modal-footer">
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <button id="closeModal" class="btn btn-default modal-dismiss">Batal</button>
-                                <button type="submit" class="btn btn-success" id="simpan">Simpan</button>
-                                <button type="submit" class="btn btn-success" id="ubah">Ubah</button>
+                                <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="cancel">Kembali</button>
+
                             </div>
                         </div>
-                    </footer>
-                </form>
-            </section>
+                    </div>
+                    </form>
+                </div>
+            </div>
         </div>
         <!-- modal tambah -->
-        <!-- modal Edit -->
-
+        <!-- modal edit -->
+        <div class="modal" id="myModalEdit">
+            <div class="modal-dialog modal-block">
+                <div class="modal-content  ">
+                    <!-- Modal Header -->
+                    <div class="modal-header card-header">
+                        <h2 class="card-title" id="judul">Ubah Tipe Asuransi</h2>
+                        <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+                    </div>
+                    <form method="POST" id="formUpdate">
+                    @csrf
+                    <div class="modal-body"> 
+                        <div class="modal-wrapper">
+                            <div class="modal-text">
+                                <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
+                                <input id="editName" type="text" name="name" class="form-control"
+                                    placeholder="Tipe Asuransi" required />
+                                <input id="editId" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi"
+                                    required />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="cancelEdit">Kembali</button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <!-- modal Edit-->
 </section>
 @endsection
 @section('script')
@@ -131,24 +166,15 @@
 
 
 <script>
+
     var oTable;
-    $('#ubah').hide();
+    //$('#ubah').hide();
 
     function closeModal() {
-        $('#closeModal').click();
+        $('#cancelEdit').click();
+        $('#cancel').click();
         $('#formTambah').trigger("reset");
     }
-
-    function editTombol() {
-        $('#ubah').show();
-        $('#simpan').hide();
-    }
-    $('#closeModal').on("click", function () {
-        $('#formTambah').trigger("reset");
-    });
-
-
-
     $(document).ready(function () {
         closeModal();
         oTable = $('#tableTipeAsuransi').DataTable({
@@ -173,16 +199,11 @@
                     render: function (data, type, row) {
                         // console.log(type);
                         let buttonEdit =
-                            '<button type="button" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" onclick="buttonEdit(' +
-                            data + ');"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-                        // '<button type="button" href="#modalEdit" class="btn btn-success modal-sizes float-right" style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah<i class="fa fa-plus"></i>';
+                            '<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#myModalEdit" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
                         let buttonHapus =
                             '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
                             data +
                             ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-
-                        // let buttonEdit = '<button type="button" class="btn-sm btn-info" data-toggle="modal" data-target="#showModalUpdate" style="margin-right:5px;" onclick="buttonEdit(\''+data+'\');">Update</button>';
-                        // let buttonHapus = '<button type="button" class="btn-sm btn-danger" onclick="buttonDelete(\''+data+'\');" >Delete</button>';
                         return buttonEdit + buttonHapus;
                     }
                 }
@@ -193,8 +214,7 @@
 
 
     $('#formTambah').on('submit', function (e) {
-        $('#closeModal').click();
-
+        console.log("asdads");
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -207,6 +227,7 @@
             url: "{{ route('post_tipe_asuransi')}}",
             data: $(this).serialize(),
             success: function (response) {
+
                 closeModal();
                 new PNotify({
                     title: 'Regular Notice',
@@ -214,23 +235,18 @@
                     type: 'success'
                 });
 
-
+                oTable.ajax.reload();
             }
         });
     });
 
     /* ======================= EDIT========================= */
     function buttonEdit(idEdit) {
-        //console.log(idEdit);
-        $('#judul').text("Ubah Tipe Asuransi");
-        editTombol();
-        $('#modalForm').click();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
         $.ajax({
             type: "GET",
             url: "{{route('edit_tipe_asuransi')}}",
@@ -240,9 +256,8 @@
             success: function (data) {
                 //console.log(data);
                 oTable.ajax.reload();
-                $("#formTambah").attr('formEdit');
-                $('#name').val(data.nama);
-                $('#id').val(data.id);
+                $('#editName').val(data.nama);
+                $('#editId').val(data.id);
             }
         });
 
@@ -250,7 +265,8 @@
 
     /* ======================= EDIT========================= */
     /* ======================= UPDaTE========================= */
-    $('#ubah').on("click", function () {
+    $('#formUpdate').on("submit", function (e) {
+        e.preventDefault();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -259,12 +275,16 @@
         $.ajax({
             type: "POST",
             url: "{{route('update_tipe_asuransi')}}",
-            data: $('#formTambah').serialize(),
+            data: $('#formUpdate').serialize(),
             success: function (data) {
-                //console.log(data);
+                closeModal();
+                new PNotify({
+                    title: 'Regular Notice',
+                    text: 'Check me out! I\'m a notice.',
+                    type: 'success'
+                });
+
                 oTable.ajax.reload();
-
-
             }
         });
     });
