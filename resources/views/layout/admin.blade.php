@@ -181,5 +181,9 @@
 		<!-- Examples -->
     <script src="{{ asset('assets/js/examples/examples.dashboard.js') }}"></script>
     @yield('script')
+
+
+
+	@yield('jscustom')
 	</body>
 </html>

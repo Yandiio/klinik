@@ -15,7 +15,6 @@ class CreatePasienTable extends Migration
     {
         Schema::create('pasien', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_penjamin')->unsigned();
             $table->string('nik');
             $table->date('tanggal_lahir');
             $table->string('nama_lengkap');
@@ -30,7 +29,7 @@ class CreatePasienTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('id_penjamin')->references('id')->on('penjamin');
+            
         });
     }
 
