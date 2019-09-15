@@ -255,7 +255,7 @@
             },
             success: function (data) {
                 //console.log(data);
-                oTable.ajax.reload();
+                
                 $('#editName').val(data.nama);
                 $('#editId').val(data.id);
             }

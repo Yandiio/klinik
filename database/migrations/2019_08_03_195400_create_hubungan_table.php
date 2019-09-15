@@ -15,7 +15,7 @@ class CreateHubunganTable extends Migration
     {
         Schema::create('hubungan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('hubungan_keluaraga');
+            $table->string('hubungan_keluarga');
             $table->timestamps();
         });
     }
