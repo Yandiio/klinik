@@ -30,12 +30,6 @@ route::get('pasien/list-pendaftaran',function(){
     return view('pasien.listPendaftaran');
 });
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f8d16130e6fbf06e196c1ba3e4e073c4c476bb96
-
 route::get('pasien/tambah-pendaftaran',function(){
     return view('pasien.tambahPendaftaran');
 });
