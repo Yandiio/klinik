@@ -46,7 +46,6 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="form-horizontal" novalidate="novalidate">
                         <div class="tab-content">
                             <div id="w2-account" class="tab-pane p-3 active">
                                 <div class="form-group row">
@@ -54,15 +53,15 @@
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name">
+                                            id="w2-first-name" required>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Agama</option>
-                                            <option value="">Islam</option>
-                                            <option value="">Hindu</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" required>
+                                            <option value="a">Agama</option>
+                                            <option value="a">Islam</option>
+                                            <option value="a">Hindu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -71,15 +70,15 @@
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name">
+                                            id="w2-first-name" required>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Negara
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Negara</option>
-                                            <option value="">Indonesia</option>
-                                            <option value="">Singapura</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
+                                            <option value="a">Negara</option>
+                                            <option value="a">Indonesia</option>
+                                            <option value="a">Singapura</option>
                                         </select>
                                     </div>
                                 </div>
@@ -88,15 +87,15 @@
                                         Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="last-name"
-                                            id="w2-last-name">
+                                            id="w2-last-name" requeired>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Jawa Barat</option>
-                                            <option value="">Jawa Timur</option>
-                                            <option value="">Jawa Tenggah</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
+                                            <option value="a">Jawa Barat</option>
+                                            <option value="a">Jawa Timur</option>
+                                            <option value="a">Jawa Tenggah</option>
                                         </select>
                                     </div>
                                 </div>
@@ -111,16 +110,16 @@
                                                 </span>
                                             </span>
                                             <input type="text" data-plugin-datepicker
-                                                class="form-control form-control-sm mb-3">
+                                                class="form-control form-control-sm mb-3" requeired>
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
                                         for="w2-last-name">Kabupaten <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Banjar Negara</option>
-                                            <option value="">Kepulauan Seribu</option>
-                                            <option value="">Bayumas</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
+                                            <option value="a">Banjar Negara</option>
+                                            <option value="a">Kepulauan Seribu</option>
+                                            <option value="a">Bayumas</option>
                                         </select>
                                     </div>
                                 </div>
@@ -128,19 +127,19 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Jenis
                                         Kelamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Jenis Kelamin</option>
-                                            <option value="">Laki-laki</option>
-                                            <option value="">Perempuan</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
+                                            <option value="a">Jenis Kelamin</option>
+                                            <option value="a">Laki-laki</option>
+                                            <option value="a">Perempuan</option>
                                         </select>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
                                         for="w2-last-name">Kecamatan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Kecamatan</option>
-                                            <option value="">Pondok Melati</option>
-                                            <option value="">Pondok Unggu</option>
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
+                                            <option value="a">Kecamatan</option>
+                                            <option value="a">Pondok Melati</option>
+                                            <option value="a">Pondok Unggu</option>
                                         </select>
                                     </div>
                                 </div>
@@ -148,7 +147,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
                                             <option value="">Golongan darah</option>
                                             <option value="d">A</option>
                                             <option value="d">B</option>
@@ -159,7 +158,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
                                         for="w2-last-name">Kelurahan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
+                                        <select name="" id="" class="form-control form-control-sm mb-3" requeired>
                                             <option value="h">Harapan Jaya</option>
                                             <option value="d">JatiRahayu</option>
                                             <option value="d">Pondok Mulia</option>
@@ -171,7 +170,7 @@
                                         Telepon <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name">
+                                            id="w2-first-name" requeired>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
@@ -204,9 +203,9 @@
                                         penjamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Umum</option>
-                                            <option value="">Pribadi</option>
-                                            <option value="">BPJS</option>
+                                            <option value="a">Umum</option>
+                                            <option value="a">Pribadi</option>
+                                            <option value="a">BPJS</option>
                                         </select>
                                     </div>
                                 </div>
@@ -271,10 +270,10 @@
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Hubungan</option>
-                                            <option value="">Anak</option>
-                                            <option value="">Istri</option>
-                                            <option value="">Dll</option>
+                                            <option value="a">Hubungan</option>
+                                            <option value="a">Anak</option>
+                                            <option value="a">Istri</option>
+                                            <option value="a">Dll</option>
                                         </select>
                                     </div>
                                 </div>
@@ -288,9 +287,9 @@
                                     <div class="col-sm-4">
 
                                         <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Umum</option>
-                                            <option value="">Pribadi</option>
-                                            <option value="">BPJS</option>
+                                            <option value="a">Umum</option>
+                                            <option value="a">Pribadi</option>
+                                            <option value="a">BPJS</option>
 
                                         </select>
                                     </div>
@@ -314,8 +313,8 @@
                                     <div class="col-sm-4">
                                         <!-- <input type="password" class="form-control form-control-sm mb-3" name="password" id="w2-password" required minlength="6"> -->
                                         <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Bukan Pasie Rujukkan</option>
-                                            <option value="">Pasien Rujukan</option>
+                                            <option value="a">Bukan Pasie Rujukkan</option>
+                                            <option value="a">Pasien Rujukan</option>
                                         </select>
                                     </div>
 
@@ -324,10 +323,10 @@
                                     <div class="col-sm-4">
                                         <!-- <input type="password" class="form-control form-control-sm mb-3" name="password" id="w2-password" required minlength="6"> -->
                                         <select name="" id="" class="form-control form-control-sm mb-3">
-                                            <option value="">Pilih Dokter</option>
-                                            <option value="">[GIGI] Drs.Beny Setiawan</option>
-                                            <option value="">[Gizi] Drs.Khoslis Pratama</option>
-                                            <option value="">[Lambung] Drs.Yadi Pamungkas</option>
+                                            <option value="a">Pilih Dokter</option>
+                                            <option value="a">[GIGI] Drs.Beny Setiawan</option>
+                                            <option value="a">[Gizi] Drs.Khoslis Pratama</option>
+                                            <option value="a">[Lambung] Drs.Yadi Pamungkas</option>
                                         </select>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
@@ -348,18 +347,20 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="card-footer">
                     <ul class="pager">
                         <li class="previous disabled">
+                            <!-- <button ><i class="fas fa-angle-left"></i></button> -->
                             <a><i class="fas fa-angle-left"></i> Sebelumnya</a>
                         </li>
-                        <li class="finish hidden float-right">
-                            <a>Selesai</a>
+                        <li class="finish float-right">
+                            <!-- <button>ggg</button> -->
+                            <a id="selesai">Selesai</a>
                         </li>
                         <li class="next">
-                            <a>Selanjutnya <i class="fas fa-angle-right"></i></a>
+                            <a id="selanjutnya1">Selanjutnya <i class="fas fa-angle-right"></i></a>
+                            <a id="selanjutnya2">Selanjutnya <i class="fas fa-angle-right"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -413,7 +414,7 @@
 <script src="{{asset('assets/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
 
 <!-- Specific Page Vendor -->
-<script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script>
+<!-- <script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script> -->
 <script src="{{asset('assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
@@ -429,7 +430,7 @@
 <script src="{{asset('assets/js/theme.init.js')}}"></script>
 
 <!-- Examples -->
-<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
+<!-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> -->
 <script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
 
 <script>
@@ -443,19 +444,60 @@
 
 @section('jscustom')
 <script>
+disabledTapAwal();
 
-$('#dataPribadi').click(function(){
+
+
+$(document).ready(function(){
+    selanjutnya1();
+    selanjutnya2();
+
+    $('#selesai').click(function(){
+        $('#dataPribadi').click();
+        $('#selesai').hide();
+        $('#selanjutnya1').show();
+        disabledTapAwal();
+    });
+
+    
+});
+
+function disabledTapAwal(){
+    // $('#penjamin').prop("disabled",true);
+    // $('#daftar').prop("disabled",true);
     $('#penjamin').hide();
     $('#daftar').hide();
-});
-$('#penjamin').click(function(){
-    $('#dataPribadi').hide();
-    $('#daftar').hide();
-});
-$('#daftar').click(function(){
-    $('#dataPribadi').hide();
-    $('#penjamin').hide();
-});
+    $('#selanjutnya2').hide();
+    $('#selesai').hide();
+}
+function selanjutnya1(){
+        $('#selanjutnya1').click(function(){
+        //console.log('selanjutnya 1');
+            $('#penjamin').show();
+            $('#dataPribadi').show();
+        /* fungsi button */
+            $(this).hide();
+            $('#selanjutnya2').show();
+            $('#penjamin').click();
+            $("#daftar").mouseenter(function(){
+            $(this).prop("disabled",true);
+        });
+        $("#dataPribadi").mouseenter(function(){
+            $(this).prop("disabled",true);
+        });
+    });
+}
+function selanjutnya2(){
+    $('#selanjutnya2').click(function(){
+        //console.log('selanjutnya 1');
+        $('#daftar').show();
+        $(this).hide();
+        $('#selesai').show();
+        $('#daftar').click();
+    });
+}
+
+
 
 
 

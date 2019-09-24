@@ -121,6 +121,7 @@ Theme Version: 	2.1.1
 			} else {
 				return true;
 			}
+			console.log("djadsjadsoad");
 		},
 		onTabChange: function( tab, navigation, index, newindex ) {
 			var totalTabs = navigation.find('li').length - 1;
