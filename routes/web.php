@@ -41,15 +41,20 @@ route::get('pasien/tipe-asuransi',function(){
 });
 
 route::get('pasien/tipe-asuransi/list','Pasien\TipeAsuransiController@tipeAsuransiList')->name('list_tipe_asuransi');
+route::get('pasien/tipe-asuransi/data','Pasien\TipeAsuransiController@getAsuransiData')->name('get_asuransi_data');
 route::post('pasien/tipe-asuransi/tambah','Pasien\TipeAsuransiController@postTipeAsuransi')->name('post_tipe_asuransi');
 route::get('pasien/tipe-asuransi/edit','Pasien\TipeAsuransiController@editTipeAsuransi')->name('edit_tipe_asuransi');
 route::post('pasien/tipe-asuransi/update','Pasien\TipeAsuransiController@updateTipeAsuransi')->name('update_tipe_asuransi');
 route::get('pasien/tipe-asuransi/delete','Pasien\TipeAsuransiController@deleteTipeAsuransi')->name('delete_tipe_asuransi');
 
 
-route::get('pasien/list-pendaftaran/list','Pasien\PendaftranController@pendaftaranList')->name('list_pendaftaran');
+route::get('pasien/list-pendaftaran/list','Pasien\PendaftaranController@pendaftaranList')->name('list_pendaftaran');
+route::post('pasien/input-pendaftaran','Pasien\PendaftaranController@tambahPendaftaran')->name('input_pendaftaran');
 
-
+route::get('provinsi','LokasiController@getProvinsi')->name('get_provinsi');
+route::get('kota','LokasiController@getKota')->name('get_kota');
+route::get('kecamatan','LokasiController@getKecamatan')->name('get_kecamatan');
+route::get('kelurahan','LokasiController@getKelurahan')->name('get_kelurahan');
 
 
 /* =========================================== pasien ===================================== */
