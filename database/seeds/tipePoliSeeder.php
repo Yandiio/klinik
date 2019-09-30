@@ -13,24 +13,13 @@ class tipePoliSeeder extends Seeder
     public function run()
     {
         //
-        $tipePoli = new tipePoli;
-        $tipePoli->nama = "pribadi";
-        $tipePoli->save();
-
-        $tipePoli = new tipePoli;
-        $tipePoli->nama = "avirst";
-        $tipePoli->save();
+        $poli = ['GIGI','ANAK','MATA','UMUM','SYARAF'];
+        for ($i=0; $i <5 ; $i++) { 
+            # code...
+            $tipePoli = new tipePoli;
+            $tipePoli->nama = $poli[$i];
+            $tipePoli->save();
+        }
         
-        $tipePoli = new tipePoli;
-        $tipePoli->nama = "bpjs";
-        $tipePoli->save();
-
-        $tipePoli = new tipePoli;
-        $tipePoli->nama = "cigna";
-        $tipePoli->save();
-
-        $tipePoli = new tipePoli;
-        $tipePoli->nama = "prudensial";
-        $tipePoli->save();
     }
 }

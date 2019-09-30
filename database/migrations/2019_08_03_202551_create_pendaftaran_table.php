@@ -18,6 +18,7 @@ class CreatePendaftaranTable extends Migration
             $table->integer('id_pasien')->unsigned();
             $table->integer('id_tipe_poli')->unsigned();
             $table->string('no_daftar');
+            $table->date('tgl_daftar');
             $table->string('keluhan');
             $table->timestamps();
 

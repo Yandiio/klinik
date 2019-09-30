@@ -24,7 +24,6 @@ class CreatePasienTable extends Migration
             $table->integer('jenis_kelamin');
             $table->string('golongan_darah')->nullable();
             $table->string('agama');
-            $table->string('keterangan');
             $table->timestamps();
 
 

@@ -16,9 +16,9 @@ use App\Model\pendaftaran;
 class PendaftaranController extends Controller
 {
     //
-    public function pendaftranList(){
+    public function pendaftaranList(){
         $pasien = pasien::all();
-        return response()->json();
+        return response()->json($pasien);
     }
     public function tambahPendaftaran(Request $request){
         //dd($request);
@@ -30,14 +30,36 @@ class PendaftaranController extends Controller
         $pasien->telepone = $request->input('telepone');
         $pasien->usia = $request->input('umur');
         $pasien->jenis_kelamin = $request->input('jenisKelamin');
-        $pasien->golongan_darah = $request->input('golongan_darah');
+        $pasien->golongan_darah = $request->input('golonganDarah');
         $pasien->agama = $request->input('agama');
-        $pasien->keterangan = $request->input('keterangan');
         $pasien->save();
 
+        $penjamin = new penjamin;
+        $penjamin->id_tipe_asuransi = $request->input('ansuransiAs');
+        $penjamin->hubungan = $request->input('hubunganAs');
+        $penjamin->id_pasien = $pasien->id;
+        $penjamin->nik = $request->input('nikAs');
+        $penjamin->nama_lengkap = $request->input('namaLengkapAs');
+        $penjamin->telepone = $request->input('teleponeAs');
+        $penjamin->hp = $request->input('hpAs');
+        $penjamin->kode_karyawan = $request->input('kodeKaryawanAs');
+        $penjamin->no_polis = $request->input('noPolisAs');
+        $penjamin->tanggal_akhir_polis = $request->input('tanggalAkhirPolisAs');
+        $penjamin->keterangan = $request->input('keteranganAs');
+        $penjamin->save();
+
+        $pendaftaran = new pendaftaran;
+        $pendaftaran->id_pasien = $pasien->id;
+        $pendaftaran->id_tipe_poli = $request->input('poli');
+        $pendaftaran->no_daftar = "001";
+        $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
+        $pendaftaran->keluhan = $request->input('keluhan');
+        $pendaftaran->save();
 
 
-        // return response($request);
+
+
+        return response("mantap");
     }
     
 }

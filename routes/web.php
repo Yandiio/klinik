@@ -81,6 +81,7 @@ route::get('dokter/tipe-poli',function(){
 });
 
 route::get('dokter/tipe-poli/list', 'tipePoliController@gettipePoli_List')->name('tipePoli_getList');
+route::get('dokter/tipe-poli/data', 'tipePoliController@gettipePoli_Data')->name('tipePoli_getData');
 route::post('dokter/tipe-poli/tambah', 'tipePoliController@posttipePoli_Input')->name('tipePoli_postInput');
 route::get('dokter/tipe-poli/ubah', 'tipePoliController@gettipePoli_Edit')->name('tipePoli_getEdit');
 route::post('dokter/tipe-poli/perbarui', 'tipePoliController@posttipePoli_Update')->name('tipePoli_PostUpdate');

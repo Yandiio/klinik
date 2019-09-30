@@ -18,6 +18,10 @@ class tipePoliController extends Controller
         return Datatables::of($res)->make(true);
         return response()->json($res);
     }
+    public function gettipePoli_Data() {
+        $res = tipePoli::get();
+        return response()->json($res);
+    }
 
     public function posttipePoli_Input(Request $request) {
         //dd($request);

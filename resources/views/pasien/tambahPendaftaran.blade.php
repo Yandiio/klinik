@@ -66,7 +66,8 @@
                                             <option value="1">Islam</option>
                                             <option value="2">Kristen Protestan</option>
                                             <option value="3">Budha</option>
-                                            <option value="3">Hindu</option>
+                                            <option value="4">Hindu</option>
+                                            <option value="5">Khatolik</option>
                                         </select>
                                     </div>
                                 </div>
@@ -107,11 +108,11 @@
                                     <div class="col-sm-4">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text" style="height:25px">
+                                                <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker name="tanggalLahir"
+                                            <input type="date" name="tanggalLahir"
                                                 class="form-control form-control-sm mb-3" requeired>
                                         </div>
                                     </div>
@@ -156,7 +157,7 @@
                                             <option value="0">A</option>
                                             <option value="1">B</option>
                                             <option value="2">O</option>
-                                            <option value="3">C</option>
+                                            <option value="3">AB</option>
                                         </select>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
@@ -195,14 +196,14 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="nikAs"
                                             id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tipe
                                         Asuransi <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <select data-plugin-selectTwo class="form-control populate form-control-sm mb-3"
-                                            id="asuransi">
+                                            id="asuransi" name="ansuransiAs">
 
                                         </select>
                                     </div>
@@ -211,13 +212,13 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkapAs"
                                             id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kode
                                         Karyawan<span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="kodeKaryawanAs"
                                             id="w2-first-name">
                                     </div>
                                 </div>
@@ -226,13 +227,13 @@
                                         for="w2-first-name">Telepone
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="teleponeAs"
                                             id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Polis
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="noPolisAs"
                                             id="w2-first-name">
                                     </div>
 
@@ -241,7 +242,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Hp
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="hpAs"
                                             id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal
@@ -249,12 +250,12 @@
                                     <div class="col-sm-4">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text" style="height:25px">
+                                                <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker
-                                                class="form-control form-control-sm mb-3">
+                                            <input type="date" 
+                                                class="form-control form-control-sm mb-3" name="tanggalAkhirPolisAs">
                                         </div>
                                     </div>
                                 </div>
@@ -263,17 +264,21 @@
                                         for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keterangan"
+                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keteranganAs"
                                             data-plugin-textarea-autosize></textarea>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Hubungan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="hubungan" id="" class="form-control form-control-sm mb-3">
-                                            <option value="a">Hubungan</option>
-                                            <option value="a">Anak</option>
-                                            <option value="a">Istri</option>
-                                            <option value="a">Dll</option>
+                                        <select name="hubunganAs" id="" class="form-control form-control-sm mb-3">
+                                            <option value="0">Pribadi</option>
+                                            <option value="1">Bapak</option>
+                                            <option value="2">Ibu</option>
+                                            <option value="3">Anak</option>
+                                            <option value="4">Kaka</option>
+                                            <option value="5">Adik</option>
+                                            <option value="6">Kake</option>
+                                            <option value="7">Nenek</option>
                                         </select>
                                     </div>
                                 </div>
@@ -288,22 +293,19 @@
                                     <div class="col-sm-4">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text" style="height:25px">
+                                                <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker name="tanggalDaftar"
+                                            <input type="date"  name="tanggalDaftar"
                                                 class="form-control form-control-sm mb-3">
                                         </div>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Dokter
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">Poli
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="dokter" id="" class="form-control form-control-sm mb-3">
-                                            <option value="a">Pilih Dokter</option>
-                                            <option value="a">[GIGI] Drs.Beny Setiawan</option>
-                                            <option value="a">[Gizi] Drs.Khoslis Pratama</option>
-                                            <option value="a">[Lambung] Drs.Yadi Pamungkas</option>
+                                        <select name="poli" id="poli" class="form-control form-control-sm mb-3">
+                                            <option value="">Pilih Poli</option>
                                         </select>
                                     </div>
                                 </div>
@@ -405,7 +407,6 @@
 <!-- <script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script> -->
 <script src="{{asset('assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
-<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('assets/vendor/autosize/autosize.js')}}"></script>
 
 <!-- Theme Base, Components and Settings -->
@@ -458,6 +459,7 @@
         });
         dataAnsuransi();
         tampilProvinsi();
+        dataPoli();
 
     });
 
@@ -592,6 +594,23 @@
             success: function (data) {
                 $.each(data, function (index, value) {
                     $('#asuransi').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama + '</option>')
+                });
+            }
+
+        });
+    }
+    function dataPoli(){
+        $.ajax({
+            type: "GET",
+            url: "{{route('tipePoli_getData')}}",
+            //    data: {
+            //        'id': id
+            //    },
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#poli').append('<option id=' + value.id + ' value=' + value
                         .id +
                         '>' + value.nama + '</option>')
                 });
