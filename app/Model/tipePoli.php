@@ -14,5 +14,10 @@ class tipePoli extends Model
         
     ];
     public $timestamps = true;
+
+
+    public function poli(){
+        return $this->hasMany('App\Model\tipePoli', 'id_tipe_poli', 'id');
+    }
     
 }

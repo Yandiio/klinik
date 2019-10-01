@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Model;
+use App\Model\penjamin;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,34 +26,41 @@ class pasien extends Model
         
     ];
     public $timestamps = true;
-    protected $appends = ['jeniskelamin'];
+    protected $appends = ['jk','gd','ag'];
 
-    // protected $jeniskelamin = [
-    //     '0' => 'Laki-Laki',
-    //     '1' => 'Perempuan', 
-    // ];
-    // protected $golongandarah = [
-    //     '0' => 'A',
-    //     '1' => 'B',
-    //     '2' => 'O',
-    //     '3' => 'AB',
-    // ];
-    // protected $agama = [
-    //     '0' => 'Islam',
-    //     '1' => 'Kristen Protestan',
-    //     '2' => 'Budha',
-    //     '3' => 'Hindu',
-    //     '4' => 'Khatolik',
-    // ];
+    protected $jk = [
+        0 => 'Laki-Laki',
+        1 => 'Perempuan', 
+    ];
+    protected $gd = [
+        '0' => 'A',
+        '1' => 'B',
+        '2' => 'O',
+        '3' => 'AB',
+    ];
+    protected $ag = [
+        '0' => 'Islam',
+        '1' => 'Kristen Protestan',
+        '2' => 'Budha',
+        '3' => 'Hindu',
+        '4' => 'Khatolik',
+    ];
 
-    public function getJeniskelaminAttribute(){
-        return $this->jeniskelamin[$this->jenis_kelamin];
+    public function getJkAttribute(){
+        return $this->jk[$this->jenis_kelamin];
     }
-    // public function getGolongandarahAttribute(){
-    //     return $this->golongandarah;
-    // }
-    // public function getAgamaAttribute(){
-    //     return $this->agama;
-    // }
+    public function getGdAttribute(){
+        return $this->gd[$this->golongan_darah];
+    }
+    public function getAgAttribute(){
+        return $this->ag[$this->agama];
+    }
 
+    
+    public function pendaftaran(){
+        return $this->hasMany('App\Model\pendaftaran', 'id_pasien', 'id');
+    }
+    public function penjamin(){
+        return $this->belongsTo('App\Model\penjamin', 'id_pasien', 'id');
+    }
 }

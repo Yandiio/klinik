@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Model;
+use App\Model\pasien;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,4 +33,9 @@ class penjamin extends Model
         '6' => 'Kake',
         '7' => 'Nenek'
     ];
+
+
+    public function pasien(){
+        return $this->hasMany('App\Model\pasien', 'id_pasien', 'id');
+    }
 }

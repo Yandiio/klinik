@@ -39,10 +39,10 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Tipe</th>
+                                    <th>Asuransi</th>
                                     <th>Nik</th>
                                     <th>Nama</th>
-                                    <th>Dokter</th>
+                                    <th>Poli</th>
                                     <th>Tanggal</th>
                                     <th>Aksi</th>
                                     <th>Daftar</th>
@@ -60,7 +60,7 @@
                                     <th>Daftar</th>
                                 </tr>
                             </tfoot>
-                            <tbody>
+                            <!-- <tbody>
                                 <tr>
                                     <td>D001</td>
                                     <td>BPJS</td>
@@ -115,7 +115,7 @@
                                                 class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>
                                     </td>
                                 </tr>
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                 </div>
@@ -150,12 +150,12 @@
 	var oTable;
 
     $(document).ready(function () {
-        closeModal();
+        
         oTable = $('#listPendaftaran').DataTable({
             responsive: true,
             processing: true,
             serverSide: true,
-            ajax: "{{ route('list_tipe_asuransi')}}",
+            ajax: "{{ route('list_pendaftaran')}}",
             columns: [
 
                 {
@@ -165,23 +165,47 @@
                     }
                 },
                 {
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
                     data: 'nama',
                     name: 'nama'
                 },
                 {
                     data: 'id',
-                    render: function (data, type, row) {
-                        // console.log(type);
-                        let buttonEdit =
-                            '<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#myModalEdit" onclick="buttonEdit(' +
-                            data + ')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-                        let buttonHapus =
-                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
-                            data +
-                            ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-                        return buttonEdit + buttonHapus;
-                    }
-                }
+                    name: 'id'
+                },
+                {
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'id',
+                    name: 'id'
+                },
+                // {
+                //     data: 'id',
+                //     render: function (data, type, row) {
+                //         // console.log(type);
+                //         let buttonEdit =
+                //             '<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#myModalEdit" onclick="buttonEdit(' +
+                //             data + ')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+                //         let buttonHapus =
+                //             '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
+                //             data +
+                //             ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+                //         return buttonEdit + buttonHapus;
+                //     }
+                // }
             ]
         });
 

@@ -11,17 +11,43 @@ use App\Model\tipeAsuransi;
 use App\Model\hubungan;
 use App\Model\penjamin;
 use App\Model\pendaftaran;
+use Yajra\Datatables\Datatables;
 
 
 class PendaftaranController extends Controller
 {
     //
     public function pendaftaranList(){
-        $pasien = pasien::all();
-        return response()->json($pasien);
+        $listPasien = pendaftaran::get()
+        ->map(function($key){
+            return [
+                'id'            => $key->id,
+                'nikPasien'     => $key->pasien->nik,
+                'nama'          => $key->pasien->nama_lengkap,
+                'jenisKelamin'  => $key->pasien->jk,
+                'golonganDarah' => $key->pasien->gd,
+                'agama'         => $key->pasien->ag,
+                'poli'          => $key->poli->nama,
+                'tanggalDaftar' => $key->tgl_daftar,
+                'ansuransi'     => $key->pasien->get(),
+            ];
+        });
+        
+        return Datatables::of($listPasien)->make(true);
     }
     public function tambahPendaftaran(Request $request){
         //dd($request);
+        $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
+        
+        if($cekData){
+            // dd($car);
+             $car = "00";
+             $nomor = $car . $cekData->id += 1 ;
+         }else{
+             $nomor = $car .'1';
+         }
+         //dd($nomor);
+
         $pasien = new pasien;
         $pasien->nik = $request->input('nik');
         $pasien->nama_lengkap = $request->input('namaLengkap');
@@ -51,7 +77,7 @@ class PendaftaranController extends Controller
         $pendaftaran = new pendaftaran;
         $pendaftaran->id_pasien = $pasien->id;
         $pendaftaran->id_tipe_poli = $request->input('poli');
-        $pendaftaran->no_daftar = "001";
+        $pendaftaran->no_daftar = $nomor;
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
         $pendaftaran->save();
