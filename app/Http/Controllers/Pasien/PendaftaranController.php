@@ -11,13 +11,17 @@ use App\Model\tipeAsuransi;
 use App\Model\hubungan;
 use App\Model\penjamin;
 use App\Model\pendaftaran;
+use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
+
+
 
 
 class PendaftaranController extends Controller
 {
     //
     public function pendaftaranList(){
+
         $listPasien = pendaftaran::get()
         ->map(function($key){
             return [
@@ -29,11 +33,40 @@ class PendaftaranController extends Controller
                 'agama'         => $key->pasien->ag,
                 'poli'          => $key->poli->nama,
                 'tanggalDaftar' => $key->tgl_daftar,
-                'ansuransi'     => $key->pasien->get(),
+                'asuransi'      => $key->pasien()->get()->map(function($value){
+                    return [
+                                'as' => $value->penjamin()->get()->map(function($l){
+                                    return [
+                                        'ap' =>$l->asuransi->nama,
+                                    ];
+                                }),
+                            ];
+                }),
+                'alamat'        => $key->pasien()->get()->map(function($value){
+                    return [
+                                'id' => $value->alamatpasien()->get()->map(function($m){
+                                    return [
+                                         'provinsi' => $m->prvns->name,
+                                        'kabupaten' => $m->kbptn->name,
+                                        'kecamatan' => $m->kcmtn->name,
+                                        'kelurahan' => $m->klrhn->name,
+                                        'alamat'    => $m->alamat,
+                                    ];
+                                }),
+                            ];
+                }),
+                
             ];
         });
+
+        // $penjamin = alamatPasien::get()->map(function($key){
+        //     return [
+        //         'id' => $key->kcmtn->name
+        //     ];
+        // });
         
-        return Datatables::of($listPasien)->make(true);
+        // return Datatables::of($listPasien)->make(true);
+        return response()->json($listPasien);
     }
     public function tambahPendaftaran(Request $request){
         //dd($request);
@@ -44,6 +77,7 @@ class PendaftaranController extends Controller
              $car = "00";
              $nomor = $car . $cekData->id += 1 ;
          }else{
+            $car = "00";
              $nomor = $car .'1';
          }
          //dd($nomor);
@@ -82,10 +116,21 @@ class PendaftaranController extends Controller
         $pendaftaran->keluhan = $request->input('keluhan');
         $pendaftaran->save();
 
+        $alamat = new alamatPasien;
+        $alamat->id_pasien = $pasien->id;
+        $alamat->alamat = $request->input('alamat');
+        $alamat->kelurahan = $request->input('kelurahan');
+        $alamat->kecamatan = $request->input('kecamatan');
+        $alamat->provinsi = $request->input('provinsi');
+        $alamat->kabupaten = $request->input('kota');
+        $alamat->save();
 
 
 
-        return response("mantap");
+
+
+
+        return response($request);
     }
     
 }

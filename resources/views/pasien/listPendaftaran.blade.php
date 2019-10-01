@@ -165,8 +165,20 @@
                     }
                 },
                 {
-                    data: 'poli',
-                    name: 'poli'
+                    data: 'asuransi',
+                    render: function (data, type, row, meta) {
+                        console.log(row.alamat[0]['id'][0]);
+                        // return $.each(row.asuransi,function(index,value){
+                        //       //console.log(index);
+                        //         return $.each(index,function(k,l){
+                        //             // $.each(index,function(m,n){
+                        //             //     console.log(n);
+                        //             // })
+                        //         })
+                        // })
+                        // return data[0][id][0][asuransi];
+                    }
+                    
                 },
                 {
                     data: 'nama',

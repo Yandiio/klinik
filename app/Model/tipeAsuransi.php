@@ -14,5 +14,7 @@ class tipeAsuransi extends Model
     ];
     public $timestamps = true;
 
-   
+    public function penjamin(){
+        return $this->hasMany('App\Model\penjamin', 'id_tipe_asuransi', 'id');
+    }
 }

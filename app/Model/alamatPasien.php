@@ -18,4 +18,21 @@ class alamatPasien extends Model
         'kabupaten',
     ];
     public $timestamps = true;
+
+
+    public function pasien(){
+        return $this->belongsTo('App\Model\pasien', 'id_pasien', 'id');
+    }
+    public function prvns(){
+        return $this->belongsTo('Laravolt\Indonesia\Models\Province', 'provinsi', 'id');
+    }
+    public function kbptn(){
+        return $this->belongsTo('Laravolt\Indonesia\Models\City', 'kabupaten', 'id');
+    }
+    public function kcmtn(){
+        return $this->belongsTo('Laravolt\Indonesia\Models\District', 'kecamatan', 'id');
+    }
+    public function klrhn(){
+        return $this->belongsTo('Laravolt\Indonesia\Models\Village', 'kelurahan', 'id');
+    }
 }

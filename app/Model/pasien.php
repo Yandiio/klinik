@@ -61,6 +61,9 @@ class pasien extends Model
         return $this->hasMany('App\Model\pendaftaran', 'id_pasien', 'id');
     }
     public function penjamin(){
-        return $this->belongsTo('App\Model\penjamin', 'id_pasien', 'id');
+        return $this->hasMany('App\Model\penjamin', 'id_pasien', 'id');
+    }
+    public function alamatpasien(){
+        return $this->hasMany('App\Model\alamatPasien', 'id_pasien', 'id');
     }
 }
