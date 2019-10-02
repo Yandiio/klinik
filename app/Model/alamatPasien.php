@@ -21,7 +21,7 @@ class alamatPasien extends Model
 
 
     public function pasien(){
-        return $this->belongsTo('App\Model\pasien', 'id_pasien', 'id');
+        return $this->hashMany('App\Model\pasien', 'id_pasien', 'id');
     }
     public function prvns(){
         return $this->belongsTo('Laravolt\Indonesia\Models\Province', 'provinsi', 'id');

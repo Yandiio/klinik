@@ -22,51 +22,29 @@ class PendaftaranController extends Controller
     //
     public function pendaftaranList(){
 
-        $listPasien = pendaftaran::get()
+        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->get()
         ->map(function($key){
             return [
                 'id'            => $key->id,
-                'nikPasien'     => $key->pasien->nik,
-                'nama'          => $key->pasien->nama_lengkap,
-                'jenisKelamin'  => $key->pasien->jk,
-                'golonganDarah' => $key->pasien->gd,
-                'agama'         => $key->pasien->ag,
+                'nikPasien'     => $key->penjamin->pasien->id,
+                'nama'          => $key->penjamin->pasien->nama_lengkap,
+                'jenisKelamin'  => $key->penjamin->pasien->jk,
+                'golonganDarah' => $key->penjamin->pasien->gd,
+                'agama'         => $key->penjamin->pasien->ag,
                 'poli'          => $key->poli->nama,
                 'tanggalDaftar' => $key->tgl_daftar,
-                'asuransi'      => $key->pasien()->get()->map(function($value){
-                    return [
-                                'as' => $value->penjamin()->get()->map(function($l){
-                                    return [
-                                        'ap' =>$l->asuransi->nama,
-                                    ];
-                                }),
-                            ];
-                }),
-                'alamat'        => $key->pasien()->get()->map(function($value){
-                    return [
-                                'id' => $value->alamatpasien()->get()->map(function($m){
-                                    return [
-                                         'provinsi' => $m->prvns->name,
-                                        'kabupaten' => $m->kbptn->name,
-                                        'kecamatan' => $m->kcmtn->name,
-                                        'kelurahan' => $m->klrhn->name,
-                                        'alamat'    => $m->alamat,
-                                    ];
-                                }),
-                            ];
-                }),
+                'asuransi'      => $key->penjamin->asuransi->nama,
+                'provinsi'      => $key->penjamin->pasien->alamatpasien->prvns->name,
+                'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
+                'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
+                'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
+                
                 
             ];
         });
-
-        // $penjamin = alamatPasien::get()->map(function($key){
-        //     return [
-        //         'id' => $key->kcmtn->name
-        //     ];
-        // });
         
-        // return Datatables::of($listPasien)->make(true);
-        return response()->json($listPasien);
+        return Datatables::of($listPasien)->make(true);
+        //return response()->json($listPasien);
     }
     public function tambahPendaftaran(Request $request){
         //dd($request);
@@ -82,8 +60,17 @@ class PendaftaranController extends Controller
          }
          //dd($nomor);
 
+         $alamat = new alamatPasien;
+         $alamat->alamat = $request->input('alamat');
+         $alamat->kelurahan = $request->input('kelurahan');
+         $alamat->kecamatan = $request->input('kecamatan');
+         $alamat->provinsi = $request->input('provinsi');
+         $alamat->kabupaten = $request->input('kota');
+         $alamat->save();
+
         $pasien = new pasien;
         $pasien->nik = $request->input('nik');
+        $pasien->alamat_pasien = $alamat->id;
         $pasien->nama_lengkap = $request->input('namaLengkap');
         $pasien->tempat_lahir = $request->input('tempatLahir');
         $pasien->tanggal_lahir = $request->input('tanggalLahir');
@@ -109,21 +96,14 @@ class PendaftaranController extends Controller
         $penjamin->save();
 
         $pendaftaran = new pendaftaran;
-        $pendaftaran->id_pasien = $pasien->id;
+        $pendaftaran->id_penjamin = $penjamin->id;
         $pendaftaran->id_tipe_poli = $request->input('poli');
         $pendaftaran->no_daftar = $nomor;
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
         $pendaftaran->save();
 
-        $alamat = new alamatPasien;
-        $alamat->id_pasien = $pasien->id;
-        $alamat->alamat = $request->input('alamat');
-        $alamat->kelurahan = $request->input('kelurahan');
-        $alamat->kecamatan = $request->input('kecamatan');
-        $alamat->provinsi = $request->input('provinsi');
-        $alamat->kabupaten = $request->input('kota');
-        $alamat->save();
+        
 
 
 

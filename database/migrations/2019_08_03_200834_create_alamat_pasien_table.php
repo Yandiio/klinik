@@ -15,7 +15,6 @@ class CreateAlamatPasienTable extends Migration
     {
         Schema::create('alamat_pasien', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_pasien')->unsigned();
             $table->string('alamat');
             $table->string('kelurahan');
             $table->string('kecamatan');
@@ -24,7 +23,7 @@ class CreateAlamatPasienTable extends Migration
             $table->timestamps();
 
 
-            $table->foreign('id_pasien')->references('id')->on('pasien');
+            
         });
     }
 

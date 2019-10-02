@@ -166,27 +166,24 @@
                 },
                 {
                     data: 'asuransi',
-                    render: function (data, type, row, meta) {
-                        console.log(row.alamat[0]['id'][0]);
-                        // return $.each(row.asuransi,function(index,value){
-                        //       //console.log(index);
-                        //         return $.each(index,function(k,l){
-                        //             // $.each(index,function(m,n){
-                        //             //     console.log(n);
-                        //             // })
-                        //         })
-                        // })
-                        // return data[0][id][0][asuransi];
-                    }
+                    nama: 'asuransi'
                     
+                },
+                {
+                    data: 'nikPasien',
+                    name: 'nikPasien'
                 },
                 {
                     data: 'nama',
                     name: 'nama'
                 },
                 {
-                    data: 'id',
-                    name: 'id'
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
+                    data: 'tanggalDaftar',
+                    name: 'tanggalDaftar'
                 },
                 {
                     data: 'id',
@@ -196,28 +193,7 @@
                     data: 'id',
                     name: 'id'
                 },
-                {
-                    data: 'id',
-                    name: 'id'
-                },
-                {
-                    data: 'id',
-                    name: 'id'
-                },
-                // {
-                //     data: 'id',
-                //     render: function (data, type, row) {
-                //         // console.log(type);
-                //         let buttonEdit =
-                //             '<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#myModalEdit" onclick="buttonEdit(' +
-                //             data + ')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-                //         let buttonHapus =
-                //             '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
-                //             data +
-                //             ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-                //         return buttonEdit + buttonHapus;
-                //     }
-                // }
+               
             ]
         });
 
