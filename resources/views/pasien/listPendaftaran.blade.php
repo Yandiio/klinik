@@ -187,12 +187,23 @@
                 },
                 {
                     data: 'id',
-                    name: 'id'
+                    render: function (data, type, row) {
+                        // console.log(type);
+                        let buttonEdit =
+                            '<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href=""> <i class="fa fa-edit" aria-hidden="true"></i> </a>';
+                        return buttonEdit;
+                    }
                 },
                 {
                     data: 'id',
-                    name: 'id'
+                    render: function (data, type, row) {
+                        // console.log(type);
+                        let buttondaftarUlang =
+                            '<a class="btn-sm btn-success" title="Pendaftaran ulang !"style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>';
+                        return buttondaftarUlang;
+                    }
                 },
+                
                
             ]
         });

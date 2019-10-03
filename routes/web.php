@@ -50,11 +50,13 @@ route::get('pasien/tipe-asuransi/delete','Pasien\TipeAsuransiController@deleteTi
 
 route::get('pasien/list-pendaftaran/list','Pasien\PendaftaranController@pendaftaranList')->name('list_pendaftaran');
 route::post('pasien/input-pendaftaran','Pasien\PendaftaranController@tambahPendaftaran')->name('input_pendaftaran');
+route::get('print','Pasien\PendaftaranController@print')->name('print_pendaftaran');
 
 route::get('provinsi','LokasiController@getProvinsi')->name('get_provinsi');
 route::get('kota','LokasiController@getKota')->name('get_kota');
 route::get('kecamatan','LokasiController@getKecamatan')->name('get_kecamatan');
 route::get('kelurahan','LokasiController@getKelurahan')->name('get_kelurahan');
+
 
 
 /* =========================================== pasien ===================================== */

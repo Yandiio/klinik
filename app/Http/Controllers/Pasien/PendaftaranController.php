@@ -13,6 +13,8 @@ use App\Model\penjamin;
 use App\Model\pendaftaran;
 use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
+use Dompdf\Dompdf;
+use PDF;
 
 
 
@@ -110,7 +112,16 @@ class PendaftaranController extends Controller
 
 
 
-        return response($request);
+        return response()->json($pendaftaran->id);
     }
     
+    public function print(Request $request){
+       
+        $nomer = pendaftaran::find($request->id);
+
+        //dd($soaja);
+        // $dompdf = new Dompdf();
+        $dompdf = PDF::loadView('print.printnomer',['nomer' => $nomer ]);
+        return $dompdf->stream();
+    }
 }
