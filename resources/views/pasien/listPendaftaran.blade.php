@@ -28,7 +28,7 @@
                 <div class="card-body">
                     <h4 class="card-title">List Pendaftaran</h4>
                     <!-- <h6 class="card-subtitle">Export data to Copy, CSV, Excel, PDF & Print</h6> -->
-                    <a href="{{url('pasien/tambah-pendaftaran')}}" class="btn btn-success float-right "
+                    <a href="{{url('pasien/tambah-pendaftaran')}}" class="btn btn-primary float-right "
                         style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Daftar <i
                             class="fa fa-plus"></i></a>
                     <br>
@@ -124,6 +124,82 @@
         </div>
     </div>
 
+    <!-- modal tambah -->
+    <div class="modal" id="modalTambah">
+        <div class="modal-dialog modal-block">
+            <div class="modal-content  ">
+                <!-- Modal Header -->
+                <div class="modal-header card-header">
+                    <h2 class="card-title" id="judul">Detail Pasien</h2>
+                    <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+                </div>
+                <form method="POST" id="formTambah">
+                    @csrf
+                    <div class="modal-body">
+                        <ul class="list-unstyled search-results-list">
+                            <li>
+                                <p class="result-type">
+                                    <span class="badge badge-primary">PASIEN</span>
+                                </p>
+                                <div class="result-data">
+                                    <p class="h3 title text-primary" id="nama">Calendar</p>
+                                    <p class="description">
+                                        <small id="jenisKelamin">Laki2</small>
+                                        <br>
+                                        <small id="usia">25 Thn</small>
+                                        <br>
+                                        <small id="tempatLahir">Bekasi, </small> &nbsp<small id="tanggalLahir">25 agustus
+                                            1989</small>
+                                    </p>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Kota :</td>
+                                                <td id="kota">Dki Jakarta</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Provinsi :</td>
+                                                <td id="provinsi">Dki Jakarta</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kelurahan:</td>
+                                                <td id="kelurahan">Dki Jakarta</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Kecamatan :</td>
+                                                <td id="kecamatan">Dki Jakarta</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="h4 title" id="alamat">Calendar</p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="cancel">Kembali</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- modal tambah -->
 </section>
 @endsection
 @section('css')
@@ -147,10 +223,10 @@
 
 
 <script>
-	var oTable;
+    var oTable;
 
     $(document).ready(function () {
-        
+
         oTable = $('#listPendaftaran').DataTable({
             responsive: true,
             processing: true,
@@ -167,7 +243,7 @@
                 {
                     data: 'asuransi',
                     nama: 'asuransi'
-                    
+
                 },
                 {
                     data: 'nikPasien',
@@ -190,7 +266,8 @@
                     render: function (data, type, row) {
                         // console.log(type);
                         let buttonEdit =
-                            '<a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href=""> <i class="fa fa-edit" aria-hidden="true"></i> </a>';
+                            ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
+                            row.id + ')"><i class="fa fa-eye"></i></button>';
                         return buttonEdit;
                     }
                 },
@@ -198,18 +275,50 @@
                     data: 'id',
                     render: function (data, type, row) {
                         // console.log(type);
+                        var url = '{{ url("pasien/edit-pendaftaran", "id") }}';
+                        url = url.replace('id', row.id);
                         let buttondaftarUlang =
-                            '<a class="btn-sm btn-success" title="Pendaftaran ulang !"style="margin-right:5px" href="{{ url('pasien/edit-pendaftaran') }}"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>';
+                            '<a class="btn-sm btn-success" title="Pendaftaran ulang !"style="margin-right:5px" href="' +
+                            url +
+                            '"> <i class="fas fa-plus-square" aria-hidden="true"></i> Daftar</a>';
                         return buttondaftarUlang;
                     }
                 },
-                
-               
+
+
             ]
         });
 
     });
 
-</script>
+    function buttonView(idEdit) {
 
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{route('detail_pendaftaran')}}",
+            data: {
+                id: idEdit
+            },
+            success: function (data) {
+                console.log(data[0]);
+
+                $('#nama').text(data[0].nama);
+                $('#jenisKelamin').text(data[0].jenisKelamin);
+                $('#kota').text(data[0].kabupaten);
+                $('#kecamatan').text(data[0].kecamatan);
+                $('#kelrahan').text(data[0].kelurahan);
+                $('#usia').text(data[0].usia);
+                $('#alamat').text(data[0].alamat);
+            }
+        });
+
+    }
+
+</script>
 @stop
