@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(tipeAsuransiSeeder::class);
         //$this->call(hubunganSeeder::class);
         //$this->call(laboratoriumSeeder::class);
-        //$this->call(diagnosaSeeder::class);
+        $this->call(DiagnosaSeeder::class);
     }
 }

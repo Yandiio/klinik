@@ -17,12 +17,10 @@
                 <li><span>Labortorium</span></li>
                 <li><span>Diagnosa</span></li>
             </ol>
-    
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
         </header>
         <!-- header atas -->
-        
         <div class="row">
 			<div class="col-lg-12">
 				<section class="card">
@@ -36,14 +34,12 @@
                     </header>
                     <div class="card">
                         <div class="card-body">
-                            <button type="button"  href="#modalMD" class="btn btn-success modal-sizes float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
-                                    Tambah 
-                                <i class="fa fa-plus"></i>
-                            </button>
-                            
-                            
+							<button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-bottom: 10px">
+									Tambah
+									<i class="fa fa-plus"></i>
+							</button>
                             <div class="table-responsive m-t-40">
-                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                <table id="tableAjaxDiagnosaList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
 											<th width="5%">No</th>
@@ -64,34 +60,11 @@
                                     </tfoot>
                                     <tbody>
 											<tr>
-												<td >1</td>
-												<td>Demam</td>
-												<td>Beayukugan</td>
-												<td>blabla</td>
-												<td>
-													<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-													<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-												</td>  
-											</tr>
-											<tr>
-												<td >2</td>
-												<td>Pilek</td>
-												<td>awakening</td>
-												<td>bla bla</td>
-												<td>
-												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-													<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-												</td>  
-											</tr>
-											<tr>
-												<td >3</td>
-												<td>Kutu air</td>
-												<td>amaterasu</td>
-												<td>ahsdha</td>
-												<td>
-												<button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-													<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-												</td>  
+												<td ></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
 											</tr>
                                     </tbody>
                                 </table>
@@ -102,85 +75,101 @@
 		    </div>
         <!-- bagian body -->
                 <!-- bagian body -->
-        <!-- modal tambah -->
-        <div id="modalMD" class="modal-block modal-header-color modal-block-success mfp-hide">
-			<section class="card">
-				<header class="card-header">
-					<h2 class="card-title">Diagnosa</h2>
-				</header>
-				<div class="card-body">
-					<div class="modal-wrapper">
-						<div class="modal-text">
-							<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Nama Diagnosa" required/>	    
-						</div>
-						<br>
-						<div class="modal-text">
-							<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Hasil diagnosa" required/>
-						</div>
-						<br>
-						<div class="modal-text">
-							<label class="control-label">Keterangan <span class="required"></span></label>	
-							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
-						</div>
-					</div>
-				</div>
-				<footer class="card-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-default modal-dismiss">Batal</button>
-							<button type="submit" class="btn btn-success modal-confirm">Simpan</button>
-						</div>
-					</div>
-				</footer>
-			</section>
-		</div>
 		<!-- modal tambah -->
-		<!-- modal Edit -->
-		<div id="modalMDEdit" class="modal-block modal-header-color modal-block-success mfp-hide">
-			<section class="card">
-				<header class="card-header">
-					<h2 class="card-title">Diagnosa</h2>
-				</header>
-				<div class="card-body">
-					<div class="modal-wrapper">
-						<div class="modal-text">
-							<label class="control-label">Nama Diagnosa <span class="required">*</span></label>	
-							<input type="text" name="fullname" class="form-control" placeholder="Tipe Pendaftaran" required/>	    
-						</div>
-						<br>
-						<!-- <div class="modal-text">
-							<label class="control-label">Harga <span class="required">*</span></label>	
-							<div class="input-group ">
-								<div class="input-group">
-									<span class="input-group-append">
-										<span class="input-group-text">
-										Rp	
-										</span>
-									</span>
-									<input type="number" class="form-control" placeholder="Harga">
-										
-								</div>
-							</div>	        
-						</div>
-						<br> -->
-						<div class="modal-text">
-							<label class="control-label">Keterangan <span class="required">*</span></label>	
-							<textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
+		<div class="modal" id="modalTambah">
+			<div class="modal-dialog modal-block">
+				<div class="modal-content  ">
+					<!-- Modal Header -->
+					<div class="modal-header card-header">
+						<h2 class="card-title" id="judul">Tambah Diagnosa</h2>
+						<button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+					</div>
+					<form method="POST" id="formTambah">
+						@csrf
+					<div class="modal-body">
+						<div class="modal-wrapper">
+							<div class="modal-text">
+								<label class="control-label">Kode diagnosa <span class="required">*</span></label>	
+								<input type="text" name="NewKode" class="form-control" placeholder="Kode Diagnosa" required/>	    
+							</div>
+							<div class="modal-text">
+								<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
+								<input type="text" name="NewNama" class="form-control" placeholder="Nama Diagnosa" required/>	    
+							</div>
+							<br>
+							<div class="modal-text">
+								<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
+								<input type="text" name="NewHasil" class="form-control" placeholder="Hasil diagnosa" required/>
+							</div>
+							<br>
+							<div class="modal-text">
+								<label class="control-label">Keterangan <span class="required"></span></label>	
+								<textarea class="form-control" name="NewKeterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
+							</div>
 						</div>
 					</div>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" id="cancel">Kembali</button>
+							</div>
+						</div>
+					</div>
+					</form>
 				</div>
-				<footer class="card-footer">
-					<div class="row">
-						<div class="col-md-12 text-right">
-							<button class="btn btn-default modal-dismiss">Batal</button>
-							<button type="submit" class="btn btn-success modal-confirm">Simpan</button>
+			</div>
+		</div>
+
+        <!-- modal Edit -->
+		<div class="modal" id="modalUbah">
+			<div class="modal-dialog modal-block">
+				<div class="modal-content  ">
+					<!-- Modal Header -->
+					<div class="modal-header card-header">
+						<h2 class="card-title" id="judul">Edit Diagnosa</h2>
+						<button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+					</div>
+					<form method="POST" id="formUpdate">
+						@csrf
+					<div class="modal-body">
+						<div class="modal-wrapper">
+							<div class="modal-text">
+								<label class="control-label">Kode diagnosa <span class="required">*</span></label>	
+								<input type="text" name="editKode" class="form-control" required/>	
+								<input id="editId" type="hidden" name="id" class="form-control" required />    
+							</div>
+							<div class="modal-text">
+								<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
+								<input type="text" name="editNama" class="form-control" required/>	    
+							</div>
+							<br>
+							<div class="modal-text">
+								<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
+								<input type="text" name="editHasil" class="form-control" required/>
+							</div>
+							<br>
+							<div class="modal-text">
+								<label class="control-label">Keterangan <span class="required"></span></label>	
+								<textarea class="form-control" name="editKeterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
+							</div>
 						</div>
 					</div>
-				</footer>
-			</section>
+					<div class="modal-footer">
+						<div class="row">
+							<div class="col-md-12 text-right">
+								<button type="submit" class="btn btn-primary" id="saveEdit">Update</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal" id="cancelEdit">Kembali</button>
+							</div>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
 		</div>
+		
+
+
 </section>
 @endsection
 @section('css')
@@ -188,60 +177,164 @@
 
 @stop
 @section('script')
+<!-- This is data table -->
+<script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+<!-- start - This is for export functionality only -->
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
- <!-- This is data table -->
- <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
- <!-- start - This is for export functionality only -->
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
- <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
- <!-- end - This is for export functionality only -->
- <script>
- $(function() {
-     $('#myTable').DataTable();
-     $(function() {
-         var table = $('#example').DataTable({
-             "columnDefs": [{
-                 "visible": false,
-                 "targets": 2
-             }],
-             "order": [
-                 [2, 'asc']
-             ],
-             "displayLength": 25,
-             "drawCallback": function(settings) {
-                 var api = this.api();
-                 var rows = api.rows({
-                     page: 'current'
-                 }).nodes();
-                 var last = null;
-                 api.column(2, {
-                     page: 'current'
-                 }).data().each(function(group, i) {
-                     if (last !== group) {
-                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                         last = group;
-                     }
-                 });
-             }
-         });
-         // Order by the grouping
-         $('#example tbody').on('click', 'tr.group', function() {
-             var currentOrder = table.order()[0];
-             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                 table.order([2, 'desc']).draw();
-             } else {
-                 table.order([2, 'asc']).draw();
-             }
-         });
-     });
- });
- 
- </script> 
+<script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
+<script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
+<script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<!-- end - This is for export functionality only -->
+<script>
+var oTableListDiagnosa;
+	
+	function closeModal() {
+        $('#cancelEdit').click();
+        $('#cancel').click();
+        $('#formTambah').trigger("reset");
+    }
 
+	$(document).ready(function(){
+		oTableListDiagnosa = $('#tableAjaxDiagnosaList').DataTable({
+			responsive: true,
+			processing: true,
+			serverSide: true,
+			ajax: "{{route('Diagnosa_getList')}}",
+			columns: [
+				{ data: 'kode_diagnosa', name: 'kode_diagnosa'},
+				{ data: 'nama', name: 'nama' },
+				{ data: 'hasil_diagnosa', name: 'hasil_diagnosa' },
+				{ data: 'keterangan', name: 'keterangan' },
+				{ data: 'id',
+					render: function (data, type, row) {
+						// console.log(type);
+						let buttonEdit =
+							'<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#modalUbah" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+						let buttonHapus =
+							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
+							data +
+							');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+						return buttonEdit + buttonHapus;
+					}
+				}
+			]
+		});
+	});
+
+	/* ------------------- Function Input Start ---------------- */
+	$('#formTambah').on('submit', function (e) {
+		e.preventDefault();
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $("input[name='_token']").val()
+			}
+		});
+		$.ajax({
+			type: "POST",
+			url: "{{ route('Diagnosa_postInput')}}",
+			data: $(this).serialize(),
+			success: function (response) {
+				closeModal();
+				new PNotify({
+					title: 'Regular Notice',
+					text: 'Check me out! I\'m a notice.',
+					type: 'success'
+				});
+			oTableListDiagnosa.ajax.reload();
+			}
+		});
+	});
+	/* ------------------- Function Input End ---------------- */
+
+	/* ------------------- Function Edit Start ---------------- */
+	function buttonEdit(idEdit) {
+		//console.log(idEdit);
+        $.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN' : $("input[name='_token']").val()
+			}
+		});
+		$.ajax({
+			type: "GET",
+			url: "{{route('Diagnosa_getEdit')}}",
+			data: {id:idEdit},
+            success: function (data) {
+				//console.log(data);
+				$('#editId').val(data.id);
+				$('#editKode').val(data.kode_diagnosa);
+				$('#editNama').val(data.nama);
+				$('#editHasil').val(data.hasil_diagnosa);
+				$('#editKeterangan').val(data.keterangan);
+			}
+		});
+	}
+	/* ------------------- Function Edit End ---------------- */
+
+	/* ------------------- Function Update Start ------------- */
+	$('#formUpdate').on("submit", function (e) {
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
+        $.ajax({
+            type: "POST",
+            url: "{{route('Diagnosa_postUpdate')}}",
+            data: $('#formUpdate').serialize(),
+            success: function (data) {
+                closeModal();
+                new PNotify({
+                    title: 'Regular Notice',
+                    text: 'Check me out! I\'m a notice.',
+                    type: 'success'
+                });
+				oTableListDiagnosa.ajax.reload();
+            }
+        });
+    });
+	/* ------------------- Function Update End ------------- */
+
+	/* ------------------- Function Delete Start ---------------- */
+	function buttonDelete(idDelete) {
+		bootbox.confirm({
+			message: "Apakah anda yakin ingin menghapus ?",
+			buttons: {
+				confirm: {
+					label: 'Ya, Saya ingin menghapus',
+					className: 'btn-success'
+				},
+				cancel: {
+					label: 'Tidak',
+					className: 'btn-danger'
+				}
+			},
+			callback: function (result) {
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN' : $("input[name='_token']").val()
+					}
+				});
+				$.ajax({
+					type: "POST",
+					url: "{{route('Diagnosa_postDelete')}}",
+					data: {
+						id: idDelete
+					},
+					success: function (data) {
+						//console.log(data);
+						oTableListDiagnosa.ajax.reload();
+						new PNotify({
+							title: 'Hapus',
+							text: 'Berhasil hapus',
+							type: 'success',
+						});
+					}
+				});
+			}
+		});
+	}
+	/* ------------------- Function Delete Start --------------*/
+
+</script> 
 @stop

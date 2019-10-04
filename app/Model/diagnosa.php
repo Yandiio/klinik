@@ -9,7 +9,8 @@ class diagnosa extends Model
     //
     protected $table = 'diagnosa';
     public $fillable = [ 
-        'id', 
+        'id',
+        'kode_diagnosa',
         'nama',
         'hasil_diagnosa',
         'keterangan'

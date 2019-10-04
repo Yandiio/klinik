@@ -102,9 +102,16 @@ route::get('rekam-medis/tambah-rekam-medis',function(){
 route::get('rekam-medis/detail-rekam-medis',function(){
     return view('rekamMedis.detailRekamMedis');
 });
+
 route::get('rekam-medis/diagnosa',function(){
     return view('rekamMedis.diagnosa');
 });
+
+route::get('rekam-medis/diagnosa/list', 'rekamMedis\DiagnosaController@getDiagnosa_List')->name('Diagnosa_getList');
+route::post('rekam-medis/diagnosa/tambah', 'rekamMedis\DiagnosaController@postDiagnosa_Input')->name('Diagnosa_postInput');
+route::get('rekam-medis/diagnosa/ubah', 'rekamMedis\DiagnosaController@getDiagnosa_Edit')->name('Diagnosa_getEdit');
+route::post('rekam-medis/diagnosa/perbarui', 'rekamMedis\DiagnosaController@postDiagnosa_Update')->name('Diagnosa_postUpdate');
+route::post('rekam-medis/diagnosa/hapus', 'rekamMedis\DiagnosaController@postDiagnosa_Delete')->name('Diagnosa_postDelete');
 
 route::get('rekam-medis/laboratorium',function(){
     return view('rekamMedis.laboratorium');

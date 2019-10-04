@@ -31,7 +31,7 @@ class tipePoliController extends Controller
     }
 
     public function gettipePoli_Edit(Request $request)  {
-        // dd($request);
+        dd($request);
         $poli = tipePoli::find($request->id);
         return response()->json($poli);
     }

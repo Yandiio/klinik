@@ -108,58 +108,96 @@
 @stop
 @section('script')
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
- <!-- This is data table -->
- <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
- <!-- start - This is for export functionality only -->
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
- <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
- <!-- end - This is for export functionality only -->
- <script>
- $(function() {
-     $('#myTable').DataTable();
-     $(function() {
-         var table = $('#example').DataTable({
-             "columnDefs": [{
-                 "visible": false,
-                 "targets": 2
-             }],
-             "order": [
-                 [2, 'asc']
-             ],
-             "displayLength": 25,
-             "drawCallback": function(settings) {
-                 var api = this.api();
-                 var rows = api.rows({
-                     page: 'current'
-                 }).nodes();
-                 var last = null;
-                 api.column(2, {
-                     page: 'current'
-                 }).data().each(function(group, i) {
-                     if (last !== group) {
-                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                         last = group;
-                     }
-                 });
-             }
-         });
-         // Order by the grouping
-         $('#example tbody').on('click', 'tr.group', function() {
-             var currentOrder = table.order()[0];
-             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                 table.order([2, 'desc']).draw();
-             } else {
-                 table.order([2, 'asc']).draw();
-             }
-         });
-     });
- });
+<!-- This is data table -->
+<script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+<!-- start - This is for export functionality only -->
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+<!-- end - This is for export functionality only -->
+<script>
+    // var oTableListDokter;
+	
+	// function closeModal() {
+    //     $('#cancelEdit').click();
+    //     $('#cancel').click();
+    //     $('#formTambah').trigger("reset");
+    // }
+
+	// $(document).ready(function(){
+	// 	oTableListDokter = $('#tabelAjaxtipeDokter').DataTable({
+	// 		responsive: true,
+	// 		processing: true,
+	// 		serverSide: true,
+	// 		ajax: "#",
+	// 		columns: [
+	// 			{ data: 'id',
+	// 				render: function (data, type, row, meta) {
+	// 					return meta.row + meta.settings._iDisplayStart + 1;
+	// 					}
+	// 				},
+	// 			{ data: 'nama', name: 'nama' },
+	// 			{ data: 'id',
+	// 				render: function (data, type, row) {
+	// 					// console.log(type);
+	// 					let buttonEdit =
+	// 						'<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#modalUbah" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+	// 					let buttonHapus =
+	// 						'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
+	// 						data +
+	// 						');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+	// 					return buttonEdit + buttonHapus;
+	// 				}
+	// 			}
+	// 		]
+	// 	});
+	// });
+
+
+//  $(function() {
+//      $('#myTable').DataTable();
+//      $(function() {
+//          var table = $('#example').DataTable({
+//              "columnDefs": [{
+//                  "visible": false,
+//                  "targets": 2
+//              }],
+//              "order": [
+//                  [2, 'asc']
+//              ],
+//              "displayLength": 25,
+//              "drawCallback": function(settings) {
+//                  var api = this.api();
+//                  var rows = api.rows({
+//                      page: 'current'
+//                  }).nodes();
+//                  var last = null;
+//                  api.column(2, {
+//                      page: 'current'
+//                  }).data().each(function(group, i) {
+//                      if (last !== group) {
+//                          $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+//                          last = group;
+//                      }
+//                  });
+//              }
+//          });
+//          // Order by the grouping
+//          $('#example tbody').on('click', 'tr.group', function() {
+//              var currentOrder = table.order()[0];
+//              if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+//                  table.order([2, 'desc']).draw();
+//              } else {
+//                  table.order([2, 'asc']).draw();
+//              }
+//          });
+//      });
+//  });
  
  </script> 
 
