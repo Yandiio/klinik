@@ -19,8 +19,8 @@ class pendaftaran extends Model
     public $timestamps = true;
 
 
-    public function pasien(){
-        return $this->belongsTo('App\Model\pasien', 'id_pasien', 'id');
+    public function penjamin(){
+        return $this->belongsTo('App\Model\penjamin', 'id_penjamin', 'id');
     }
     public function poli(){
         return $this->belongsTo('App\Model\tipePoli', 'id_tipe_poli', 'id');

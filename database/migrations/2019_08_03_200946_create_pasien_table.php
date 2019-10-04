@@ -15,6 +15,7 @@ class CreatePasienTable extends Migration
     {
         Schema::create('pasien', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('alamat_pasien')->unsigned();
             $table->string('nik');
             $table->string('nama_lengkap');
             $table->string('tempat_lahir');
@@ -25,6 +26,9 @@ class CreatePasienTable extends Migration
             $table->string('golongan_darah')->nullable();
             $table->string('agama');
             $table->timestamps();
+
+            
+            $table->foreign('alamat_pasien')->references('id')->on('alamat_pasien');
 
 
             

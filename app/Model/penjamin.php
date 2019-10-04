@@ -11,19 +11,20 @@ class penjamin extends Model
     protected $table = 'penjamin';
     public $fillable = [ 
         'id', 
+        'id_pasien',
         'id_tipe_asuransi',
-        'id_hubungan',
         'nik',
         'nama_lengkap',
         'telepone',
         'hp',
         'no_polis',
         'tanggal_akhir_polis',
-        'keterangan'
+        'keterangan',
+        'hubungan'
     ];
     public $timestamps = true;
-    protected $appends = ['hubungan'];
-    protected $agama = [
+    protected $appends = ['hbn'];
+    protected $hbn = [
         '0' => 'Pribadi',
         '1' => 'Bapak',
         '2' => 'Ibu',
@@ -36,6 +37,13 @@ class penjamin extends Model
 
 
     public function pasien(){
-        return $this->hasMany('App\Model\pasien', 'id_pasien', 'id');
+        return $this->belongsTo('App\Model\pasien', 'id_pasien', 'id');
+    }
+    public function asuransi(){
+        return $this->belongsTo('App\Model\tipeAsuransi', 'id_tipe_asuransi', 'id');
+    }
+
+    public function getHbnAttribute(){
+        return $this->hbn[$this->hubungan];
     }
 }

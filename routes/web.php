@@ -28,14 +28,12 @@ route::get('/',function(){
 
 route::get('pasien/list-pendaftaran',function(){
     return view('pasien.listPendaftaran');
-});
+})->name('daftar_tampil');
 
 route::get('pasien/tambah-pendaftaran',function(){
     return view('pasien.tambahPendaftaran');
 });
-route::get('pasien/edit-pendaftaran',function(){
-    return view('pasien.editPendaftaran');
-});
+
 route::get('pasien/tipe-asuransi',function(){
     return view('pasien.tipeAsuransi');
 });
@@ -49,12 +47,18 @@ route::get('pasien/tipe-asuransi/delete','Pasien\TipeAsuransiController@deleteTi
 
 
 route::get('pasien/list-pendaftaran/list','Pasien\PendaftaranController@pendaftaranList')->name('list_pendaftaran');
+route::get('pasien/list-pendaftaran/detail','Pasien\PendaftaranController@pendaftaranDetail')->name('detail_pendaftaran');
 route::post('pasien/input-pendaftaran','Pasien\PendaftaranController@tambahPendaftaran')->name('input_pendaftaran');
+route::get('print','Pasien\PendaftaranController@print')->name('print_pendaftaran');
+route::get('pasien/edit-pendaftaran/{id}','Pasien\PendaftaranController@editPendaftaran')->name('edit_pendaftaran');
+route::post('pasien/update-pendaftaran','Pasien\PendaftaranController@updatePendaftaran')->name('update_pendaftaran');
+
 
 route::get('provinsi','LokasiController@getProvinsi')->name('get_provinsi');
 route::get('kota','LokasiController@getKota')->name('get_kota');
 route::get('kecamatan','LokasiController@getKecamatan')->name('get_kecamatan');
 route::get('kelurahan','LokasiController@getKelurahan')->name('get_kelurahan');
+
 
 
 /* =========================================== pasien ===================================== */

@@ -47,7 +47,7 @@
                         </li>
                     </ul>
                     <form action="#" id="formTambah" method="POST">
-                         @csrf
+                        @csrf
                         <div class="tab-content">
 
                             <div id="w2-account" class="tab-pane p-3 active">
@@ -61,7 +61,8 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="agama" id="agama" class="form-control form-control-sm mb-3" required>
+                                        <select name="agama" id="agama" class="form-control form-control-sm mb-3"
+                                            required>
                                             <option value="0">Agama</option>
                                             <option value="1">Islam</option>
                                             <option value="2">Kristen Protestan</option>
@@ -212,14 +213,14 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkapAs"
-                                            id="w2-first-name">
+                                        <input type="text" class="form-control form-control-sm mb-3"
+                                            name="namaLengkapAs" id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kode
                                         Karyawan<span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="kodeKaryawanAs"
-                                            id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3"
+                                            name="kodeKaryawanAs" id="w2-first-name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -254,8 +255,8 @@
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="date" 
-                                                class="form-control form-control-sm mb-3" name="tanggalAkhirPolisAs">
+                                            <input type="date" class="form-control form-control-sm mb-3"
+                                                name="tanggalAkhirPolisAs">
                                         </div>
                                     </div>
                                 </div>
@@ -264,8 +265,8 @@
                                         for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keteranganAs"
-                                            data-plugin-textarea-autosize></textarea>
+                                        <textarea class="form-control" rows="3" id="textareaAutosize"
+                                            name="keteranganAs" data-plugin-textarea-autosize></textarea>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Hubungan
                                         <span class="required">*</span></label>
@@ -297,7 +298,7 @@
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="date"  name="tanggalDaftar"
+                                            <input type="date" name="tanggalDaftar"
                                                 class="form-control form-control-sm mb-3">
                                         </div>
                                     </div>
@@ -509,7 +510,7 @@
             // },
             success: function (data) {
                 // the next thing you want to do 
-                
+
                 // $city.empty();
                 for (var i = 0; i < data.length; i++) {
                     $('#provinsi').append('<option id=' + data[i].id + ' value=' + data[i].id +
@@ -601,7 +602,8 @@
 
         });
     }
-    function dataPoli(){
+
+    function dataPoli() {
         $.ajax({
             type: "GET",
             url: "{{route('tipePoli_getData')}}",
@@ -618,9 +620,9 @@
 
         });
     }
-    
+
     $('#formTambah').on('submit', function (e) {
-        console.log("asdads");
+
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -634,17 +636,36 @@
             data: $(this).serialize(),
             success: function (data) {
 
-                console.log(data);
+                // console.log(data);
+                var id = data;
+                // window.location.href= "{{ route ('print_pendaftaran'),'_blank' }}";
                 new PNotify({
                     title: 'Regular Notice',
                     text: 'Check me out! I\'m a notice.',
                     type: 'success'
                 });
-                // oTable.ajax.reload();
+                print(data);
+                
+
             }
         });
     });
 
+    function print(idx){
+        console.log(idx)
+        $.ajax({
+                
+                type: "GET",
+                url: "{{ route('print_pendaftaran')}}",
+                data: {
+                    'id' : idx,
+                },
+                success: function (data) {
+
+
+                }
+            });
+    }
 
 </script>
 @stop
