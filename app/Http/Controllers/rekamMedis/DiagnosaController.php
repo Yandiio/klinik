@@ -45,5 +45,9 @@ class DiagnosaController extends Controller
         return response()->json($diag);
     }
 
-
+    public function postDiagnosa_Delete() {
+        $id = request()->input('id');
+        $diag = Diagnosa::find($id);
+        $diag->delete();
+    }
 }
