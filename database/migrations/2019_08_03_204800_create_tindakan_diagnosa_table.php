@@ -13,13 +13,12 @@ class CreateTindakanDiagnosaTable extends Migration
      */
     public function up()
     {
-        Schema::create('tindakan_diagnosa_', function (Blueprint $table) {
+        Schema::create('tindakan_diagnosa', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_rekam_medis')->unsigned();
             $table->integer('id_diagnosa')->unsigned();
             $table->timestamps();
 
-            $table->foreign('id_rekam_medis')->references('id')->on('rekam_medis');
+            
             $table->foreign('id_diagnosa')->references('id')->on('diagnosa');
             
         });
@@ -32,6 +31,6 @@ class CreateTindakanDiagnosaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tindakan_diagnosa_');
+        Schema::dropIfExists('tindakan_diagnosa');
     }
 }
