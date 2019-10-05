@@ -136,22 +136,22 @@
 						<div class="modal-wrapper">
 							<div class="modal-text">
 								<label class="control-label">Kode diagnosa <span class="required">*</span></label>	
-								<input type="text" name="editKode" class="form-control" required/>	
+								<input id= "editKode" type="text" name="editKode" class="form-control" required />	
 								<input id="editId" type="hidden" name="id" class="form-control" required />    
 							</div>
 							<div class="modal-text">
 								<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
-								<input type="text" name="editNama" class="form-control" required/>	    
+								<input type="text" name="editNama" class="form-control" id="editNama" required/>	    
 							</div>
 							<br>
 							<div class="modal-text">
 								<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
-								<input type="text" name="editHasil" class="form-control" required/>
+								<input type="text" name="editHasil" class="form-control" id="editHasil"required/>
 							</div>
 							<br>
 							<div class="modal-text">
 								<label class="control-label">Keterangan <span class="required"></span></label>	
-								<textarea class="form-control" name="editKeterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
+								<textarea class="form-control" rows="3" id="editKeterangan" name ="editKeterangan" textareaAutosize data-plugin-textarea-autosize></textarea>	    
 							</div>
 						</div>
 					</div>
@@ -248,7 +248,7 @@ var oTableListDiagnosa;
 
 	/* ------------------- Function Edit Start ---------------- */
 	function buttonEdit(idEdit) {
-		//console.log(idEdit);
+		// /console.log(idEdit);
         $.ajaxSetup({
 			headers: {
 				'X-CSRF-TOKEN' : $("input[name='_token']").val()
@@ -259,7 +259,7 @@ var oTableListDiagnosa;
 			url: "{{route('Diagnosa_getEdit')}}",
 			data: {id:idEdit},
             success: function (data) {
-				//console.log(data);
+			console.log(data);
 				$('#editId').val(data.id);
 				$('#editKode').val(data.kode_diagnosa);
 				$('#editNama').val(data.nama);

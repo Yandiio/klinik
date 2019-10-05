@@ -20,6 +20,7 @@ class DiagnosaController extends Controller
     }
 
     public function postDiagnosa_Input(Request $request) {
+        //dd($request);
         $diag = new Diagnosa;
         $diag->kode_diagnosa = $request->input('NewKode');
         $diag->nama = $request->input('NewNama');
@@ -29,18 +30,18 @@ class DiagnosaController extends Controller
     }
 
     public function getDiagnosa_Edit(Request $request) {
-        dd($request);
+        //dd($request);
         $diag = Diagnosa::find($request->id);
         return response()->json($diag);
     }
 
     public function postDiagnosa_Update(Request $request) {
-        dd($request);
+        // dd($request);
         $diag = Diagnosa::find($request->id);
-        $diag->kode_diagnosa = $request->input('NewKode');
-        $diag->nama = $request->input('NewNama');
-        $diag->hasil_diagnosa = $request->input('NewHasil');
-        $diag->keterangan = $request->input('NewKeterangan');
+        $diag->kode_diagnosa = $request->input('editKode');
+        $diag->nama = $request->input('editNama');
+        $diag->hasil_diagnosa = $request->input('editHasil');
+        $diag->keterangan = $request->input('editKeterangan');
         $diag->save();
         return response()->json($diag);
     }
