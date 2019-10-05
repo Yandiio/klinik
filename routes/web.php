@@ -121,7 +121,12 @@ route::get('rekam-medis/laboratorium',function(){
     return view('rekamMedis.laboratorium');
 });
 
-
+route::get('rekam-medis/laboratorium/list','rekamMedis\LabController@labList')->name('list_lab');
+route::get('rekam-medis/laboratorium/data','rekamMedis\LabController@getAsuransiData')->name('get_asuransi_data');
+route::post('rekam-medis/laboratorium/tambah','rekamMedis\LabController@postTipeAsuransi')->name('post_tipe_asuransi');
+route::get('rekam-medis/laboratorium/edit','rekamMedis\LabController@editTipeAsuransi')->name('edit_tipe_asuransi');
+route::post('rekam-medis/laboratorium/update','rekamMedis\LabController@updateTipeAsuransi')->name('update_tipe_asuransi');
+route::get('rekam-medis/laboratorium/delete','rekamMedis\LabController@deleteTipeAsuransi')->name('delete_tipe_asuransi');
 
 /* =========================================== Rekam Medis===================================== */
 

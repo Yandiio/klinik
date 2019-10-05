@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(PendaftaranSeeder::class);
         //$this->call(hubunganSeeder::class);
-        //$this->call(laboratoriumSeeder::class);
+        $this->call(laboratoriumSeeder::class);
         $this->call(DiagnosaSeeder::class);
     }
 }
