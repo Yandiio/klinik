@@ -41,14 +41,14 @@
                             
                             
                             <div class="table-responsive m-t-40">
-                                <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                                <table id="listRekamMedis" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Rekam Medis</th>
+                                            <th>No Daftar</th>
                                             <th>Tanggal</th>
                                             <th>Nama Pasien</th>
-                                            <th>Nama Dokter</th>
+                                            <th>Usia</th>
                                             <th>Poli</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
@@ -56,17 +56,17 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>No</th>
+                                        <th>No</th>
+                                            <th>No Daftar</th>
                                             <th>Tanggal</th>
-                                            <th>Rekam Medis</th>
                                             <th>Nama Pasien</th>
-                                            <th>Nama Dokter</th>
+                                            <th>Usia</th>
                                             <th>Poli</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
+                                    <!-- <tbody>
                                         <tr style="text-align:center">
                                             <td >1</td>
                                             <td>RM-001</td>
@@ -117,7 +117,7 @@
                                             </td>  
                                         </tr>
                                                     
-                                    </tbody>
+                                    </tbody> -->
                                 </table>
                             </div>
                         </div>
@@ -146,48 +146,113 @@
  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
  <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
  <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+ 
  <!-- end - This is for export functionality only -->
  <script>
- $(function() {
-     $('#myTable').DataTable();
-     $(function() {
-         var table = $('#example').DataTable({
-             "columnDefs": [{
-                 "visible": false,
-                 "targets": 2
-             }],
-             "order": [
-                 [2, 'asc']
-             ],
-             "displayLength": 25,
-             "drawCallback": function(settings) {
-                 var api = this.api();
-                 var rows = api.rows({
-                     page: 'current'
-                 }).nodes();
-                 var last = null;
-                 api.column(2, {
-                     page: 'current'
-                 }).data().each(function(group, i) {
-                     if (last !== group) {
-                         $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                         last = group;
-                     }
-                 });
-             }
-         });
-         // Order by the grouping
-         $('#example tbody').on('click', 'tr.group', function() {
-             var currentOrder = table.order()[0];
-             if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                 table.order([2, 'desc']).draw();
-             } else {
-                 table.order([2, 'asc']).draw();
-             }
-         });
-     });
- });
+    var oTable;
 
- </script> 
+    $(document).ready(function () {
+
+        oTable = $('#listRekamMedis').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('list_rekam_medis')}}",
+            columns: [
+
+                {
+                    data: 'id',
+                    render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+                {
+                    data: 'noDaftar',
+                    nama: 'noDaftar'
+
+                },
+                {
+                    data: 'tanggalDaftar',
+                    name: 'tanggalDaftar'
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'usia',
+                    name: 'usia'
+                },
+                {
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
+                    data: 'status',
+                    render: function (data, type, row) {
+                        if (row.status === "0") {
+                            let bagess = '<div class="badge badge-warning">Pending</div>';
+                            return bagess;
+                        } else if (row.status === "1") {
+                            let bagess = '<div class="badge badge-primary">sucess</div>';
+                            return bagess;
+                        } else {
+                            let bagess = '<div class="badge badge-success">NO</div>';
+                            return bagess;
+                        }
+                    }
+                },
+                {
+                    data: 'id',
+                    render: function (data, type, row) {
+                        // console.log(type);
+                        var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
+                        url = url.replace('id', row.id);
+                        let buttonMedis =
+                            ' <a class="btn-sm btn-primary" title="Buat Tindakan!" style="margin-right:5px" href="'+url+'"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>';
+                        let buttonView =
+                            ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
+                            row.id + ')"><i class="fa fa-eye"></i></button>';
+                        
+                        return  buttonView + buttonMedis  ;
+                    }
+                },
+
+
+            ]
+        });
+
+    });
+
+    function buttonView(idEdit) {
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{route('detail_pendaftaran')}}",
+            data: {
+                id: idEdit
+            },
+            success: function (data) {
+                console.log(data[0]);
+
+                $('#nama').text(data[0].nama);
+                $('#jenisKelamin').text(data[0].jenisKelamin);
+                $('#kota').text(data[0].kabupaten);
+                $('#kecamatan').text(data[0].kecamatan);
+                $('#kelrahan').text(data[0].kelurahan);
+                $('#usia').text(data[0].usia);
+                $('#alamat').text(data[0].alamat);
+            }
+        });
+
+    }
+
+</script>
 
 @stop

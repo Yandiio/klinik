@@ -86,15 +86,15 @@
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Nama Laboratorium <span class="required">*</span></label>
-                                <input id="name" type="text" name="name" class="form-control"
-                                    placeholder="Tipe Asuransi" required />
+                                <input id="name" type="text" name="nama" class="form-control"
+                                    placeholder="nama Laboratorium" required />
                                 <input id="id" type="hidden" name="id" class="form-control" placeholder=""
                                     required />
                             </div>
                             <br>
 							<div class="modal-text">
 								<label class="control-label">Keterangan <span class="required"></span></label>	
-								<textarea class="form-control" name="NewKeterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize placeholder="Keterangan Laboratorium"></textarea>	    
+								<textarea class="form-control" name="keterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize placeholder="Keterangan Laboratorium"></textarea>	    
 							</div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Nama Laboratorium<span class="required">*</span></label>
-                                <input id="editName" type="text" name="name" class="form-control"
+                                <input id="editName" type="text" name="editNama" class="form-control"
                                     placeholder="Nama Laboratorium" required />
                                 <input id="editId" type="hidden" name="id" class="form-control" placeholder="Nama Laboratorium"
                                     required />
@@ -229,7 +229,7 @@
 
 
     $('#formTambah').on('submit', function (e) {
-        console.log("asdads");
+        
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -239,7 +239,7 @@
 
         $.ajax({
             type: "POST",
-            url: "{{ route('post_tipe_asuransi')}}",
+            url: "{{ route('post_lab')}}",
             data: $(this).serialize(),
             success: function (response) {
 
@@ -264,7 +264,7 @@
         });
         $.ajax({
             type: "GET",
-            url: "{{route('edit_tipe_asuransi')}}",
+            url: "{{route('edit_lab')}}",
             data: {
                 id: idEdit
             },
@@ -289,7 +289,7 @@
         });
         $.ajax({
             type: "POST",
-            url: "{{route('update_tipe_asuransi')}}",
+            url: "{{route('update_lab')}}",
             data: $('#formUpdate').serialize(),
             success: function (data) {
                 closeModal();
@@ -329,7 +329,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "{{route('delete_tipe_asuransi')}}",
+                    url: "{{route('delete_lab')}}",
                     data: {
                         id: idDelete
                     },

@@ -122,12 +122,17 @@ route::get('rekam-medis/laboratorium',function(){
 });
 
 route::get('rekam-medis/laboratorium/list','rekamMedis\LabController@labList')->name('list_lab');
-route::get('rekam-medis/laboratorium/data','rekamMedis\LabController@getAsuransiData')->name('get_asuransi_data');
-route::post('rekam-medis/laboratorium/tambah','rekamMedis\LabController@postTipeAsuransi')->name('post_tipe_asuransi');
-route::get('rekam-medis/laboratorium/edit','rekamMedis\LabController@editTipeAsuransi')->name('edit_tipe_asuransi');
-route::post('rekam-medis/laboratorium/update','rekamMedis\LabController@updateTipeAsuransi')->name('update_tipe_asuransi');
-route::get('rekam-medis/laboratorium/delete','rekamMedis\LabController@deleteTipeAsuransi')->name('delete_tipe_asuransi');
+route::post('rekam-medis/laboratorium/tambah','rekamMedis\LabController@postLab')->name('post_lab');
+route::get('rekam-medis/laboratorium/edit','rekamMedis\LabController@editLab')->name('edit_lab');
+route::post('rekam-medis/laboratorium/update','rekamMedis\LabController@updateLab')->name('update_lab');
+route::get('rekam-medis/laboratorium/delete','rekamMedis\LabController@deleteLab')->name('delete_lab');
 
+
+route::get('rekam-medis/list-rekam-medis/list','rekamMedis\RekamMedisController@rekamMedisList')->name('list_rekam_medis');
+route::get('rekam-medis/list-rekam-medis/detail','rekamMedis\RekamMedisController@rekamMedisDetail')->name('detail_rekam_medis');
+route::post('rekam-medis/input-rekam-medis','rekamMedis\RekamMedisController@tambahrekamMedis')->name('input_rekam_medis');
+route::get('rekam-medis/edit-rekam-medis/{id}','rekamMedis\RekamMedisController@editrekamMedis')->name('edit_rekam_medis');
+route::post('rekam-medis/update-rekam-medis','rekamMedis\RekamMedisController@updaterekamMedis')->name('update_rekam_medis');
 /* =========================================== Rekam Medis===================================== */
 
 /* =========================================== Setting===================================== */

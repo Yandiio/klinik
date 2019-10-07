@@ -52,17 +52,15 @@
 
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">NO
-                                        Registrasi</label>
+                                        Pendafataran</label>
                                     <div class="col-sm-4">
-
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly" value="RE001">
+                                            id="w2-first-name" readonly="readonly" value="{{$daftar[0]->no_daftar}}">
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No
-                                        Rekam Medis <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly" value="ME001">
+                                            id="w2-first-name" readonly="readonly" value="{{$daftar[0]->poli->nama}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -70,14 +68,13 @@
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="234543452" disabled>
+                                            id="w2-first-name" placeholder="234543452" disabled value="{{$daftar[0]->penjamin->pasien->nik}}">
                                     </div>
 
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
-                                        Pasien <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Penjamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="BPJS" disabled>
+                                            id="w2-first-name" placeholder="BPJS" disabled value="{{$daftar[0]->penjamin->asuransi->nama}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -85,13 +82,13 @@
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="Helmay cahyadi" disabled>
+                                            id="w2-first-name" placeholder="Helmay cahyadi" disabled value="{{$daftar[0]->penjamin->pasien->nama_lengkap}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="23" disabled>
+                                            id="w2-first-name" placeholder="23" disabled value="{{$daftar[0]->penjamin->pasien->usia}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -99,13 +96,13 @@
                                         Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="Bekasi" disabled>
+                                            id="w2-first-name" placeholder="Bekasi" disabled value ="{{$daftar[0]->penjamin->pasien->tempat_lahir}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="B+" disabled>
+                                            id="w2-first-name" placeholder="B+" disabled value="{{$daftar[0]->penjamin->pasien->gd}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -119,7 +116,7 @@
                                                 </span>
                                             </span>
                                             <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3"
-                                                placeholder="23/07/2019" disabled>
+                                                placeholder="23/07/2019" disabled value= "{{$daftar[0]->penjamin->pasien->tanggal_lahir}}">
                                         </div>
 
                                     </div>
@@ -127,7 +124,7 @@
                                         Kelamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="Laki-Laki" disabled>
+                                            id="w2-first-name" placeholder="Laki-Laki" disabled value ="{{$daftar[0]->penjamin->pasien->jk}}">
                                     </div>
 
                                 </div>
@@ -142,15 +139,14 @@
                                                 </span>
                                             </span>
                                             <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3"
-                                                placeholder="23/07/2019" disabled>
+                                                placeholder="23/07/2019" disabled value ="{{$daftar[0]->tgl_daftar}}">
                                         </div>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keluhan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize"
-                                            data-plugin-textarea-autosize placeholder="Jl.kamelia rt 04 rw 05 Bekasi"
-                                            disabled></textarea>
+                                            data-plugin-textarea-autosize disabled value="{{$daftar[0]->keluhan}}"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +157,7 @@
                                         Rekam medis <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly" value="ME001">
+                                            id="w2-first-name" readonly="readonly" value="Auto">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Dokter
                                         <span class="required">*</span></label>
@@ -175,32 +171,32 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">
                                         Suhu Badan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="suhuBadan"
                                             id="w2-first-name" placeholder="suhu">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tekanan
                                         darah
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="tekananDarah"
                                             id="w2-first-name" placeholder="Tekanan Darah">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">
                                         Berat Badan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="beratBadan"
                                             id="w2-first-name" placeholder="Berat Badan">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tinngi
                                         badan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="tinggiBadan"
                                             id="w2-first-name" placeholder="Tinngi badan">
                                     </div>
                                 </div>
@@ -214,13 +210,13 @@
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3">
+                                            <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" name="tglTindakan">
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize"
+                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keterangan"
                                             data-plugin-textarea-autosize></textarea>
                                     </div>
                                 </div>  
@@ -426,51 +422,7 @@
 <script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
 <!-- <script src="{{asset('assets/js/examples/examples.datatables.editable.js')}}"></script>
 		<script src="{{asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script> -->
-<script>
-    $(document).ready(function () {
-        var i = 1;
-        $(this).on('click', '#addItem', function () {
-            i++;
 
-            // $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
-            $('#dynamic_field').append('<tr id="row' + i +
-                '"><td><a href="#" name="add" id="addItem" class="btn btn-default">+</a></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name" ></td><td><input type="Text" class="form-control" id="name"></td><td><input type="number" class="form-control" placeholder="Sirup" id="name" disabled></td><td><input type="number" class="form-control"  id="name"></td><td><input type="number" class="form-control"  id="name"></td><td><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><a href="#" name="add" id="' +
-                i + '" class="btn btn-danger btn-remove">x</a></td></tr>');
-        });
-        $(document).on('click', '.btn-remove', function () {
-            var button_id = $(this).attr("id");
-            $('#row' + button_id + '').remove();
-
-        });
-        $(this).on('click', '#tindakanTambah', function () {
-
-            i++;
-
-
-            // $('#dynamic_field').append('<tr id="row'+i+'"><td><button type = "submit" name="add" id="addItem" class="btn btn-default">+</button></td><td width="50%"><input type="Text" class="form-control" placeholder="Nama Item" id="name"></td><td width="50%"><input type="Text" class="form-control" placeholder="Keterangan" id="name"></td><td><button name="romove" id="'+i+'" class="btn btn-danger btn-remove">x</button></td></tr>');
-            $('#datatable-editable').append('<tr id="row' + i +
-                '"><td></td><td><input type="Text" class="form-control" placeholder="tindakan" id="name" name=field' +
-                i +
-                ' autofocus></td><td><input type="Text" class="form-control" placeholder="akan" id="name" name=""></td><td><input type="Text" class="form-control" placeholder="Nama Obat" id="name"></td><td class="actions"><a href="#" class="on-editing save-row"><i class="fas fa-save"></i></a><a href="#" class=" on-editing cancel-row"><i class="fas fa-times"></i></a></td></tr>'
-            );
-            $('input[name="aa"' + i + ']').focus();
-
-            console.log(tess);
-            $('#row' + i + '').focus();
-
-            function setFocus() {
-
-            }
-        });
-        $(document).on('click', '.btn-remove', function () {
-            var button_id = $(this).attr("id");
-            $('#row' + button_id + '').remove();
-
-        });
-
-    });
-
-</script>
 
 
 

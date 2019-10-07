@@ -16,34 +16,36 @@ class LabController extends Controller
 
         return Datatables::of($lab)->make(true);
     }
-    public function postTipeAsuransi(Request $request){
+    public function postLab(Request $request){
 
         //dd($request);
-        $asuransi = new tipeAsuransi;
-        $asuransi->nama = $request->input('name');
-        $asuransi->save();
+        $lab = new laboratorium;
+        $lab->nama = $request->input('nama');
+        $lab->keterangan = $request->input('keterangan');
+        $lab->save();
     }
-    public function editTipeAsuransi(Request $request){
+    public function editLab(Request $request){
         //dd($request);
-        $asuransi = tipeAsuransi::find($request->id);
+        $lab = laboratorium::find($request->id);
 
-        return response()->json($asuransi);
+        return response()->json($lab);
     }
-    public function updateTipeAsuransi(Request $request){
+    public function updateLab(Request $request){
         //dd($request);
-        $asuransi = tipeAsuransi::find($request->id);
-        $asuransi->nama = $request->input('name');
-        $asuransi->save();
+        $lab = laboratorium::find($request->id);
+        $lab->nama = $request->input('editNama');
+        $lab->keterangan = $request->input('editKeterangan');
+        $lab->save();
 
-        return response()->json($asuransi);
+        return response()->json($lab);
     }
-    public function deleteTipeAsuransi(Request $request){
+    public function deleteLab(Request $request){
         
-        $asuransi = tipeAsuransi::find($request->id);
-        $asuransi->delete();
+        $lab = laboratorium::find($request->id);
+        $lab->delete();
     }
     public function getAsuransiData(){
-        $asuransi = tipeAsuransi::all();
-        return response()->json($asuransi);
+        $lab = laboratorium::all();
+        return response()->json($lab);
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Pasien;
-
+namespace App\Http\Controllers\rekamMedis;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,18 +12,13 @@ use App\Model\penjamin;
 use App\Model\pendaftaran;
 use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
-use Dompdf\Dompdf;
-use PDF;
 
-
-
-
-class PendaftaranController extends Controller
+class RekamMedisController extends Controller
 {
     //
-    public function pendaftaranList(){
+    public function rekamMedisList(){
 
-        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->get()
+        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar','status','no_daftar')->get()
         ->map(function($key){
             return [
                 'id'            => $key->id,
@@ -41,15 +35,19 @@ class PendaftaranController extends Controller
                 'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
                 'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
                 'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
+                'status'     => $key->status,
+                'sts'     => $key->ts,
+                'noDaftar'     => $key->no_daftar,
+                'usia'     => $key->penjamin->pasien->usia,
                 
                 
             ];
         });
-        
+        // $listPasien = pendaftaran::all();
         return Datatables::of($listPasien)->make(true);
         //return response()->json($listPasien);
     }
-    public function pendaftaranDetail(Request $request){
+    public function rekamMedisDetail(Request $request){
 
         $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->where('id',$request->id)->get()
         ->map(function($key){
@@ -70,7 +68,7 @@ class PendaftaranController extends Controller
                 'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
                 'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
                 'alamat'     => $key->penjamin->pasien->alamatpasien->alamat,
-                
+                'status'     => $key->status,
                 
             ];
         });
@@ -79,7 +77,7 @@ class PendaftaranController extends Controller
         return response()->json($listPasien);
     }
 
-    public function tambahPendaftaran(Request $request){
+    public function tambahrekamMedis(Request $request){
         //dd($request);
         $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
         
@@ -134,7 +132,6 @@ class PendaftaranController extends Controller
         $pendaftaran->no_daftar = $nomor;
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
-        $pendaftaran->status = 0;
         $pendaftaran->save();
 
         
@@ -147,20 +144,16 @@ class PendaftaranController extends Controller
         return response()->json($pendaftaran->id);
     }
 
-    public function editPendaftaran($id){
+    public function editrekamMedis($id){
         //dd($id);
 
         $pendaftaran = pendaftaran::where('id',$id)->get();
-        //dd($pasien);
-        // return response()->json($listPasien);
-        // $pasien = pendaftaran::where('id',$id)->get();
+        
 
-        //dd($listPasien);
-
-        return view('pasien.editPendaftaran',compact('pendaftaran'));
+        return view('rekamMedis.tambahRekamMedis',['daftar'=>$pendaftaran]);
 
     }
-    public function updatePendaftaran(Request $request){
+    public function updaterekamMedis(Request $request){
         //dd($request->iddaftar);
 
          $pendaftaranLama = pendaftaran::find($request->iddaftar);
@@ -221,7 +214,6 @@ class PendaftaranController extends Controller
         $pendaftaran->no_daftar = $nomor;
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
-        $pendaftaran->status = 0;
         $pendaftaran->save();
         
 
