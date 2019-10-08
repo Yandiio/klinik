@@ -1,6 +1,6 @@
 @extends('layout.admin')
 
-@yield('title', 'Tambah Pendaftaran')
+@yield('title', 'Tambah Pendataan')
 
 @section('content')
 <section role="main" class="content-body">
@@ -15,7 +15,7 @@
                     </a>
                 </li>
                 <li><span>Pasien</span></li>
-                <li><span>Tipe Pendaftaran</span></li>
+                <li><span>Tipe Pendataan</span></li>
             </ol>
 
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -28,43 +28,40 @@
                 <div class="tabs">
                     <ul class="nav nav-tabs nav-justify">
                         <li class="nav-item active">
-                            <a href="#w2-account" data-toggle="tab" class="nav-link text-center" id="dataPribadi">
+                            <a href="#w2-account" data-toggle="tab" class="nav-link text-center" id="tab1">
                                 <span class="badge badge-primary">1</span>
                                 Pasien
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#w2-profile" data-toggle="tab" class="nav-link text-center" id="penjamin">
+                            <a href="#w2-profile" data-toggle="tab" class="nav-link text-center" id="tab2">
                                 <span class="badge badge-primary">2</span>
                                 Rekam Medis
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#w2-confirm" data-toggle="tab" class="nav-link text-center" id="daftar">
+                            <a href="#w2-confirm" data-toggle="tab" class="nav-link text-center" id="tab3">
                                 <span class="badge badge-primary">3</span>
                                 Tindakan
                             </a>
                         </li>
                     </ul>
-                    <form action="#" id="formUpdate" method="POST">
-                        @csrf
+                    <form class="form-horizontal" novalidate="novalidate">
                         <div class="tab-content">
-
                             <div id="w2-account" class="tab-pane p-3 active">
+
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">NO
                                         Pendafataran</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly"
-                                            value="{{$pendaftaran[0]->no_daftar}}">
+                                            id="w2-first-name" readonly="readonly" value="{{$data[0]->no_data}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly"
-                                            value="{{$pendaftaran[0]->poli->nama}}">
+                                            id="w2-first-name" readonly="readonly" value="{{$data[0]->poli->nama}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -73,7 +70,7 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="234543452" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->nik}}">
+                                            value="{{$data[0]->penjamin->pasien->nik}}">
                                     </div>
 
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Penjamin
@@ -81,7 +78,7 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="BPJS" disabled
-                                            value="{{$pendaftaran[0]->penjamin->asuransi->nama}}">
+                                            value="{{$data[0]->penjamin->asuransi->nama}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -90,14 +87,14 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Helmay cahyadi" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->nama_lengkap}}">
+                                            value="{{$data[0]->penjamin->pasien->nama_lengkap}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="23" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->usia}}">
+                                            value="{{$data[0]->penjamin->pasien->usia}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -106,14 +103,14 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Bekasi" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->tempat_lahir}}">
+                                            value="{{$data[0]->penjamin->pasien->tempat_lahir}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="B+" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->gd}}">
+                                            value="{{$data[0]->penjamin->pasien->gd}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -128,7 +125,7 @@
                                             </span>
                                             <input type="text" data-plugin-datepicker
                                                 class="form-control form-control-sm mb-3" placeholder="23/07/2019"
-                                                disabled value="{{$pendaftaran[0]->penjamin->pasien->tanggal_lahir}}">
+                                                disabled value="{{$data[0]->penjamin->pasien->tanggal_lahir}}">
                                         </div>
 
                                     </div>
@@ -137,7 +134,7 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
                                             id="w2-first-name" placeholder="Laki-Laki" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->jk}}">
+                                            value="{{$data[0]->penjamin->pasien->jk}}">
                                     </div>
 
                                 </div>
@@ -153,7 +150,7 @@
                                             </span>
                                             <input type="text" data-plugin-datepicker
                                                 class="form-control form-control-sm mb-3" placeholder="23/07/2019"
-                                                disabled value="{{$pendaftaran[0]->tgl_data}}">
+                                                disabled value="{{$data[0]->tgl_data}}">
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keluhan
@@ -161,7 +158,7 @@
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize"
                                             data-plugin-textarea-autosize disabled
-                                            value="{{$pendaftaran[0]->keluhan}}"></textarea>
+                                            value="{{$data[0]->keluhan}}"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -241,26 +238,90 @@
                             <!-- kontent tab 2 -->
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
+                                    <!-- <form>
+                                        <table class="" id="dynamic_field">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Nama Obat</th>
+                                                    <th width="5%">Qty</th>
+                                                    <th width="15%">Unit</th>
+                                                    <th>Dosis</th>
+                                                    <th width="10%">Hari</th>
+                                                    <th>Keterangan</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <a href="#" name="add" id="addItem" class="btn btn-default">+</a>
+
+                                                    </td>
+                                                    <td>
+                                                        <input type="Text" class="form-control" placeholder="Nama Obat"
+                                                            id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="Text" class="form-control" id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" placeholder="Sirup"
+                                                            id="name" disabled>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="name">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" class="form-control" id="name">
+                                                    </td>
+
+                                                    <td>
+                                                        <input type="Text" class="form-control" placeholder="Keterangan"
+                                                            id="name">
+                                                    </td>
+                                                    <td>
+                                                        <a href="#" name="add" id="add" class="btn btn-danger">x</a>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </form> -->
                                     <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                                         <thead>
                                             <tr>
-                                                <th style="width:5%">
-                                                    <button type="button" class="btn btn-primary float-right"
-                                                        data-toggle="modal" data-target="#modalTambah" id="modalDiagnosa">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
-                                                </th>
+                                                <th style="width:5%">*</th>
                                                 <th>Nama Diagnosa</th>
                                                 <th>Hasil Diagnosa</th>
 
                                                 <th style="width:10%">Aksi</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="bodyDiagnosa">
-                                            
+                                        <tbody>
+                                            <tr>
+                                                <td><a href="#" id="tindakanTambah" class="btn btn-primary">
+                                                        <i class="fas fa-plus"></i></a></td>
+                                                <td>Perut Kembung</td>
+                                                <td>Hipermint</td>
+
+                                                <td class="actions">
+                                                    <a href="#" class="hidden on-editing save-row"><i
+                                                            class="fas fa-save"></i></a>
+                                                    <a href="#" class="hidden on-editing cancel-row"><i
+                                                            class="fas fa-times"></i></a>
+                                                    <a href="#" class="on-default edit-row"><i
+                                                            class="fas fa-pencil-alt"></i></a>
+                                                    <a href="#" class="on-default remove-row"><i
+                                                            class="far fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+
+
                                         </tbody>
                                     </table>
-                                    <!-- <table class="table table-bordered table-striped mb-0" id="datatable-editable">
+                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
                                         <thead>
                                             <tr>
                                                 <th style="width:5%">*</th>
@@ -291,11 +352,13 @@
 
 
                                         </tbody>
-                                    </table> -->
-                                </div>
-                            </div>
+                                    </table>
 
+                                </div>
+
+                            </div>
                         </div>
+                    
                 </div>
                 <div class="card-footer">
                     <ul class="pager">
@@ -322,73 +385,10 @@
         </div>
     </div>
 
-    <!-- modal tambah -->
-    <div class="modal" id="modalTambah">
-        <div class="modal-dialog modal-block modal-block-lg">
-            <div class="modal-content  ">
-                <!-- Modal Header -->
-                <div class="modal-header card-header">
-                    <h2 class="card-title" id="judul">Tambah Diagnosa</h2>
-                    <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
-                </div>
-                <form method="POST" id="formTambah">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="modal-wrapper">
-                            <div class="modal-text">
-                            <div class="col-lg-12">
-                            
-                            <div class="table-responsive m-t-40">
-                                <table id="tableAjaxDiagnosaList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-											<th width="5%">No</th>
-											<th>Nama Diagnosa</th>
-											<th>Hasil Diagnosa</th>
-											<th>Keterangan</th>
-											<th width="15%">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            
-                            </div>
-                           
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
-                                <button type="button" class="btn btn-default" data-dismiss="modal"
-                                    id="cancel">Kembali</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- modal tambah -->
-
 
 </section>
 @endsection
 @section('css')
-<script src="{{ asset('assets/js/jquery-3.4.1.min.js')}}"></script>
 <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
 
@@ -396,7 +396,7 @@
 <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
-<!-- Specific Page Vendorccc CSS -->
+<!-- Specific Page Vendor CSS -->
 <link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
 
 <!-- Theme CSS -->
@@ -416,6 +416,7 @@
 <!-- caresolul -->
 <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/vendor/datatables/media/css/dataTables.bootstrap4.css')}}" />
 
 @stop
 @section('script')
@@ -431,9 +432,10 @@
 <script src="{{asset('assets/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
 
 <!-- Specific Page Vendor -->
-<!-- <script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script> -->
+<script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script>
 <script src="{{asset('assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
 <script src="{{asset('assets/vendor/autosize/autosize.js')}}"></script>
 
 <!-- Theme Base, Components and Settings -->
@@ -446,32 +448,14 @@
 <script src="{{asset('assets/js/theme.init.js')}}"></script>
 
 <!-- Examples -->
-<!-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> -->
+<script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script>
 <script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
-
-<script src="{{asset('assets/vendor/select2/js/select2.js')}}"></script>
-<script src="{{ asset('assets/vendor/jquery-ui/jquery-ui.js')}}"></script>
-<script src="{{ asset('assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script>
-
-<script src="{{ asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
-<script src="{{ asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js')}}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
-<script src="{{ asset('assets/js/examples/examples.advanced.form.js')}}"></script>
-<script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+<!-- <script src="{{asset('assets/js/examples/examples.datatables.editable.js')}}"></script>
+		<script src="{{asset('assets/vendor/datatables/media/js/jquery.dataTables.min.js')}}"></script> -->
 
 <script>
+    //disabledTapAwal();
 
-
-
-
-</script>
-
-@stop
-
-@section('jscustom')
-<script>
-    disabledTapAwal();
-   
 
 
     $(document).ready(function () {
@@ -479,141 +463,45 @@
         selanjutnya2();
 
         $('#selesai').click(function () {
-            $('#dataPribadi').click();
+            $('#tab1').click();
             $('#selesai').hide();
             $('#selanjutnya1').show();
             disabledTapAwal();
         });
-
+        
 
     });
 
     function disabledTapAwal() {
-        // $('#penjamin').prop("disabled",true);
-        // $('#daftar').prop("disabled",true);
-        $('#penjamin').hide();
-        $('#daftar').hide();
+        
+        $('#tab2').hide();
+        $('#tab3').hide();
         $('#selanjutnya2').hide();
         $('#selesai').hide();
     }
 
     function selanjutnya1() {
         $('#selanjutnya1').click(function () {
-            //console.log('selanjutnya 1');
-            $('#penjamin').show();
-            $('#dataPribadi').show();
-            /* fungsi button */
             $(this).hide();
+            $('#tab2').click();
+            $('#tab2').show();
             $('#selanjutnya2').show();
-            $('#penjamin').click();
-            $("#daftar").mouseenter(function () {
-                $(this).prop("disabled", true);
-            });
-            $("#dataPribadi").mouseenter(function () {
-                $(this).prop("disabled", true);
-            });
+            
+          
         });
     }
 
     function selanjutnya2() {
         $('#selanjutnya2').click(function () {
-            //console.log('selanjutnya 1');
-            $('#daftar').show();
+            $('#tab3').click();
+            $('#tab3').show();
             $(this).hide();
             $('#selesai').show();
-            $('#daftar').click();
-            $("#daftar").mouseenter(function () {
-                $(this).prop("disabled", true);
-            });
-            $("#penjamini").mouseenter(function () {
-                $(this).prop("disabled", true);
-            });
+            
         });
     }
 
-    
-
-    $('#formUpdate').on('submit', function (e) {
-
-        e.preventDefault();
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $("input[name='_token']").val()
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "",
-            data: $(this).serialize(),
-            success: function (data) {
-
-                // console.log(data);
-                var id = data;
-                // window.location.href= "{{ route ('print_pendaftaran'),'_blank' }}";
-                new PNotify({
-                    title: 'Regular Notice',
-                    text: 'Check me out! I\'m a notice.',
-                    type: 'success'
-                });
-
-                // redirect()
-            }
-        });
-    });
-
-
-    $('#modalDiagnosa').on('click',function(){
-        
-        oTableDiagnosa = $('#tableAjaxDiagnosaList').DataTable({
-			responsive: true,
-			processing: true,
-			serverSide: true,
-			ajax: "{{route('Diagnosa_getList')}}",
-			columns: [
-				{ data: 'kode_diagnosa', name: 'kode_diagnosa'},
-				{ data: 'nama', name: 'nama' },
-				{ data: 'hasil_diagnosa', name: 'hasil_diagnosa' },
-				{ data: 'keterangan', name: 'keterangan' },
-				{ data: 'id',
-					render: function (data, type, row) {
-						// console.log(type);
-						
-						let buttonTambah =
-							'<button type="button" href="" class="btn-sm btn-primary"  title="Hapus Data !" style="margin-right:5px" onclick="buttonAdd('+data+')"><i class="fa fa-plus" aria-hidden="true"></i></button>';
-						return buttonTambah;
-					}
-				}
-			]
-		});
-    });
-
-    function buttonAdd(idDiagnosa){
-        
-
-        $.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN' : $("input[name='_token']").val()
-			}
-		});
-		$.ajax({
-			type: "GET",
-			url: "{{route('Diagnosa_getEdit')}}",
-			data: {id:idDiagnosa},
-            success: function (data) {
-			//console.log(data);
-            var itemdiagnosa = '<tr><td>'+data.id+'</td><td>'+data.nama+'</td><td>'+data.hasil_diagnosa+'</td><td>'+data.keterangan+'</td></tr>';
-				
-
-
-            $('#bodyDiagnosa').append(itemdiagnosa);
-			}
-		});
-    }
-
-
-    function close(){
-
-    }
 </script>
+
+
 @stop

@@ -150,7 +150,7 @@ class RekamMedisController extends Controller
         $pendaftaran = pendaftaran::where('id',$id)->get();
         
 
-        return view('rekamMedis.tambahRekamMedis',['daftar'=>$pendaftaran]);
+        return view('rekamMedis.tambahRekamMedis',['pendaftaran'=>$pendaftaran]);
 
     }
     public function updaterekamMedis(Request $request){
