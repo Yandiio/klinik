@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\Diagnosa;
+use App\Model\diagnosa;
 
 class DiagnosaSeeder extends Seeder
 {

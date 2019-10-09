@@ -14,9 +14,16 @@ class pendaftaran extends Model
         'id_tipe_poli',
         'no_daftar',
         'keluhan',
+        'status',
         
     ];
+    
     public $timestamps = true;
+    protected $appends = ['ts'];
+    protected $ts = [
+        '0' => 'Pending',
+        '1' => 'Sucsess'
+    ];
 
 
     public function penjamin(){
@@ -25,4 +32,9 @@ class pendaftaran extends Model
     public function poli(){
         return $this->belongsTo('App\Model\tipePoli', 'id_tipe_poli', 'id');
     }
+
+    public function getTsAttribute(){
+        return $this->ts[$this->status];
+    }
+    
 }
