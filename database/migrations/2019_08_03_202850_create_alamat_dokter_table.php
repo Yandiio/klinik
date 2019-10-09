@@ -15,16 +15,12 @@ class CreateAlamatDokterTable extends Migration
     {
         Schema::create('alamat_dokter', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_dokter')->unsigned();
             $table->string('alamat');
             $table->string('kelurahan');
             $table->string('kecamatan');
             $table->string('provinsi');
             $table->string('kabupaten')->nullable();
             $table->timestamps();
-
-
-            $table->foreign('id_dokter')->references('id')->on('dokter');
             
         });
     }

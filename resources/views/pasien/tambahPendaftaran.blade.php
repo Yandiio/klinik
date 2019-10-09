@@ -420,7 +420,7 @@
 <script src="{{asset('assets/js/theme.init.js')}}"></script>
 
 <!-- Examples -->
-<!-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> -->
+{{-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> --}}
 <script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
 
 <script src="{{asset('assets/vendor/select2/js/select2.js')}}"></script>

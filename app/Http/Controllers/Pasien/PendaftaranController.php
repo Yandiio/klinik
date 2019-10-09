@@ -47,7 +47,7 @@ class PendaftaranController extends Controller
         });
         
         return Datatables::of($listPasien)->make(true);
-        //return response()->json($listPasien);
+        return response()->json($listPasien);
     }
     public function pendaftaranDetail(Request $request){
 
@@ -80,26 +80,26 @@ class PendaftaranController extends Controller
     }
 
     public function tambahPendaftaran(Request $request){
-        //dd($request);
+        dd($request);
         $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
         
         if($cekData){
             // dd($car);
-             $car = "00";
-             $nomor = $car . $cekData->id += 1 ;
-         }else{
             $car = "00";
-             $nomor = $car .'1';
-         }
-         //dd($nomor);
+            $nomor = $car . $cekData->id += 1 ;
+        }else{
+            $car = "00";
+            $nomor = $car .'1';
+        }
+        //dd($nomor);
 
-         $alamat = new alamatPasien;
-         $alamat->alamat = $request->input('alamat');
-         $alamat->kelurahan = $request->input('kelurahan');
-         $alamat->kecamatan = $request->input('kecamatan');
-         $alamat->provinsi = $request->input('provinsi');
-         $alamat->kabupaten = $request->input('kota');
-         $alamat->save();
+        $alamat = new alamatPasien;
+        $alamat->alamat = $request->input('alamat');
+        $alamat->kelurahan = $request->input('kelurahan');
+        $alamat->kecamatan = $request->input('kecamatan');
+        $alamat->provinsi = $request->input('provinsi');
+        $alamat->kabupaten = $request->input('kota');
+        $alamat->save();
 
         $pasien = new pasien;
         $pasien->nik = $request->input('nik');
@@ -135,14 +135,6 @@ class PendaftaranController extends Controller
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
         $pendaftaran->save();
-
-        
-
-
-
-
-
-
         return response()->json($pendaftaran->id);
     }
 
@@ -162,30 +154,30 @@ class PendaftaranController extends Controller
     public function updatePendaftaran(Request $request){
         //dd($request->iddaftar);
 
-         $pendaftaranLama = pendaftaran::find($request->iddaftar);
-         $idAlamat = $pendaftaranLama->penjamin->pasien->alamatpasien->id;
-         $idPasien = $pendaftaranLama->penjamin->pasien->id;
-         $idPenjamin = $pendaftaranLama->penjamin->id;
+        $pendaftaranLama = pendaftaran::find($request->iddaftar);
+        $idAlamat = $pendaftaranLama->penjamin->pasien->alamatpasien->id;
+        $idPasien = $pendaftaranLama->penjamin->pasien->id;
+        $idPenjamin = $pendaftaranLama->penjamin->id;
 
 
-         $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
+        $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
         
         if($cekData){
             // dd($car);
-             $car = "00";
-             $nomor = $car . $cekData->id += 1 ;
-         }else{
             $car = "00";
-             $nomor = $car .'1';
-         }
-         
-         $alamat = alamatPasien::find($idAlamat);
-         $alamat->alamat = $request->input('alamat');
-         $alamat->kelurahan = $request->input('kelurahan');
-         $alamat->kecamatan = $request->input('kecamatan');
-         $alamat->provinsi = $request->input('provinsi');
-         $alamat->kabupaten = $request->input('kota');
-         $alamat->save();
+            $nomor = $car . $cekData->id += 1 ;
+        }else{
+            $car = "00";
+            $nomor = $car .'1';
+        }
+        
+        $alamat = alamatPasien::find($idAlamat);
+        $alamat->alamat = $request->input('alamat');
+        $alamat->kelurahan = $request->input('kelurahan');
+        $alamat->kecamatan = $request->input('kecamatan');
+        $alamat->provinsi = $request->input('provinsi');
+        $alamat->kabupaten = $request->input('kota');
+        $alamat->save();
 
         $pasien = pasien::find($idPasien);
         $pasien->nik = $request->input('nik');
@@ -221,17 +213,11 @@ class PendaftaranController extends Controller
         $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
         $pendaftaran->keluhan = $request->input('keluhan');
         $pendaftaran->save();
-        
-
         return response()->json($pendaftaran->id);
-       
-
     }
     
-    public function print(Request $request){
-       
+    public function print(Request $request){       
         $nomer = pendaftaran::find($request->id);
-
         //dd($soaja);
         // $dompdf = new Dompdf();
         $dompdf = PDF::loadView('print.printnomer',['nomer' => $nomer ]);

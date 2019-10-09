@@ -6,7 +6,6 @@
 <section role="main" class="content-body">
         <header class="page-header">
         <h2>Dokter</h2>
-    
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
                 <li>
@@ -17,7 +16,6 @@
                 <li><span>Dokter</span></li>
                 <li><span>List Dokter</span></li>
             </ol>
-    
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
         </header>
@@ -26,15 +24,13 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="{{ url('dokter/tambah-dokter') }}" class="btn btn-success float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
-                            
+                        <div class="card-body">
+							<a href="{{ url('dokter/tambah-dokter') }}" class="btn btn-info float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
                         <h4 class="card-title">List Dokter</h4>
-                        
                         <div class="table-responsive m-t-40">
-                            <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+                            <table id="tabelAjaxDokterList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
                                         <th>Kode Dokter</th>
                                         <th>Nama Dokter</th>
                                         <th>Poli</th>
@@ -44,7 +40,6 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>No</th>
                                         <th>Kode Dokter</th>
                                         <th>Nama Dokter</th>
                                         <th>Poli</th>
@@ -54,151 +49,127 @@
                                 </tfoot>
                                 <tbody>
                                     <tr>
-                                        <td >1</td>
-                                        <td>KD-001</td>
-                                        <td>Dr.Agus Setyadi</td>
-                                        <td>Poli Umum</td>
-                                        <td>081235252</td>
-                                        <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/edit-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </td>  
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
                                     </tr>
-                                    <tr>
-                                        <td >2</td>
-                                        <td>KD-002</td>
-                                        <td>Drg.Anita</td>
-                                        <td>Poli Gigi</td>
-                                        <td>241353727</td>
-                                        
-                                        <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/edit-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </td>  
-                                    </tr>
-                                    <tr>
-                                        <td >3</td>
-                                        <td>KD-003</td>
-                                        <td>Dr.Dilan</td>
-                                        <td>Poli Klinik</td>
-                                        <td>3535535</td>
-                                        <td>
-                                            <a class="btn-sm btn-success" title="Lihat Data !" style="margin-right:5px" href="{{ url('dokter/tambah-dokter') }}"> <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                            <a class="btn-sm btn-warning" title="Ubah Data !" style="margin-right:5px" href="{{ url('dokter/detail-dokter') }}"> <i class="fa fa-edit" aria-hidden="true"></i> </a>
-                                            <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                        </td>  
-                                    </tr>
-                                                
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            
             </div>
         </div>
+
 </section>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2/css/select2.css') }}" />
-<link rel="stylesheet" href="{{ asset('assets/vendor/select2-bootstrap-theme/select2-bootstrap.min.css') }}" />
+<script src="{{ asset('assets/js/jquery-3.4.1.min.js')}}"></script>
+<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
+
+<link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/fontawesome-all.min.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
+<link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+
+<!-- Specific Page Vendorccc CSS -->
+<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="{{asset('assets/css/theme.css')}}" />
+
+<!-- Skin CSS -->
+<link rel="stylesheet" href="{{asset('assets/css/skins/default.css')}}" />
+
+<!-- Theme Custom CSS -->
+<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+
+<!-- Head Libs -->
+<script src="{{asset('assets/vendor/modernizr/modernizr.js')}}"></script>
+
+<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
+
+<!-- caresolul -->
+<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.css')}}" />
 
 @stop
 @section('script')
-<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-<!-- This is data table -->
+<!-- Vendor -->
+<script src="{{asset('assets/vendor/jquery/jquery.js')}}"></script>
+<script src="{{asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
+<script src="{{asset('assets/vendor/popper/umd/popper.min.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
+<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('assets/vendor/common/common.js')}}"></script>
+<script src="{{asset('assets/vendor/nanoscroller/nanoscroller.js')}}"></script>
+<script src="{{asset('assets/vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
+<script src="{{asset('assets/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
+
+<!-- Specific Page Vendor -->
+<!-- <script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script> -->
+<script src="{{asset('assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
+<script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
+<script src="{{asset('assets/vendor/autosize/autosize.js')}}"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="{{asset('assets/js/theme.js')}}"></script>
+
+<!-- Theme Custom -->
+<script src="{{asset('assets/js/custom.js')}}"></script>
+
+<!-- Theme Initialization Files -->
+<script src="{{asset('assets/js/theme.init.js')}}"></script>
+
+<!-- Examples -->
+{{-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> --}}
+<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
+
+<script src="{{asset('assets/vendor/select2/js/select2.js')}}"></script>
+<script src="{{ asset('assets/vendor/jquery-ui/jquery-ui.js')}}"></script>
+<script src="{{ asset('assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script>
+
+<script src="{{ asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
+<script src="{{ asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js')}}"></script>
+<script src="{{ asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
+<script src="{{ asset('assets/js/examples/examples.advanced.form.js')}}"></script>
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
-<!-- start - This is for export functionality only -->
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
-<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
 <!-- end - This is for export functionality only -->
 <script>
-    // var oTableListDokter;
-	
-	// function closeModal() {
-    //     $('#cancelEdit').click();
-    //     $('#cancel').click();
-    //     $('#formTambah').trigger("reset");
-    // }
+    var oTableList;
 
-	// $(document).ready(function(){
-	// 	oTableListDokter = $('#tabelAjaxtipeDokter').DataTable({
-	// 		responsive: true,
-	// 		processing: true,
-	// 		serverSide: true,
-	// 		ajax: "#",
-	// 		columns: [
-	// 			{ data: 'id',
-	// 				render: function (data, type, row, meta) {
-	// 					return meta.row + meta.settings._iDisplayStart + 1;
-	// 					}
-	// 				},
-	// 			{ data: 'nama', name: 'nama' },
-	// 			{ data: 'id',
-	// 				render: function (data, type, row) {
-	// 					// console.log(type);
-	// 					let buttonEdit =
-	// 						'<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#modalUbah" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-	// 					let buttonHapus =
-	// 						'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
-	// 						data +
-	// 						');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-	// 					return buttonEdit + buttonHapus;
-	// 				}
-	// 			}
-	// 		]
-	// 	});
-	// });
+    $(document).ready(function(){
+		oTableList = $('#tabelAjaxDokterList').DataTable({
+            responsive: true,
+			processing: true,
+			serverSide: true,
+			ajax: "{{route('Dokter_getList')}}",
+            columns: [
+                {data: 'kode_dokter', name: 'kode_dokter' },
+                {data: 'nama_lengkap', name: 'nama_lengkap'},
+                {data: 'poli', name: 'poli'},
+                {data: 'telepon', name: 'telepon'},
+                { data: 'id',
+					render: function (data, type, row) {
+						// console.log(type);
+						let buttonEdit =
+							'<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#modalUbah" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+						let buttonHapus =
+							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
+							data +
+							');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+						return buttonEdit + buttonHapus;
+					}
+				}
+            ]
+        });
+	});
 
 
-//  $(function() {
-//      $('#myTable').DataTable();
-//      $(function() {
-//          var table = $('#example').DataTable({
-//              "columnDefs": [{
-//                  "visible": false,
-//                  "targets": 2
-//              }],
-//              "order": [
-//                  [2, 'asc']
-//              ],
-//              "displayLength": 25,
-//              "drawCallback": function(settings) {
-//                  var api = this.api();
-//                  var rows = api.rows({
-//                      page: 'current'
-//                  }).nodes();
-//                  var last = null;
-//                  api.column(2, {
-//                      page: 'current'
-//                  }).data().each(function(group, i) {
-//                      if (last !== group) {
-//                          $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-//                          last = group;
-//                      }
-//                  });
-//              }
-//          });
-//          // Order by the grouping
-//          $('#example tbody').on('click', 'tr.group', function() {
-//              var currentOrder = table.order()[0];
-//              if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-//                  table.order([2, 'desc']).draw();
-//              } else {
-//                  table.order([2, 'asc']).draw();
-//              }
-//          });
-//      });
-//  });
- 
- </script> 
+
+</script> 
 
 @stop

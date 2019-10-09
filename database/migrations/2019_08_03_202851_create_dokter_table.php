@@ -15,23 +15,24 @@ class CreateDokterTable extends Migration
     {
         Schema::create('dokter', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kode_dokter');
             $table->integer('id_tipe_poli')->unsigned();
+            $table->integer('tipe_dokter');
+            $table->integer('alamat_dokter')->unsigned();
             $table->string('nik');
             $table->date('tanggal_lahir');
             $table->string('nama_lengkap');
-            $table->integer('telepone');
+            $table->integer('telepon');
             $table->integer('hp');
             $table->string('tempat_lahir');
             $table->integer('usia');
             $table->integer('jenis_kelamin');
-            $table->string('golongan_darah')->nullable();
             $table->string('agama');
             $table->string('keterangan');
             $table->timestamps();
 
-
             $table->foreign('id_tipe_poli')->references('id')->on('tipe_poli');
-          
+            $table->foreign('alamat_dokter')->references('id')->on('alamat_dokter');
         });
     }
 
