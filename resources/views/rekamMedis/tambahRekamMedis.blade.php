@@ -241,57 +241,82 @@
                             <!-- kontent tab 2 -->
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:5%">
-                                                    <button type="button" class="btn btn-primary float-right"
-                                                        data-toggle="modal" data-target="#modalTambah" id="modalDiagnosa">
-                                                        <i class="fa fa-plus"></i>
-                                                    </button>
-                                                </th>
-                                                <th>Nama Diagnosa</th>
-                                                <th>Hasil Diagnosa</th>
+                                    <div class="col-md-12">
+                                        <section class="card card-featured card-featured-dark mb-4">
+                                            <header class="card-header">
+                                                <div class="card-actions">
+                                                    <a href="#" class="card-action card-action-toggle"
+                                                        data-card-toggle></a>
+                                                    <a href="#" class="card-action card-action-dismiss"
+                                                        data-card-dismiss></a>
+                                                </div>
 
-                                                <th style="width:10%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="bodyDiagnosa">
-                                            
-                                        </tbody>
-                                    </table>
-                                    <!-- <table class="table table-bordered table-striped mb-0" id="datatable-editable">
-                                        <thead>
-                                            <tr>
-                                                <th style="width:5%">*</th>
-                                                <th>Nama Lab</th>
+                                                <h2 class="card-title">Diagnosa</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <!-- <code>.card-info</code> -->
+                                                <table class="table table-bordered table-striped mb-0"
+                                                    id="datatable-editable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:5%">
+                                                                <button type="button"
+                                                                    class="btn btn-primary float-right"
+                                                                    data-toggle="modal" data-target="#modalTambah"
+                                                                    id="modalDiagnosa">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </th>
+                                                            <th width="30%">Nama Diagnosa</th>
+                                                            <th>Hasil Diagnosa</th>
+                                                            <th style="width:10%">Aksi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bodyDiagnosa">
 
-                                                <th>Keterangan</th>
-                                                <th style="width:10%">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td> <a href="#" id="tindakanTambah" class="btn btn-primary">
-                                                        <i class="fas fa-plus"></i></a></td>
-                                                <td>Lab 1</td>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <section class="card card-featured card-featured-dark mb-4">
+                                            <header class="card-header">
+                                                <div class="card-actions">
+                                                    <a href="#" class="card-action card-action-toggle"
+                                                        data-card-toggle></a>
+                                                    <a href="#" class="card-action card-action-dismiss"
+                                                        data-card-dismiss></a>
+                                                </div>
 
-                                                <td>Cek Darah,Cek urine</td>
-                                                <td class="actions">
-                                                    <a href="#" class="hidden on-editing save-row"><i
-                                                            class="fas fa-save"></i></a>
-                                                    <a href="#" class="hidden on-editing cancel-row"><i
-                                                            class="fas fa-times"></i></a>
-                                                    <a href="#" class="on-default edit-row"><i
-                                                            class="fas fa-pencil-alt"></i></a>
-                                                    <a href="#" class="on-default remove-row"><i
-                                                            class="far fa-trash-alt"></i></a>
-                                                </td>
-                                            </tr>
+                                                <h2 class="card-title">Laboratorium</h2>
+                                            </header>
+                                            <div class="card-body">
+                                                <!-- <code>.card-info</code> -->
+                                                <table class="table table-bordered table-striped mb-0"
+                                                    id="datatable-editable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:5%">
+                                                                <button type="button"
+                                                                    class="btn btn-primary float-right"
+                                                                    data-toggle="modal" data-target="#modalTambahLab"
+                                                                    id="modalLab">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </button>
+                                                            </th>
+                                                            <th width="30%">Nama Lab</th>
+                                                            <th>Keterangan</th>
+                                                            <th style="width:10%">Aksi</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="bodyLab">
 
-
-                                        </tbody>
-                                    </table> -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </section>
+                                    </div>
                                 </div>
                             </div>
 
@@ -336,34 +361,96 @@
                     <div class="modal-body">
                         <div class="modal-wrapper">
                             <div class="modal-text">
-                            <div class="col-lg-12">
-                            
-                            <div class="table-responsive m-t-40">
-                                <table id="tableAjaxDiagnosaList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
-                                    <thead>
-                                        <tr>
-											<th width="5%">No</th>
-											<th>Nama Diagnosa</th>
-											<th>Hasil Diagnosa</th>
-											<th>Keterangan</th>
-											<th width="15%">Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-											<tr>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-											</tr>
-                                    </tbody>
-                                </table>
+                                <div class="col-lg-12">
+
+                                    <div class="table-responsive m-t-40">
+                                        <table id="tableAjaxDiagnosaList"
+                                            class="display nowrap table table-hover table-striped table-bordered"
+                                            cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th width="5%">No</th>
+                                                    <th>Nama Diagnosa</th>
+                                                    <th>Hasil Diagnosa</th>
+                                                    <th>Keterangan</th>
+                                                    <th width="15%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+
                             </div>
-                            
-                            
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
+                                <button type="button" class="btn btn-default" data-dismiss="modal"
+                                    id="cancel">Kembali</button>
+
                             </div>
-                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- modal tambah -->
+
+    <!-- modal tambah -->
+    <div class="modal" id="modalTambahLab">
+        <div class="modal-dialog modal-block modal-block-lg">
+            <div class="modal-content  ">
+                <!-- Modal Header -->
+                <div class="modal-header card-header">
+                    <h2 class="card-title" id="judul">Tambah Lab</h2>
+                    <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
+                </div>
+                <form method="POST" id="formTambah">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="modal-wrapper">
+                            <div class="modal-text">
+                                <div class="col-lg-12">
+
+                                    <div class="table-responsive m-t-40">
+                                        <table id="tableAjaxLabList"
+                                            class="display nowrap table table-hover table-striped table-bordered"
+                                            cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th width="5%">No</th>
+                                                    <th>Nama Lab</th>
+                                                    <th>Keterangan</th>
+                                                    <th width="10%">Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
@@ -471,7 +558,7 @@
 @section('jscustom')
 <script>
     disabledTapAwal();
-   
+
 
 
     $(document).ready(function () {
@@ -531,7 +618,7 @@
         });
     }
 
-    
+
 
     $('#formUpdate').on('submit', function (e) {
 
@@ -563,57 +650,138 @@
     });
 
 
-    $('#modalDiagnosa').on('click',function(){
-        
-        oTableDiagnosa = $('#tableAjaxDiagnosaList').DataTable({
-			responsive: true,
-			processing: true,
-			serverSide: true,
-			ajax: "{{route('Diagnosa_getList')}}",
-			columns: [
-				{ data: 'kode_diagnosa', name: 'kode_diagnosa'},
-				{ data: 'nama', name: 'nama' },
-				{ data: 'hasil_diagnosa', name: 'hasil_diagnosa' },
-				{ data: 'keterangan', name: 'keterangan' },
-				{ data: 'id',
-					render: function (data, type, row) {
-						// console.log(type);
-						
-						let buttonTambah =
-							'<button type="button" href="" class="btn-sm btn-primary"  title="Hapus Data !" style="margin-right:5px" onclick="buttonAdd('+data+')"><i class="fa fa-plus" aria-hidden="true"></i></button>';
-						return buttonTambah;
-					}
-				}
-			]
-		});
+    $('#modalLab').on('click', function () {
+
+        oTableDiagnosa = $('#tableAjaxLabList').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            destroy: true,
+            ajax: "{{route('list_lab')}}",
+            columns: [{
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'keterangan',
+                    name: 'keterangan'
+                },
+                {
+                    data: 'id',
+                    render: function (data, type, row) {
+                        // console.log(type);
+
+                        let buttonTambah =
+                            '<button type="button" href="" class="btn-sm btn-primary"  title="Hapus Data !" style="margin-right:5px" onclick="buttonAddLab(' +
+                            data + ')"><i class="fa fa-plus" aria-hidden="true"></i></button>';
+                        return buttonTambah;
+                    }
+                }
+            ]
+        });
     });
 
-    function buttonAdd(idDiagnosa){
-        
+    $('#modalDiagnosa').on('click', function () {
+
+        oTableDiagnosa = $('#tableAjaxDiagnosaList').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            destroy: true,
+            ajax: "{{route('Diagnosa_getList')}}",
+            columns: [{
+                    data: 'kode_diagnosa',
+                    name: 'kode_diagnosa'
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'hasil_diagnosa',
+                    name: 'hasil_diagnosa'
+                },
+                {
+                    data: 'keterangan',
+                    name: 'keterangan'
+                },
+                {
+                    data: 'id',
+                    render: function (data, type, row) {
+                        // console.log(type);
+
+                        let buttonTambah =
+                            '<button type="button" href="" class="btn-sm btn-primary"  title="Hapus Data !" style="margin-right:5px" onclick="buttonAdd(' +
+                            data + ')"><i class="fa fa-plus" aria-hidden="true"></i></button>';
+                        return buttonTambah;
+                    }
+                }
+            ]
+        });
+    });
+
+
+
+
+
+    function buttonAdd(idDiagnosa) {
+
 
         $.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN' : $("input[name='_token']").val()
-			}
-		});
-		$.ajax({
-			type: "GET",
-			url: "{{route('Diagnosa_getEdit')}}",
-			data: {id:idDiagnosa},
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{route('Diagnosa_getEdit')}}",
+            data: {
+                id: idDiagnosa
+            },
             success: function (data) {
-			//console.log(data);
-            var itemdiagnosa = '<tr><td>'+data.id+'</td><td>'+data.nama+'</td><td>'+data.hasil_diagnosa+'</td><td>'+data.keterangan+'</td></tr>';
-				
+                //console.log(data);
+                var itemdiagnosa = '<tr><td>' + data.id + '<input type="hidden" name="diagnosa[]" value="'+data.id+'" id="idDiagnosa'+data.id+'"></td><td>' + data.nama + '</td><td>' + data
+                    .hasil_diagnosa +
+                    '</td><td><button type="button" href="" class="btn btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button></td></tr>';
+
+                $('#bodyDiagnosa').append(itemdiagnosa);
+            }
+        });
+    }
+    
+    function buttonAddLab(idDiagnosa) {
 
 
-            $('#bodyDiagnosa').append(itemdiagnosa);
-			}
-		});
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{route('Diagnosa_getEdit')}}",
+            data: {
+                id: idDiagnosa
+            },
+            success: function (data) {
+                //console.log(data);
+                var itemdiagnosa = '<tr><td>' + data.id +'<input type="hidden" name="lab[]" value="'+data.id+'" id="idLab'+data.id+'"></td><td>' + data.nama + '</td><td>' + data
+                    .keterangan +
+                    '</td><td><button type="button" class="btn btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button></td></tr>';
+
+                $('#bodyLab').append(itemdiagnosa);
+            }
+        });
     }
 
+    $('.table tbody').on('click', '.btn' , function(){
+        $(this).closest('tr').remove();
+        
+    });
 
-    function close(){
-
-    }
 </script>
 @stop
