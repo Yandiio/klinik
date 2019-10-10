@@ -85,12 +85,12 @@
 									<div class="featured-boxes mt-0 mb-0">
 										<div class="featured-box featured-box-primary mt-5">
 											<div class="box-content">
-												<h4 class="mb-0">Member Login</h4>
+												<h4 class="mb-0">Login Aplikasi</h4>
 												<form id="frmLogin" action="#" method="POST">
 													<div class="form-row">
 														<div class="form-group col-lg-12">
 															<input type="hidden" value="{{ csrf_token() }}" name="_token"/>
-															<label>Nomor Peserta</label>
+															<label>Nama</label>
 															<input type="text"  maxlength="100" class="form-control" name="nomor" id="nomor" placeholder="Nomor Peserta" required>
 														</div>
 														<div class="form-group col-lg-12">
@@ -154,7 +154,7 @@
 		 <script src="{{ asset('assets/vendor/bootbox/bootbox.min.js') }}"></script>
 
 		<!-- Theme Initialization Files -->
-		<script src="{{ asset('assets/js/theme.init.js') }}"></script>
+		<!-- <script src="{{ asset('assets/js/theme.init.js') }}"></script> -->
 
 		<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script> -->
 		<script>
