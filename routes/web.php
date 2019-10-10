@@ -143,6 +143,7 @@ route::get('setting/user',function(){
     return view('setting.user');
 });
 
+route::get('setting/role/list','Setting\RoleController@roleList')->name('list_role');
 
 /* =========================================== Setting===================================== */
 
