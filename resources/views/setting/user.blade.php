@@ -76,7 +76,7 @@
                 <div class="modal-content  ">
                     <!-- Modal Header -->
                     <div class="modal-header card-header">
-                        <h2 class="card-title" id="judul">Tambah Asuransi</h2>
+                        <h2 class="card-title" id="judul">Tambah User</h2>
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
                     <form method="POST" id="formTambah">
@@ -121,7 +121,7 @@
                 <div class="modal-content  ">
                     <!-- Modal Header -->
                     <div class="modal-header card-header">
-                        <h2 class="card-title" id="judul">Ubah Tipe Asuransi</h2>
+                        <h2 class="card-title" id="judul">Ubah User</h2>
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
                     <form method="POST" id="formUpdate">
