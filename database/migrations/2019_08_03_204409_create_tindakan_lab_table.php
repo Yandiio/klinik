@@ -16,10 +16,12 @@ class CreateTindakanLabTable extends Migration
         Schema::create('tindakan_lab', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_laboratorium')->unsigned();
+            $table->integer('id_rekammedis')->unsigned();
             $table->timestamps();
 
             
             $table->foreign('id_laboratorium')->references('id')->on('laboratorium');
+            $table->foreign('id_rekammedis')->references('id')->on('rekam_medis');
         });
     }
 
