@@ -15,10 +15,19 @@
 //     return view('welcome');
 // });
 
+// Route::get('login', function () {
+//     return view('login_member');
+// });
+
 
 /* =========================================== dashboard ===================================== */
 
-route::get('/',function(){
+
+Route::get('/', function () {
+    return view('login_member');
+});
+
+route::get('dashboard',function(){
     return view('dashboard.dashboard');
 });
 /* =========================================== dashboard ===================================== */
@@ -148,6 +157,7 @@ route::get('setting/user',function(){
     return view('setting.user');
 });
 
+route::get('setting/role/list','Setting\RoleController@roleList')->name('list_role');
 
 /* =========================================== Setting===================================== */
 

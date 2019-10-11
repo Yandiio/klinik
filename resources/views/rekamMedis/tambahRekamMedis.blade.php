@@ -46,23 +46,25 @@
                             </a>
                         </li>
                     </ul>
-                    <form action="#" id="formUpdate" method="POST">
+                <form action="#" id="formTambah" method="POST">
                         @csrf
                         <div class="tab-content">
-
                             <div id="w2-account" class="tab-pane p-3 active">
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">NO
                                         Pendafataran</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="noDaftar"
                                             id="w2-first-name" readonly="readonly"
                                             value="{{$pendaftaran[0]->no_daftar}}">
+                                            <input type="hidden" class="form-control form-control-sm mb-3" name="idDaftar"
+                                            id="w2-first-name" readonly="readonly"
+                                            value="{{$pendaftaran[0]->id}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="text" class="form-control form-control-sm mb-3" name="poli"
                                             id="w2-first-name" readonly="readonly"
                                             value="{{$pendaftaran[0]->poli->nama}}">
                                     </div>
@@ -71,7 +73,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="Text" class="form-control form-control-sm mb-3" name="nik"
                                             id="w2-first-name" placeholder="234543452" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->nik}}">
                                     </div>
@@ -79,7 +81,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Penjamin
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="Text" class="form-control form-control-sm mb-3" name="penjamin"
                                             id="w2-first-name" placeholder="BPJS" disabled
                                             value="{{$pendaftaran[0]->penjamin->asuransi->nama}}">
                                     </div>
@@ -88,14 +90,14 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="Text" class="form-control form-control-sm mb-3" name="namaLengkap"
                                             id="w2-first-name" placeholder="Helmay cahyadi" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->nama_lengkap}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="number" class="form-control form-control-sm mb-3" name="usia"
                                             id="w2-first-name" placeholder="23" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->usia}}">
                                     </div>
@@ -104,15 +106,15 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat
                                         Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="Text" class="form-control form-control-sm mb-3" name="tempatlahir"
                                             id="w2-first-name" placeholder="Bekasi" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->tempat_lahir}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" placeholder="B+" disabled
+                                        <input type="Text" class="form-control form-control-sm mb-3"
+                                            name="golonganDarah" id="w2-first-name" placeholder="B+" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->gd}}">
                                     </div>
                                 </div>
@@ -128,14 +130,15 @@
                                             </span>
                                             <input type="text" data-plugin-datepicker
                                                 class="form-control form-control-sm mb-3" placeholder="23/07/2019"
-                                                disabled value="{{$pendaftaran[0]->penjamin->pasien->tanggal_lahir}}">
+                                                name="tglLahir" disabled
+                                                value="{{$pendaftaran[0]->penjamin->pasien->tanggal_lahir}}">
                                         </div>
 
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Jenis
                                         Kelamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="Text" class="form-control form-control-sm mb-3" name="first-name"
+                                        <input type="Text" class="form-control form-control-sm mb-3" name="jenisKelamin"
                                             id="w2-first-name" placeholder="Laki-Laki" disabled
                                             value="{{$pendaftaran[0]->penjamin->pasien->jk}}">
                                     </div>
@@ -143,7 +146,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal
-                                        Pendataan<span class="required">*</span></label>
+                                        Pendaftaran<span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
@@ -152,14 +155,14 @@
                                                 </span>
                                             </span>
                                             <input type="text" data-plugin-datepicker
-                                                class="form-control form-control-sm mb-3" placeholder="23/07/2019"
-                                                disabled value="{{$pendaftaran[0]->tgl_data}}">
+                                                class="form-control form-control-sm mb-3" name="tglPendaftaran" disabled
+                                                value="{{$pendaftaran[0]->tgl_data}}">
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keluhan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize"
+                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keluhan"
                                             data-plugin-textarea-autosize disabled
                                             value="{{$pendaftaran[0]->keluhan}}"></textarea>
                                     </div>
@@ -177,11 +180,11 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Dokter
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="" id="" class="form-control form-control-sm mb-3">
+                                        <select name="dokter" id="dokter" class="form-control form-control-sm mb-3">
                                             <option value="">Pilih Dokter</option>
-                                            <option value="">[GIGI] Drs.Beny Setiawan</option>
-                                            <option value="">[Gizi] Drs.Khoslis Pratama</option>
-                                            <option value="">[Lambung] Drs.Yadi Pamungkas</option>
+                                            <option value="1">[GIGI] Drs.Beny Setiawan</option>
+                                            <option value="2">[Gizi] Drs.Khoslis Pratama</option>
+                                            <option value="3">[Lambung] Drs.Yadi Pamungkas</option>
                                         </select>
                                     </div>
                                 </div>
@@ -219,14 +222,14 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal
                                         Tindakan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <div class="input-group">
+                                    <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text" style="height:25px">
+                                                <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker
-                                                class="form-control form-control-sm mb-3" name="tglTindakan">
+                                            <input type="date" class="form-control form-control-sm mb-3"
+                                                name="tanggalTindakan">
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
@@ -356,56 +359,48 @@
                     <h2 class="card-title" id="judul">Tambah Diagnosa</h2>
                     <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                 </div>
-                <form method="POST" id="formTambah">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="modal-wrapper">
-                            <div class="modal-text">
-                                <div class="col-lg-12">
-
-                                    <div class="table-responsive m-t-40">
-                                        <table id="tableAjaxDiagnosaList"
-                                            class="display nowrap table table-hover table-striped table-bordered"
-                                            cellspacing="0" width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <th width="5%">No</th>
-                                                    <th>Nama Diagnosa</th>
-                                                    <th>Hasil Diagnosa</th>
-                                                    <th>Keterangan</th>
-                                                    <th width="15%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-
+                <div class="modal-body">
+                    <div class="modal-wrapper">
+                        <div class="modal-text">
+                            <div class="col-lg-12">
+                                <div class="table-responsive m-t-40">
+                                    <table id="tableAjaxDiagnosaList"
+                                        class="display nowrap table table-hover table-striped table-bordered"
+                                        cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">No</th>
+                                                <th>Nama Diagnosa</th>
+                                                <th>Hasil Diagnosa</th>
+                                                <th>Keterangan</th>
+                                                <th width="15%">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
-                                <button type="button" class="btn btn-default" data-dismiss="modal"
-                                    id="cancel">Kembali</button>
-
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                id="cancel">Kembali</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -420,52 +415,48 @@
                     <h2 class="card-title" id="judul">Tambah Lab</h2>
                     <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                 </div>
-                <form method="POST" id="formTambah">
-                    @csrf
-                    <div class="modal-body">
-                        <div class="modal-wrapper">
-                            <div class="modal-text">
-                                <div class="col-lg-12">
+                <div class="modal-body">
+                    <div class="modal-wrapper">
+                        <div class="modal-text">
+                            <div class="col-lg-12">
 
-                                    <div class="table-responsive m-t-40">
-                                        <table id="tableAjaxLabList"
-                                            class="display nowrap table table-hover table-striped table-bordered"
-                                            cellspacing="0" width="100%">
-                                            <thead>
-                                                <tr>
-                                                    <th width="5%">No</th>
-                                                    <th>Nama Lab</th>
-                                                    <th>Keterangan</th>
-                                                    <th width="10%">Aksi</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                <div class="table-responsive m-t-40">
+                                    <table id="tableAjaxLabList"
+                                        class="display nowrap table table-hover table-striped table-bordered"
+                                        cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">No</th>
+                                                <th>Nama Lab</th>
+                                                <th>Keterangan</th>
+                                                <th width="10%">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
-
                             </div>
-                        </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
-                                <button type="button" class="btn btn-default" data-dismiss="modal"
-                                    id="cancel">Kembali</button>
-
-                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="row">
+                        <div class="col-md-12 text-right">
+                            <!-- <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button> -->
+                            <button type="button" class="btn btn-default" data-dismiss="modal"
+                                id="cancel">Kembali</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -620,7 +611,7 @@
 
 
 
-    $('#formUpdate').on('submit', function (e) {
+    $('#formTambah').on('submit', function (e) {
 
         e.preventDefault();
         $.ajaxSetup({
@@ -631,13 +622,11 @@
 
         $.ajax({
             type: "POST",
-            url: "",
+            url: "{{ route('input_rekam_medis') }}",
             data: $(this).serialize(),
             success: function (data) {
-
-                // console.log(data);
-                var id = data;
-                // window.location.href= "{{ route ('print_pendaftaran'),'_blank' }}";
+                
+                window.location.href= "{{ url ('rekam-medis/list-rekam-medis') }}";
                 new PNotify({
                     title: 'Regular Notice',
                     text: 'Check me out! I\'m a notice.',
@@ -744,7 +733,8 @@
             },
             success: function (data) {
                 //console.log(data);
-                var itemdiagnosa = '<tr><td>' + data.id + '<input type="hidden" name="diagnosa[]" value="'+data.id+'" id="idDiagnosa'+data.id+'"></td><td>' + data.nama + '</td><td>' + data
+                var itemdiagnosa = '<tr><td>' + data.id + '<input type="hidden" name="diagnosa[]" value="' +
+                    data.id + '" id="idDiagnosa' + data.id + '"></td><td>' + data.nama + '</td><td>' + data
                     .hasil_diagnosa +
                     '</td><td><button type="button" href="" class="btn btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button></td></tr>';
 
@@ -752,7 +742,7 @@
             }
         });
     }
-    
+
     function buttonAddLab(idDiagnosa) {
 
 
@@ -769,7 +759,8 @@
             },
             success: function (data) {
                 //console.log(data);
-                var itemdiagnosa = '<tr><td>' + data.id +'<input type="hidden" name="lab[]" value="'+data.id+'" id="idLab'+data.id+'"></td><td>' + data.nama + '</td><td>' + data
+                var itemdiagnosa = '<tr><td>' + data.id + '<input type="hidden" name="lab[]" value="' + data
+                    .id + '" id="idLab' + data.id + '"></td><td>' + data.nama + '</td><td>' + data
                     .keterangan +
                     '</td><td><button type="button" class="btn btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button></td></tr>';
 
@@ -778,9 +769,9 @@
         });
     }
 
-    $('.table tbody').on('click', '.btn' , function(){
+    $('.table tbody').on('click', '.btn', function () {
         $(this).closest('tr').remove();
-        
+
     });
 
 </script>

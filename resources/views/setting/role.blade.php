@@ -8,7 +8,7 @@
 @section('content')
 <section role="main" class="content-body">
         <header class="page-header">
-        <h2>Pasien</h2>
+        <h2>Setting</h2>
     
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
@@ -17,8 +17,8 @@
                         <i class="fas fa-home"></i>
                     </a>
                 </li>
-                <li><span>Pasien</span></li>
-                <li><span>Tipe Asuransi</span></li>
+                <li><span>Setting</span></li>
+                <li><span>Role</span></li>
             </ol>
     
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
@@ -29,54 +29,45 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <button type="button"  href="#modalMD" class="btn btn-success modal-sizes float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
+                    <!-- <button type="button"  href="#modalMD" class="btn btn-success modal-sizes float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">
                         Tambah
                         <i class="fa fa-plus"></i>
-                    </button>
-                    <h4 class="card-title">List Asuransi</h4>
+                    </button> -->
+                    <h4 class="card-title">List Role</h4>
                     <br>
                     <div class="table-responsive m-t-40">
                         <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Tipe Pendaftaran</th>
-                                    <th>Aksi</th>
+                                    <th>Nama Role</th>
+                                    <th>Keterangan</th>
+                                    
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>No</th>
-                                    <th>Tipe Pendaftaran</th>
-                                    <th>Aksi</th>
+                                    <th>Nama Role</th>
+                                    <th>Keterangan</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <tr>
                                     <td >1</td>
-                                    <td>Avrist</td>
-                                    <td>
-                                        <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                        <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                    </td>  
+                                    <td>Petugas Locket</td>
+                                    <td>Modul Pendaftaran</td>
                                 </tr>
                                 <tr>
                                     <td >2</td>
-                                    <td>Pribadi</td>
-                                    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                        <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                    </td>  
+                                    <td>Administratif</td>
+                                    <td>Modul Rekam Medis dan dokter</td>
                                 </tr>
                                 <tr>
                                     <td >3</td>
-                                    <td>Bpjs</td>
-                                    <td>
-                                    <button type="button" class="btn-sm btn-warning modal-sizes"  title="Ubah Data !" style="margin-right:5px" href="#modalMDEdit"><i class="fa fa-edit" aria-hidden="true"></i></button>
-                                        <button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                                    </td> 
+                                    <td>Kepala Klinik</td>
+                                    <td>Laporan dan dashboard</td>
                                 </tr>
-                                
                             </tbody>
                         </table>
                     </div>

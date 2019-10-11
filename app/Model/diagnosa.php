@@ -16,4 +16,9 @@ class diagnosa extends Model
         'keterangan'
     ];
     public $timestamps = true;
+
+
+    public function tindakandiagnosa(){
+        return $this->hashMany('App\Model\diagnosa', 'id_diagnosa', 'id');
+    }
 }

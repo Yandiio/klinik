@@ -14,4 +14,9 @@ class laboratorium extends Model
         'keterangan',
     ];
     public $timestamps = true;
+
+
+    public function tindakanlab(){
+        return $this->hashMany('App\Model\tindakanLab', 'id_lab', 'id');
+    }
 }

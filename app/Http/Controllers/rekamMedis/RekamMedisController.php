@@ -12,6 +12,9 @@ use App\Model\penjamin;
 use App\Model\pendaftaran;
 use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
+use App\Model\rekamMedis;
+use App\Model\tindakanDiagnosa;
+use App\Model\tindakanLab;
 
 class RekamMedisController extends Controller
 {
@@ -79,69 +82,55 @@ class RekamMedisController extends Controller
 
     public function tambahrekamMedis(Request $request){
         //dd($request);
-        $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
+
+        $iddiagnosa = $request->input('diagnosa');
+        //dd($iddiagnosa);
+        $idlab = $request->input('lab');
+        $cekData = rekamMedis::select('id')->orderBy('created_at','desc')->first();
         
         if($cekData){
             // dd($car);
-             $car = "00";
+             $car = "RM-0";
              $nomor = $car . $cekData->id += 1 ;
          }else{
-            $car = "00";
+            $car = "RM-0";
              $nomor = $car .'1';
          }
          //dd($nomor);
 
-         $alamat = new alamatPasien;
-         $alamat->alamat = $request->input('alamat');
-         $alamat->kelurahan = $request->input('kelurahan');
-         $alamat->kecamatan = $request->input('kecamatan');
-         $alamat->provinsi = $request->input('provinsi');
-         $alamat->kabupaten = $request->input('kota');
-         $alamat->save();
 
-        $pasien = new pasien;
-        $pasien->nik = $request->input('nik');
-        $pasien->alamat_pasien = $alamat->id;
-        $pasien->nama_lengkap = $request->input('namaLengkap');
-        $pasien->tempat_lahir = $request->input('tempatLahir');
-        $pasien->tanggal_lahir = $request->input('tanggalLahir');
-        $pasien->telepone = $request->input('telepone');
-        $pasien->usia = $request->input('umur');
-        $pasien->jenis_kelamin = $request->input('jenisKelamin');
-        $pasien->golongan_darah = $request->input('golonganDarah');
-        $pasien->agama = $request->input('agama');
-        $pasien->save();
+        $rekamanmedis = new rekamMedis;
+        $rekamanmedis->id_pendaftaran = $request->input('idDaftar');
+        $rekamanmedis->id_dokter = 1;
+        $rekamanmedis->no_medis = $nomor;
+        $rekamanmedis->suhu_badan = $request->input('suhuBadan');
+        $rekamanmedis->berat_badan = $request->input('beratBadan');
+        $rekamanmedis->tinggi_badan = $request->input('tinggiBadan');
+        $rekamanmedis->tekanan_darah = $request->input('tekananDarah');
+        $rekamanmedis->save();
 
-        $penjamin = new penjamin;
-        $penjamin->id_tipe_asuransi = $request->input('ansuransiAs');
-        $penjamin->hubungan = $request->input('hubunganAs');
-        $penjamin->id_pasien = $pasien->id;
-        $penjamin->nik = $request->input('nikAs');
-        $penjamin->nama_lengkap = $request->input('namaLengkapAs');
-        $penjamin->telepone = $request->input('teleponeAs');
-        $penjamin->hp = $request->input('hpAs');
-        $penjamin->kode_karyawan = $request->input('kodeKaryawanAs');
-        $penjamin->no_polis = $request->input('noPolisAs');
-        $penjamin->tanggal_akhir_polis = $request->input('tanggalAkhirPolisAs');
-        $penjamin->keterangan = $request->input('keteranganAs');
-        $penjamin->save();
-
-        $pendaftaran = new pendaftaran;
-        $pendaftaran->id_penjamin = $penjamin->id;
-        $pendaftaran->id_tipe_poli = $request->input('poli');
-        $pendaftaran->no_daftar = $nomor;
-        $pendaftaran->tgl_daftar = $request->input('tanggalDaftar');
-        $pendaftaran->keluhan = $request->input('keluhan');
-        $pendaftaran->save();
-
-        
+        $daftar = pendaftaran::find($request->idDaftar);
+        $daftar->status = 1;
+        $daftar->save();
 
 
+        for ($i=0; $i <count($iddiagnosa) ; $i++) { 
+            # code...
+            $tindakan = new tindakanDiagnosa;
+            $tindakan->id_diagnosa = $iddiagnosa[$i];
+            $tindakan->id_rekammedis = $rekamanmedis->id;
+            $tindakan->save();
+        }
 
+        for ($i=0; $i <count($idlab) ; $i++) { 
+            # code...
+                $lab = new tindakanLab;
+                $lab->id_laboratorium = $idlab[$i];
+                $lab->id_rekammedis = $rekamanmedis->id;
+                $lab->save();
+        }
 
-
-
-        return response()->json($pendaftaran->id);
+        // return redirect('rekam-medis/list-rekam-medis');
     }
 
     public function editrekamMedis($id){

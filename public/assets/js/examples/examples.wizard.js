@@ -121,7 +121,6 @@ Theme Version: 	2.1.1
 			} else {
 				return true;
 			}
-			console.log("djadsjadsoad");
 		},
 		onTabChange: function( tab, navigation, index, newindex ) {
 			var totalTabs = navigation.find('li').length - 1;
@@ -264,7 +263,7 @@ Theme Version: 	2.1.1
 			var $total = navigation.find('li').length - 1;
 			var $current = index;
 			var $percent = Math.floor(( $current / $total ) * 100);
-			
+
 			navigation.find('li').removeClass('active');
 			navigation.find('li').eq( $current ).addClass('active');
 
