@@ -46,7 +46,8 @@
                             </a>
                         </li>
                     </ul>
-                    <form class="form-horizontal" novalidate="novalidate">
+                    <form action="#" id="formTambah" method="POST">
+                            @csrf
                         <div class="tab-content">
                             <div id="w2-account" class="tab-pane p-3 active">
                                 <div class="form-group row">
@@ -54,12 +55,12 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" id="w2-username"
-                                            name="" placeholder="Kode Dokter">
+                                            name="kd_dokter" placeholder="Kode Dokter">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Poli <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                        <select class="form-control form-control-sm mb-3" name="poli" id="poli">
                                             <option value=""></option>
                                         </select>
                                     </div>
@@ -69,10 +70,15 @@
                                         External Dokter <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value="">Yes</option>
-                                            <option value="">No</option>
+                                        <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="iExternal">
+                                            <option value="">=== PILIH ===</option>
+                                            <option value="1">Yes</option>
+                                            <option value="2">No</option>
                                         </select>
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keterangan<span class="required">*</span></label>
+                                    <div class="col-sm-4">
+                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="keterangan" data-plugin-textarea-autosize></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -81,83 +87,108 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">NIK<span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="" id="" placeholder="NIK">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="nik" id="nik" placeholder="NIK">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Nama Lengkap<span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="" id="" placeholder="Nama Lengkap">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap" id="namaLengkap" placeholder="Nama Lengkap">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal Lahir <span class="required">*</span>
-                                    </label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal
+                                        Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <div class="input-group">
                                             <span class="input-group-prepend">
-                                                <span class="input-group-text" style="height:25px">
+                                                <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="text" data-plugin-datepicker class="form-control form-control-sm mb-3" placeholder="01/01/2019">
+                                            <input type="date" name="tanggalLahir" class="form-control form-control-sm mb-3" >
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat Lahir <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="" id="" placeholder="Tempat Lahir">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir" id="itempatLahir" placeholder="Tempat Lahir" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email">
-                                    </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No. Telepon <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="" id="" placeholder="No Telepon">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="telepon" id="" placeholder="No Telepon">
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No. Handphone <span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="hp" id="iHp" placeholder="No Handphone" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-email">Jenis Kelamin <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value="0">Laki - Laki</option>
+                                        <select class="form-control form-control-sm mb-3" name="jenisKelamin" id="ijenisKelamin" required>
+                                            <option value="">Jenis Kelamin</option>
+                                            <option value="0">Laki-Laki</option>
                                             <option value="1">Perempuan</option>
                                         </select>
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia<span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="usia" required>
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama<span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="agama" id="agama" placeholder="usia" required>
                                     </div>
                                 </div>
                             </div>
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Provinsi</label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value=""></option>
+                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3"
+                                            requeired>
+                                            <option id="itemProvinsi">=========== Pilih Provinsi ======</option>
                                         </select>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kabupaten</label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value=""></option>
+                                        <select name="kota" id="kota" class="form-control form-control-sm mb-3"
+                                            requeired>
+                                            <option id="itemKota">=========== Pilih Kota ======</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kecamatan</label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kecamatan
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value=""></option>
+                                        <select name="kecamatan" id="kecamatan"
+                                            class="form-control form-control-sm mb-3" requeired>
+                                            <option id="itemKecamatan" value="">============ Kecamatan ========</option>
                                         </select>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kelurahan</label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kelurahan
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select class="form-control form-control-sm mb-3" name="" id="">
-                                            <option value=""></option>
+                                        <select name="kelurahan" id="kelurahan"
+                                            class="form-control form-control-sm mb-3" requeired>
+                                            <option id="itemKelurahan" value="">============ Kelurahan ========</option>
                                         </select>
                                     </div>
                                 </div>
@@ -165,39 +196,36 @@
                                     
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="" id="w2-last-name" placeholder="Kode Pos">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="kodePos" id="w2-last-name" placeholder="Kode Pos">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
+                                        <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
                                     </div>
                                 </div>
-                                <!-- <div class="form-group row">
-                                    <div class="col-sm-4"></div>
-                                    <div class="col-sm-10">
-                                        <div class="checkbox-custom">
-                                            <input type="checkbox" name="terms" id="w2-terms" required>
-                                            <label for="w2-terms">I agree to the terms of service</label>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="card-footer">
                     <ul class="pager">
                         <li class="previous disabled">
-                            <a><i class="fas fa-angle-left"></i> Previous</a>
-                        </li>
-                        <li class="finish hidden float-right">
-                            <a>Finish</a>
+                            <!-- <button ><i class="fas fa-angle-left"></i></button>
+                            <a><i class="fas fa-angle-left"></i> Sebelumnya</a> -->
+                            <button id="sebelumnya" class="mb-1 mt-1 mr-1 btn btn-default float-left" type="button"><i
+                                    class="fas fa-angle-left"></i> Sebelumnya</button>
                         </li>
                         <li class="next">
-                            <a>Next <i class="fas fa-angle-right"></i></a>
+                            <button id="selanjutnya1" class="mb-1 mt-1 mr-1 btn btn-default float-right"
+                                type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
+                            <button id="selanjutnya2" class="mb-1 mt-1 mr-1 btn btn-default float-right"
+                                type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
+                        </li>
+                        <li class="finish float-right">
+                            <button type="submit" class="mb-1 mt-1 mr-1 btn btn-default" id="selesai">Selesai</button>
                         </li>
                     </ul>
                 </div>
+            </form>
             </section>
         </div>
     </div>
@@ -284,38 +312,164 @@
     $(document).ready(function () {
         selanjutnya1();
         selanjutnya2();
+        
         $('#selesai').click(function () {
+            //console.log('#selesai');
+            $('#formTambah').trigger("reset");
             $('#dataDokter').click();
             $('#selesai').hide();
             $('#selanjutnya1').show();
             disabledTapAwal();
         });
+
         tampilProvinsi();
         dataPoli();
     });
 
     function disabledTapAwal() {
-        // $('#penjamin').prop("disabled",true);
-        // $('#daftar').prop("disabled",true);
-        $('#penjamin').hide();
-        $('#daftar').hide();
+        $('#dataPribadi').hide();
+        $('#idAlamat').hide();
         $('#selanjutnya2').hide();
         $('#selesai').hide();
     }
 
+    function selanjutnya1() {
+        $('#selanjutnya1').click(function () {
+            //console.log('selanjutnya 1');
+            $('#dataPribadi').show();
+            $('#dataDokter').show();
+            /* fungsi button */
+            $(this).hide();
+            $('#selanjutnya2').show();
+            $('#dataPribadi').click();
+            $("#idAlamat").mouseenter(function () {
+                $(this).prop("disabled", true);
+            });
+            $("#dataDokter").mouseenter(function () {
+                $(this).prop("disabled", true);
+            });
+        });
+    }
+
+    function selanjutnya2() {
+        $('#selanjutnya2').click(function () {
+            //console.log('selanjutnya 2');
+            $('#idAlamat').show();
+            $(this).hide();
+            $('#idAlamat').click();
+            $('#selesai').show();
+        });
+    }
+
+    function dataPoli() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('tipePoli_getData')}}",
+            //    data: {
+            //        'id': id
+            //    },
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#poli').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama + '</option>')
+                });
+            }
+        });
+    }
+
+    function tampilProvinsi() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('get_provinsi')}}",
+            // data: {
+            //     'id': id
+            // },
+            success: function (data) {
+                // the next thing you want to do 
+                // $city.empty();
+                for (var i = 0; i < data.length; i++) {
+                    $('#provinsi').append('<option id=' + data[i].id + ' value=' + data[i].id +
+                        '>' + data[i].name + '</option>');
+                }
+            }
+        });
+    }
+
+
+    $("#provinsi").change(function () {
+    // console.log($('#provinsi').val());
+    var id = $('#provinsi').val();
+        $.ajax({
+            type: "GET",
+            url: "{{route('get_kota')}}",
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                // the next thing you want to do 
+                //console.log(data);
+                // $city.empty();
+                for (var i = 0; i < data.length; i++) {
+                    $('#kota').append('<option id=' + data[i].id + ' value=' + data[i].id + '>' +
+                        data[i].name + '</option>');
+                }
+            }
+        });
+    });
+
+    $("#kota").click(function () {
+    //console.log($('#kota').val());
+    var id = $('#kota').val();
+        $.ajax({
+            type: "GET",
+            url: "{{route('get_kecamatan')}}",
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                // the next thing you want to do 
+                //console.log(data);
+                // $city.empty();
+                for (var i = 0; i < data.length; i++) {
+                    $('#kecamatan').append('<option id=' + data[i].id + ' value=' + data[i].id +
+                        '>' + data[i].name + '</option>');
+                }
+            }
+        });
+    });
+
+    $("#kecamatan").click(function () {
+    //console.log($('#kota').val());
+    var id = $('#kecamatan').val();
+        $.ajax({
+            type: "GET",
+            url: "{{route('get_kelurahan')}}",
+            data: {
+                'id': id
+            },
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $('#kelurahan').append('<option id=' + data[i].id + ' value=' + data[i].id +
+                        '>' + data[i].name + '</option>');
+                }
+            }
+        });
+    });
+
     $('#formTambah').on('submit', function (e) {
         e.preventDefault();
         $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $("input[name='_token']").val()
-        }
-    });
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
         $.ajax({
             type: "POST",
             url: "{{ route('Dokter_postInput')}}",
             data: $(this).serialize(),
             success: function (data) {
-                // console.log(data);
+                console.log(data);
                 var id = data;
                 new PNotify({
                     title: 'Regular Notice',
@@ -325,6 +479,9 @@
             }
         });
     });
+
+
+
 
 </script>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\dokter;
 use App\Model\alamat_dokter;
+use App\Model\alamatDokter;
 use Yajra\Datatables\Datatables;
 use Dompdf\Dompdf;
 use PDF;
@@ -39,9 +40,45 @@ class DokterController extends Controller
         }
 
     public function postDokter_Input(Request $request) {
-        dd($request);
+        // dd($request);
         $cekData = dokter::select('id')->orderBy('created_at','desc')->first();
+        if($cekData){
+            $car = "00";
+            $nomor = $car . $cekData->id += 1 ;
+        }else{
+            $car = "00";
+            $nomor = $car . '1';
+        }
+        // dd($nomor);
+
+        $alamat = new alamatDokter;
+        $alamat->alamat     = $request->input('alamat');
+        $alamat->kelurahan  = $request->input('kelurahan');
+        $alamat->kecamatan  = $request->input('kecamatan');
+        $alamat->provinsi   = $request->input('provinsi');
+        $alamat->kabupaten  = $request->input('kota');
+        $alamat->save();
+
+        $dokter = new dokter;
+        $dokter->alamat_dokter  = $alamat->id;
+        $dokter->kode_dokter    = $request->input('kd_dokter');
+        $dokter->tipe_dokter    = $request->input('tipe_dokter');
+        $dokter->id_tipe_poli   = $request->input('poli');
+        $dokter->keterangan     = $request->input('keterangan');
+        $dokter->nik            = $request->input('nik');
+        $dokter->nama_lengkap   = $request->input('namaLengkap');
+        $dokter->tanggal_lahir  = $request->input('tanggalLahir');
+        $dokter->tempat_lahir   = $request->input('tempatLahir');
+        $dokter->telepon       = $request->input('telepon');
+        $dokter->hp             = $request->input('hp');
+        $dokter->jenis_kelamin  = $request->input('jenisKelamin');
+        // $dokter->email          = $request->input('email');
+        $dokter->usia           = $request->input('usia');
+        $dokter->agama          = $request->input('agama');
+        $dokter->save();
+        return response()->json($dokter->id);
     }
 
+    
 
 }
