@@ -22,8 +22,8 @@ class CreateDokterTable extends Migration
             $table->string('nik');
             $table->date('tanggal_lahir');
             $table->string('nama_lengkap');
-            $table->integer('telepon');
-            $table->integer('hp');
+            $table->string('telepon');
+            $table->string('hp');
             $table->string('tempat_lahir');
             $table->integer('usia');
             $table->integer('jenis_kelamin');
