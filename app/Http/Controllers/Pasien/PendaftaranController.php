@@ -38,8 +38,8 @@ class PendaftaranController extends Controller
                 'tanggalDaftar' => $key->tgl_daftar,
                 'asuransi'      => $key->penjamin->asuransi->nama,
                 'provinsi'      => $key->penjamin->pasien->alamatpasien->prvns->name,
-                'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
-                'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
+                 'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
+                 'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
                 'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
                 
                 
@@ -80,7 +80,7 @@ class PendaftaranController extends Controller
     }
 
     public function tambahPendaftaran(Request $request){
-        dd($request);
+        //dd($request);
         $cekData = pendaftaran::select('id')->orderBy('created_at','desc')->first();
         
         if($cekData){

@@ -20,7 +20,7 @@ class CreatePasienTable extends Migration
             $table->string('nama_lengkap');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
-            $table->integer('telepone');
+            $table->string('telepone');
             $table->integer('usia')->nullable();
             $table->integer('jenis_kelamin');
             $table->string('golongan_darah')->nullable();
