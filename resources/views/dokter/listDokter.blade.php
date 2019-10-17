@@ -155,12 +155,12 @@
                 { data: 'id',
 					render: function (data, type, row) {
 						// console.log(type);
-						let buttonEdit =
-							'<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#modalUbah" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
+						var url = '{{ url("dokter/edit-dokter", "id") }}';
+                        url = url.replace('id', row.id);
+                        let buttonEdit =
+                            '<a class="btn-sm btn-warning" title="Pendaftaran ulang !"style="margin-right:5px" href="' +url +'"><i class="fas fa-edit" aria-hidden="true"></i></a>';
 						let buttonHapus =
-							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
-							data +
-							');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
+							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete('+data +');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
 						return buttonEdit + buttonHapus;
 					}
 				}
@@ -168,6 +168,46 @@
         });
 	});
 
+    /* ----------------- Function Delete Start -----------------*/
+	function buttonDelete(idDelete) {
+		bootbox.confirm({
+			message: "Apakah anda yakin ingin menghapus ?",
+			buttons: {
+				confirm: {
+					label: 'Ya, Saya ingin menghapus',
+					className: 'btn-success'
+				},
+				cancel: {
+					label: 'Tidak',
+					className: 'btn-danger'
+				}
+			},
+			callback: function (result) {
+				$.ajaxSetup({
+					headers: {
+						'X-CSRF-TOKEN' : $("input[name='_token']").val()
+					}
+				});
+				$.ajax({
+					type: "POST",
+					url: "#",
+					data: {
+						id: idDelete
+					},
+					success: function (data) {
+						//console.log(data);
+						oTableList.ajax.reload();
+						new PNotify({
+							title: 'Hapus',
+							text: 'Berhasil hapus',
+							type: 'success',
+						});
+					}
+				});
+			}
+		});
+	}
+	/* ----------------- Function Delete End -----------------*/
 
 
 </script> 

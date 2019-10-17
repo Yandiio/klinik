@@ -71,7 +71,7 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="iExternal">
-                                            <option value="">=== PILIH ===</option>
+                                            <option value="">====== PILIH ======</option>
                                             <option value="1">Yes</option>
                                             <option value="2">No</option>
                                         </select>
@@ -146,27 +146,26 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia<span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="usia" required>
+                                        <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="Usia" required>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama<span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="agama" id="agama" placeholder="usia" required>
+                                        <input type="text" class="form-control form-control-sm mb-3" name="agama" id="agama" placeholder="Agama" required>
                                     </div>
                                 </div>
                             </div>
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
-                                        <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi<span class="required">*</span>
+                                    </label>
                                     <div class="col-sm-4">
-                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3"
-                                            requeired>
+                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3" requeired>
                                             <option id="itemProvinsi">=========== Pilih Provinsi ======</option>
                                         </select>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota
-                                        <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota<span class="required">*</span>
+                                    </label>
                                     <div class="col-sm-4">
                                         <select name="kota" id="kota" class="form-control form-control-sm mb-3"
                                             requeired>

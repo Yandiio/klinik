@@ -88,9 +88,12 @@ route::get('dokter/tambah-dokter',function(){
 
 route::post('dokter/tambah-dokter/tambah', 'Dokter\DokterController@postDokter_Input')->name('Dokter_postInput');
 
-route::get('dokter/edit-dokter',function(){
-    return view('dokter.editDokter');
-});
+// route::get('dokter/edit-dokter',function(){
+//     return view('dokter.editDokter');
+// });
+
+route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
+
 route::get('dokter/detail-dokter',function(){
     return view('dokter.detailDokter');
 });
