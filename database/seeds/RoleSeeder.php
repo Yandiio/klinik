@@ -13,8 +13,8 @@ class RoleSeeder extends Seeder
     public function run()
     {
         //
-        $namaRole = ['Petugas Locket','Administratif','Kepala Klinik','Super Admin'];
-        $keterangan = ['Modul Pendafataran','Modul Rekam medis dan dokter','laporan dan dahsboar','Semua Mua'];
+        $namaRole = ['Petugas Locket','Administratif','Kepala Klinik','Super Admin','dokter'];
+        $keterangan = ['Modul Pendafataran','Modul Rekam medis dan dokter','laporan dan dahsboar','Semua Mua','input rekam medis'];
         for ($i=0; $i <4 ; $i++) { 
             # code...
             $role = new role;

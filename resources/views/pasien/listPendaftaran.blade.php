@@ -39,11 +39,11 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Asuransi</th>
                                     <th>Nik</th>
                                     <th>Nama</th>
-                                    <th>Poli</th>
-                                    <th>Tanggal</th>
+                                    <th>Jenis kelamin</th>
+                                    <th>Usia</th>
+                                    <th>Tempat lahir</th>
                                     <th>Aksi</th>
                                     <th>Daftar</th>
                                 </tr>
@@ -51,11 +51,11 @@
                             <tfoot>
                                 <tr>
                                     <th>No</th>
-                                    <th>Tipe</th>
                                     <th>Nik</th>
                                     <th>Nama</th>
-                                    <th>Dokter</th>
-                                    <th>Tanggal</th>
+                                    <th>Jenis kelamin</th>
+                                    <th>Usia</th>
+                                    <th>Tempat lahir</th>
                                     <th>Aksi</th>
                                     <th>Daftar</th>
                                 </tr>
@@ -138,9 +138,14 @@
                     <div class="modal-body">
                         <ul class="list-unstyled search-results-list">
                             <li>
-                                <p class="result-type">
+                                <p class="result-type" id="barcode">
                                     <span class="badge badge-primary">PASIEN</span>
                                 </p>
+                                <div class="visible-print text-center" id="qr">
+                                QrCode::generate('Make me into a QrCode!', '../public/qrcodes/qrcode.svg');
+                              
+                                </div>
+                                
                                 <div class="result-data">
                                     <p class="h3 title text-primary" id="nama">Calendar</p>
                                     <p class="description">
@@ -148,7 +153,8 @@
                                         <br>
                                         <small id="usia">25 Thn</small>
                                         <br>
-                                        <small id="tempatLahir">Bekasi, </small> &nbsp<small id="tanggalLahir">25 agustus
+                                        <small id="tempatLahir">Bekasi, </small> &nbsp<small id="tanggalLahir">25
+                                            agustus
                                             1989</small>
                                     </p>
                                     <table>
@@ -241,25 +247,26 @@
                     }
                 },
                 {
-                    data: 'asuransi',
-                    nama: 'asuransi'
-
-                },
-                {
                     data: 'nikPasien',
-                    name: 'nikPasien'
+                    nama: 'nikPasien'
+
                 },
                 {
                     data: 'nama',
                     name: 'nama'
                 },
                 {
-                    data: 'poli',
-                    name: 'poli'
+                    data: 'jenisKelamin',
+                    name: 'jenisKelamin'
+                },
+
+                {
+                    data: 'usia',
+                    name: 'usia'
                 },
                 {
-                    data: 'tanggalDaftar',
-                    name: 'tanggalDaftar'
+                    data: 'lahir',
+                    name: 'lahir'
                 },
                 {
                     data: 'id',
@@ -315,10 +322,14 @@
                 $('#kelrahan').text(data[0].kelurahan);
                 $('#usia').text(data[0].usia);
                 $('#alamat').text(data[0].alamat);
+               
+                jquery('#qr').qrcode({width: 64,height: 64,text: "size doesn't matter"});
+
             }
         });
 
     }
+   
 
 </script>
 @stop
