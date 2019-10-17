@@ -164,6 +164,8 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Laravolt\Indonesia\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -177,6 +179,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
 
     ],
 
@@ -229,6 +232,8 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Indonesia' => Laravolt\Indonesia\Facade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        //'QRCode' => LaravelQRCode\Facades\QRCode::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class    
 
     ],
 

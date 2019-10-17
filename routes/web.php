@@ -165,6 +165,10 @@ route::get('report/user',function(){
     return view('report');
 });
 
+Route::get('qr-code', function () 
+{
+  return view('pasien.qrqode');    
+});
 
 
 /* =========================================== Report===================================== */

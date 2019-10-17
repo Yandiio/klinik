@@ -24,29 +24,28 @@ class PendaftaranController extends Controller
     //
     public function pendaftaranList(){
 
-        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->get()
+        $listPasien = pasien::get()
         ->map(function($key){
             return [
                 'id'            => $key->id,
-                'nikPasien'     => $key->penjamin->pasien->nik,
-                'idPasien'     => $key->penjamin->pasien->id,
-                'nama'          => $key->penjamin->pasien->nama_lengkap,
-                'jenisKelamin'  => $key->penjamin->pasien->jk,
-                'golonganDarah' => $key->penjamin->pasien->gd,
-                'agama'         => $key->penjamin->pasien->ag,
-                'poli'          => $key->poli->nama,
-                'tanggalDaftar' => $key->tgl_daftar,
-                'asuransi'      => $key->penjamin->asuransi->nama,
-                'provinsi'      => $key->penjamin->pasien->alamatpasien->prvns->name,
-                 'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
-                 'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
-                'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
-                
+                'nikPasien'     => $key->nik,
+                'idPasien'     => $key->id,
+                 'nama'          => $key->nama_lengkap,
+                 'jenisKelamin'  => $key->jk,
+                 'golonganDarah' => $key->gd,
+                'agama'         => $key->ag,
+                'provinsi'      => $key->alamatpasien->prvns->name,
+                 'kabupaten'     => $key->alamatpasien->kbptn->name,
+                 'kecamatan'     => $key->alamatpasien->kcmtn->name,
+                'kelurahan'     => $key->alamatpasien->klrhn->name,
+                'alamat'     => $key->alamatpasien->alamat,
+                'usia'      => $key->usia,
+                'lahir'      => $key->tempat_lahir
                 
             ];
         });
         
-        return Datatables::of($listPasien)->make(true);
+         return Datatables::of($listPasien)->make(true);
         return response()->json($listPasien);
     }
     public function pendaftaranDetail(Request $request){
