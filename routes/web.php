@@ -80,19 +80,19 @@ route::get('dokter/list-dokter',function(){
     return view('dokter.listDokter');
 });
 
-route::get('dokter/list-dokter/list', 'Dokter\DokterController@getDokter_List')->name('Dokter_getList');
-
 route::get('dokter/tambah-dokter',function(){
     return view('dokter.tambahDokter');
 });
 
+route::get('dokter/list-dokter/list', 'Dokter\DokterController@getDokter_List')->name('Dokter_getList');
 route::post('dokter/tambah-dokter/tambah', 'Dokter\DokterController@postDokter_Input')->name('Dokter_postInput');
-
+route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
+route::post('dokter/edit-dokter/update', 'Dokter\DokterController@postDokter_Update')->name('Dokter_postUpdate');
+route::post('dokter/list-dokter/delete', 'Dokter\DokterController@postDokter_Delete')->name('Dokter_postDelete');
 // route::get('dokter/edit-dokter',function(){
 //     return view('dokter.editDokter');
 // });
 
-route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
 
 route::get('dokter/detail-dokter',function(){
     return view('dokter.detailDokter');
@@ -170,7 +170,7 @@ route::get('report/user',function(){
 
 Route::get('qr-code', function () 
 {
-  return view('pasien.qrqode');    
+    return view('pasien.qrqode');    
 });
 
 

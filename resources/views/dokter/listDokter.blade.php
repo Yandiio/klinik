@@ -28,6 +28,8 @@
 							<a href="{{ url('dokter/tambah-dokter') }}" class="btn btn-info float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
                         <h4 class="card-title">List Dokter</h4>
                         <div class="table-responsive m-t-40">
+                            <form method="POST" id="formList">
+                                    @csrf
                             <table id="tabelAjaxDokterList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
@@ -57,6 +59,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -137,6 +140,7 @@
 <script src="{{ asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
 <script src="{{ asset('assets/js/examples/examples.advanced.form.js')}}"></script>
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/bootbox/bootbox.all.min.js')}}"></script>
 <!-- end - This is for export functionality only -->
 <script>
     var oTableList;
@@ -190,7 +194,7 @@
 				});
 				$.ajax({
 					type: "POST",
-					url: "#",
+					url: "{{route('Dokter_postDelete')}}",
 					data: {
 						id: idDelete
 					},
