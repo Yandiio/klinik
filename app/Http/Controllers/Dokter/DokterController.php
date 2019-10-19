@@ -79,6 +79,10 @@ class DokterController extends Controller
         return response()->json($dokter->id);
     }
 
-    
+    public function getDokter_Edit($id){
+        
+        $dokter = dokter::where('id',$id)->get();
+        return view ('dokter.editDokter', compact('dokter'));
+    }
 
 }
