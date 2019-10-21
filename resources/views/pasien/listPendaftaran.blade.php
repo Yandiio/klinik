@@ -322,8 +322,7 @@
                 $('#usia').text(data[0].usia);
                 $('#alamat').text(data[0].alamat);
                 generate_qrcode(data[0].qrcode);
-                // alert(data[0].qrcode);
-                // jquery('#qr').qrcode({width: 64,height: 64,text: "size doesn't matter"});
+                
 
             }
         });
