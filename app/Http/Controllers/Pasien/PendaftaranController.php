@@ -15,6 +15,7 @@ use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
 use Dompdf\Dompdf;
 use PDF;
+use QrCode;
 
 
 
@@ -52,6 +53,9 @@ class PendaftaranController extends Controller
 
         $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->where('id',$request->id)->get()
         ->map(function($key){
+                
+                
+            
             return [
                 'id'            => $key->id,
                 'nikPasien'     => $key->penjamin->pasien->nik,
@@ -69,7 +73,7 @@ class PendaftaranController extends Controller
                 'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
                 'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
                 'alamat'     => $key->penjamin->pasien->alamatpasien->alamat,
-                
+                'qrcode' => $key->penjamin->pasien->nama_lengkap,
                 
             ];
         });

@@ -1,4 +1,3 @@
-<div class="visible-print text-center">
-        {!! QrCode::size(200)->generate('123'); !!}
-        
-</div>
+<img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->merge('ss.png', 0.3, true)
+                        ->size(500)->errorCorrection('H')
+                        ->generate('Welcome to kerneldev.com!')) !!} ">

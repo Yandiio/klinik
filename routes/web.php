@@ -167,7 +167,7 @@ route::get('report/user',function(){
 
 Route::get('qr-code', function () 
 {
-  return view('pasien.qrqode');    
+    return QrCode::size(250)->generate('Welcome to kerneldev.com!'); 
 });
 
 
