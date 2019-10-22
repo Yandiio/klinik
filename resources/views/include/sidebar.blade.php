@@ -72,7 +72,7 @@
                             </li>
                             <li>
                                 <a class="nav-link" href="{{url('rekam-medis/diagnosa')}}">
-                                    Diagnosa
+                                    Tindakan
                                 </a>
                             </li>
                             <li>

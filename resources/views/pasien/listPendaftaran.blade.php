@@ -230,6 +230,8 @@
 <script>
     var oTable;
 
+  
+
     $(document).ready(function () {
 
         oTable = $('#listPendaftaran').DataTable({
@@ -335,7 +337,9 @@
         $('#qrcode canvas').remove();
         $('#qrcode').qrcode({
             render: 'canvas',
-            text: teks
+            text: teks,
+            width: 100,
+	        height: 100
         });
     }
 </script>

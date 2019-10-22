@@ -68,6 +68,11 @@
                                     <td>Kepala Klinik</td>
                                     <td>Laporan dan dashboard</td>
                                 </tr>
+                                <tr>
+                                    <td >4</td>
+                                    <td>Dokter</td>
+                                    <td>Hasil Diagnosa</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
