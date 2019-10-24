@@ -101,7 +101,7 @@ class RekamMedisController extends Controller
 
         $rekamanmedis = new rekamMedis;
         $rekamanmedis->id_pendaftaran = $request->input('idDaftar');
-        $rekamanmedis->id_dokter = 1;
+        $rekamanmedis->id_dokter = $request->input('dokter');
         $rekamanmedis->no_medis = $nomor;
         $rekamanmedis->suhu_badan = $request->input('suhuBadan');
         $rekamanmedis->berat_badan = $request->input('beratBadan');
@@ -114,13 +114,7 @@ class RekamMedisController extends Controller
         $daftar->save();
 
 
-        for ($i=0; $i <count($iddiagnosa) ; $i++) { 
-            # code...
-            $tindakan = new tindakanDiagnosa;
-            $tindakan->id_diagnosa = $iddiagnosa[$i];
-            $tindakan->id_rekammedis = $rekamanmedis->id;
-            $tindakan->save();
-        }
+        
 
         for ($i=0; $i <count($idlab) ; $i++) { 
             # code...

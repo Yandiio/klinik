@@ -81,6 +81,7 @@ route::get('dokter/list-dokter',function(){
 });
 
 route::get('dokter/list-dokter/list', 'Dokter\DokterController@getDokter_List')->name('Dokter_getList');
+route::get('dokter/list-dokter/data', 'Dokter\DokterController@dataDokter')->name('dokter_get_data');
 
 route::get('dokter/tambah-dokter',function(){
     return view('dokter.tambahDokter');
@@ -120,6 +121,16 @@ route::get('rekam-medis/tambah-rekam-medis',function(){
 route::get('rekam-medis/detail-rekam-medis',function(){
     return view('rekamMedis.detailRekamMedis');
 });
+
+route::get('rekam-medis/pemeriksaan',function(){
+    return view('rekamMedis.pemeriksaan');
+});
+
+route::get('rekam-medis/pemeriksaan/list','rekamMedis\PemeriksaanController@list')->name('data-list-pemeriksaan');
+route::get('rekam-medis/pemeriksaan/data-antrian', 'rekamMedis\PemeriksaanController@dataAntrian')->name('data-antrian');
+route::get('rekam-medis/pemeriksaan/detail-antrian-daftar', 'rekamMedis\PemeriksaanController@detailAntrianDaftar')->name('detail-antrian-daftar');
+route::post('rekam-medis/pemeriksaan/update', 'rekamMedis\PemeriksaanController@pemeriksaanUpadte')->name('pemeriksaan-update');
+
 
 route::get('rekam-medis/diagnosa',function(){
     return view('rekamMedis.diagnosa');

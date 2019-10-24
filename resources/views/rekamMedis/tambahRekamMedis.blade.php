@@ -181,9 +181,7 @@
                                     <div class="col-sm-4">
                                         <select name="dokter" id="dokter" class="form-control form-control-sm mb-3">
                                             <option value="">Pilih Dokter</option>
-                                            <option value="1">[GIGI] Drs.Beny Setiawan</option>
-                                            <option value="2">[Gizi] Drs.Khoslis Pratama</option>
-                                            <option value="3">[Lambung] Drs.Yadi Pamungkas</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -283,7 +281,7 @@
                                                     <div class="col-lg-4 form-group">
 
                                                     </div>
-                                                    <div class="col-lg-4 form-group">
+                                                    <!-- <div class="col-lg-4 form-group">
                                                         <label class="control-label float-right" for="w2-first-name">Satatus
                                                             <span class="required">*</span></label>
                                                     </div>
@@ -294,7 +292,7 @@
                                                                 <option value="1">Selesai</option>
                                                                 
                                                     </select>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                         </section>
                                     </div>
@@ -533,6 +531,7 @@
     $(document).ready(function () {
         selanjutnya1();
         selanjutnya2();
+        dataDokter();
 
         $('#selesai').click(function () {
             $('#dataPribadi').click();
@@ -751,6 +750,22 @@
         $(this).closest('tr').remove();
 
     });
+    function dataDokter() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('dokter_get_data')}}",
+            
+            success: function (data) {
+                //console.log(data[0].id);
+                $.each(data, function (index, value) {
+                    $('#dokter').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama_lengkap + '</option>')
+                });
+            }
+
+        });
+    }
 
 </script>
 @stop

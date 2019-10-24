@@ -220,13 +220,16 @@
                     data: 'status',
                     render: function (data, type, row) {
                         if (row.status === "0") {
-                            let bagess = '<div class="badge badge-warning">Pending</div>';
+                            let bagess = '<div class="badge badge-warning">Menunggu</div>';
                             return bagess;
                         } else if (row.status === "1") {
-                            let bagess = '<div class="badge badge-primary">sucess</div>';
+                            let bagess = '<div class="badge badge-info">Antrian</div>';
+                            return bagess;
+                        } else if (row.status === "2") {
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
                         } else {
-                            let bagess = '<div class="badge badge-success">NO</div>';
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
                         }
                     }
@@ -248,7 +251,21 @@
 
                             return buttonView + buttonMedis;
 
-                        } else {
+                        } else if(row.status == 2){
+
+                            var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
+                            url = url.replace('id', row.id);
+                            let buttonMedis =
+                                ' <a class="btn-sm btn-default" title="Buat Tindakan!" style="margin-right:5px" href="' +
+                                url +
+                                '" onclick="return false;"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>';
+                            let buttonView =
+                                ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
+                                row.id + ')"><i class="fa fa-eye"></i></button>';
+
+                            return buttonView + buttonMedis;
+
+                        }else {
                             var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
                             url = url.replace('id', row.id);
                             let buttonMedis =

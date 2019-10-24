@@ -21,8 +21,9 @@ class pendaftaran extends Model
     public $timestamps = true;
     protected $appends = ['ts'];
     protected $ts = [
-        '0' => 'Pending',
-        '1' => 'Sucsess'
+        '0' => 'Menunggu',
+        '1' => 'Antrian',
+        '2' => 'Selesai'
     ];
 
 

@@ -15,12 +15,12 @@ class CreateTindakanDiagnosaTable extends Migration
     {
         Schema::create('tindakan_diagnosa', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_diagnosa')->unsigned();
             $table->integer('id_rekammedis')->unsigned();
+            $table->string('hasil_diagnosa');
             $table->timestamps();
 
             
-            $table->foreign('id_diagnosa')->references('id')->on('diagnosa');
+            
             $table->foreign('id_rekammedis')->references('id')->on('rekam_medis');
             
         });
