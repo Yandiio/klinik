@@ -182,6 +182,19 @@ Route::get('qr-code', function ()
 });
 
 
+/* =========================================== Dashboard===================================== */
+
+route::get('dashboard/jumlah-pasien','DashboardController@jumlahPasien')->name('jumlah_pasien');
+
+route::get('dashboard/jumlah-dokter','DashboardController@jumlahDokter')->name('jumlah_dokter');
+
+route::get('dashboard/jumlah-medis','DashboardController@jumlahRekamMedis')->name('jumlah_medis');
+
+route::get('dashboard/jumlah-poli','DashboardController@jumlahPoli')->name('jumlah_poli');
+
+/* =========================================== Dashboard===================================== */
+
+
 /* =========================================== Report===================================== */
 
 
