@@ -192,6 +192,9 @@ route::get('dashboard/jumlah-medis','DashboardController@jumlahRekamMedis')->nam
 
 route::get('dashboard/jumlah-poli','DashboardController@jumlahPoli')->name('jumlah_poli');
 
+route::get('dashboard/chart','DashboardController@detailChart')->name('detail_chart');
+route::get('dashboard/tabel','DashboardController@tableDashboard')->name('tabel_dashboard');
+
 /* =========================================== Dashboard===================================== */
 
 

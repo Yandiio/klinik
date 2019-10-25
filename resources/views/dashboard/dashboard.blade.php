@@ -137,8 +137,8 @@
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
 
-                    <h2 class="card-title">Bars Chart</h2>
-                    <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p>
+                    <h2 class="card-title">Pasien Chart</h2>
+                    <!-- <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p> -->
                 </header>
                 <div class="card-body" id="cartdashboard">
 
@@ -165,14 +165,17 @@
                     <h2 class="card-title">Tindakan Pasien Yang Masuk Hari Ini</h2>
                 </header>
                 <div class="card-body">
-                    <table class="table table-responsive-md table-striped mb-0">
+                    <table class="table table-responsive-md table-striped mb-0" id="tablePendaftaran">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Nama Pasien</th>
-                                <th>Nama Dokter</th>
+                                <th>Poli</th>
+                                <th>Asuransi</th>
+                                
+                                <th>Tanggal</th>
                                 <th>Status</th>
-                                {{-- <th>Progress</th> --}}
+
                             </tr>
                         </thead>
                         <tbody>
@@ -231,6 +234,7 @@
 @endsection
 
 @section('script')
+<script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function () {
         totalPasien();
@@ -238,8 +242,59 @@
         totalMedis();
         totalPoli();
         cart();
+       
 
+        oTableData = $('#tablePendaftaran').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            destroy: true,
+            ajax: "{{route('tabel_dashboard')}}",
+            columns: [{
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'nama',
+                    name: 'nama'
+                },
+                {
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
+                    data: 'asuransi',
+                    name: 'asuransi'
+                },
+                {
+                    data: 'tanggal',
+                    name: 'tanggal'
+                },
+                
+                
+                {
+                    data: 'status',
+                    render: function (data, type, row) {
+                        if (row.status === "0") {
+                            let bagess = '<div class="badge badge-danger">Menunggu</div>';
+                            return bagess;
+                        }else if(row.status === "1"){
+                            let bagess = '<div class="badge badge-warning">Antrian</div>';
+                            return bagess;
+                        }else if(row.status === "2"){
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }else{
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }
+                    }
+                },
 
+            ]
+        });
+
+        filterInput();
 
     });
 
@@ -319,18 +374,20 @@
         });
         $.ajax({
             type: "GET",
-            url: "{{ route('jumlah_poli') }}",
+            url: "{{ route('detail_chart') }}",
             data: {},
-            success: function (datax) {
+            success: function (data) {
+                    
+                    console.log(data);
 
                 var flotBarsData = [
-                    ["Senin", datax],
-                    ["Selasa", 42],
-                    ["Rabu", 25],
-                    ["Kamis", 23],
-                    ["Jumat", 37],
-                    ["Sabtu", 33],
-                    ["Minggu", 18],
+                    [data[0].hari6, data[0].data6],
+                    [data[0].hari5, data[0].data5],
+                    [data[0].hari4, data[0].data4],
+                    [data[0].hari3, data[0].data3],
+                    [data[0].hari2, data[0].data2],
+                    [data[0].hari1, data[0].data1],
+                    [data[0].hariini, data[0].data0],
                 ];
 
                 if ($('#flotBars').get(0)) {
@@ -371,8 +428,10 @@
             }
         });
     }
-
-
+    function filterInput(){
+        $('#tablePendaftaran_filter').hide();
+        $('#tablePendaftaran_paginate').addClass("float-right");
+    }
 
 </script>
 @endsection

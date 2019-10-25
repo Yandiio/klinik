@@ -19,12 +19,12 @@ class pendaftaran extends Model
     ];
     
     public $timestamps = true;
-    protected $appends = ['ts'];
-    protected $ts = [
-        '0' => 'Menunggu',
-        '1' => 'Antrian',
-        '2' => 'Selesai'
-    ];
+    // protected $appends = ['ts'];
+    // protected $ts = [
+    //     '0' => 'Menunggu',
+    //     '1' => 'Antrian',
+    //     '2' => 'Selesai'
+    // ];
 
 
     public function penjamin(){
@@ -34,8 +34,8 @@ class pendaftaran extends Model
         return $this->belongsTo('App\Model\tipePoli', 'id_tipe_poli', 'id');
     }
 
-    public function getTsAttribute(){
-        return $this->ts[$this->status];
-    }
+    // public function getTsAttribute(){
+    //     return $this->ts[$this->status];
+    // }
     
 }
