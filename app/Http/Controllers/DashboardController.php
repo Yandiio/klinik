@@ -64,12 +64,47 @@ class DashboardController extends Controller
         $hariminlima = pendaftaran::select('tgl_daftar')->where('tgl_daftar',Carbon::now()->addDay(-4))->first();
         $hariminenam = pendaftaran::select('tgl_daftar')->where('tgl_daftar',Carbon::now()->addDay(-6))->first();
         
-        $hariminsatu = $hariminsatu->tgl_daftar;
-        $harimindua = $harimindua->tgl_daftar;
-        $harimintiga = $harimintiga->tgl_daftar;
-        $hariminempat = $hariminempat->tgl_daftar;
-        $hariminlima = $hariminlima->tgl_daftar;
-        $hariminenam = $hariminenam->tgl_daftar;
+        if ($hariminsatu == true) {
+            # code...
+            $hariminsatu = $hariminsatu->tgl_daftar;
+        }else{
+            $hariminsatu = Carbon::now()->addDay(-1)->format('d-m-Y');
+        }
+        if ($harimindua == true) {
+            # code...
+            $harimindua = $harimindua->tgl_daftar;
+        }else{
+            $harimindua = Carbon::now()->addDay(-2)->format('d-m-y');
+        }
+        if ($harimintiga == true) {
+            # code...
+            $harimintiga = $harimintiga->tgl_daftar;
+        }else{
+            $harimintiga = Carbon::now()->addDay(-3)->format('d-m-y');;
+        }if ($hariminempat == true) {
+            # code...
+            $hariminempat = $hariminempat->tgl_daftar;
+        }else{
+            $hariminempat = Carbon::now()->addDay(-4)->format('d-m-y');;
+        }if ($hariminlima == true) {
+            # code...
+            $hariminlima = $hariminlima->tgl_daftar;
+        }else{
+            $hariminlima = Carbon::now()->addDay(-5)->format('d-m-y');;
+        }
+        if ($hariminenam == true) {
+            # code...
+            $hariminenam = $hariminenam->tgl_daftar;
+        }else{
+            # code...
+            $hariminenam = Carbon::now()->addDay(-6)->format('d-m-y');;
+        }
+        
+        
+        
+        
+        
+        
         //$tes = Carbon::parse($hariminsatu)->format('d-m-Y');
             return [
                 'hariini' => $hariini,

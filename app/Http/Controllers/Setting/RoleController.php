@@ -16,8 +16,9 @@ class RoleController extends Controller
 
         $role = role::all();
 
-        return response()->json($role);
+        
         return Datatables::of($role)->make(true);
+        return response()->json($role);
     }
 
     
