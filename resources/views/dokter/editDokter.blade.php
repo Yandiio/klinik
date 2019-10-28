@@ -62,7 +62,11 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="poli" id="poli">
-                                                <option value="{{$dokter->id_tipe_poli}}">{{$dokter->id_tipe_poli}}</option>
+                                                    {{-- <option value="{{$poli->id}}" {{ "$poli->id" == "$dokter->id_tipe_poli" ? 'selected' : ''}}>{{$item->nama}}</option> --}}
+                                                @foreach ($poli as $item)
+                                                    <option value="{{$item->id}}" {{ "$item->id" == "$dokter->id_tipe_poli" ? 'selected' : ''}}>{{$item->nama}}</option>
+                                                @endforeach
+                                                {{-- <option value="{{$dokter->id_tipe_poli}}">{{$dokter->id_tipe_poli}}</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -72,9 +76,9 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="editExternal">
-                                                <option value="{{$dokter->tipe_dokter}}">{{$dokter->tipe_dokter}}</option>
-                                                <option value="1">Yes</option>
-                                                <option value="2">No</option>
+                                                {{-- <option value="{{$dokter->tipe_dokter}}">{{$dokter->tipe_dokter}}</option> --}}
+                                                <option value="1" {{ $dokter->tipe_dokter =='1' ? 'selected' : ''}} >Yes</option>
+                                                <option value="2" {{ $dokter->tipe_dokter =='0' ? 'selected' : ''}}>No</option>
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keterangan<span class="required">*</span></label>
@@ -323,7 +327,7 @@
         });
 
         tampilProvinsi();
-        dataPoli();
+        // dataPoli();
     });
 
     function disabledTapAwal() {

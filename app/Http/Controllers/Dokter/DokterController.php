@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Model\dokter;
 // use App\Model\alamat_dokter;
 use App\Model\alamatDokter;
+use App\Model\tipePoli;
 use Yajra\Datatables\Datatables;
 use Dompdf\Dompdf;
 use PDF;
@@ -97,7 +98,8 @@ class DokterController extends Controller
         //     ];
         // });
         //dd($dokter);
-        return view('dokter.editDokter',['dokter'=>$dokter]);
+        $tipePoli = tipePoli::select('id','nama')->get();
+        return view('dokter.editDokter',['dokter'=>$dokter, 'poli'=> $tipePoli]);
         // return response()->json($dokter->id);
     }
 
