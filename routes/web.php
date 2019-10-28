@@ -90,7 +90,7 @@ route::get('dokter/tambah-dokter',function(){
 route::post('dokter/tambah-dokter/tambah', 'Dokter\DokterController@postDokter_Input')->name('Dokter_postInput');
 route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
 route::post('dokter/edit-dokter/pernbarui', 'Dokter\DokterController@postDokter_Update')->name('Dokter_postUpdate');
-route::post('dokter/hapus x-dokter/hapus', 'Dokter\DokterController@postDokter_Delete')->name('Dokter_postDelete');
+route::post('dokter/hapus-dokter/hapus', 'Dokter\DokterController@postDokter_Delete')->name('Dokter_postDelete');
 // route::get('dokter/edit-dokter',function(){
 //     return view('dokter.editDokter');
 // });

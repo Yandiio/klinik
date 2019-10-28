@@ -32,7 +32,7 @@ class CreateDokterTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_tipe_poli')->references('id')->on('tipe_poli');
-            $table->foreign('alamat_dokter')->references('id')->on('alamat_dokter');
+            $table->foreign('alamat_dokter')->references('id')->on('alamat_dokter')->onDelete('cascade');
         });
     }
 

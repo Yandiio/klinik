@@ -136,14 +136,15 @@ class DokterController extends Controller
     }
 
     public function postDokter_Delete() {
-
-        $id = request()->input('id'); //Crypt::decryptString();
-        
-        $alamat = alamatDokter::find($id);
-        // dd($alamat); 
-        $alamat->delete();
-        // $dokter = dokter::find($id);
+        // dd('test');
+        $id = request()->input('id');
+        $dokter = dokter::find($id);
+        $dokteralamat = $dokter->alamat_dokter;
+        $alamat = alamatDokter::where('id',$dokteralamat)->get();
+        // $alamatDokter = 
+        // dd($dokter);
         // $dokter->delete();
+        $alamat->delete();
 
     }
 

@@ -25,6 +25,8 @@
         </div>
         </header>
         <!-- header atas -->
+        <form method="POST" id="formPoli" class="myForm" >
+            @csrf
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -67,6 +69,8 @@
                 </div>
             </div>
         </div>
+    </div>
+        </form>
 
 </section>
 @endsection
@@ -122,6 +126,7 @@
 
     /* ----------------- Function Delete Start -----------------*/
     function buttonDelete(idx) {
+        // console.log(idx);
 		bootbox.confirm({
 			message: "Apakah anda yakin ingin menghapus ?",
 			buttons: {
@@ -147,7 +152,7 @@
 						id: idx
 					},
 					success: function (data) {
-						console.log(data);
+						// console.log(data);
 						oTableList.ajax.reload();
 						new PNotify({
 							title: 'Hapus',
