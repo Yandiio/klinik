@@ -87,18 +87,27 @@
                                     <label class="control-label">Name <span class="required">*</span></label>
                                     <input id="name" type="text" name="name" class="form-control" placeholder="Name"
                                         required />
-                                    <br>
+                                   
                                     <label class="control-label">Password <span class="required">*</span></label>
                                     <input id="name" type="password" name="name" class="form-control"
                                         placeholder="Password" required />
-                                    <br>
+                                        <label class="control-label">Password <span class="required">*</span></label>
+                                    <input id="name" type="password" name="name" class="form-control"
+                                        placeholder="Password" required />
+                                    
                                     <label class="control-label">Role <span class="required">*</span></label>
                                     <select name="role" id="role" class="form-control">
                                         <option value="">Pilih Role</option>
                                     </select>
+                                    <br>
+                                    <div id="tampilDokter"> 
+                                    <label class="control-label">dokter <span class="required">*</span></label>
+                                    <select name="dokter" id="dokter" class="form-control">
+                                        <option value="karyawan">Pilih Dokter</option>
+                                    </select>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <div class="row">
@@ -130,20 +139,29 @@
                             <div class="modal-wrapper">
                                 <div class="modal-text">
                                     <label class="control-label">Name <span class="required">*</span></label>
-                                    <input id="name" type="text" name="name" class="form-control" placeholder="Name"
+                                    <input id="editName" type="text" name="name" class="form-control" placeholder="Name"
                                         required />
-                                    <br>
+                                   
                                     <label class="control-label">Password <span class="required">*</span></label>
                                     <input id="name" type="password" name="name" class="form-control"
                                         placeholder="Password" required />
-                                    <br>
+                                        <label class="control-label">Password <span class="required">*</span></label>
+                                    <input id="editPassword" type="password" name="name" class="form-control"
+                                        placeholder="Password" required />
+                                    
                                     <label class="control-label">Role <span class="required">*</span></label>
                                     <select name="editRole" id="editRole" class="form-control">
                                         <option value="">Pilih Role</option>
                                     </select>
+                                    <br>
+                                    <div id="tampilEditDokter"> 
+                                    <label class="control-label">dokter <span class="required">*</span></label>
+                                    <select name="editRole" id="editDokter" class="form-control">
+                                        <option value="karyawan">Pilih Dokter</option>
+                                    </select>
+                                    </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <div class="row">
@@ -184,6 +202,8 @@
     var oTable;
     //$('#ubah').hide();
     dataRole();
+    $('#tampilDokter').hide();
+    $('#tampilEditDokter').hide();
 
     function closeModal() {
         $('#cancelEdit').click();
@@ -360,28 +380,63 @@
     function dataRole() {
         $.ajax({
             type: "GET",
-            url: "{{route('list_role')}}",
-            //    data: {
-            //        'id': id
-            //    },
+            url: "{{route('role_data')}}",
+            // data: {
+            //     'id': id
+            // },
+            success: function (data) {
+                // the next thing you want to do 
+                //console.log(data);
+                // $city.empty();
+                for (var i = 0; i < data.length; i++) {
+                    $('#role').append('<option id=' + data[i].id + ' value=' + data[i].id +
+                        '>' + data[i].name_role + '</option>');
+                }
+            }
+        });
+    }
+
+    $('#role').change(function(){
+        var id = $('#role').val();
+
+        // console.log(id);
+        if (id == 5) {
+            $('#tampilDokter').show();
+            dataDokter();
+        }else{
+            $('#tampilDokter').hide();
+        }
+
+    });
+    $('#editRole').change(function(){
+        var id = $('#role').val();
+
+        // console.log(id);
+        if (id == 5) {
+            $('#tampilEditDokter').show();
+            dataDokter();
+        }else{
+            $('#tampilEditDokter').hide();
+        }
+
+    });
+    
+    function dataDokter() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('dokter_get_data')}}",
+            
             success: function (data) {
                 //console.log(data[0].id);
                 $.each(data, function (index, value) {
-                    $('#role').append('<option id=' + value.id + ' value=' + value
+                    $('#dokter').append('<option id=' + value.id + ' value=' + value
                         .id +
-                        '>' + value.name_role + '</option>')
-                });
-
-                $.each(data, function (index, value) {
-                    $('#editRole').append('<option id=' + value.id + ' value=' + value
-                        .id +
-                        '>' + value.name_role + '</option>')
+                        '>' + value.nama_lengkap + '</option>')
                 });
             }
 
         });
     }
-
 
     /* ======================= Delete========================= */
 

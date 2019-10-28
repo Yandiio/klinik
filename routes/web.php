@@ -169,6 +169,7 @@ route::get('setting/user',function(){
 });
 
 route::get('setting/role/list','Setting\RoleController@roleList')->name('list_role');
+route::get('setting/role/data','Setting\RoleController@roleData')->name('role_data');
 
 /* =========================================== Setting===================================== */
 
