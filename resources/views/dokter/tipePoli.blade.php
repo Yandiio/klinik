@@ -90,20 +90,20 @@
 		<!-- modal tambah -->
 		<div class="modal" id="modalTambah">
             <div class="modal-dialog modal-block">
-                <div class="modal-content  ">
+                <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header card-header">
                         <h2 class="card-title" id="judul">Tambah Tipe Poli</h2>
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
-                    <form method="POST" id="formTambah">
+                    <form method="POST" id="formPoli" class="myForm" >
                         @csrf
                     <div class="modal-body">
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Tipe Poli<span class="required">*</span></label>
-                                <input id="name" type="text" name="name" class="form-control" placeholder="Tipe Poli" required />
-                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Poli" required />
+								<input id="name" type="text" name="name" class="form-control" placeholder="Tipe Poli"/>
+                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Poli" required/>
                             </div>
                         </div>
                     </div>
@@ -166,6 +166,10 @@
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
 <script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.validation.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+<script src="{{asset('assets/js/validation.js')}}"></script>
+
 <!-- end - This is for export functionality only -->
 
 <script>
@@ -174,10 +178,11 @@
 	function closeModal() {
         $('#cancelEdit').click();
         $('#cancel').click();
-        $('#formTambah').trigger("reset");
+        $('#formPolo').trigger("reset");
     }
 
 	$(document).ready(function(){
+		
 		oTableListPoli = $('#tabelAjaxtipePoliList').DataTable({
 			responsive: true,
 			processing: true,
@@ -204,9 +209,11 @@
 				}
 			]
 		});
+
+		
 	});
 	
-	$('#formTambah').on('submit', function (e) {
+	$('#formPoli').on('submit', function (e) {
 		e.preventDefault();
 		$.ajaxSetup({
 			headers: {
@@ -314,7 +321,11 @@
 			}
 		});
 	}
-	/* ----------------- Function Delete End -----------------*/
+	//* ----------------- Function Delete End -----------------*/
+	
+	/* ----------------- Function Validation Start -------------------*/
+	
+	/* ----------------- Function Validation End -------------------*/
 
 </script> 
 

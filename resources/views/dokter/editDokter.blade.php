@@ -45,8 +45,9 @@
                             </li>
                         </ul>
                         <form action="#" id="formUpdate" method="POST">
+                            <input type="hidden" name="id_dokter_aja" value="{{ $dokter->id }}">
                                 {{-- <input type="hidden" class="form-control form-control-sm mb-3" name="iddokter"
-                                id="" value="{{ $dokter[0]->id}}"> --}}
+                                id="" value="{{ $dokter->id}}"> --}}
                                 @csrf
                             <div class="tab-content">
                                 <div id="w2-account" class="tab-pane p-3 active">
@@ -55,14 +56,13 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <input type="text" class="form-control form-control-sm mb-3" id="editKode"
-                                                name="kd_dokter" value="{{$dokter[0]->kode_dokter}}">
-                                            <input type="hidden" name="id_dokter_aja" value="{{$dokter[0]->id}}">
+                                                name="kd_dokter" value="{{$dokter->kode_dokter}}">
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Poli <span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="poli" id="poli">
-                                                <option value="{{$dokter[0]->id_tipe_poli}}">{{$dokter[0]->id_tipe_poli}}</option>
+                                                <option value="{{$dokter->id_tipe_poli}}">{{$dokter->id_tipe_poli}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -72,14 +72,14 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="editExternal">
-                                                <option value="{{$dokter[0]->tipe_dokter}}">{{$dokter[0]->tipe_dokter}}</option>
+                                                <option value="{{$dokter->tipe_dokter}}">{{$dokter->tipe_dokter}}</option>
                                                 <option value="1">Yes</option>
                                                 <option value="2">No</option>
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keterangan<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" id="editKeterangan" name="keterangan" data-plugin-textarea-autosize>{{$dokter[0]->keterangan}}</textarea>
+                                            <textarea class="form-control" rows="3" id="editKeterangan" name="keterangan" data-plugin-textarea-autosize>{{$dokter->keterangan}}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -88,12 +88,12 @@
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">NIK<span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control form-control-sm mb-3" name="nik" id="editNIK" value="{{$dokter[0]->nik}}" placeholder="NIK">
+                                            <input type="text" class="form-control form-control-sm mb-3" name="nik" id="editNIK" value="{{$dokter->nik}}" placeholder="NIK">
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Nama Lengkap<span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap" id="editNamaLengkap" value="{{$dokter[0]->nama_lengkap}}">
+                                            <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap" id="editNamaLengkap" value="{{$dokter->nama_lengkap}}">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -106,25 +106,25 @@
                                                         <i class="fas fa-calendar-alt"></i>
                                                     </span>
                                                 </span>
-                                            <input type="date" name="tanggalLahir" id="editTanggalLahir" value="{{$dokter[0]->tanggal_lahir}}" class="form-control form-control-sm mb-3" >
+                                            <input type="date" name="tanggalLahir" id="editTanggalLahir" value="{{$dokter->tanggal_lahir}}" class="form-control form-control-sm mb-3" >
                                             </div>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat Lahir <span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir" id="editTempatLahir" value="{{$dokter[0]->tempat_lahir}}" required>
+                                        <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir" id="editTempatLahir" value="{{$dokter->tempat_lahir}}" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No. Telepon <span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                            <input type="number" class="form-control form-control-sm mb-3" name="telepon" id="editNoTelepon" value="{{$dokter[0]->telepon}}">
+                                            <input type="number" class="form-control form-control-sm mb-3" name="telepon" id="editNoTelepon" value="{{$dokter->telepon}}">
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No. Handphone <span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="hp" id="editHP" value="{{$dokter[0]->hp}}" required>
+                                        <input type="number" class="form-control form-control-sm mb-3" name="hp" id="editHP" value="{{$dokter->hp}}" required>
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -132,7 +132,7 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="jenisKelamin" id="editJenisKelamin" required>
-                                                <option value="{{$dokter[0]->jenis_kelamin}}">{{$dokter[0]->jenis_kelamin}}</option>
+                                                <option value="{{$dokter->jenis_kelamin}}">{{$dokter->jenis_kelamin}}</option>
                                                 <option value="0">Laki-Laki</option>
                                                 <option value="1">Perempuan</option>
                                             </select>
@@ -147,12 +147,12 @@
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia<span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                            <input type="number" class="form-control form-control-sm mb-3" name="usia" id="editUsia" value="{{$dokter[0]->usia}}" required>
+                                            <input type="number" class="form-control form-control-sm mb-3" name="usia" id="editUsia" value="{{$dokter->usia}}" required>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama<span class="required">*</span>
                                         </label>
                                         <div class="col-sm-4">
-                                            <input type="text" class="form-control form-control-sm mb-3" name="agama" id="editAgama" value="{{$dokter[0]->agama}}" required>
+                                            <input type="text" class="form-control form-control-sm mb-3" name="agama" id="editAgama" value="{{$dokter->agama}}" required>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3" requeired>
-                                                <option id="itemProvinsi" >{{$dokter[0]->alamatDokter->provinsi}}</option>
+                                                <option id="itemProvinsi" >{{$dokter->alamatDokter->provinsi}}</option>
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota<span class="required">*</span>
@@ -170,7 +170,7 @@
                                         <div class="col-sm-4">
                                             <select name="kota" id="kota" class="form-control form-control-sm mb-3"
                                                 requeired>
-                                                <option id="itemKota">{{$dokter[0]->alamatDokter->kabupaten}}</option>
+                                                <option id="itemKota">{{$dokter->alamatDokter->kabupaten}}</option>
                                             </select>
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                         <div class="col-sm-4">
                                             <select name="kecamatan" id="kecamatan"
                                                 class="form-control form-control-sm mb-3" requeired>
-                                                <option id="itemKecamatan" value="{{$dokter[0]->alamatDokter->kecamatan}}">{{$dokter[0]->alamatDokter->kecamatan}}</option>
+                                                <option id="itemKecamatan" value="{{$dokter->alamatDokter->kecamatan}}">{{$dokter->alamatDokter->kecamatan}}</option>
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kelurahan
@@ -188,15 +188,15 @@
                                         <div class="col-sm-4">
                                             <select name="kelurahan" id="kelurahan"
                                                 class="form-control form-control-sm mb-3" requeired>
-                                                <option id="itemKelurahan" value="{{$dokter[0]->alamatDokter->kelurahan}}">{{$dokter[0]->alamatDokter->kelurahan}}</option>
+                                                <option id="itemKelurahan" value="{{$dokter->alamatDokter->kelurahan}}">{{$dokter->alamatDokter->kelurahan}}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" value="{{$dokter[0]->alamatDokter->alamat}}" data-plugin-textarea-autosize>{{$dokter[0]->alamatDokter->alamat}}</textarea>
-                                            <input type="hidden" name="id_alamat" value="{{$dokter[0]->alamatDokter->id}}">
+                                            <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" value="{{$dokter->alamatDokter->alamat}}" data-plugin-textarea-autosize>{{$dokter->alamatDokter->alamat}}</textarea>
+                                            <input type="hidden" name="id_alamat" value="{{$dokter->alamatDokter->id}}">
                                         </div>
                                         {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
                                         <div class="col-sm-4">

@@ -24,14 +24,14 @@ class tipePoliController extends Controller
     }
 
     public function posttipePoli_Input(Request $request) {
-        dd($request);
+        // dd($request);
         $poli = new tipePoli;
         $poli->nama = $request->input('name');
         $poli->save();
     }
 
     public function gettipePoli_Edit(Request $request)  {
-        dd($request);
+        // dd($request);
         $poli = tipePoli::find($request->id);
         return response()->json($poli);
     }

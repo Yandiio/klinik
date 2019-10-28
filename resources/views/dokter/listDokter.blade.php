@@ -2,6 +2,11 @@
 
 @yield('title', 'List Dokter')
 
+@section('css')
+<link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
+@stop
+
 @section('content')
 <section role="main" class="content-body">
         <header class="page-header">
@@ -68,79 +73,25 @@
 
 </section>
 @endsection
-@section('css')
-<script src="{{ asset('assets/js/jquery-3.4.1.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
 
-<link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/fontawesome-all.min.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
-<link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
-
-<!-- Specific Page Vendorccc CSS -->
-<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
-
-<!-- Theme CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/theme.css')}}" />
-
-<!-- Skin CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/skins/default.css')}}" />
-
-<!-- Theme Custom CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
-
-<!-- Head Libs -->
-<script src="{{asset('assets/vendor/modernizr/modernizr.js')}}"></script>
-
-<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
-
-<!-- caresolul -->
-<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.carousel.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.css')}}" />
-
-@stop
 @section('script')
-<!-- Vendor -->
-<script src="{{asset('assets/vendor/jquery/jquery.js')}}"></script>
-<script src="{{asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js')}}"></script>
-<script src="{{asset('assets/vendor/popper/umd/popper.min.js')}}"></script>
-<script src="{{asset('assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
-<script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
-<script src="{{asset('assets/vendor/common/common.js')}}"></script>
-<script src="{{asset('assets/vendor/nanoscroller/nanoscroller.js')}}"></script>
-<script src="{{asset('assets/vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
-<script src="{{asset('assets/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
-
-<!-- Specific Page Vendor -->
-<!-- <script src="{{asset('assets/vendor/jquery-validation/jquery.validate.js')}}"></script> -->
-<script src="{{asset('assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js')}}"></script>
-<script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
-<script src="{{asset('assets/vendor/autosize/autosize.js')}}"></script>
-
-<!-- Theme Base, Components and Settings -->
-<script src="{{asset('assets/js/theme.js')}}"></script>
-
-<!-- Theme Custom -->
-<script src="{{asset('assets/js/custom.js')}}"></script>
-
-<!-- Theme Initialization Files -->
-<script src="{{asset('assets/js/theme.init.js')}}"></script>
-
-<!-- Examples -->
-{{-- <script src="{{asset('assets/js/examples/examples.wizard.js')}}"></script> --}}
-<script src="{{asset('assets/vendor/owl.carousel/owl.carousel.js')}}"></script>
-
-<script src="{{asset('assets/vendor/select2/js/select2.js')}}"></script>
-<script src="{{ asset('assets/vendor/jquery-ui/jquery-ui.js')}}"></script>
-<script src="{{ asset('assets/vendor/jqueryui-touch-punch/jqueryui-touch-punch.js')}}"></script>
-
-<script src="{{ asset('assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js')}}"></script>
-<script src="{{ asset('assets/vendor/jquery-maskedinput/jquery.maskedinput.js')}}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js')}}"></script>
-<script src="{{ asset('assets/js/examples/examples.advanced.form.js')}}"></script>
+<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+<!-- This is data table -->
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
-<script src="{{ asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<!-- start - This is for export functionality only -->
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+<script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
+
+
+
 <!-- end - This is for export functionality only -->
 <script>
     var oTableList;
@@ -163,9 +114,9 @@
                         url = url.replace('id', row.id);
                         let buttonEdit =
                             '<a class="btn-sm btn-warning" title="Pendaftaran ulang !"style="margin-right:5px" href="' +url +'"><i class="fas fa-edit" aria-hidden="true"></i></a>';
-						let buttonHapus =
+						let buttonDelete =
 							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete('+data +');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-						return buttonEdit + buttonHapus;
+						return buttonEdit + buttonDelete;
 					}
 				}
             ]
@@ -173,7 +124,7 @@
 	});
 
     /* ----------------- Function Delete Start -----------------*/
-	function buttonDelete(idDelete) {
+    function buttonDelete(idx) {
 		bootbox.confirm({
 			message: "Apakah anda yakin ingin menghapus ?",
 			buttons: {
@@ -196,10 +147,10 @@
 					type: "POST",
 					url: "{{route('Dokter_postDelete')}}",
 					data: {
-						id: idDelete
+						id: idx
 					},
 					success: function (data) {
-						//console.log(data);
+						console.log(data);
 						oTableList.ajax.reload();
 						new PNotify({
 							title: 'Hapus',

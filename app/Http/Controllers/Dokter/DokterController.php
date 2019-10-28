@@ -40,7 +40,7 @@ class DokterController extends Controller
         }
 
     public function postDokter_Input(Request $request) {
-        // dd($request);
+        //dd($request);
 
         $alamat = new alamatDokter;
         $alamat->alamat     = $request->input('alamat');
@@ -70,9 +70,10 @@ class DokterController extends Controller
         return response()->json($dokter->id);
     }
 
-    public function getDokter_Edit($id){
-        // dd($id);
-        $dokter = dokter::where('id',$id)->get();
+    public function getDokter_Edit(Request $request , $id){
+        //dd($id);
+        $dokter = dokter::find($id);
+        // dd($dokter);
         // $dokter = dokter::where('id', 'id_tipe_poli')->where('id',$id)->get()
         // ->map(function($key){
         //     return [
@@ -131,9 +132,16 @@ class DokterController extends Controller
         return response()->json($dokter->id);
     }
 
-    public function postDokter_Delete(Request $request) {
-        $dokter = dokter::find($request->id);
-        $dokter->delete();
+    public function postDokter_Delete() {
+
+        $id = request()->input('id'); //Crypt::decryptString();
+        
+        $alamat = alamatDokter::find($id);
+        // dd($alamat); 
+        $alamat->delete();
+        // $dokter = dokter::find($id);
+        // $dokter->delete();
+
     }
 
 }
