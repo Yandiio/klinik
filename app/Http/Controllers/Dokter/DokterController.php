@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Dokter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\dokter;
-use App\Model\alamat_dokter;
+// use App\Model\alamat_dokter;
 use App\Model\alamatDokter;
 use Yajra\Datatables\Datatables;
 use Dompdf\Dompdf;
@@ -138,9 +138,12 @@ class DokterController extends Controller
     public function postDokter_Delete() {
         // dd('test');
         $id = request()->input('id');
+        // dd($id);
         $dokter = dokter::find($id);
         $dokteralamat = $dokter->alamat_dokter;
-        $alamat = alamatDokter::where('id',$dokteralamat)->get();
+        $dokter->delete();
+        // dd($dokteralamat);
+        $alamat = alamatDokter::where('id',$dokteralamat)->first();
         // $alamatDokter = 
         // dd($dokter);
         // $dokter->delete();
