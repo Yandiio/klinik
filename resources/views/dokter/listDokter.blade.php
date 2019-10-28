@@ -33,8 +33,6 @@
 							<a href="{{ url('dokter/tambah-dokter') }}" class="btn btn-info float-right "  style="margin-bottom: 20px" title="Tambah Tipe Pendaftaran !">Tambah <i class="fa fa-plus"></i></a>
                         <h4 class="card-title">List Dokter</h4>
                         <div class="table-responsive m-t-40">
-                            <form method="POST" id="formList">
-                                    @csrf
                             <table id="tabelAjaxDokterList" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
@@ -64,7 +62,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            </form>
                         </div>
                     </div>
                 </div>

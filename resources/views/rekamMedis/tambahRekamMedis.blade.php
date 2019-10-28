@@ -46,7 +46,7 @@
                             </a>
                         </li>
                     </ul>
-                <form action="#" id="formTambah" method="POST">
+                    <form action="#" id="formTambah" method="POST">
                         @csrf
                         <div class="tab-content">
                             <div id="w2-account" class="tab-pane p-3 active">
@@ -57,9 +57,8 @@
                                         <input type="text" class="form-control form-control-sm mb-3" name="noDaftar"
                                             id="w2-first-name" readonly="readonly"
                                             value="{{$pendaftaran[0]->no_daftar}}">
-                                            <input type="hidden" class="form-control form-control-sm mb-3" name="idDaftar"
-                                            id="w2-first-name" readonly="readonly"
-                                            value="{{$pendaftaran[0]->id}}">
+                                        <input type="hidden" class="form-control form-control-sm mb-3" name="idDaftar"
+                                            id="w2-first-name" readonly="readonly" value="{{$pendaftaran[0]->id}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                         <span class="required">*</span></label>
@@ -182,9 +181,7 @@
                                     <div class="col-sm-4">
                                         <select name="dokter" id="dokter" class="form-control form-control-sm mb-3">
                                             <option value="">Pilih Dokter</option>
-                                            <option value="1">[GIGI] Drs.Beny Setiawan</option>
-                                            <option value="2">[Gizi] Drs.Khoslis Pratama</option>
-                                            <option value="3">[Lambung] Drs.Yadi Pamungkas</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -222,7 +219,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Tanggal
                                         Tindakan <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                    <div class="input-group">
+                                        <div class="input-group">
                                             <span class="input-group-prepend">
                                                 <span class="input-group-text" style="height:28px">
                                                     <i class="fas fa-calendar-alt"></i>
@@ -232,8 +229,7 @@
                                                 name="tanggalTindakan">
                                         </div>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1"
-                                        for="w2-first-name">Keterangan
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Keluhan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize" name="keterangan"
@@ -244,44 +240,6 @@
                             <!-- kontent tab 2 -->
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <div class="col-md-12">
-                                        <section class="card card-featured card-featured-dark mb-4">
-                                            <header class="card-header">
-                                                <div class="card-actions">
-                                                    <a href="#" class="card-action card-action-toggle"
-                                                        data-card-toggle></a>
-                                                    <a href="#" class="card-action card-action-dismiss"
-                                                        data-card-dismiss></a>
-                                                </div>
-
-                                                <h2 class="card-title">Diagnosa</h2>
-                                            </header>
-                                            <div class="card-body">
-                                                <!-- <code>.card-info</code> -->
-                                                <table class="table table-bordered table-striped mb-0"
-                                                    id="datatable-editable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th style="width:5%">
-                                                                <button type="button"
-                                                                    class="btn btn-primary float-right"
-                                                                    data-toggle="modal" data-target="#modalTambah"
-                                                                    id="modalDiagnosa">
-                                                                    <i class="fa fa-plus"></i>
-                                                                </button>
-                                                            </th>
-                                                            <th width="30%">Nama Diagnosa</th>
-                                                            <th>Hasil Diagnosa</th>
-                                                            <th style="width:10%">Aksi</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody id="bodyDiagnosa">
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </section>
-                                    </div>
                                     <div class="col-md-12">
                                         <section class="card card-featured card-featured-dark mb-4">
                                             <header class="card-header">
@@ -317,35 +275,53 @@
 
                                                     </tbody>
                                                 </table>
-                                            </div>
+                                                <br>
+                                                <div class="row">
+
+                                                    <div class="col-lg-4 form-group">
+
+                                                    </div>
+                                                    <!-- <div class="col-lg-4 form-group">
+                                                        <label class="control-label float-right" for="w2-first-name">Satatus
+                                                            <span class="required">*</span></label>
+                                                    </div>
+                                                    <div class="col-lg-4 form-group">
+                                                    <select name="dokter" id="dokter"
+                                                                class="form-control form-control-sm mb-3">
+                                                                <option value="">Antrian</option>
+                                                                <option value="1">Selesai</option>
+                                                                
+                                                    </select>
+                                                    </div> -->
+                                                </div>
                                         </section>
                                     </div>
                                 </div>
+
                             </div>
-
                         </div>
-                </div>
-                <div class="card-footer">
-                    <ul class="pager">
-                        <li class="previous disabled">
-                            <!-- <button ><i class="fas fa-angle-left"></i></button>
+                        <div class="card-footer">
+                            <ul class="pager">
+                                <li class="previous disabled">
+                                    <!-- <button ><i class="fas fa-angle-left"></i></button>
                             <a><i class="fas fa-angle-left"></i> Sebelumnya</a> -->
-                            <button id="sebelumnya" class="mb-1 mt-1 mr-1 btn btn-default float-left" type="button"><i
-                                    class="fas fa-angle-left"></i> Sebelumnya</button>
-                        </li>
-                        <li class="finish float-right">
-                            <button id="selesai" class="mb-1 mt-1 mr-1 btn btn-default" type="submit">Selesai</button>
+                                    <button id="sebelumnya" class="mb-1 mt-1 mr-1 btn btn-default float-left"
+                                        type="button"><i class="fas fa-angle-left"></i> Sebelumnya</button>
+                                </li>
+                                <li class="finish float-right">
+                                    <button id="selesai" class="mb-1 mt-1 mr-1 btn btn-default"
+                                        type="submit">Selesai</button>
 
-                        </li>
-                        <li class="next">
-                            <button id="selanjutnya1" class="mb-1 mt-1 mr-1 btn btn-default float-right"
-                                type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
-                            <button id="selanjutnya2" class="mb-1 mt-1 mr-1 btn btn-default float-right"
-                                type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
-                        </li>
-                    </ul>
-                </div>
-                </form>
+                                </li>
+                                <li class="next">
+                                    <button id="selanjutnya1" class="mb-1 mt-1 mr-1 btn btn-default float-right"
+                                        type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
+                                    <button id="selanjutnya2" class="mb-1 mt-1 mr-1 btn btn-default float-right"
+                                        type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
             </section>
         </div>
     </div>
@@ -555,6 +531,7 @@
     $(document).ready(function () {
         selanjutnya1();
         selanjutnya2();
+        dataDokter();
 
         $('#selesai').click(function () {
             $('#dataPribadi').click();
@@ -625,8 +602,8 @@
             url: "{{ route('input_rekam_medis') }}",
             data: $(this).serialize(),
             success: function (data) {
-                
-                window.location.href= "{{ url ('rekam-medis/list-rekam-medis') }}";
+
+                window.location.href = "{{ url ('rekam-medis/list-rekam-medis') }}";
                 new PNotify({
                     title: 'Regular Notice',
                     text: 'Check me out! I\'m a notice.',
@@ -773,6 +750,22 @@
         $(this).closest('tr').remove();
 
     });
+    function dataDokter() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('dokter_get_data')}}",
+            
+            success: function (data) {
+                //console.log(data[0].id);
+                $.each(data, function (index, value) {
+                    $('#dokter').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama_lengkap + '</option>')
+                });
+            }
+
+        });
+    }
 
 </script>
 @stop

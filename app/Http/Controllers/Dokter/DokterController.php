@@ -38,7 +38,10 @@ class DokterController extends Controller
         return Datatables::of($listDokter)->make(true);
         return response()->json($listDokter);
         }
-
+    public function dataDokter(){
+        $res = dokter::get();
+        return response()->json($res);
+    }
     public function postDokter_Input(Request $request) {
         //dd($request);
 

@@ -14,8 +14,8 @@ class RoleSeeder extends Seeder
     {
         //
         $namaRole = ['Petugas Locket','Administratif','Kepala Klinik','Super Admin','dokter'];
-        $keterangan = ['Modul Pendafataran','Modul Rekam medis dan dokter','laporan dan dahsboar','Semua Mua','input rekam medis'];
-        for ($i=0; $i <4 ; $i++) { 
+        $keterangan = ['Modul Pendafataran','Modul Rekam medis dan dokter','laporan dan dahsboar','Semua Mua','input hasil diagnosa'];
+        for ($i=0; $i <5; $i++) { 
             # code...
             $role = new role;
             $role->name_role = $namaRole[$i];

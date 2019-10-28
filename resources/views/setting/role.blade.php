@@ -68,6 +68,11 @@
                                     <td>Kepala Klinik</td>
                                     <td>Laporan dan dashboard</td>
                                 </tr>
+                                <tr>
+                                    <td >4</td>
+                                    <td>Dokter</td>
+                                    <td>Hasil Diagnosa</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -143,53 +148,34 @@
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
     <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+    <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
     <!-- end - This is for export functionality only -->
     <script>
-    $(function() {
-        $('#myTable').DataTable();
-        $(function() {
-            var table = $('#example').DataTable({
-                "columnDefs": [{
-                    "visible": false,
-                    "targets": 2
-                }],
-                "order": [
-                    [2, 'asc']
-                ],
-                "displayLength": 25,
-                "drawCallback": function(settings) {
-                    var api = this.api();
-                    var rows = api.rows({
-                        page: 'current'
-                    }).nodes();
-                    var last = null;
-                    api.column(2, {
-                        page: 'current'
-                    }).data().each(function(group, i) {
-                        if (last !== group) {
-                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                            last = group;
-                        }
-                    });
-                }
-            });
-            // Order by the grouping
-            $('#example tbody').on('click', 'tr.group', function() {
-                var currentOrder = table.order()[0];
-                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                    table.order([2, 'desc']).draw();
-                } else {
-                    table.order([2, 'asc']).draw();
-                }
-            });
+    $(document).ready(function(){
+        oTable = $('#example23').DataTable({
+            responsive: true,
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('list_role')}}",
+            columns: [
+
+                {
+                    data: 'id',
+                    render: function (data, type, row, meta) {
+                        return meta.row + meta.settings._iDisplayStart + 1;
+                    }
+                },
+                {
+                    data: 'name_role',
+                    name: 'name_role'
+                },
+                {
+                    data: 'keterangan',
+                    name: 'keterangan'
+                },
+                
+            ]
         });
     });
-    // $('#example23').DataTable({
-    //     dom: 'Bfrtip',
-    //     buttons: [
-    //         'copy', 'csv', 'excel', 'pdf', 'print'
-    //     ]
-    // });
-    // $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
     </script>
 @stop

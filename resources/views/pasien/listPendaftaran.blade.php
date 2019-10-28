@@ -141,11 +141,8 @@
                                 <p class="result-type" id="barcode">
                                     <span class="badge badge-primary">PASIEN</span>
                                 </p>
-                                <div class="visible-print text-center" id="qr">
-                                QrCode::generate('Make me into a QrCode!', '../public/qrcodes/qrcode.svg');
-                              
-                                </div>
-                                
+                                <div id="qrcode"></div>
+
                                 <div class="result-data">
                                     <p class="h3 title text-primary" id="nama">Calendar</p>
                                     <p class="description">
@@ -226,10 +223,14 @@
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.qrcode.min.js') }}"></script>
+
 
 
 <script>
     var oTable;
+
+  
 
     $(document).ready(function () {
 
@@ -300,7 +301,7 @@
 
     function buttonView(idEdit) {
 
-
+        //console.log(idEdit);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -322,14 +323,24 @@
                 $('#kelrahan').text(data[0].kelurahan);
                 $('#usia').text(data[0].usia);
                 $('#alamat').text(data[0].alamat);
-               
-                jquery('#qr').qrcode({width: 64,height: 64,text: "size doesn't matter"});
+                generate_qrcode(data[0].qrcode);
+                
 
             }
         });
 
     }
-   
 
+    function generate_qrcode(teks) {
+        //var teks = "tess";
+
+        $('#qrcode canvas').remove();
+        $('#qrcode').qrcode({
+            render: 'canvas',
+            text: teks,
+            width: 100,
+	        height: 100
+        });
+    }
 </script>
 @stop

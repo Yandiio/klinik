@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\AlamatPasien;
+use App\Model\alamatPasien;
 
 class AlamatPasienSeeder extends Seeder
 {

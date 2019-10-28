@@ -77,11 +77,11 @@
                 <!-- bagian body -->
 		<!-- modal tambah -->
 		<div class="modal" id="modalTambah">
-			<div class="modal-dialog modal-block">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content  ">
 					<!-- Modal Header -->
 					<div class="modal-header card-header">
-						<h2 class="card-title" id="judul">Tambah Diagnosa</h2>
+						<h2 class="card-title" id="judul">Tindakan</h2>
 						<button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
 					</div>
 					<form method="POST" id="formTambah">
@@ -89,22 +89,25 @@
 					<div class="modal-body">
 						<div class="modal-wrapper">
 							<div class="modal-text">
-								<label class="control-label">Kode diagnosa <span class="required">*</span></label>	
-								<input type="text" name="NewKode" class="form-control" placeholder="Kode Diagnosa" required/>	    
+								<label class="control-label">No Rekam Medis</label>	
+								<input type="text" name="NewKode" class="form-control" placeholder="Kode Diagnosa"  value="001" required  disabled/>	    
 							</div>
 							<div class="modal-text">
-								<label class="control-label">Nama diagnosa <span class="required">*</span></label>	
-								<input type="text" name="NewNama" class="form-control" placeholder="Nama Diagnosa" required/>	    
+								<label class="control-label">Nama Pasien</label>	
+								<input type="text" name="NewNama" class="form-control" placeholder="Nama Diagnosa" value="Rudi" disabled required/>	    
+							</div>
+							<div class="modal-text">
+								<label class="control-label">Umur </label>	
+								<input type="text" name="NewHasil" class="form-control" placeholder="Hasil diagnosa" value="" disabled required/>
+							</div>
+							<div class="modal-text">
+								<label class="control-label">Keluhan </label>	
+								<textarea class="form-control" name="NewKeterangan" rows="3" id="textareaAutosize" value="Rudi" disabled data-plugin-textarea-autosize></textarea>	    
 							</div>
 							<br>
 							<div class="modal-text">
-								<label class="control-label">Hasil Diagnosa <span class="required">*</span></label>	
-								<input type="text" name="NewHasil" class="form-control" placeholder="Hasil diagnosa" required/>
-							</div>
-							<br>
-							<div class="modal-text">
-								<label class="control-label">Keterangan <span class="required"></span></label>	
-								<textarea class="form-control" name="NewKeterangan" rows="3" id="textareaAutosize" data-plugin-textarea-autosize></textarea>	    
+								<label class="control-label">Hasil diagnosa </label>	
+								<input type="text" name="NewHasil" class="form-control" placeholder="Hasil diagnosa" value="" disabled required/>
 							</div>
 						</div>
 					</div>

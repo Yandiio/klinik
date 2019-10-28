@@ -71,8 +71,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="{{url('rekam-medis/diagnosa')}}">
-                                    Diagnosa
+                                <a class="nav-link" href="{{url('rekam-medis/pemeriksaan')}}">
+                                    Pemeriksaan
                                 </a>
                             </li>
                             <li>

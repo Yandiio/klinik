@@ -136,7 +136,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-jeniskelamin">Jenis Kelamin <span class="required">*</span>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-email">Jenis Kelamin <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
                                         <select class="form-control form-control-sm mb-3" name="jenisKelamin" id="jenisKelamin" required>
@@ -152,11 +152,11 @@
                                         <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="Usia" required>
                                         <b class="form-text text-danger" id="forUsiaEror" style="margin-top:-15;font-siza:smaller;font-size: smaller;"></b>
                                     </div>
-                                    {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
-                                    </div> --}}
+                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama<span class="required">*</span>
@@ -169,15 +169,16 @@
                             </div>
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi<span class="required">*</span>
-                                    </label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3" requeired>
+                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3"
+                                            requeired>
                                             <option id="itemProvinsi">=========== Pilih Provinsi ======</option>
                                         </select>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota<span class="required">*</span>
-                                    </label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota
+                                        <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <select name="kota" id="kota" class="form-control form-control-sm mb-3"
                                             requeired>
@@ -205,10 +206,10 @@
                                 </div>
                                 <div class="form-group row">
                                     
-                                    {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="kodePos" id="w2-last-name" placeholder="Kode Pos">
-                                    </div> --}}
+                                    </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
@@ -546,7 +547,7 @@
             url: "{{ route('Dokter_postInput')}}",
             data: $(this).serialize(),
             success: function (data) {
-                //console.log(data);
+                console.log(data);
                 var id = data;
                 new PNotify({
                     title: 'Regular Notice',

@@ -80,11 +80,13 @@ route::get('dokter/list-dokter',function(){
     return view('dokter.listDokter');
 });
 
+route::get('dokter/list-dokter/list', 'Dokter\DokterController@getDokter_List')->name('Dokter_getList');
+route::get('dokter/list-dokter/data', 'Dokter\DokterController@dataDokter')->name('dokter_get_data');
+
 route::get('dokter/tambah-dokter',function(){
     return view('dokter.tambahDokter');
 });
 
-route::get('dokter/list-dokter/list', 'Dokter\DokterController@getDokter_List')->name('Dokter_getList');
 route::post('dokter/tambah-dokter/tambah', 'Dokter\DokterController@postDokter_Input')->name('Dokter_postInput');
 route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
 route::post('dokter/edit-dokter/pernbarui', 'Dokter\DokterController@postDokter_Update')->name('Dokter_postUpdate');
@@ -94,6 +96,9 @@ route::post('dokter/hapus x-dokter/hapus', 'Dokter\DokterController@postDokter_D
 // });
 
 
+route::get('dokter/edit-dokter',function(){
+    return view('dokter.editDokter');
+});
 route::get('dokter/detail-dokter',function(){
     return view('dokter.detailDokter');
 });
@@ -123,6 +128,16 @@ route::get('rekam-medis/tambah-rekam-medis',function(){
 route::get('rekam-medis/detail-rekam-medis',function(){
     return view('rekamMedis.detailRekamMedis');
 });
+
+route::get('rekam-medis/pemeriksaan',function(){
+    return view('rekamMedis.pemeriksaan');
+});
+
+route::get('rekam-medis/pemeriksaan/list','rekamMedis\PemeriksaanController@list')->name('data-list-pemeriksaan');
+route::get('rekam-medis/pemeriksaan/data-antrian', 'rekamMedis\PemeriksaanController@dataAntrian')->name('data-antrian');
+route::get('rekam-medis/pemeriksaan/detail-antrian-daftar', 'rekamMedis\PemeriksaanController@detailAntrianDaftar')->name('detail-antrian-daftar');
+route::post('rekam-medis/pemeriksaan/update', 'rekamMedis\PemeriksaanController@pemeriksaanUpadte')->name('pemeriksaan-update');
+
 
 route::get('rekam-medis/diagnosa',function(){
     return view('rekamMedis.diagnosa');
@@ -161,6 +176,7 @@ route::get('setting/user',function(){
 });
 
 route::get('setting/role/list','Setting\RoleController@roleList')->name('list_role');
+route::get('setting/role/data','Setting\RoleController@roleData')->name('role_data');
 
 /* =========================================== Setting===================================== */
 
@@ -170,8 +186,24 @@ route::get('report/user',function(){
 
 Route::get('qr-code', function () 
 {
-    return view('pasien.qrqode');    
+    return QrCode::size(250)->generate('Welcome to kerneldev.com!'); 
 });
+
+
+/* =========================================== Dashboard===================================== */
+
+route::get('dashboard/jumlah-pasien','DashboardController@jumlahPasien')->name('jumlah_pasien');
+
+route::get('dashboard/jumlah-dokter','DashboardController@jumlahDokter')->name('jumlah_dokter');
+
+route::get('dashboard/jumlah-medis','DashboardController@jumlahRekamMedis')->name('jumlah_medis');
+
+route::get('dashboard/jumlah-poli','DashboardController@jumlahPoli')->name('jumlah_poli');
+
+route::get('dashboard/chart','DashboardController@detailChart')->name('detail_chart');
+route::get('dashboard/tabel','DashboardController@tableDashboard')->name('tabel_dashboard');
+
+/* =========================================== Dashboard===================================== */
 
 
 /* =========================================== Report===================================== */

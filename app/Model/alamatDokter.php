@@ -19,21 +19,4 @@ class alamatDokter extends Model
 
     ];
     public $timestamps = true;
-
-    public function dokter(){
-        return $this->hashMany('App\Model\dokter', 'id');
-    }
-    public function prvns(){
-        return $this->belongsTo('Laravolt\Indonesia\Models\Province', 'provinsi', 'id', 'name');
-    }
-    public function kbptn(){
-        return $this->belongsTo('Laravolt\Indonesia\Models\City', 'kabupaten', 'id');
-    }
-    public function kcmtn(){
-        return $this->belongsTo('Laravolt\Indonesia\Models\District', 'kecamatan', 'id');
-    }
-    public function klrhn(){
-        return $this->belongsTo('Laravolt\Indonesia\Models\Village', 'kelurahan', 'id');
-    }   
-
 }

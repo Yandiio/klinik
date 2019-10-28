@@ -10,7 +10,7 @@ class tindakanDiagnosa extends Model
     protected $table = 'tindakan_diagnosa';
     public $fillable = [ 
         'id', 
-        'id_diagnosa',
+        'hasil_diagnosa',
         'id_rekammedis'
     ];
     public $timestamps = true;
@@ -18,7 +18,5 @@ class tindakanDiagnosa extends Model
     public function rekammedis(){
         return $this->belongsTo('App\Model\rekamMedis', 'id_rekammedis', 'id');
     }
-    public function diagnosa(){
-        return $this->belongsTo('App\Model\diagnosa', 'id_diagnosa', 'id');
-    }
+    
 }

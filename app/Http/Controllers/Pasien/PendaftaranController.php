@@ -15,6 +15,7 @@ use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
 use Dompdf\Dompdf;
 use PDF;
+use QrCode;
 
 
 
@@ -49,27 +50,28 @@ class PendaftaranController extends Controller
         return response()->json($listPasien);
     }
     public function pendaftaranDetail(Request $request){
-
-        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar')->where('id',$request->id)->get()
+            //dd($request->id);
+        $listPasien = pasien::where('id',$request->id)->get()
         ->map(function($key){
+                
+                
+            $qr = $key->nik.'-'.$key->nama_lengkap;
             return [
                 'id'            => $key->id,
-                'nikPasien'     => $key->penjamin->pasien->nik,
-                'idPasien'     => $key->penjamin->pasien->id,
-                'nama'          => $key->penjamin->pasien->nama_lengkap,
-                'jenisKelamin'  => $key->penjamin->pasien->jk,
-                'golonganDarah' => $key->penjamin->pasien->gd,
-                'agama'         => $key->penjamin->pasien->ag,
-                'usia'          => $key->penjamin->pasien->usia,
-                'poli'          => $key->poli->nama,
+                'nikPasien'     => $key->nik,
+                'idPasien'     => $key->id,
+                'nama'          => $key->nama_lengkap,
+                'jenisKelamin'  => $key->jk,
+                'golonganDarah' => $key->gd,
+                'agama'         => $key->ag,
+                'usia'          => $key->usia,
                 'tanggalDaftar' => $key->tgl_daftar,
-                'asuransi'      => $key->penjamin->asuransi->nama,
-                'provinsi'      => $key->penjamin->pasien->alamatpasien->prvns->name,
-                'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
-                'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
-                'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
-                'alamat'     => $key->penjamin->pasien->alamatpasien->alamat,
-                
+                'provinsi'      => $key->alamatpasien->prvns->name,
+                'kabupaten'     => $key->alamatpasien->kbptn->name,
+                'kecamatan'     => $key->alamatpasien->kcmtn->name,
+                'kelurahan'     => $key->alamatpasien->klrhn->name,
+                'alamat'     => $key->alamatpasien->alamat,
+                'qrcode' => $qr,
                 
             ];
         });
