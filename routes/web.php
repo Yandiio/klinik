@@ -30,6 +30,11 @@ Route::get('/', function () {
 route::get('dashboard',function(){
     return view('dashboard.dashboard');
 });
+route::get('dashboard-user',function(){
+    return view('dashboard.dashboarduser');
+});
+
+route::post('login','LoginController@postLogin')->name('post_login');
 /* =========================================== dashboard ===================================== */
 
 
@@ -170,6 +175,13 @@ route::get('setting/user',function(){
 
 route::get('setting/role/list','Setting\RoleController@roleList')->name('list_role');
 route::get('setting/role/data','Setting\RoleController@roleData')->name('role_data');
+
+
+route::get('setting/user/list','Setting\UserController@listUser')->name('list_user');
+route::post('setting/user/tambah','Setting\UserController@userTambah')->name('user_tambah');
+route::get('setting/user/edit','Setting\UserController@editUser')->name('edit_user');
+route::post('setting/user/update','Setting\UserController@updateUser')->name('update_user');
+route::get('setting/user/delete','Setting\UserController@deleteUser')->name('delete_user');
 
 /* =========================================== Setting===================================== */
 
