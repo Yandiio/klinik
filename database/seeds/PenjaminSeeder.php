@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\Penjamin;
+use App\Model\penjamin;
 
 class PenjaminSeeder extends Seeder
 {
