@@ -223,6 +223,8 @@ route::get('report/laporan',function(){
     return view('report.laporan');
 });
 
+route::get('report/laporan/list','Laporan\LaporanController@listLaporan')->name('list_laporan');
+
 
 
 /* =========================================== Report===================================== */

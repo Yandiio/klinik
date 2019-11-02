@@ -377,9 +377,6 @@
             url: "{{ route('detail_chart') }}",
             data: {},
             success: function (data) {
-                    
-                    console.log(data);
-
                 var flotBarsData = [
                     [data[0].hari6, data[0].data6],
                     [data[0].hari5, data[0].data5],

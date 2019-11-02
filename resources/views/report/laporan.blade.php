@@ -40,28 +40,57 @@
                 </header>
                 <div class="card">
                     <div class="card-body">
-                            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-bottom: 10px">
-                                
-                                    Cari
-                                    <i class="fa fa-serc"></i>
-                            </button>
+                        <div class="form-group row">
+                            <!-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                                        Rekam medis <span class="required">*</span></label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                            id="w2-first-name" readonly="readonly" value="Auto">
+                                    </div> -->
+                            <label class="col-sm-2 control-label text-sm-left pt-1" for="w2-last-name">Nama Poli
+                                <span class="required">*</span></label>
+                            <div class="col-sm-4">
+                                <select name="poli" id="poli" class="form-control form-control-sm mb-3">
+                                    <option value="">Pilih Poli</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" style="margin-bottom: 10px">
+
+                            Cari
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <br>
+                        <br>
                         <div class="table-responsive">
-                            <table id="tableTipeAsuransi" class="table table-hover table-striped table-bordered"
+                            <table id="tableLaporan" class="table table-hover table-striped table-bordered"
                                 cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th width="10%">No</th>
-                                        <th>Tipe Asuransi</th>
-                                        <th width="15%">Aksi</th>
+                                        <th>No Medis</th>
+                                        <th>Asuransi</th>
+                                        <th>Nama pasien</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Berat Badan</th>
+                                        <th>Nama Poli</th>
+                                        <th>Hasil Diagnosa</th>
+                                        <th>Status</th>
+                                        <!-- <th width="15%">Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tfoot>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Tipe Asuransi</th>
-                                        <th>Aksi</th>
-                                    </tr>
+                                    <th width="10%">No</th>
+                                    <th>No Medis</th>
+                                    <th>Asuransi</th>
+                                    <th>Nama pasien</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Berat Badan</th>
+                                    <th>Nama Poli</th>
+                                    <th>Hasil Diagnosa</th>
+                                    <th>Status</th>
                                 </tfoot>
+                                
                             </table>
                         </div>
                     </div>
@@ -80,28 +109,28 @@
                     </div>
                     <form method="POST" id="formTambah">
                         @csrf
-                    <div class="modal-body">
-                        <div class="modal-wrapper">
-                            <div class="modal-text">
-                                <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
-                                <input id="name" type="text" name="name" class="form-control"
-                                    placeholder="Tipe Asuransi" required />
-                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi"
-                                    required />
+                        <div class="modal-body">
+                            <div class="modal-wrapper">
+                                <div class="modal-text">
+                                    <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
+                                    <input id="name" type="text" name="name" class="form-control"
+                                        placeholder="Tipe Asuransi" required />
+                                    <input id="id" type="hidden" name="id" class="form-control"
+                                        placeholder="Tipe Asuransi" required />
+                                </div>
                             </div>
-                        </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"
-                                    id="cancel">Kembali</button>
 
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                                        id="cancel">Kembali</button>
+
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -117,28 +146,28 @@
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
                     <form method="POST" id="formUpdate">
-                    @csrf
-                    <div class="modal-body"> 
-                        <div class="modal-wrapper">
-                            <div class="modal-text">
-                                <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
-                                <input id="editName" type="text" name="name" class="form-control"
-                                    placeholder="Tipe Asuransi" required />
-                                <input id="editId" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi"
-                                    required />
+                        @csrf
+                        <div class="modal-body">
+                            <div class="modal-wrapper">
+                                <div class="modal-text">
+                                    <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
+                                    <input id="editName" type="text" name="name" class="form-control"
+                                        placeholder="Tipe Asuransi" required />
+                                    <input id="editId" type="hidden" name="id" class="form-control"
+                                        placeholder="Tipe Asuransi" required />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"
+                                        id="cancelEdit">Kembali</button>
+                                </div>
                             </div>
                         </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col-md-12 text-right">
-                                <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal"
-                                    id="cancelEdit">Kembali</button>
-                            </div>
-                        </div>
-                    </div>
                     </form>
                 </div>
             </div>
@@ -158,32 +187,17 @@
 
 
 <!-- end - This is for export functionality only -->
-
 <script>
-
-
-</script>
-
-
-<script>
-
-    var oTable;
-    //$('#ubah').hide();
-
-    function closeModal() {
-        $('#cancelEdit').click();
-        $('#cancel').click();
-        $('#formTambah').trigger("reset");
-    }
     $(document).ready(function () {
-        closeModal();
-        oTable = $('#tableTipeAsuransi').DataTable({
+        dataPoli();
+
+        oTableData = $('#tableLaporan').DataTable({
             responsive: true,
             processing: true,
             serverSide: true,
-            ajax: "{{ route('list_tipe_asuransi')}}",
+            destroy: true,
+            ajax: "{{route('list_laporan')}}",
             columns: [
-
                 {
                     data: 'id',
                     render: function (data, type, row, meta) {
@@ -191,153 +205,73 @@
                     }
                 },
                 {
-                    data: 'nama',
-                    name: 'nama'
+                    data: 'nomedis',
+                    name: 'nomedis'
                 },
                 {
-                    data: 'id',
+                    data: 'asuransi',
+                    name: 'asuransi'
+                },
+                {
+                    data: 'namapasien',
+                    name: 'namapasien'
+                },
+                {
+                    data: 'jk',
+                    name: 'jk'
+                }, 
+                {
+                    data: 'beratbadan',
+                    name: 'beratbadan'
+                },
+                {
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
+                    data: 'hasildiagnosa',
+                    name: 'hasildiagnosa'
+                },
+                {
+                    data: 'status',
                     render: function (data, type, row) {
-                        // console.log(type);
-                        let buttonEdit =
-                            '<button type="click" class="btn-sm btn-warning"  title="Ubah Data !" style="margin-right:5px" data-toggle="modal" data-target="#myModalEdit" onclick="buttonEdit('+data+')"><i class="fa fa-edit" aria-hidden="true"></i></button>';
-                        let buttonHapus =
-                            '<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete(' +
-                            data +
-                            ');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
-                        return buttonEdit + buttonHapus;
+                        if (row.status === "0") {
+                            let bagess = '<div class="badge badge-danger">Menunggu</div>';
+                            return bagess;
+                        }else if(row.status === "1"){
+                            let bagess = '<div class="badge badge-warning">Antrian</div>';
+                            return bagess;
+                        }else if(row.status === "2"){
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }else{
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }
                     }
-                }
+                },
             ]
         });
 
+
     });
-
-
-    $('#formTambah').on('submit', function (e) {
-        console.log("asdads");
-        e.preventDefault();
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $("input[name='_token']").val()
-            }
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "{{ route('post_tipe_asuransi')}}",
-            data: $(this).serialize(),
-            success: function (response) {
-
-                closeModal();
-                new PNotify({
-                    title: 'Regular Notice',
-                    text: 'Check me out! I\'m a notice.',
-                    type: 'success'
-                });
-
-                oTable.ajax.reload();
-            }
-        });
-    });
-
-    /* ======================= EDIT========================= */
-    function buttonEdit(idEdit) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+    function dataPoli() {
         $.ajax({
             type: "GET",
-            url: "{{route('edit_tipe_asuransi')}}",
-            data: {
-                id: idEdit
-            },
+            url: "{{route('tipePoli_getData')}}",
+            //    data: {
+            //        'id': id
+            //    },
             success: function (data) {
-                //console.log(data);
-                
-                $('#editName').val(data.nama);
-                $('#editId').val(data.id);
+                $.each(data, function (index, value) {
+                    $('#poli').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama + '</option>')
+                });
             }
-        });
 
+        });
     }
-
-    /* ======================= EDIT========================= */
-    /* ======================= UPDaTE========================= */
-    $('#formUpdate').on("submit", function (e) {
-        e.preventDefault();
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "POST",
-            url: "{{route('update_tipe_asuransi')}}",
-            data: $('#formUpdate').serialize(),
-            success: function (data) {
-                closeModal();
-                new PNotify({
-                    title: 'Regular Notice',
-                    text: 'Check me out! I\'m a notice.',
-                    type: 'success'
-                });
-
-                oTable.ajax.reload();
-            }
-        });
-    });
-    /* ======================= UPDate========================= */
-
-    /* ======================= Delete========================= */
-    function buttonDelete(idDelete) {
-        console.log(idDelete);
-        bootbox.confirm({
-            message: "Apakah anda yakin ingin menghapus ?",
-            buttons: {
-                confirm: {
-                    label: 'Ya, Saya ingin menghapus',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'Tidak',
-                    className: 'btn-danger'
-                }
-            },
-            callback: function (result) {
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-                    type: "GET",
-                    url: "{{route('delete_tipe_asuransi')}}",
-                    data: {
-                        id: idDelete
-                    },
-                    success: function (data) {
-                        //console.log(data);
-                        oTable.ajax.reload();
-                        new PNotify({
-                            title: 'Hapus',
-                            text: 'Berhasil hapus',
-                            type: 'success',
-                        });
-
-                    }
-                });
-            }
-        });
-
-
-
-
-    }
-
-    /* ======================= Delete========================= */
 
 </script>
 @stop
