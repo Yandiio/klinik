@@ -108,13 +108,8 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="">
-                                    Pendaftaran pasien
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="">
-                                    Rekam Medis
+                                <a class="nav-link" href="{{url('report/laporan')}}">
+                                    Laporan
                                 </a>
                             </li>
                         </ul>

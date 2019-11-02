@@ -219,7 +219,9 @@ route::get('dashboard/tabel','DashboardController@tableDashboard')->name('tabel_
 
 
 /* =========================================== Report===================================== */
-
+route::get('report/laporan',function(){
+    return view('report.laporan');
+});
 
 
 
