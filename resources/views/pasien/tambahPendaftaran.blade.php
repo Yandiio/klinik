@@ -55,43 +55,42 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="nik"
-                                            id="w2-first-name" required>
+                                        <input type="number" class="form-control form-control-sm mb-3" name="nik" id="nikPribadi">
+                                        <b class="form-text text-danger" id="forNikEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="agama" id="agama" class="form-control form-control-sm mb-3"
-                                            required>
-                                            <option value="0">Agama</option>
+                                        <select name="agama" id="agama" class="form-control form-control-sm mb-3">
+                                            <option value="">Agama</option>
                                             <option value="1">Islam</option>
                                             <option value="2">Kristen Protestan</option>
                                             <option value="3">Budha</option>
                                             <option value="4">Hindu</option>
                                             <option value="5">Khatolik</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forAgamaEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama
-                                        Lengkap <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap"
-                                            id="w2-first-name" required>
+                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap" id="namaLengkap" >
+                                        <b class="form-text text-danger" id="forNamaLengkapEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="umur"
-                                            id="w2-first-name" required>
+                                        <input type="text" class="form-control form-control-sm mb-3" name="umur" id="umur">
+                                        <b class="form-text text-danger" id="forUmurEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat
                                         Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir"
-                                            id="w2-last-name" requeired>
+                                        <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir" id="tempatLahir" >
+                                        <b class="form-text text-danger" id="forTempatLahirEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
                                         <span class="required">*</span></label>
@@ -99,8 +98,8 @@
                                         <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3"
                                             requeired>
                                             <option id="itemProvinsi">=========== Pilih Provinsi ======</option>
-
                                         </select>
+                                        <b class="form-text text-danger" id="forProvinsiEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -113,8 +112,8 @@
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="date" name="tanggalLahir"
-                                                class="form-control form-control-sm mb-3" requeired>
+                                            <input type="date" name="tanggalLahir" class="form-control form-control-sm mb-3" id="date" requeired>
+                                            <b class="form-text text-danger" id="forTanggalLahirEror" style="margin-top:-15;font-size: smaller;"></b>
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota
@@ -124,18 +123,19 @@
                                             requeired>
                                             <option id="itemKota">=========== Pilih Kota ======</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forKotaEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Jenis
                                         Kelamin <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="jenisKelamin" id="" class="form-control form-control-sm mb-3"
-                                            requeired>
+                                        <select name="jenisKelamin" id="jenisKelamin" class="form-control form-control-sm mb-3" requeired>
                                             <option value="">Jenis Kelamin</option>
                                             <option value="0">Laki-laki</option>
                                             <option value="1">Perempuan</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forJenisKelaminEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1"
                                         for="w2-last-name">Kecamatan
@@ -144,15 +144,15 @@
                                         <select name="kecamatan" id="kecamatan"
                                             class="form-control form-control-sm mb-3" requeired>
                                             <option id="itemKecamatan" value="">============ Kecamatan ========</option>
-
                                         </select>
+                                        <b class="form-text text-danger" id="forKecamatanEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="golonganDarah" id="" class="form-control form-control-sm mb-3"
+                                        <select name="golonganDarah" id="golonganDarah" class="form-control form-control-sm mb-3"
                                             requeired>
                                             <option value="">Golongan darah</option>
                                             <option value="0">A</option>
@@ -160,35 +160,30 @@
                                             <option value="2">O</option>
                                             <option value="3">AB</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forGolonganDarahEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1"
-                                        for="w2-last-name">Kelurahan
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kelurahan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="kelurahan" id="kelurahan"
-                                            class="form-control form-control-sm mb-3" requeired>
+                                        <select name="kelurahan" id="kelurahan" class="form-control form-control-sm mb-3" requeired>
                                             <option id="itemKelurahan" value="">============ Kelurahan ========</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No
-                                        Telepon <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Telepon <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="telepone"
-                                            id="w2-first-name" requeired>
+                                        <input type="number" class="form-control form-control-sm mb-3" name="telepone" id="telepon" requeired>
+                                        <b class="form-text text-danger" id="forTeleponEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize" name="alamat"
-                                            data-plugin-textarea-autosize></textarea>
+                                        <textarea class="form-control" rows="3" id="alamat" name="alamat" data-plugin-textarea-autosize></textarea>
                                     </div>
-
+                                    <b class="form-text text-danger" id="forAlamatEror" style="margin-top:-15;font-size: smaller;"></b>
                                 </div>
                                 <div class="form-group row">
-
-
                                 </div>
                             </div>
                             <!-- kontent tabb 1 -->
@@ -197,45 +192,35 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nik
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="nikAs"
-                                            id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="nikAs" id="nikAs">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tipe
                                         Asuransi <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select data-plugin-selectTwo class="form-control populate form-control-sm mb-3"
-                                            id="asuransi" name="ansuransiAs">
-
+                                        <select data-plugin-selectTwo class="form-control populate form-control-sm mb-3" id="asuransi" name="ansuransiAs">
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama
-                                        Lengkap <span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Nama Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3"
-                                            name="namaLengkapAs" id="w2-first-name">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="namaLengkapAs" id="w2-first-name">
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kode
-                                        Karyawan<span class="required">*</span></label>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kode Karyawan<span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3"
-                                            name="kodeKaryawanAs" id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="kodeKaryawanAs" id="w2-first-name">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1"
-                                        for="w2-first-name">Telepone
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Telepone
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="teleponeAs"
-                                            id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="teleponeAs" id="w2-first-name">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">No Polis
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="noPolisAs"
-                                            id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="noPolisAs" id="noPolis">
                                     </div>
 
                                 </div>
@@ -243,8 +228,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Hp
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <input type="number" class="form-control form-control-sm mb-3" name="hpAs"
-                                            id="w2-first-name">
+                                        <input type="number" class="form-control form-control-sm mb-3" name="hpAs" id="noHP">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tanggal
                                         Akhir Polis <span class="required">*</span></label>
@@ -255,8 +239,7 @@
                                                     <i class="fas fa-calendar-alt"></i>
                                                 </span>
                                             </span>
-                                            <input type="date" class="form-control form-control-sm mb-3"
-                                                name="tanggalAkhirPolisAs">
+                                            <input type="date" class="form-control form-control-sm mb-3" name="tanggalAkhirPolisAs">
                                         </div>
                                     </div>
                                 </div>
@@ -265,8 +248,7 @@
                                         for="w2-first-name">Keterangan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" id="textareaAutosize"
-                                            name="keteranganAs" data-plugin-textarea-autosize></textarea>
+                                        <textarea class="form-control" rows="3" id="keterangan" name="keteranganAs" data-plugin-textarea-autosize></textarea>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Hubungan
                                         <span class="required">*</span></label>
@@ -474,8 +456,50 @@
     }
 
     function selanjutnya1() {
-        $('#selanjutnya1').click(function () {
-            //console.log('selanjutnya 1');
+        $('#selanjutnya1').click(function (e) {
+            e.preventDefault();
+            if ($('#nikPribadi').val() === '' ) {
+                $('#forNikEror').html('* Silahkan input data NIK');
+                $('#nik').focus();
+                return false;
+            }
+            else if ($('#agama').val() === '' ) {
+                $('#forAgamaEror').html('* Silahkan pilih agama');
+                $('#agama').focus();
+                return false;
+            }
+            else if ($('#namaLengkap').val() === '' ) {
+                $('#forNamaLengkapEror').html('* Silahkan input Nama Lengkap');
+                $('#namaLengkap').focus();
+                return false;
+            }
+            else if ($('#umur').val() === '' ) {
+                $('#forUmurEror').html('* Silahkan input umur');
+                $('#umur').focus();
+                return false;
+            }
+            else if ($('#tempatLahir').val() === '' ) {
+                $('#forTempatLahirEror').html('* Silahkan input tempat lahir');
+                $('#tempatLahir').focus();
+                return false;
+            }
+            else if ($('#tanggalLahir').val() === '' ) {
+                $('#forTanggalLahirEror').html('* Silahkan input tanggal lahir');
+                $('#tanggalLahir').focus();
+                return false;
+            }
+            else if ($('#tanggalLahir').val() === '' ) {
+                $('#forTanggalLahirEror').html('* Silahkan input tanggal lahir');
+                $('#tanggalLahir').focus();
+                return false;
+            }
+            else if ($('#jenisKelamin').val() === '' ) {
+                $('#forJenisKelaminEror').html('* Silahkan input tanggal lahir');
+                $('#jenisKelamin').focus();
+                return false;
+            }
+            
+            else {
             $('#penjamin').show();
             $('#dataPribadi').show();
             /* fungsi button */
@@ -488,6 +512,7 @@
             $("#dataPribadi").mouseenter(function () {
                 $(this).prop("disabled", true);
             });
+            }
         });
     }
 

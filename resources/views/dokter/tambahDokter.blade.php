@@ -74,7 +74,7 @@
                                         <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="tipe_dokter">
                                             <option value="">====== PILIH ======</option>
                                             <option value="1">Yes</option>
-                                            <option value="2">No</option>
+                                            <option value="0">No</option>
                                         </select>
                                         <b class="form-text text-danger" id="forTipeDokterEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>

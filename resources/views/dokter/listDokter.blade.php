@@ -25,7 +25,7 @@
         </div>
         </header>
         <!-- header atas -->
-        <form method="POST" id="formPoli" class="myForm" >
+        <form method="POST" id="formDokter" class="myForm" >
             @csrf
         <div class="row">
             <div class="col-12">
@@ -114,7 +114,7 @@
 						var url = '{{ url("dokter/edit-dokter", "id") }}';
                         url = url.replace('id', row.id);
                         let buttonEdit =
-                            '<a class="btn-sm btn-warning" title="Pendaftaran ulang !"style="margin-right:5px" href="' +url +'"><i class="fas fa-edit" aria-hidden="true"></i></a>';
+                            '<a class="btn-sm btn-warning" title="Edit Dokter ! "style="margin-right:5px" href="' +url +'"><i class="fas fa-edit" aria-hidden="true"></i></a>';
 						let buttonDelete =
 							'<button type="button" href="" class="btn-sm btn-danger"  title="Hapus Data !" style="margin-right:5px" onclick="buttonDelete('+data +');"><i class="fa fa-trash" aria-hidden="true"></i></button>';
 						return buttonEdit + buttonDelete;

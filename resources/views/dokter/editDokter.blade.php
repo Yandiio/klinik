@@ -77,8 +77,8 @@
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="editExternal">
                                                 {{-- <option value="{{$dokter->tipe_dokter}}">{{$dokter->tipe_dokter}}</option> --}}
-                                                <option value="1" {{ $dokter->tipe_dokter =='1' ? 'selected' : ''}} >Yes</option>
-                                                <option value="2" {{ $dokter->tipe_dokter =='0' ? 'selected' : ''}}>No</option>
+                                                <option value="1" {{ $dokter->tipe_dokter =='1' ? 'selected' : ''}}>Yes</option>
+                                                <option value="0" {{ $dokter->tipe_dokter =='0' ? 'selected' : ''}}>No</option>
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keterangan<span class="required">*</span></label>
@@ -136,9 +136,11 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select class="form-control form-control-sm mb-3" name="jenisKelamin" id="editJenisKelamin" required>
-                                                <option value="{{$dokter->jenis_kelamin}}">{{$dokter->jenis_kelamin}}</option>
+                                                <option value="0" {{ $dokter->jenis_kelamin =='0' ? 'selected' : ''}}>Laki-laki</option>
+                                                <option value="1" {{ $dokter->jenis_kelamin =='1' ? 'selected' : ''}}>Perempuan</option>
+                                                {{-- <option value="{{$dokter->jenis_kelamin}}">{{$dokter->jenis_kelamin}}</option>
                                                 <option value="0">Laki-Laki</option>
-                                                <option value="1">Perempuan</option>
+                                                <option value="1">Perempuan</option> --}}
                                             </select>
                                         </div>
                                         {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
@@ -166,7 +168,10 @@
                                         </label>
                                         <div class="col-sm-4">
                                             <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3" requeired>
-                                                <option id="itemProvinsi" >{{$dokter->alamatDokter->provinsi}}</option>
+                                                {{-- <option id="itemProvinsi" >{{$dokter->alamatDokter->provinsi}}</option> --}}
+                                                @foreach ($alamat as $item)
+                                                    <option value="{{$item->id}}" {{ "$item->id" == "$dokter->alamatDokter->provinsi" ? 'selected' : ''}}></option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota<span class="required">*</span>
@@ -483,7 +488,7 @@
                     text: 'Check me out! I\'m a notice.',
                     type: 'success'
                 });
-                
+                window.location = '{{ url("dokter/list-dokter")}}'
             }
         });
     });

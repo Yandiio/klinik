@@ -208,7 +208,9 @@ route::get('dashboard/tabel','DashboardController@tableDashboard')->name('tabel_
 
 /* =========================================== Report===================================== */
 
-
+route::get('pendaftaran/print',function(){
+    return view('print.printnomer');
+});
 
 
 /* =========================================== Report===================================== */

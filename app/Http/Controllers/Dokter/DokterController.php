@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Dokter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\dokter;
-// use App\Model\alamat_dokter;
 use App\Model\alamatDokter;
 use App\Model\tipePoli;
 use Yajra\Datatables\Datatables;
@@ -77,29 +76,9 @@ class DokterController extends Controller
     public function getDokter_Edit(Request $request , $id){
         //dd($id);
         $dokter = dokter::find($id);
-        // dd($dokter);
-        // $dokter = dokter::where('id', 'id_tipe_poli')->where('id',$id)->get()
-        // ->map(function($key){
-        //     return [
-        //         'id'                =>$key->id,
-        //         'kode_dokter'       =>$key->kode_dokter,
-        //         'poli'              =>$key->poli->nama,
-        //         'alamat_dokter'     =>$key->alamatdokter->id,
-        //         'nik'               =>$key->nik,
-        //         'tanggal_lahir'     =>$key->tanggal_lahir,
-        //         'nama_lengkap'      =>$key->nama_lengkap,
-        //         'telepon'           =>$key->telepon,
-        //         'hp'                =>$key->hp,
-        //         'tempat_lahir'      =>$key->tempat_lahir,
-        //         'usia'              =>$key->usia,
-        //         'jenis_kelamin'     =>$key->jenis_kelamin,
-        //         'agama'             =>$key->agama,
-        //         'keterangan'        =>$key->keterangan
-        //     ];
-        // });
-        //dd($dokter);
+        $alamat = alamatDokter::find($id)->get();
         $tipePoli = tipePoli::select('id','nama')->get();
-        return view('dokter.editDokter',['dokter'=>$dokter, 'poli'=> $tipePoli]);
+        return view('dokter.editDokter',['dokter'=>$dokter, 'poli'=> $tipePoli , 'alamat' => $alamat]);
         // return response()->json($dokter->id);
     }
 
