@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Model\AlamatDokter;
+use App\Model\alamatDokter;
 
 class alamatDokterSeeder extends Seeder
 {
@@ -32,7 +32,7 @@ class alamatDokterSeeder extends Seeder
 
             for ($i=0; $i <10 ; $i++) { 
             # code...
-                $alamat = new AlamatDokter;
+                $alamat = new alamatDokter;
                 $alamat->alamat = $almt[$i];
                 $alamat->kelurahan = $kelurahan[$i];
                 $alamat->kecamatan = $kecamatan[$i];

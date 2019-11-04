@@ -1,11 +1,12 @@
 @extends('layout.admin')
 
-@yield('title', 'Edit Dokter')
+@yield('title', 'Pendaftaran')
 
 @section('content')
 <section role="main" class="content-body">
         <header class="page-header">
         <h2>Dokter</h2>
+    
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
                 <li>
@@ -16,6 +17,7 @@
                 <li><span>Dokter</span></li>
                 <li><span>Edit Dokter</span></li>
             </ol>
+    
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
         </header>
@@ -112,6 +114,36 @@
                                                 </span>
                                             <input type="date" name="tanggalLahir" id="editTanggalLahir" value="{{$dokter->tanggal_lahir}}" class="form-control form-control-sm mb-3" >
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="">
+                                                    No. Pajak <span class="required">*</span>
+                                                </label>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control form-control-sm mb-3" value="1234567" placeholder="No Pajak" name="nopajak"  >
+                                                    </div>
+                                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="">
+                                                        External Dokter <span class="required">*</span>
+                                                    </label>
+                                                    <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Yes</option>
+                                                            <option value="">No</option>
+                                                        </select>
+                                                    </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-password">
+                                                    Departement <span class="required">*</span>
+                                                </label>
+                                                    <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Klinik Bina Persada 1</option>
+                                                            <option value="">Klinik Bina Persada 2</option>
+                                                        </select>
+                                                    </div>
+                                                    
+                                            </div>
+                                            
                                         </div>
                                         <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Tempat Lahir <span class="required">*</span>
                                         </label>
@@ -200,69 +232,111 @@
                                                 <option id="itemKelurahan" value="{{$dokter->alamatDokter->kelurahan}}">{{$dokter->alamatDokter->kelurahan}}</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
-                                        <div class="col-sm-4">
-                                            <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" value="{{$dokter->alamatDokter->alamat}}" data-plugin-textarea-autosize>{{$dokter->alamatDokter->alamat}}</textarea>
-                                            <input type="hidden" name="id_alamat" value="{{$dokter->alamatDokter->id}}">
+                                        <div id="w2-confirm" class="tab-pane p-3">
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Negara</label>
+                                                <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Indonesia</option>
+                                                        </select>
+                                                </div>
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Provinsi</label>
+                                                <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">DKI Jakarta</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kabupaten</label>
+                                                <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Jakarta</option>
+                                                        </select>
+                                                </div>
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kecamatan</label>
+                                                <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Cakung Timur</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kelurahan</label>
+                                                <div class="col-sm-4">
+                                                        <select class="form-control form-control-sm mb-3" name="" id="">
+                                                            <option value="">Cakung Timur</option>
+                                                        </select>
+                                                </div>
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
+                                                <div class="col-sm-4">
+                                                        <input type="text" class="form-control form-control-sm mb-3" value="13910" name="last-name" id="w2-last-name" placeholder="Kode Pos">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
+                                                <div class="col-sm-6">
+                                                    <textarea class="form-control" rows="3" id="textareaAutosize" data-plugin-textarea-autosize>Jalan Jakarta Garden City Block H No 2</textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-4"></div>
+                                                <div class="col-sm-10">
+                                                    <div class="checkbox-custom">
+                                                        <input type="checkbox" name="terms" id="w2-terms" required>
+                                                        <label for="w2-terms">I agree to the terms of service</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
-                                        <div class="col-sm-4">
-                                            <input type="text" class="form-control form-control-sm mb-3" name="kodePos" id="w2-last-name" placeholder="Kode Pos">
-                                        </div> --}}
                                     </div>
-                                </div>
+                                </form>
                             </div>
+                            <div class="card-footer">
+                                <ul class="pager">
+                                    <li class="previous disabled">
+                                        <a><i class="fas fa-angle-left"></i> Previous</a>
+                                    </li>
+                                    <li class="finish hidden float-right">
+                                        <a>Finish</a>
+                                    </li>
+                                    <li class="next">
+                                        <a>Next <i class="fas fa-angle-right"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
                     </div>
-                    <div class="card-footer">
-                        <ul class="pager">
-                            <li class="previous disabled">
-                                <!-- <button ><i class="fas fa-angle-left"></i></button>
-                                <a><i class="fas fa-angle-left"></i> Sebelumnya</a> -->
-                                <button id="sebelumnya" class="mb-1 mt-1 mr-1 btn btn-default float-left" type="button"><i
-                                        class="fas fa-angle-left"></i> Sebelumnya</button>
-                            </li>
-                            <li class="next">
-                                <button id="selanjutnya1" class="mb-1 mt-1 mr-1 btn btn-default float-right"
-                                    type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
-                                <button id="selanjutnya2" class="mb-1 mt-1 mr-1 btn btn-default float-right"
-                                    type="button">Selanjutnya <i class="fas fa-angle-right"></i></button>
-                            </li>
-                            <li class="finish float-right">
-                                <button type="submit" class="mb-1 mt-1 mr-1 btn btn-default" id="selesai">EDIT</button>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-                </section>
-            </div>
         </div>
+     
+        
         
 </section>
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
 
-<link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/fontawesome-all.min.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
-<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/fontawesome-all.min.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" />
+		<link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" />
 
-<!-- Specific Page Vendor CSS -->
-<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
+		<!-- Specific Page Vendor CSS -->
+		<link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
 
-<!-- Theme CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/theme.css')}}" />
+		<!-- Theme CSS -->
+		<link rel="stylesheet" href="{{asset('assets/css/theme.css')}}" />
 
-<!-- Skin CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/skins/default.css')}}" />
+		<!-- Skin CSS -->
+		<link rel="stylesheet" href="{{asset('assets/css/skins/default.css')}}" />
 
-<!-- Theme Custom CSS -->
-<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+		<!-- Theme Custom CSS -->
+		<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
 
-<!-- Head Libs -->
-<script src="{{asset('assets/vendor/modernizr/modernizr.js')}}"></script>
+		<!-- Head Libs -->
+		<script src="{{asset('assets/vendor/modernizr/modernizr.js')}}"></script>
 
 @stop
 @section('script')

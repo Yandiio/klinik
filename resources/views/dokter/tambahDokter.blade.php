@@ -17,7 +17,6 @@
                 <li><span>Dokter</span></li>
                 <li><span>Tambah Dokter</span></li>
             </ol>
-
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
     </header>
@@ -152,11 +151,6 @@
                                         <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="Usia" required>
                                         <b class="form-text text-danger" id="forUsiaEror" style="margin-top:-15;font-siza:smaller;font-size: smaller;"></b>
                                     </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
-                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Agama<span class="required">*</span>
@@ -164,6 +158,11 @@
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="agama" id="agama" placeholder="Agama" required>
                                         <b class="form-text text-danger" id="forAgamaEror" style="margin-top:-15;font-siza:smaller;font-size: smaller;"></b>
+                                    </div>
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
                                     </div>
                                 </div>
                             </div>
@@ -329,8 +328,8 @@
         selanjutnya2();
         
         $('#selesai').click(function () {
-            console.log('#selesai');
-            $('#formTambah').trigger("reset");
+            // console.log('#selesai');
+            // $('#formTambah').trigger("reset");
             $('#dataDokter').click();
             $('#selesai').hide();
             $('#selanjutnya1').show();

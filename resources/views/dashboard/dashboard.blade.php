@@ -137,7 +137,7 @@
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
 
-                    <h2 class="card-title">Pasien Chart</h2>
+                    <h2 class="card-title">Pendafataran Pasien Chart</h2>
                     <!-- <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p> -->
                 </header>
                 <div class="card-body" id="cartdashboard">
@@ -377,9 +377,6 @@
             url: "{{ route('detail_chart') }}",
             data: {},
             success: function (data) {
-                    
-                    console.log(data);
-
                 var flotBarsData = [
                     [data[0].hari6, data[0].data6],
                     [data[0].hari5, data[0].data5],

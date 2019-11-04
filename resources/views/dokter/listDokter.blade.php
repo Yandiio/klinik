@@ -69,30 +69,21 @@
                 </div>
             </div>
         </div>
-    </div>
-        </form>
 
 </section>
 @endsection
 
 @section('script')
-<script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
 <!-- This is data table -->
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
 <!-- start - This is for export functionality only -->
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
-<script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
-
-
-
+<script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
+<script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.validation.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+<script src="{{asset('assets/js/validation.js')}}"></script>
 <!-- end - This is for export functionality only -->
 <script>
     var oTableList;
@@ -124,9 +115,7 @@
         });
 	});
 
-    /* ----------------- Function Delete Start -----------------*/
-    function buttonDelete(idx) {
-        // console.log(idx);
+    function buttonDelete(idDelete) {
 		bootbox.confirm({
 			message: "Apakah anda yakin ingin menghapus ?",
 			buttons: {
@@ -149,10 +138,10 @@
 					type: "POST",
 					url: "{{route('Dokter_postDelete')}}",
 					data: {
-						id: idx
+						id: idDelete
 					},
 					success: function (data) {
-						// console.log(data);
+						//console.log(data);
 						oTableList.ajax.reload();
 						new PNotify({
 							title: 'Hapus',
@@ -164,7 +153,6 @@
 			}
 		});
 	}
-	/* ----------------- Function Delete End -----------------*/
 
 
 </script> 

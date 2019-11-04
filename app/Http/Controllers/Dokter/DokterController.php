@@ -44,7 +44,6 @@ class DokterController extends Controller
     }
     public function postDokter_Input(Request $request) {
         //dd($request);
-
         $alamat = new alamatDokter;
         $alamat->alamat     = $request->input('alamat');
         $alamat->kelurahan  = $request->input('kelurahan');
@@ -129,7 +128,5 @@ class DokterController extends Controller
         // dd($dokter);
         // $dokter->delete();
         $alamat->delete();
-
     }
-
 }

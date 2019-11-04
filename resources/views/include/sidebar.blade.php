@@ -15,14 +15,14 @@
             <nav id="menu" class="nav-main" role="navigation">
 
                 <ul class="nav nav-main">
-                    <li class="nav-parent nav-expanded nav-active">
+                    <li class="nav-parent nav-expanded nav-active" id="dashboardadmin">
                         <a class="nav-link" href="{{url('dashboard')}}">
                             <i class="fas fa-home" aria-hidden="true"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-parent">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#" id="modulPasien">
                             <i class="fas fa-columns" aria-hidden="true"></i>
                             <span>Pasien</span>
                         </a>
@@ -108,13 +108,8 @@
                         </a>
                         <ul class="nav nav-children">
                             <li>
-                                <a class="nav-link" href="">
-                                    Pendaftaran pasien
-                                </a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="">
-                                    Rekam Medis
+                                <a class="nav-link" href="{{url('report/laporan')}}">
+                                    Laporan
                                 </a>
                             </li>
                         </ul>
@@ -140,3 +135,24 @@
     </div>
 
 </aside>
+
+@section('script')
+
+
+<script>
+	$(document).ready(function(){
+		allHide();
+        console.log('tessst aja');
+	});
+
+	function allHide(){
+		$('#dashboardadmin').hide();
+        $('#modulPasien').hide();
+
+
+	}
+	
+	</script>
+@endsection
+
+

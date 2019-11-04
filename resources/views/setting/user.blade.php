@@ -46,21 +46,24 @@
                             <i class="fa fa-plus"></i>
                         </button>
                         <div class="table-responsive">
-                            <table id="tableTipeAsuransi" class="table table-hover table-striped table-bordered"
+                            <table id="tableUser" class="table table-hover table-striped table-bordered"
                                 cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th width="10%">No</th>
-                                        <th>User</th>
+                                        <th>Nama</th>
                                         <th>Role</th>
+                                        
                                         <th width="15%">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Tipe Asuransi</th>
-                                        <th>Aksi</th>
+                                        <th width="10%">No</th>
+                                        <th>Nama</th>
+                                        <th>Role</th>
+                                        
+                                        <th width="15%">Aksi</th>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -85,16 +88,12 @@
                             <div class="modal-wrapper">
                                 <div class="modal-text">
                                     <label class="control-label">Name <span class="required">*</span></label>
-                                    <input id="name" type="text" name="name" class="form-control" placeholder="Name"
+                                    <input id="name" type="text" name="nama" class="form-control" placeholder="Name"
                                         required />
                                    
                                     <label class="control-label">Password <span class="required">*</span></label>
-                                    <input id="name" type="password" name="name" class="form-control"
+                                    <input id="password" type="password" name="password" class="form-control"
                                         placeholder="Password" required />
-                                        <label class="control-label">Password <span class="required">*</span></label>
-                                    <input id="name" type="password" name="name" class="form-control"
-                                        placeholder="Password" required />
-                                    
                                     <label class="control-label">Role <span class="required">*</span></label>
                                     <select name="role" id="role" class="form-control">
                                         <option value="">Pilih Role</option>
@@ -103,7 +102,7 @@
                                     <div id="tampilDokter"> 
                                     <label class="control-label">dokter <span class="required">*</span></label>
                                     <select name="dokter" id="dokter" class="form-control">
-                                        <option value="karyawan">Pilih Dokter</option>
+                                        <option value="">Pilih Dokter</option>
                                     </select>
                                     </div>
                                 </div>
@@ -139,16 +138,14 @@
                             <div class="modal-wrapper">
                                 <div class="modal-text">
                                     <label class="control-label">Name <span class="required">*</span></label>
-                                    <input id="editName" type="text" name="name" class="form-control" placeholder="Name"
+                                    <input id="editName" type="text" name="editName" class="form-control" placeholder="Name"
+                                        required />
+                                    <input id="idEdit" type="text" name="id" class="form-control" placeholder="Name"
                                         required />
                                    
                                     <label class="control-label">Password <span class="required">*</span></label>
-                                    <input id="name" type="password" name="name" class="form-control"
+                                    <input id="editPassword" type="password" name="editPassword" class="form-control"
                                         placeholder="Password" required />
-                                        <label class="control-label">Password <span class="required">*</span></label>
-                                    <input id="editPassword" type="password" name="name" class="form-control"
-                                        placeholder="Password" required />
-                                    
                                     <label class="control-label">Role <span class="required">*</span></label>
                                     <select name="editRole" id="editRole" class="form-control">
                                         <option value="">Pilih Role</option>
@@ -156,8 +153,8 @@
                                     <br>
                                     <div id="tampilEditDokter"> 
                                     <label class="control-label">dokter <span class="required">*</span></label>
-                                    <select name="editRole" id="editDokter" class="form-control">
-                                        <option value="karyawan">Pilih Dokter</option>
+                                    <select name="editDokter" id="editDokter" class="form-control">
+                                        <option value="">Pilih Dokter</option>
                                     </select>
                                     </div>
                                 </div>
@@ -202,6 +199,7 @@
     var oTable;
     //$('#ubah').hide();
     dataRole();
+    dataRoleEdit();
     $('#tampilDokter').hide();
     $('#tampilEditDokter').hide();
 
@@ -212,11 +210,11 @@
     }
     $(document).ready(function () {
         closeModal();
-        oTable = $('#tableTipeAsuransi').DataTable({
+        oTable = $('#tableUser').DataTable({
             responsive: true,
             processing: true,
             serverSide: true,
-            ajax: "{{ route('list_tipe_asuransi')}}",
+            ajax: "{{ route('list_user')}}",
             columns: [
 
                 {
@@ -226,13 +224,14 @@
                     }
                 },
                 {
-                    data: 'nama',
-                    name: 'nama'
+                    data: 'username',
+                    name: 'username'
                 },
                 {
-                    data: 'nama',
-                    name: 'nama'
+                    data: 'role',
+                    name: 'role'
                 },
+                
                 {
                     data: 'id',
                     render: function (data, type, row) {
@@ -254,7 +253,7 @@
 
 
     $('#formTambah').on('submit', function (e) {
-        console.log("asdads");
+        
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -264,7 +263,7 @@
 
         $.ajax({
             type: "POST",
-            url: "{{ route('post_tipe_asuransi')}}",
+            url: "{{ route('user_tambah')}}",
             data: $(this).serialize(),
             success: function (response) {
 
@@ -289,15 +288,16 @@
         });
         $.ajax({
             type: "GET",
-            url: "{{route('edit_tipe_asuransi')}}",
+            url: "{{route('edit_user')}}",
             data: {
                 id: idEdit
             },
             success: function (data) {
-                //console.log(data);
+                $('#editName').val(data.username);
+                $('#idEdit').val(data.id);
+                
 
-                $('#editName').val(data.nama);
-                $('#editId').val(data.id);
+                
             }
         });
 
@@ -314,7 +314,7 @@
         });
         $.ajax({
             type: "POST",
-            url: "{{route('update_tipe_asuransi')}}",
+            url: "{{route('update_user')}}",
             data: $('#formUpdate').serialize(),
             success: function (data) {
                 closeModal();
@@ -354,7 +354,7 @@
 
                 $.ajax({
                     type: "GET",
-                    url: "{{route('delete_tipe_asuransi')}}",
+                    url: "{{route('delete_user')}}",
                     data: {
                         id: idDelete
                     },
@@ -392,6 +392,26 @@
                     $('#role').append('<option id=' + data[i].id + ' value=' + data[i].id +
                         '>' + data[i].name_role + '</option>');
                 }
+                
+            }
+        });
+    }
+    function dataRoleEdit() {
+        $.ajax({
+            type: "GET",
+            url: "{{route('role_data')}}",
+            // data: {
+            //     'id': id
+            // },
+            success: function (data) {
+                // the next thing you want to do 
+                //console.log(data);
+                // $city.empty();
+                
+                for (var i = 0; i < data.length; i++) {
+                    $('#editRole').append('<option id=' + data[i].id + ' value=' + data[i].id +
+                        '>' + data[i].name_role + '</option>');
+                }
             }
         });
     }
@@ -405,11 +425,12 @@
             dataDokter();
         }else{
             $('#tampilDokter').hide();
+            
         }
 
     });
     $('#editRole').change(function(){
-        var id = $('#role').val();
+        var id = $('#editRole').val();
 
         // console.log(id);
         if (id == 5) {
@@ -417,6 +438,7 @@
             dataDokter();
         }else{
             $('#tampilEditDokter').hide();
+            
         }
 
     });
@@ -430,6 +452,11 @@
                 //console.log(data[0].id);
                 $.each(data, function (index, value) {
                     $('#dokter').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama_lengkap + '</option>')
+                });
+                $.each(data, function (index, value) {
+                    $('#editDokter').append('<option id=' + value.id + ' value=' + value
                         .id +
                         '>' + value.nama_lengkap + '</option>')
                 });
