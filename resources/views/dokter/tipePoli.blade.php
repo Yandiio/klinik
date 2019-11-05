@@ -178,7 +178,7 @@
 	function closeModal() {
         $('#cancelEdit').click();
         $('#cancel').click();
-        $('#formPolo').trigger("reset");
+        $('#formPoli').trigger("reset");
     }
 
 	$(document).ready(function(){
@@ -209,7 +209,6 @@
 				}
 			]
 		});
-
 		
 	});
 	

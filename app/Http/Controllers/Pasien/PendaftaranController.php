@@ -30,23 +30,23 @@ class PendaftaranController extends Controller
             return [
                 'id'            => $key->id,
                 'nikPasien'     => $key->nik,
-                'idPasien'     => $key->id,
-                 'nama'          => $key->nama_lengkap,
-                 'jenisKelamin'  => $key->jk,
-                 'golonganDarah' => $key->gd,
+                'idPasien'      => $key->id,
+                'nama'          => $key->nama_lengkap,
+                'jenisKelamin'  => $key->jk,
+                'golonganDarah' => $key->gd,
                 'agama'         => $key->ag,
                 'provinsi'      => $key->alamatpasien->prvns->name,
-                 'kabupaten'     => $key->alamatpasien->kbptn->name,
-                 'kecamatan'     => $key->alamatpasien->kcmtn->name,
+                'kabupaten'     => $key->alamatpasien->kbptn->name,
+                'kecamatan'     => $key->alamatpasien->kcmtn->name,
                 'kelurahan'     => $key->alamatpasien->klrhn->name,
-                'alamat'     => $key->alamatpasien->alamat,
-                'usia'      => $key->usia,
-                'lahir'      => $key->tempat_lahir
+                'alamat'        => $key->alamatpasien->alamat,
+                'usia'          => $key->usia,
+                'lahir'         => $key->tempat_lahir
                 
             ];
         });
         
-         return Datatables::of($listPasien)->make(true);
+        return Datatables::of($listPasien)->make(true);
         return response()->json($listPasien);
     }
     public function pendaftaranDetail(Request $request){

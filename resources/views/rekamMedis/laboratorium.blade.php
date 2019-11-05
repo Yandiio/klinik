@@ -10,7 +10,6 @@
 <section role="main" class="content-body">
     <header class="page-header">
         <h2>Laboratorium</h2>
-
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
                 <li>
@@ -21,12 +20,10 @@
                 <li><span>Rekam Medis</span></li>
                 <li><span> Laboratorium </span></li>
             </ol>
-
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
     </header>
     <!-- header atas -->
-
     <div class="row">
         <div class="col-md-12">
             <section class="card">
@@ -35,19 +32,16 @@
                         <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
-
                     <h2 class="card-title">List Laboratorium</h2>
                 </header>
                 <div class="card">
                     <div class="card-body">
                             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-bottom: 10px">
-                                
                                     Tambah
                                     <i class="fa fa-plus"></i>
                             </button>
                         <div class="table-responsive">
-                            <table id="tableLab" class="table table-hover table-striped table-bordered"
-                                cellspacing="0">
+                            <table id="tableLab" class="table table-hover table-striped table-bordered" cellspacing="0">
                                 <thead>
                                     <tr>
                                         <th width="10%">No</th>
@@ -80,16 +74,14 @@
                         <h2 class="card-title" id="judul">Tambah Laboratorium</h2>
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
-                    <form method="POST" id="formTambah">
+                    <form method="POST" id="formTambah" class="formLaboratorium">
                         @csrf
                     <div class="modal-body">
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Nama Laboratorium <span class="required">*</span></label>
-                                <input id="name" type="text" name="nama" class="form-control"
-                                    placeholder="nama Laboratorium" required />
-                                <input id="id" type="hidden" name="id" class="form-control" placeholder=""
-                                    required />
+                                <input id="id" type="hidden" name="id" class="form-control" placeholder="" />
+                                <input id="name" type="text" name="nama" class="form-control" placeholder="nama Laboratorium" />
                             </div>
                             <br>
 							<div class="modal-text">
@@ -104,7 +96,6 @@
                                 <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal"
                                     id="cancel">Kembali</button>
-
                             </div>
                         </div>
                     </div>
@@ -128,8 +119,7 @@
                         <div class="modal-wrapper">
                             <div class="modal-text">
                                 <label class="control-label">Nama Laboratorium<span class="required">*</span></label>
-                                <input id="editName" type="text" name="editNama" class="form-control"
-                                    placeholder="Nama Laboratorium" required />
+                                <input id="editName" type="text" name="editNama" class="form-control" placeholder="Nama Laboratorium"  />
                                 <input id="editId" type="hidden" name="id" class="form-control" placeholder="Nama Laboratorium"
                                     required />
                             </div>
@@ -166,7 +156,9 @@
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
 <script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
-
+<script src="{{asset('assets/js/jquery.validation.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+<script src="{{asset('assets/js/validation.js')}}"></script>
 
 <!-- end - This is for export functionality only -->
 
@@ -194,7 +186,6 @@
             serverSide: true,
             ajax: "{{route('list_lab')}}",
             columns: [
-
                 {
                     data: 'id',
                     render: function (data, type, row, meta) {
@@ -224,32 +215,26 @@
                 }
             ]
         });
-
     });
 
-
     $('#formTambah').on('submit', function (e) {
-        
         e.preventDefault();
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $("input[name='_token']").val()
             }
         });
-
         $.ajax({
             type: "POST",
             url: "{{ route('post_lab')}}",
             data: $(this).serialize(),
             success: function (response) {
-
                 closeModal();
                 new PNotify({
                     title: 'Regular Notice',
                     text: 'Check me out! I\'m a notice.',
                     type: 'success'
                 });
-
                 oTable.ajax.reload();
             }
         });
@@ -275,10 +260,9 @@
                 $('#editId').val(data.id);
             }
         });
-
     }
-
     /* ======================= EDIT========================= */
+
     /* ======================= UPDaTE========================= */
     $('#formUpdate').on("submit", function (e) {
         e.preventDefault();
@@ -298,7 +282,6 @@
                     text: 'Check me out! I\'m a notice.',
                     type: 'success'
                 });
-
                 oTable.ajax.reload();
             }
         });
@@ -326,7 +309,6 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-
                 $.ajax({
                     type: "GET",
                     url: "{{route('delete_lab')}}",
@@ -341,17 +323,11 @@
                             text: 'Berhasil hapus',
                             type: 'success',
                         });
-
                     }
                 });
             }
         });
-
-
-
-
     }
-
     /* ======================= Delete========================= */
 
 </script>
