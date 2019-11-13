@@ -52,4 +52,13 @@ class LaporanController extends Controller
         // return response()->json($datamedis);
 
     }
+    public function postLaporan(Request $request){
+        //dd($request);
+        $dariTanggal = $request->dari;
+        $sampaiTanggal = $request->sampai;
+        $poli = $request->poli;
+
+        $data = rekamMedis::all();
+        return responso()->json($data);
+    }
 }

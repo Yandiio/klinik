@@ -40,26 +40,44 @@
                 </header>
                 <div class="card">
                     <div class="card-body">
+                    <form action="" method="POST" id="formTambah">
+                    @csrf
+                        <div class="form-group row">
+                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Dari Tanggal
+                                <span class="required">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="date" class="form-control form-control-sm mb-3" name="dari"
+                                    id="w2-first-name">
+                            </div>
+                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Sampai Tanggal
+                                <span class="required">*</span></label>
+                            <div class="col-sm-4">
+                            <input type="date" class="form-control form-control-sm mb-3" name="sampai"
+                                    id="w2-first-name">
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <!-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
-                                        Rekam medis <span class="required">*</span></label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="first-name"
-                                            id="w2-first-name" readonly="readonly" value="Auto">
-                                    </div> -->
-                            <label class="col-sm-2 control-label text-sm-left pt-1" for="w2-last-name">Nama Poli
+                                Rekam medis <span class="required">*</span></label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control form-control-sm mb-3" name="first-name"
+                                    id="w2-first-name" readonly="readonly" value="Auto">
+                            </div> -->
+                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                 <span class="required">*</span></label>
                             <div class="col-sm-4">
                                 <select name="poli" id="poli" class="form-control form-control-sm mb-3">
-                                    <option value="">Pilih Poli</option>
+                                    
+
                                 </select>
                             </div>
                         </div>
-                        <button type="button" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary" style="margin-bottom: 10px">
+                        <button type="submit" class="mb-1 mt-1 mr-1 btn btn-xs btn-primary">
 
-                            Cari
+                            Export
                             <i class="fas fa-search"></i>
                         </button>
+                    </form>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -90,88 +108,13 @@
                                     <th>Hasil Diagnosa</th>
                                     <th>Status</th>
                                 </tfoot>
-                                
+
                             </table>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
-        <!-- bagian body -->
-        <!-- modal tambah -->
-        <div class="modal" id="modalTambah">
-            <div class="modal-dialog modal-block">
-                <div class="modal-content  ">
-                    <!-- Modal Header -->
-                    <div class="modal-header card-header">
-                        <h2 class="card-title" id="judul">Tambah Asuransi</h2>
-                        <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
-                    </div>
-                    <form method="POST" id="formTambah">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="modal-wrapper">
-                                <div class="modal-text">
-                                    <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
-                                    <input id="name" type="text" name="name" class="form-control"
-                                        placeholder="Tipe Asuransi" required />
-                                    <input id="id" type="hidden" name="id" class="form-control"
-                                        placeholder="Tipe Asuransi" required />
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"
-                                        id="cancel">Kembali</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- modal tambah -->
-        <!-- modal edit -->
-        <div class="modal" id="myModalEdit">
-            <div class="modal-dialog modal-block">
-                <div class="modal-content  ">
-                    <!-- Modal Header -->
-                    <div class="modal-header card-header">
-                        <h2 class="card-title" id="judul">Ubah Tipe Asuransi</h2>
-                        <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
-                    </div>
-                    <form method="POST" id="formUpdate">
-                        @csrf
-                        <div class="modal-body">
-                            <div class="modal-wrapper">
-                                <div class="modal-text">
-                                    <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
-                                    <input id="editName" type="text" name="name" class="form-control"
-                                        placeholder="Tipe Asuransi" required />
-                                    <input id="editId" type="hidden" name="id" class="form-control"
-                                        placeholder="Tipe Asuransi" required />
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <button type="submit" class="btn btn-primary" id="saveEdit">Simpan</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"
-                                        id="cancelEdit">Kembali</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        </div> 
     </div>
 </section>
 @endsection
@@ -197,8 +140,7 @@
             serverSide: true,
             destroy: true,
             ajax: "{{route('list_laporan')}}",
-            columns: [
-                {
+            columns: [{
                     data: 'id',
                     render: function (data, type, row, meta) {
                         return meta.row + meta.settings._iDisplayStart + 1;
@@ -219,7 +161,7 @@
                 {
                     data: 'jk',
                     name: 'jk'
-                }, 
+                },
                 {
                     data: 'beratbadan',
                     name: 'beratbadan'
@@ -238,13 +180,13 @@
                         if (row.status === "0") {
                             let bagess = '<div class="badge badge-danger">Menunggu</div>';
                             return bagess;
-                        }else if(row.status === "1"){
+                        } else if (row.status === "1") {
                             let bagess = '<div class="badge badge-warning">Antrian</div>';
                             return bagess;
-                        }else if(row.status === "2"){
+                        } else if (row.status === "2") {
                             let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
-                        }else{
+                        } else {
                             let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
                         }
@@ -255,6 +197,7 @@
 
 
     });
+
     function dataPoli() {
         $.ajax({
             type: "GET",
@@ -272,6 +215,26 @@
 
         });
     }
+
+    $('#formTambah').on('submit', function (e) {
+        
+        e.preventDefault();
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "{{ route('post_laporan')}}",
+            data: $(this).serialize(),
+            success: function (response) {
+
+                
+            }
+        });
+    });
 
 </script>
 @stop

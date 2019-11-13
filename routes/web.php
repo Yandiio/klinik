@@ -224,6 +224,8 @@ route::get('report/laporan',function(){
 });
 
 route::get('report/laporan/list','Laporan\LaporanController@listLaporan')->name('list_laporan');
+route::post('report/laporan/post','Laporan\LaporanController@postLaporan')->name('post_laporan');
+
 
 
 
