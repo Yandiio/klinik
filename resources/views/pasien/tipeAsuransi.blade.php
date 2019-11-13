@@ -78,7 +78,7 @@
                         <h2 class="card-title" id="judul">Tambah Asuransi</h2>
                         <button type="button" class="close exitEdit " data-dismiss="modal">&times;</button>
                     </div>
-                    <form method="POST" id="formTambah">
+                    <form method="POST" id="formTambah" class="formAsuransi">
                         @csrf
                     <div class="modal-body">
                         <div class="modal-wrapper">
@@ -86,8 +86,7 @@
                                 <label class="control-label">Tipe Asuransi<span class="required">*</span></label>
                                 <input id="name" type="text" name="name" class="form-control"
                                     placeholder="Tipe Asuransi" required />
-                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi"
-                                    required />
+                                <input id="id" type="hidden" name="id" class="form-control" placeholder="Tipe Asuransi" />
                             </div>
                         </div>
                         
@@ -155,6 +154,9 @@
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
 <script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.validation.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/additional-methods.js"></script>
+<script src="{{asset('assets/js/validation.js')}}"></script>
 
 
 <!-- end - This is for export functionality only -->
@@ -214,7 +216,7 @@
 
 
     $('#formTambah').on('submit', function (e) {
-        console.log("asdads");
+        console.log("fuck");
         e.preventDefault();
         $.ajaxSetup({
             headers: {
@@ -311,7 +313,6 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-
                 $.ajax({
                     type: "GET",
                     url: "{{route('delete_tipe_asuransi')}}",
@@ -326,15 +327,10 @@
                             text: 'Berhasil hapus',
                             type: 'success',
                         });
-
                     }
                 });
             }
         });
-
-
-
-
     }
 
     /* ======================= Delete========================= */

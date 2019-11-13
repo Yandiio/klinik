@@ -16,11 +16,40 @@ $(function () {
         },
         messages: {
             name: {
-                required: 'Tolong input terlebih dahulu',
+                required: '*Tolong input terlebih dahulu',
                 // maxlength: 'Hanya bisa 5 karakter'
             }
         }
     });
 
+    $('.formAsuransi').validate({
+        rules: {
+            name: {
+                required: true,
+                // minlength: 5
+            }
+        },
+        messages: {
+            name: {
+                required: '*Tolong input terlebih dahulu',
+                // minlength: 'Hanya bisa 5 karakter'
+            }
+        }
+    });
+
+    $('.formLaboratorium').validate({
+        rules: {
+            nama: {
+                required: true,
+                // minlength: 5
+            }
+        },
+        messages: {
+            nama: {
+                required: '*Tolong input terlebih dahulu',
+                // minlength: 'Hanya bisa 5 karakter'
+            }
+        }
+    });
 
 });

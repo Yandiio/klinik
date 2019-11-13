@@ -223,10 +223,9 @@ route::get('report/laporan',function(){
     return view('report.laporan');
 });
 
-route::get('report/laporan/list','Laporan\LaporanController@listLaporan')->name('list_laporan');
-route::post('report/laporan/post','Laporan\LaporanController@postLaporan')->name('post_laporan');
-
-
+route::get('pendaftaran/print',function(){
+    return view('print.printnomer');
+});
 
 
 /* =========================================== Report===================================== */

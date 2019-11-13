@@ -17,7 +17,6 @@
                 <li><span>Dokter</span></li>
                 <li><span>Tambah Dokter</span></li>
             </ol>
-
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
     </header>
@@ -55,7 +54,7 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" id="kd_dokter" name="kd_dokter" placeholder="Kode Dokter">
-                                        <p class="form-text text-danger" id="forEror" style="margin-top:-15; font-size: smaller;"></p>
+                                        <b class="form-text text-danger" id="forEror" style="margin-top:-15; font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Poli <span class="required">*</span>
                                     </label>
@@ -63,7 +62,7 @@
                                         <select class="form-control form-control-sm mb-3" name="poli" id="poli" value="">
                                             <option value="">====== PILIH ======</option>
                                         </select>
-                                        <p class="form-text text-danger" id="forPoliEror" style="margin-top:-15;font-size: smaller;"></p>
+                                        <b class="form-text text-danger" id="forPoliEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -74,7 +73,7 @@
                                         <select class="form-control form-control-sm mb-3" name="tipe_dokter" id="tipe_dokter">
                                             <option value="">====== PILIH ======</option>
                                             <option value="1">Yes</option>
-                                            <option value="2">No</option>
+                                            <option value="0">No</option>
                                         </select>
                                         <b class="form-text text-danger" id="forTipeDokterEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
@@ -150,12 +149,7 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="usia" id="usia" placeholder="Usia" required>
-                                        <b class="form-text text-danger" id="forUsiaEror" style="margin-top:-15;font-siza:smaller;font-size: smaller;"></b>
-                                    </div>
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
-                                    </label>
-                                    <div class="col-sm-4">
-                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
+                                        <b class="form-text text-danger" id="forUsiaEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -163,56 +157,64 @@
                                     </label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="agama" id="agama" placeholder="Agama" required>
-                                        <b class="form-text text-danger" id="forAgamaEror" style="margin-top:-15;font-siza:smaller;font-size: smaller;"></b>
+                                        <b class="form-text text-danger" id="forAgamaEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
+                                    {{-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Email<span class="required">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control form-control-sm mb-3" name="email" id="email" placeholder="Email" required>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div id="w2-confirm" class="tab-pane p-3">
                                 <div class="form-group row">
-                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
+                                    <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Provinsi
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3"
-                                            requeired>
-                                            <option id="itemProvinsi">=========== Pilih Provinsi ======</option>
+                                        <select name="provinsi" id="provinsi" class="form-control form-control-sm mb-3">
+                                            <option id="itemProvinsi" value="">=========== Pilih Provinsi ======</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forProvinsiEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kota
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <select name="kota" id="kota" class="form-control form-control-sm mb-3"
                                             requeired>
-                                            <option id="itemKota">=========== Pilih Kota ======</option>
+                                            <option id="itemKota" value="">=========== Pilih Kota ======</option>
+                                            
                                         </select>
+                                        <b class="form-text text-danger" id="forKotaEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kecamatan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="kecamatan" id="kecamatan"
-                                            class="form-control form-control-sm mb-3" requeired>
+                                        <select name="kecamatan" id="kecamatan" class="form-control form-control-sm mb-3">
                                             <option id="itemKecamatan" value="">============ Kecamatan ========</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forKecamatanEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Kelurahan
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <select name="kelurahan" id="kelurahan"
-                                            class="form-control form-control-sm mb-3" requeired>
+                                        <select name="kelurahan" id="kelurahan" class="form-control form-control-sm mb-3">
                                             <option id="itemKelurahan" value="">============ Kelurahan ========</option>
                                         </select>
+                                        <b class="form-text text-danger" id="forKelurahanEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-alamat">Kode Pos</label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" name="kodePos" id="w2-last-name" placeholder="Kode Pos">
+                                        <input type="text" class="form-control form-control-sm mb-3" name="kodePos" id="kodePos" placeholder="Kode Pos">
+                                        <b class="form-text text-danger" id="forKodePosEror" style="margin-top:-15;font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Alamat Lengkap<span class="required">*</span></label>
                                     <div class="col-sm-4">
-                                        <textarea class="form-control" rows="3" name="alamat" id="textareaAutosize" data-plugin-textarea-autosize></textarea>
+                                        <textarea class="form-control" rows="3" name="alamat" id="alamatLengkap" data-plugin-textarea-autosize></textarea>
+                                        <b class="form-text text-danger" id="forAlamatEror" style="font-size: smaller;"></b>
                                     </div>
                                 </div>
                             </div>
@@ -328,13 +330,45 @@
         selanjutnya1();
         selanjutnya2();
         
-        $('#selesai').click(function () {
-            console.log('#selesai');
-            $('#formTambah').trigger("reset");
-            $('#dataDokter').click();
-            $('#selesai').hide();
-            $('#selanjutnya1').show();
-            disabledTapAwal();
+        $('#selesai').click(function (e) {
+            e.preventDefault();
+            if ($('#provinsi').val() === '') {
+                $('#forProvinsiEror').html('*Silahkan pilih provinsi');
+                $('#provinsi').focus();
+                return false;
+            }
+            if ($('#kota').val() === '') {
+                $('#forKotaEror').html('*Silahkan pilih kota');
+                $('#kota').focus();
+                return false;
+            }
+            if ($('#kecamatan').val() === '') {
+                $('#forKecamatanEror').html('*Silahkan pilih kecamatan');
+                $('#kecamatan').focus();
+                return false;
+            }
+            if ($('#kelurahan').val() === '') {
+                $('#forKelurahanEror').html('*Silahkan pilih kelurahan');
+                $('#kelurahan').focus();
+                return false;
+            }
+            if ($('#kodePos').val() === '') {
+                $('#forKodePosEror').html('*Silahkan pilih kode pos');
+                $('#kodePos').focus();
+                return false;
+            }
+            if ($('#alamatLengkap').val() === '') {
+                $('#forAlamatEror').html('*Silahkan pilih alamat lengkap');
+                $('#alamatLengkap').focus();
+                return false;
+            }
+            else {
+                // console.log('#selesai');
+                $('#dataDokter').click();
+                $('#selesai').hide();
+                $('#selanjutnya1').show();
+                disabledTapAwal();
+            }
         });
 
         tampilProvinsi();
@@ -395,38 +429,47 @@
             e.preventDefault();
             if ($('#nik').val() === '') {
                 $('#forNIKEror').html('*Silahkan isi data NIK');
+                $('#nik').focus();
                 return false;
             }
             else if ($('#namaLengkap').val() === '') {
                 $('#forNamaEror').html('*Silahkan isi data Nama Lengkap');
+                $('#namaLengkap').focus();
                 return false;
             }
             else if ($('#tanggalLahir').val() === '') {
                 $('#forTglLahirEror').html('*Silahkan isi data tanggal lahir');
+                $('#tanggalLahir').focus();
                 return false;
             }
             else if ($('#tempatLahir').val() === '') {
                 $('#forTempatLahirEror').html('*Silahkan isi data tempat lahir');
+                $('#tempatLahir').focus();
                 return false;
             }
             else if ($('#telepon').val() === '') {
                 $('#forTeleponEror').html('*Silahkan isi data No.Telepon');
+                $('#telepon').focus();
                 return false;
             }
             else if ($('#iHp').val() === '') {
                 $('#forHpEror').html('*Silahkan isi data No.Handphone');
+                $('#iHp').focus();
                 return false;
             }
             else if ( $('#jenisKelamin').val() === '' ) {
                 $('#forJenisKelaminEror').html('*Silahkan pilih jenis kelamin');
+                $('#jenisKelamin').focus();
                 return false;
             }
             else if ($('#usia').val() === ''){
                 $('#forUsiaEror').html('*Silahkan isi data usia');
+                $('#usia').focus();
                 return false;
             }
             else if ($('#agama').val() === ''){
                 $('#forAgamaEror').html('*Silahkan isi data Agama');
+                $('#agama').focus();
                 return false;
             }
             else{
