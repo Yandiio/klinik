@@ -220,11 +220,12 @@ route::get('dashboard/tabel','DashboardController@tableDashboard')->name('tabel_
 
 /* =========================================== Report===================================== */
 
-route::get('report/laporan/list', 'Laporan\LaporanController@listLaporan')->name('Laporan_getList');
-
 route::get('report/laporan',function(){
     return view('report.laporan');
 });
+
+route::get('report/laporan/list', 'Laporan\LaporanController@listLaporan')->name('Laporan_getList');
+route::get('report/laporan/filter', 'Laporan\LaporanController@postLaporan')->name('Laporan_getData');
 
 route::get('pendaftaran/print',function(){
     return view('print.printnomer');
