@@ -189,8 +189,8 @@
 <script>
 var idRole = "{{ Auth::user()->id_role }}";
 //console.log(idRole);
-// allHide();
-// loginMenu();
+allHide();
+loginMenu();
 
 $(document).ready(function(){
 
