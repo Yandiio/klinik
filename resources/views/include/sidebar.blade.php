@@ -42,7 +42,7 @@
                         </ul>
                     </li>
                     <li class="nav-parent">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#" id="modulDokter">
                             <i class="fas fa-stethoscope" aria-hidden="true"></i>
                             <span>Dokter</span>
                         </a>
@@ -60,7 +60,7 @@
                         </ul>
                     </li>
                     <li class="nav-parent">
-                        <a href="#" class="nav-link">
+                        <a href="#" class="nav-link" id="modulRekamMedis">
                             <i class="fas fa-medkit"></i>
                             <span>Rekam Medis</span>
                         </a>
@@ -83,7 +83,7 @@
                         </ul>
                     </li>
                     <li class="nav-parent">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#" id="modulSetting">
                             <i class="fas fa-wrench" aria-hidden="true"></i>
                             <span>Setting</span>
                         </a>
@@ -102,7 +102,7 @@
                     </li>
 
                     <li class="nav-parent">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="#" id="modulReports">
                             <i class="fas fa-file" aria-hidden="true"></i>
                             <span>Report</span>
                         </a>
@@ -137,22 +137,11 @@
 </aside>
 
 @section('script')
-
-
 <script>
-	$(document).ready(function(){
-		allHide();
-        console.log('tessst aja');
-	});
-
-	function allHide(){
-		$('#dashboardadmin').hide();
-        $('#modulPasien').hide();
 
 
-	}
-	
-	</script>
+
+</script>
 @endsection
 
 

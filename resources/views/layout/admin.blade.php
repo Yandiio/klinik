@@ -128,7 +128,6 @@
 			</aside>
 
 		</section>
-	</section>
         
 		<!-- Vendor -->
     <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
@@ -182,10 +181,74 @@
     <script src="{{ asset('assets/js/examples/examples.dashboard.js') }}"></script>
     @yield('script')
 	
-
-
-
-
-	@yield('jscustom')
-	</body>
+</body>
 </html>
+
+
+@yield('jscustom')
+<script>
+var idRole = "{{ Auth::user()->id_role }}";
+//console.log(idRole);
+// allHide();
+// loginMenu();
+
+$(document).ready(function(){
+
+	// console.log('tessst aja');
+});
+
+	function loginMenu(){
+		// console.log(idRole);
+		if (idRole == 1){
+			petugasLoket();
+		}
+		else if (idRole == 2){
+			admin();
+		}
+		else if (idRole == 3){
+			dokter();
+		}
+		else if (idRole == 4){
+			kepalaKlinik();
+		}
+		else if (idRole == 5){
+			superAdmin();
+		}
+	}
+
+	function allHide(){
+		$('#modulPasien').hide();
+		$('#modulDokter').hide();
+		$('#modulRekamMedis').hide();
+		$('#modulSetting').hide();
+		$('#modulReports').hide();
+	}
+
+	function petugasLoket(){
+		$('#modulPasien').show();
+	}
+
+	function admin() {
+		$('#modulDokter').show();
+		$('#modulRekamMedis').show();
+	}
+
+	function dokter(){
+		$('#modulRekamMedis').show();
+		
+	}
+
+	function kepalaKlinik(){
+		$('#modulSetting').show();
+		$('#modulReports').show();
+	}
+
+	function superAdmin() {
+		$('#modulPasien').show();
+		$('#modulDokter').show();
+		$('#modulRekamMedis').show();
+		$('#modulSetting').show();
+		$('#modulReports').show();
+	}
+
+</script>

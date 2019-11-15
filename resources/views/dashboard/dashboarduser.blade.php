@@ -29,7 +29,7 @@
                 <div class="alert alert-primary">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <strong>KLINIK ABC !</strong> Login Sistem Berhasil ! <a href="" class="alert-link">
-                     </a>.
+                    </a>
                 </div>
 
                 
