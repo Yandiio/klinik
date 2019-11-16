@@ -40,18 +40,18 @@
                 </header>
                 <div class="card">
                     <div class="card-body">
-                    <form action="" method="POST" id="formNew">
+                    <form method="POST" id="formNew">
                     @csrf
                         <div class="form-group row">
                             <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Dari Tanggal
                                 <span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <input type="date" class="form-control form-control-sm mb-3" name="from" id="ifrom">
+                                <input type="date" class="form-control form-control-sm mb-3" name="from" id="iFrom">
                             </div>
                             <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Sampai Tanggal
                                 <span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <input type="date" class="form-control form-control-sm mb-3" name="to" id="ito">
+                                <input type="date" class="form-control form-control-sm mb-3" name="to" id="iTo">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -64,16 +64,16 @@
                             <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                 <span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <select name="poli" id="poli" class="form-control form-control-sm mb-3">
+                                <select name="poli" id="iPoli" class="form-control form-control-sm mb-3">
                                     <option value=""></option>
                                 </select>
                             </div>
                             <div class="col-sm-4">
-                                <button type="button" class="mb-1 mt-1 mr-1 btn btn-sm btn-light" style="float:right;">
+                                <button type="button" id="reset" class="mb-1 mt-1 mr-1 btn btn-sm btn-light" style="float:right;">
                                     Reset
                                     <i class="fas fa-trash"></i>
                                 </button>
-                                <button type="submit" id="find" class="mb-1 mt-1 mr-1 btn btn-sm btn-primary" style="float:right;">
+                                <button type="button" id="find" class="mb-1 mt-1 mr-1 btn btn-sm btn-primary" style="float:right;">
                                     Export
                                     <i class="fas fa-search"></i>
                                 </button>
@@ -138,6 +138,40 @@ var oTableListReport;
     $(document).ready(function () {
         dataPoli();
 
+        oTableReport = $('#tableLaporan').DataTable({
+            responsive: true,
+            processing: true,
+            destroy: true,
+            serverSide: true,
+            ajax: "{{ route('Laporan_getList')}}",
+            columns: [
+                { data: 'id', name: 'id' },
+                { data: 'nomedis', name: 'nomedis' },
+                { data: 'asuransi', name: 'iasuransid' },
+                { data: 'namapasien', name: 'namapasien' },
+                { data: 'jk', name: 'jk' },
+                { data: 'beratbadan', name: 'beratbadan' },
+                { data: 'poli', name: 'poli' },
+                { data: 'hasildiagnosa', name: 'hasildiagnosa' },
+                { data: 'status',
+                    render: function (data, type, row) {
+                        if (row.status === "0") {
+                            let bagess = '<div class="badge badge-warning">Menunggu</div>';
+                            return bagess;
+                        } else if (row.status === "1") {
+                            let bagess = '<div class="badge badge-info">Antrian</div>';
+                            return bagess;
+                        } else if (row.status === "2") {
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        } else {
+                            let bagess = '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }
+                    }
+                }
+            ]
+        });
     });
 
     function dataPoli() {
@@ -149,7 +183,7 @@ var oTableListReport;
         //    },
         success: function (data) {
             $.each(data, function (index, value) {
-                $('#poli').append('<option id=' + value.id + ' value=' + value
+                $('#iPoli').append('<option id=' + value.id + ' value=' + value
                     .id +
                     '>' + value.nama + '</option>')
                 });
@@ -158,30 +192,17 @@ var oTableListReport;
     }
 
     $("#find").click(function(){
-        var poli = $('#poli').val();
-        var from = $('#ifrom').val();
-        var to = $('#ito').val();
+        var poli = $('#iPoli').val();
+        var from = $('#iFrom').val();
+        var to = $('#iTo').val();
         console.log(poli, from, to);
         
+    });
 
-        oTableReport = $('#tableLaporan').DataTable({
-            responsive: true,
-            processing: true,
-            destroy: true,
-            serverSide: true,
-            ajax: "{{ route('Laporan_getList')}}",
-            columns: [
-                { data: 'id', name: 'id' },
-                { data: 'nomedis', name: 'nomedis' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' },
-                { data: 'id', name: 'id' }
-            ]
-        });
+    $("#reset").click(function(){
+        $('#iPoli').val("");
+        $('#iFrom').val("");
+        $('#iTo').val("");
     });
 
 </script>

@@ -53,12 +53,18 @@ class LaporanController extends Controller
 
     }
     public function postLaporan(Request $request){
-        //dd($request);
-        $dariTanggal = $request->dari;
-        $sampaiTanggal = $request->sampai;
+        dd($request);
+        $from = $request->from;
+        $to = $request->to;
         $poli = $request->poli;
+        dd($poli);
 
         $data = rekamMedis::all();
+
+        $res = $res->where('poli', $poli);
+        if ($from != null && $to != null){
+            $res = $res->whereBetween('poli',[$from, $to]);
+        }
         return responso()->json($data);
     }
 }
