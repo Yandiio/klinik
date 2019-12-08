@@ -14,6 +14,31 @@ use PDF;
 class DokterController extends Controller
 {
 
+    public function getDokter_Autonumber(){
+        $getautonumber = dokter::latest('id')->first();//find(1);
+        //$getautonumber-
+        if ($getautonumber == null ){
+            return response()->json("KDK-0001"); 
+        }
+        
+        $substring = substr($getautonumber->kode_dokter, 4);
+        $toint = (int)$substring;
+        $tointplus = $toint + 1;
+        $panjangcount = strlen($tointplus);
+        // return response()->json($getautonumber->KdSection);
+        $str2 = "KDK-00"    . $tointplus;
+        $str1 = "KDK-0"     . $tointplus;
+        $str0 = "KDK-001";
+    
+        if ($panjangcount = 2){
+            $res = $str2;
+        }elseif($panjangcount = 1){
+            $res = $str1;
+        }else{
+            $res = $str;
+        }
+        return response()->json($res);
+    }
 
     public function getDokter_List() {
         $listDokter = dokter::get()

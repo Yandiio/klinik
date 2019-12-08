@@ -92,6 +92,7 @@ route::get('dokter/tambah-dokter',function(){
     return view('dokter.tambahDokter');
 });
 
+Route::get('dokter/autonumber', 'Dokter\DokterController@getDokter_Autonumber')->name('Dokter_getAutonumber');
 route::post('dokter/tambah-dokter/tambah', 'Dokter\DokterController@postDokter_Input')->name('Dokter_postInput');
 route::get('dokter/edit-dokter/{id}','Dokter\DokterController@getDokter_Edit')->name('Dokter_getEdit');
 route::post('dokter/edit-dokter/pernbarui', 'Dokter\DokterController@postDokter_Update')->name('Dokter_postUpdate');

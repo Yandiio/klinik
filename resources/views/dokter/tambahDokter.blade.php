@@ -53,7 +53,7 @@
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Kode Dokter <span class="required">*</span>
                                     </label>
                                     <div class="col-sm-4">
-                                        <input type="text" class="form-control form-control-sm mb-3" id="kd_dokter" name="kd_dokter" placeholder="Kode Dokter">
+                                        <input type="text" class="form-control form-control-sm mb-3" id="kd_dokter" name="kd_dokter" placeholder="Kode Dokter" readonly>
                                         <b class="form-text text-danger" id="forEror" style="margin-top:-15; font-size: smaller;"></b>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-username">Poli <span class="required">*</span>
@@ -329,6 +329,7 @@
     $(document).ready(function () {
         selanjutnya1();
         selanjutnya2();
+        autonumber();
         
         $('#selesai').click(function (e) {
             e.preventDefault();
@@ -520,38 +521,37 @@
 
     $("#provinsi").change(function () {
     // console.log($('#provinsi').val());
-    var id = $('#provinsi').val();
-        $.ajax({
-            type: "GET",
-            url: "{{route('get_kota')}}",
-            data: {
-                'id': id
-            },
-            success: function (data) {
-                // the next thing you want to do 
-                //console.log(data);
-                // $city.empty();
-                for (var i = 0; i < data.length; i++) {
-                    $('#kota').append('<option id=' + data[i].id + ' value=' + data[i].id + '>' +
-                        data[i].name + '</option>');
+        var id = $('#provinsi').val();
+            $.ajax({
+                type: "GET",
+                url: "{{route('get_kota')}}",
+                data: {
+                    'id': id
+                },
+                success: function (data) {
+                    // the next thing you want to do 
+                    //console.log(data);
+                    // $city.empty();
+                    for (var i = 0; i < data.length; i++) {
+                        $('#kota').append('<option id=' + data[i].id + ' value=' + data[i].id + '>' +
+                            data[i].name + '</option>');
+                    }
                 }
-            }
         });
     });
 
     $("#kota").click(function () {
-    //console.log($('#kota').val());
-    var id = $('#kota').val();
-        $.ajax({
-            type: "GET",
-            url: "{{route('get_kecamatan')}}",
-            data: {
-                'id': id
-            },
-            success: function (data) {
-                // the next thing you want to do 
-                //console.log(data);
-                // $city.empty();
+        var id = $('#kota').val();
+            $.ajax({
+                type: "GET",
+                url: "{{route('get_kecamatan')}}",
+                data: {
+                    'id': id
+                },
+                success: function (data) {
+                    // the next thing you want to do 
+                    //console.log(data);
+                    // $city.empty();
                 for (var i = 0; i < data.length; i++) {
                     $('#kecamatan').append('<option id=' + data[i].id + ' value=' + data[i].id +
                         '>' + data[i].name + '</option>');
@@ -561,14 +561,13 @@
     });
 
     $("#kecamatan").click(function () {
-    //console.log($('#kota').val());
-    var id = $('#kecamatan').val();
-        $.ajax({
-            type: "GET",
-            url: "{{route('get_kelurahan')}}",
-            data: {
-                'id': id
-            },
+        var id = $('#kecamatan').val();
+            $.ajax({
+                type: "GET",
+                url: "{{route('get_kelurahan')}}",
+                data: {
+                    'id': id
+                },
             success: function (data) {
                 for (var i = 0; i < data.length; i++) {
                     $('#kelurahan').append('<option id=' + data[i].id + ' value=' + data[i].id +
@@ -600,6 +599,27 @@
             }
         });
     });
+
+    function autonumber() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $("input[name='_token']").val()
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{ route('Dokter_getAutonumber') }}" ,
+            data: {},
+            success: function(data) {
+            console.log(data);
+            if(data){
+                $("#kd_dokter").val(data);
+            }else{
+            // console.log;
+            }
+        }
+    });
+}
 
     // $('html').bind('keypress', function(e) { 
     //     if(e.keyCode == 13)
