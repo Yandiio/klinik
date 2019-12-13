@@ -64,7 +64,7 @@
                             <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
                                 <span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <select name="poli" id="iPoli" class="form-control form-control-sm mb-3">
+                                <select name="poli" id="poli" class="form-control form-control-sm mb-3">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -183,7 +183,7 @@ var oTableListReport;
         //    },
         success: function (data) {
             $.each(data, function (index, value) {
-                $('#iPoli').append('<option id=' + value.id + ' value=' + value
+                $('#poli').append('<option id=' + value.id + ' value=' + value
                     .id +
                     '>' + value.nama + '</option>')
                 });
@@ -192,10 +192,31 @@ var oTableListReport;
     }
 
     $("#find").click(function(){
-        var poli = $('#iPoli').val();
+        //alert("asdasdas");
+        var poli = $('#poli').val();
         var from = $('#iFrom').val();
         var to = $('#iTo').val();
-        console.log(poli, from, to);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: "GET",
+            url: "{{route('Laporan_getData')}}",
+            data: {
+                poli: poli,
+                dari: from,
+                sampai: to,
+            },
+            success: function (data) {
+                
+                console.log(data);
+                
+                
+            }
+        });
+    
         
     });
 

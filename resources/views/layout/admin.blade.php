@@ -429,7 +429,7 @@
 <script>
     var idRole = "{{ Auth::user()->id_role }}";
     //var auth = "{{Auth::user()->id_dokter}}"
-    console.log(idRole);
+    //console.log(idRole);
 
     allHide();
     loginMenu();

@@ -39,7 +39,7 @@ class LaporanController extends Controller
                 'id' => $key->id,
                 'nomedis' => $key->no_medis,
                 'asuransi' => $key->pendaftaran->penjamin->asuransi->nama,
-                'namapasien' =>$key->pendaftaran->penjamin->pasien->nama_lengkap,
+                'namapasien' =>$key->pendaftaran->pasien->nama_lengkap,
                 'jk' => $key->pendaftaran->penjamin->pasien->jk,
                 'beratbadan' => $key->berat_badan,
                 'poli' => $key->pendaftaran->poli->nama,
@@ -53,18 +53,46 @@ class LaporanController extends Controller
 
     }
     public function postLaporan(Request $request){
-        dd($request);
-        $from = $request->from;
-        $to = $request->to;
+        //dd($request);
         $poli = $request->poli;
-        dd($poli);
+        $dari = $request->dari;
+        $sampai = $request->sampai;
+       
 
-        $data = rekamMedis::all();
+        $datamedis = rekamMedis::get()
+        ->map(function($key){
+            //cari diagnosa
+            $diagnosa = tindakanDiagnosa::select('hasil_diagnosa')->where('id_rekammedis',$key->id)->get();
+            //dd($diagnosa);
+            $kalimat = [];
+            // masukan ke array;
+            for ($i=0; $i <count($diagnosa) ; $i++) { 
+                # code...
+                $kalimat[] = $diagnosa[$i]['hasil_diagnosa'];
+            }
+            //menjadikan koma
+            $kalimat = implode(", ",$kalimat);
+           return [
+                'id' => $key->id,
+                'nomedis' => $key->no_medis,
+                'asuransi' => $key->pendaftaran->penjamin->asuransi->nama,
+                'namapasien' =>$key->pendaftaran->pasien->nama_lengkap,
+                'jk' => $key->pendaftaran->penjamin->pasien->jk,
+                'beratbadan' => $key->berat_badan,
+                'poli' => $key->pendaftaran->poli->nama,
+                'idPoli' => $key->pendaftaran->poli->id,
+                'hasildiagnosa' => $kalimat,
+                'status' => $key->pendaftaran->status,
+                'tanggal' => $key->created_at->format('Y-m-d')
 
-        $res = $res->where('poli', $poli);
-        if ($from != null && $to != null){
-            $res = $res->whereBetween('poli',[$from, $to]);
+           ];
+        });
+
+        $res = $datamedis->where('idPoli', 1);
+        if ($dari != null && $sampai != null){
+            $res = $res->whereBetween('tanggal',[$dari, $sampai]);
         }
-        return responso()->json($data);
+        return response()->json($res);
+        //return response()->json($datamedis);
     }
 }
