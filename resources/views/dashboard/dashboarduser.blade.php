@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title', 'Klinik Pratama Bina Husada Bakti')
+@section('title', 'ABC')
 
 @section('content')
 <section role="main" class="content-body">
@@ -24,15 +24,11 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card-body">
-                
-
                 <div class="alert alert-primary">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <strong>KLINIK ABC !</strong> Login Sistem Berhasil ! <a href="" class="alert-link">
                     </a>
-                </div>
-
-                
+                </div>                
             </div>
         </div>
     </div>
@@ -42,7 +38,7 @@
 
 @section('script')
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
-<script>
+<!-- <script>
     $(document).ready(function () {
         totalPasien();
         totalDokter();
@@ -241,5 +237,5 @@
         $('#tablePendaftaran_paginate').addClass("float-right");
     }
 
-</script>
+</script> -->
 @endsection

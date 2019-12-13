@@ -210,9 +210,10 @@ $(document).ready(function(){
 		}
 		else if (idRole == 4){
 			kepalaKlinik();
+			superAdmin();
 		}
 		else if (idRole == 5){
-			superAdmin();
+			
 		}
 	}
 
