@@ -303,13 +303,19 @@
 
     
     $('#tambah').on('click', function () {
-
+        var idDokter = "{{ Auth::user()->id_dokter }}";
+        console.log(idDokter);
         oTableAntrian = $('#tableAjaxAntrianList').DataTable({
             responsive: true,
             processing: true,
             serverSide: true,
             destroy: true,
-            ajax: "{{route('data-antrian')}}",
+            ajax: {
+                "url": "{{route('data-antrian')}}",
+                "data": {
+                    "id": idDokter,
+                }
+            },
             columns: [{
                     data: 'noMedis',
                     name: 'noMedis'

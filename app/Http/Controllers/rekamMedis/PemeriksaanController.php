@@ -32,8 +32,8 @@ class PemeriksaanController extends Controller
                 'id' => $key->id,
                 'noDaftar' => $key->pendaftaran->no_daftar,
                 'noMedis' =>$key->no_medis,
-                'nama' => $key->pendaftaran->penjamin->pasien->nama_lengkap,
-                'umur' => $key->pendaftaran->penjamin->pasien->usia,
+                'nama' => $key->pendaftaran->pasien->nama_lengkap,
+                'umur' => $key->pendaftaran->pasien->usia,
                 'tanggaldaftar' => $key->pendaftaran->tgl_daftar,
                 'status' => $key->pendaftaran->status,
                 'dokter' => $key->dokter->nama_lengkap,
@@ -47,15 +47,15 @@ class PemeriksaanController extends Controller
         return Datatables::of($daftar)->make(true);
          return response()->json($daftar);
     }
-    public function dataAntrian(){
-        $daftar = rekamMedis::get()
+    public function dataAntrian(Request $request){
+        $daftar = rekamMedis::where('id_dokter',$request->id)->get()
         ->map(function($key){
             return [
                 'id' => $key->id,
                 'noDaftar' => $key->pendaftaran->no_daftar,
                 'noMedis' =>$key->no_medis,
-                 'nama' => $key->pendaftaran->penjamin->pasien->nama_lengkap,
-                'umur' => $key->pendaftaran->penjamin->pasien->usia,
+                 'nama' => $key->pendaftaran->pasien->nama_lengkap,
+                'umur' => $key->pendaftaran->pasien->usia,
                 'tanggaldaftar' => $key->pendaftaran->tgl_daftar,
                 'status' => $key->pendaftaran->status,
                 'dokter' => $key->dokter->nama_lengkap,
@@ -78,8 +78,8 @@ class PemeriksaanController extends Controller
                 'idPendaftaran' => $key->pendaftaran->id,
                 'noDaftar' => $key->pendaftaran->no_daftar,
                 'noMedis' => $key->no_medis,
-                'nama' => $key->pendaftaran->penjamin->pasien->nama_lengkap,
-                'umur' => $key->pendaftaran->penjamin->pasien->usia,
+                'nama' => $key->pendaftaran->pasien->nama_lengkap,
+                'umur' => $key->pendaftaran->pasien->usia,
                 'tanggaldaftar' => $key->pendaftaran->tgl_daftar,
                 'keluhan'       => $key->pendaftaran->keluhan
                 

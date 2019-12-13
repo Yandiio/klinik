@@ -19,6 +19,7 @@ class PendaftaranSeeder extends Seeder
         //
 
         $asuransi =['1','1','2','3','5','2','2','1','2','1'];
+        $pasien =['1','2','3','4','5','6','7','8','9','10'];
         $poli =['1','1','2','3','5','2','3','3','4','1'];
         $status  =['0','0','0','0','0','0','0','0','0','0'];
         $nomor =['001','002','003','004','005','006','007','008','009','010'];
@@ -48,6 +49,7 @@ class PendaftaranSeeder extends Seeder
             $pendaftaran = new pendaftaran;
             $pendaftaran->id_penjamin = $asuransi[$i];
             $pendaftaran->id_tipe_poli = $poli[$i];
+            $pendaftaran->id_pasien = $pasien[$i];
             $pendaftaran->no_daftar = $nomor[$i];
             $pendaftaran->tgl_daftar = Carbon::now();
             $pendaftaran->keluhan = $keluhan[$i];

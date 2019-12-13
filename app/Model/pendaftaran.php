@@ -33,6 +33,9 @@ class pendaftaran extends Model
     public function poli(){
         return $this->belongsTo('App\Model\tipePoli', 'id_tipe_poli', 'id');
     }
+    public function pasien(){
+        return $this->belongsTo('App\Model\pasien', 'id_pasien', 'id');
+    }
 
     // public function getTsAttribute(){
     //     return $this->ts[$this->status];

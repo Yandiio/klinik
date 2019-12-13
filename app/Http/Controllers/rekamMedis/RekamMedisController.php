@@ -21,27 +21,27 @@ class RekamMedisController extends Controller
     //
     public function rekamMedisList(){
 
-        $listPasien = pendaftaran::select('id','id_penjamin','id_tipe_poli','tgl_daftar','status','no_daftar')->get()
+        $listPasien = pendaftaran::select('id','id_penjamin','id_pasien','id_tipe_poli','tgl_daftar','status','no_daftar')->get()
         ->map(function($key){
             return [
                 'id'            => $key->id,
-                'nikPasien'     => $key->penjamin->pasien->nik,
-                'idPasien'     => $key->penjamin->pasien->id,
-                'nama'          => $key->penjamin->pasien->nama_lengkap,
-                'jenisKelamin'  => $key->penjamin->pasien->jk,
-                'golonganDarah' => $key->penjamin->pasien->gd,
-                'agama'         => $key->penjamin->pasien->ag,
+                'nikPasien'     => $key->pasien->id,
+                'idPasien'     => $key->pasien->id,
+                'nama'          => $key->pasien->nama_lengkap,
+                'jenisKelamin'  => $key->pasien->jk,
+                'golonganDarah' => $key->pasien->gd,
+                'agama'         => $key->pasien->ag,
                 'poli'          => $key->poli->nama,
                 'tanggalDaftar' => $key->tgl_daftar,
                 'asuransi'      => $key->penjamin->asuransi->nama,
-                'provinsi'      => $key->penjamin->pasien->alamatpasien->prvns->name,
-                'kabupaten'     => $key->penjamin->pasien->alamatpasien->kbptn->name,
-                'kecamatan'     => $key->penjamin->pasien->alamatpasien->kcmtn->name,
-                'kelurahan'     => $key->penjamin->pasien->alamatpasien->klrhn->name,
+                'provinsi'      => $key->pasien->alamatpasien->prvns->name,
+                'kabupaten'     => $key->pasien->alamatpasien->kbptn->name,
+                'kecamatan'     => $key->pasien->alamatpasien->kcmtn->name,
+                'kelurahan'     => $key->pasien->alamatpasien->klrhn->name,
                 'status'     => $key->status,
                 'sts'     => $key->ts,
                 'noDaftar'     => $key->no_daftar,
-                'usia'     => $key->penjamin->pasien->usia,
+                'usia'     => $key->pasien->usia,
                 
                 
             ];
