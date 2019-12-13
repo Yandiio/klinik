@@ -314,7 +314,7 @@
                 id: idEdit
             },
             success: function (data) {
-                console.log(data[0]);
+                //console.log(data[0]);
 
                 $('#nama').text(data[0].nama);
                 $('#jenisKelamin').text(data[0].jenisKelamin);
@@ -332,7 +332,7 @@
     }
 
     function generate_qrcode(teks) {
-        //var teks = "tess";
+        
 
         $('#qrcode canvas').remove();
         $('#qrcode').qrcode({
