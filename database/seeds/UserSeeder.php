@@ -26,6 +26,8 @@ class UserSeeder extends Seeder
         $user->id_role = 2;
         $user->save();
 
+       
+
         $user = new user;
         $user->username = 'supervisor';
         $user->password = bcrypt("123456");
@@ -35,27 +37,29 @@ class UserSeeder extends Seeder
         $user = new user;
         $user->username = 'superadmin';
         $user->password = bcrypt("123456");
-        $user->id_role = 4;
+        $user->id_role = 5;
         $user->save();
 
         $user = new user;
         $user->username = 'eko';
         $user->password = bcrypt("123456");
-        $user->id_role = 5;
+        $user->id_role = 4;
         $user->id_dokter = 1;
         $user->save();
+
+        
 
         $user = new user;
         $user->username = 'rio';
         $user->password = bcrypt("123456");
-        $user->id_role = 5;
+        $user->id_role = 4;
         $user->id_dokter = 2;
         $user->save();
 
         $user = new user;
         $user->username = 'febrian';
         $user->password = bcrypt("123456");
-        $user->id_role = 5;
+        $user->id_role = 4;
         $user->id_dokter = 3;
         $user->save();
     }

@@ -15,8 +15,14 @@
             <nav id="menu" class="nav-main" role="navigation">
 
                 <ul class="nav nav-main">
-                    <li class="nav-parent nav-expanded nav-active" id="dashboardadmin">
-                        <a class="nav-link" href="{{url('dashboard')}}">
+                    <li class="nav-parent nav-expanded nav-active">
+                        <a class="nav-link" href="{{url('dashboard')}}" id="dashboardadmin">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-parent nav-expanded nav-active">
+                        <a class="nav-link" href="{{url('dashboard-user')}}" id="dashboarduser">
                             <i class="fas fa-home" aria-hidden="true"></i>
                             <span>Dashboard</span>
                         </a>
@@ -65,12 +71,12 @@
                             <span>Rekam Medis</span>
                         </a>
                         <ul class="nav nav-children">
-                            <li>
+                            <li id="pemeriksaan">
                                 <a class="nav-link" href="{{url('rekam-medis/list-rekam-medis')}}">
                                     List Rekam Medis
                                 </a>
                             </li>
-                            <li>
+                            <li id="pemeriksaan">
                                 <a class="nav-link" href="{{url('rekam-medis/pemeriksaan')}}">
                                     Pemeriksaan
                                 </a>
