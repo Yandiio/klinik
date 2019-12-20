@@ -5,7 +5,6 @@
 <section role="main" class="content-body">
     <header class="page-header">
         <h2>Dashboard</h2>
-
         <div class="right-wrapper text-right">
             <ol class="breadcrumbs">
                 <li>
@@ -15,13 +14,12 @@
                 </li>
                 <li><span>Dashboard</span></li>
             </ol>
-
             <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fas fa-chevron-left"></i></a>
         </div>
     </header>
 
     <!-- start: page -->
-    <div class="row">
+    <div class="row" id="admin">
         <div class="col-lg-12">
             <div class="row mb-4">
                 <div class="col-xl-6">
@@ -38,7 +36,6 @@
                                         <h4 class="title">Jumlah Pasien</h4>
                                         <div class="info">
                                             <strong class="amount" id="totalpasien">439</strong>
-
                                         </div>
                                     </div>
                                     <div class="summary-footer">
@@ -125,8 +122,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <div class="row">
         <div class="col-lg-12">
@@ -136,19 +131,15 @@
                         <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
-
                     <h2 class="card-title">Pendafataran Pasien Chart</h2>
                     <!-- <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p> -->
                 </header>
                 <div class="card-body" id="cartdashboard">
-
                     <!-- Flot: Bars -->
                     <div class="chart chart-md" id="flotBars"></div>
                     <script type="text/javascript">
                         // See: js/examples/examples.charts.js for more settings.
-
                     </script>
-
                 </div>
             </section>
         </div>
@@ -161,7 +152,6 @@
                         <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
                         <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
                     </div>
-
                     <h2 class="card-title">Tindakan Pasien Yang Masuk Hari Ini</h2>
                 </header>
                 <div class="card-body">
@@ -175,7 +165,6 @@
                                 
                                 <th>Tanggal</th>
                                 <th>Status</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -202,7 +191,6 @@
                                 <td>Angeline</td>
                                 <td>Dr.Michael</td>
                                 <td><span class="badge badge-success">Success</span></td>
-
                             </tr>
                             <tr>
                                 <td>5</td>
@@ -230,6 +218,21 @@
         </div>
     </div>
     <!-- end: page -->
+
+    <!-- start: page -->
+    <div class="row" id="user">
+        <div class="col-lg-12">
+            <div class="card-body">
+                <div class="alert alert-primary">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <strong>KLINIK ABC !</strong> Login Sistem Berhasil ! <a href="" class="alert-link">
+                    </a>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!-- end: page -->
+
 </section>
 @endsection
 
@@ -237,6 +240,7 @@
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function () {
+        showbyrole();
         totalPasien();
         totalDokter();
         totalMedis();
@@ -430,5 +434,21 @@
         $('#tablePendaftaran_paginate').addClass("float-right");
     }
 
+    function showbyrole(){
+    // console.log('tes');
+    var idRole = "{{ Auth::user()->id_role }}";  
+    // console.log(idRole);
+    hidealldashboard();
+    if (idRole == 2){
+        $('#admin').show();
+    } else {
+        $('#user').show();
+        }
+    }
+
+    function hidealldashboard(){
+    $('#admin').hide();
+    $('#user').hide();
+  }
 </script>
 @endsection
