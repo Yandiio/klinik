@@ -19,7 +19,7 @@
     </header>
 
     <!-- start: page -->
-    <div class="row" id="admin">
+    <div class="row admin">
         <div class="col-lg-12">
             <div class="row mb-4">
                 <div class="col-xl-6">
@@ -71,7 +71,7 @@
                     </section>
                 </div>
             </div>
-            <div class="row">
+            <div class="row admin">
                 <div class="col-xl-6">
                     <section class="card card-featured-left card-featured-tertiary mb-3">
                         <div class="card-body">
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row admin">
         <div class="col-lg-12">
             <section class="card">
                 <header class="card-header">
@@ -144,7 +144,7 @@
             </section>
         </div>
     </div>
-    <div class="row pt-12 mt-1">
+    <div class="row pt-12 mt-1 admin">
         <div class="col-xl-12">
             <section class="card">
                 <header class="card-header card-header-transparent">
@@ -220,7 +220,7 @@
     <!-- end: page -->
 
     <!-- start: page -->
-    <div class="row" id="user">
+    <div class="row user">
         <div class="col-lg-12">
             <div class="card-body">
                 <div class="alert alert-primary">
@@ -440,15 +440,15 @@
     // console.log(idRole);
     hidealldashboard();
     if (idRole == 2){
-        $('#admin').show();
+        $('.admin').show();
     } else {
-        $('#user').show();
+        $('.user').show();
         }
     }
 
     function hidealldashboard(){
-    $('#admin').hide();
-    $('#user').hide();
+    $('.admin').hide();
+    $('.user').hide();
   }
 </script>
 @endsection
