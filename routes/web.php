@@ -230,6 +230,9 @@ route::get('report/laporan/filter', 'Laporan\LaporanController@postLaporan')->na
 route::get('pendaftaran/print',function(){
     return view('print.printnomer');
 });
+route::get('report/laporan/export',function(){
+    return view('report.laporanpdf');
+});
 
 
 /* =========================================== Report===================================== */

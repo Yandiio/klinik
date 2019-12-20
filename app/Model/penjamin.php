@@ -42,7 +42,6 @@ class penjamin extends Model
     public function asuransi(){
         return $this->belongsTo('App\Model\tipeAsuransi', 'id_tipe_asuransi', 'id');
     }
-
     public function getHbnAttribute(){
         return $this->hbn[$this->hubungan];
     }

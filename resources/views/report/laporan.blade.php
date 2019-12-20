@@ -87,28 +87,28 @@
                                 cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th width="10%">No</th>
+                                        <th width="5%">No</th>
                                         <th>No Medis</th>
-                                        <th>Asuransi</th>
                                         <th>Nama pasien</th>
                                         <th>Jenis Kelamin</th>
                                         <th>Berat Badan</th>
                                         <th>Nama Poli</th>
                                         <th>Hasil Diagnosa</th>
                                         <th>Status</th>
+                                        <th>Tanggal</th>
                                         <!-- <th width="15%">Aksi</th> -->
                                     </tr>
                                 </thead>
                                 <tfoot>
-                                    <th width="10%">No</th>
+                                    <th width="5%">No</th>
                                     <th>No Medis</th>
-                                    <th>Asuransi</th>
                                     <th>Nama pasien</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Berat Badan</th>
                                     <th>Nama Poli</th>
                                     <th>Hasil Diagnosa</th>
                                     <th>Status</th>
+                                    <th>Tanggal</th>
                                 </tfoot>
                             </table>
                         </div>
@@ -147,7 +147,7 @@ var oTableListReport;
             columns: [
                 { data: 'id', name: 'id' },
                 { data: 'nomedis', name: 'nomedis' },
-                { data: 'asuransi', name: 'iasuransid' },
+                // { data: 'asuransi', name: 'iasuransid' },
                 { data: 'namapasien', name: 'namapasien' },
                 { data: 'jk', name: 'jk' },
                 { data: 'beratbadan', name: 'beratbadan' },
@@ -169,7 +169,8 @@ var oTableListReport;
                             return bagess;
                         }
                     }
-                }
+                },
+                { data: 'tanggal', name: 'tanggal' },
             ]
         });
     });
@@ -209,11 +210,11 @@ var oTableListReport;
                 dari: from,
                 sampai: to,
             },
-            success: function (data) {
-                
-                console.log(data);
-                
-                
+            success: function (response) {
+                //console.log(data); 
+                //window.location.href = "{{ url ('report/laporan/export') }}";
+                location.href = response.downloadUrl
+                              
             }
         });
     

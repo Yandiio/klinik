@@ -15,6 +15,13 @@ use App\Model\alamatPasien;
 use Yajra\Datatables\Datatables;
 use App\Model\tindakanDiagnosa;
 use App\Model\tindakanLab;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ReportExport;
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Writer\Xls;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class LaporanController extends Controller
 {
@@ -44,7 +51,8 @@ class LaporanController extends Controller
                 'beratbadan' => $key->berat_badan,
                 'poli' => $key->pendaftaran->poli->nama,
                 'hasildiagnosa' => $kalimat,
-                'status' => $key->pendaftaran->status
+                'status' => $key->pendaftaran->status,
+                'tanggal' => $key->created_at->format('Y-m-d')
 
            ];
         });
@@ -88,11 +96,41 @@ class LaporanController extends Controller
            ];
         });
 
-        $res = $datamedis->where('idPoli', 1);
+        $res = $datamedis->where('idPoli', $poli);
         if ($dari != null && $sampai != null){
             $res = $res->whereBetween('tanggal',[$dari, $sampai]);
         }
-        return response()->json($res);
+
+       
+            // Dump array with object-arrays
+        //dd($res[0]['id']);
+        //return response()->json($res[0]);
         //return response()->json($datamedis);
+        // return Datatables::of($res)->make(true);
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'STOCK OPNAME');
+        $sheet->setCellValue('A3', 'Number');
+        $sheet->setCellValue('A4', 'Name');
+        $sheet->setCellValue('E3', 'Date');
+        $sheet->setCellValue('E4', 'Warehouse');
+        $sheet->setCellValue('A6', 'Id');
+        $sheet->setCellValue('B6', 'Code');
+        $sheet->setCellValue('C6', 'Description');
+        $sheet->setCellValue('D6', 'Price');
+        $sheet->setCellValue('E6', 'UOM');
+        $sheet->setCellValue('F6', 'QTY');
+
+        $writer = new Xlsx($spreadsheet);
+        $fileName = 'laporan.xlsx';
+        $writer->save('export/'.$fileName);
+        // $writer->save('php://ouput');
+        $result['message'] = 'Success.';
+        $result['downloadUrl'] = url('export/' . $fileName);
+
+
+        //return view('report.laporanpdf',['res' => $res ]);
+        return response()->json($result, 200);
+         
     }
 }
