@@ -63,9 +63,10 @@ class LaporanController extends Controller
     public function postLaporan(Request $request){
         //dd($request);
         $poli = $request->poli;
-        $dari = $request->dari;
-        $sampai = $request->sampai;
+        $dari = $request->from;
+        $sampai = $request->to;
        
+        //dd($dari);
 
         $datamedis = rekamMedis::get()
         ->map(function($key){
@@ -96,41 +97,17 @@ class LaporanController extends Controller
            ];
         });
 
-        $res = $datamedis->where('idPoli', $poli);
+        
         if ($dari != null && $sampai != null){
-            $res = $res->whereBetween('tanggal',[$dari, $sampai]);
+            $res = $datamedis->whereBetween('tanggal',[$dari, $sampai]);
+        }else if($poli != null){
+            $res = $datamedis->where('idPoli', $poli);
+        }else{
+            $res = $datamedis;
         }
 
-       
-            // Dump array with object-arrays
-        //dd($res[0]['id']);
-        //return response()->json($res[0]);
-        //return response()->json($datamedis);
-        // return Datatables::of($res)->make(true);
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        $sheet->setCellValue('A1', 'STOCK OPNAME');
-        $sheet->setCellValue('A3', 'Number');
-        $sheet->setCellValue('A4', 'Name');
-        $sheet->setCellValue('E3', 'Date');
-        $sheet->setCellValue('E4', 'Warehouse');
-        $sheet->setCellValue('A6', 'Id');
-        $sheet->setCellValue('B6', 'Code');
-        $sheet->setCellValue('C6', 'Description');
-        $sheet->setCellValue('D6', 'Price');
-        $sheet->setCellValue('E6', 'UOM');
-        $sheet->setCellValue('F6', 'QTY');
-
-        $writer = new Xlsx($spreadsheet);
-        $fileName = 'laporan.xlsx';
-        $writer->save('export/'.$fileName);
-        // $writer->save('php://ouput');
-        $result['message'] = 'Success.';
-        $result['downloadUrl'] = url('export/' . $fileName);
-
-
         //return view('report.laporanpdf',['res' => $res ]);
-        return response()->json($result, 200);
+        return Datatables::of($res)->make(true);
          
     }
 }

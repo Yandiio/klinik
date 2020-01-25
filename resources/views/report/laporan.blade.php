@@ -5,6 +5,8 @@
 @section('css')
 <link href="{{ asset('assets/node_modules/datatables/media/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}" />
+<link rel="stylesheet" href="{{asset('assets/css/dattables/buttons.dataTables.min.css')}}" />
+
 @stop
 @section('content')
 <section role="main" class="content-body">
@@ -40,46 +42,50 @@
                 </header>
                 <div class="card">
                     <div class="card-body">
-                    <form method="POST" id="formNew">
-                    @csrf
-                        <div class="form-group row">
-                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Dari Tanggal
-                                <span class="required">*</span></label>
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control form-control-sm mb-3" name="from" id="iFrom">
+                        <form method="POST" id="formNew">
+                            @csrf
+                            <div class="form-group row">
+                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">Dari
+                                    Tanggal
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control form-control-sm mb-3" name="from" id="iFrom">
+                                </div>
+                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Sampai
+                                    Tanggal
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-4">
+                                    <input type="date" class="form-control form-control-sm mb-3" name="to" id="iTo">
+                                </div>
                             </div>
-                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Sampai Tanggal
-                                <span class="required">*</span></label>
-                            <div class="col-sm-4">
-                                <input type="date" class="form-control form-control-sm mb-3" name="to" id="iTo">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <!-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
+                            <div class="form-group row">
+                                <!-- <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-first-name">No
                                 Rekam medis <span class="required">*</span></label>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control form-control-sm mb-3" name="first-name"
                                     id="w2-first-name" readonly="readonly" value="Auto">
                             </div> -->
-                            <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
-                                <span class="required">*</span></label>
-                            <div class="col-sm-4">
-                                <select name="poli" id="poli" class="form-control form-control-sm mb-3">
-                                    <option value=""></option>
-                                </select>
+                                <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Poli
+                                    <span class="required">*</span></label>
+                                <div class="col-sm-4">
+                                    <select name="poli" id="poli" class="form-control form-control-sm mb-3">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" id="reset" class="mb-1 mt-1 mr-1 btn btn-sm btn-light"
+                                        style="float:right;">
+                                        Reset
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                    <button type="button" id="find" class="mb-1 mt-1 mr-1 btn btn-sm btn-primary"
+                                        style="float:right;">
+                                        Export
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-sm-4">
-                                <button type="button" id="reset" class="mb-1 mt-1 mr-1 btn btn-sm btn-light" style="float:right;">
-                                    Reset
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                                <button type="button" id="find" class="mb-1 mt-1 mr-1 btn btn-sm btn-primary" style="float:right;">
-                                    Export
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
                         <br>
                         <br>
                         <div class="table-responsive">
@@ -115,113 +121,147 @@
                     </div>
                 </div>
             </section>
-        </div> 
+        </div>
     </div>
 </section>
 @endsection
 @section('script')
 
 <!-- This is data table -->
-<script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
+
 <!-- start - This is for export functionality only -->
 <script src="{{ asset('assets/js/examples/examples.modals.js') }}"></script>
 <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
 <script src="{{asset('assets/js/examples/examples.notifications.js')}}"></script>
 <script src="{{asset('assets/bootbox/bootbox.all.min.js')}}"></script>
 
+<script src="{{asset('assets/dattables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('assets/dattables/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('assets/dattables/jszip.min.js')}}"></script>
+<script src="{{asset('assets/dattables/pdfmake.min.js')}}"></script>
+<script src="{{asset('assets/dattables/vfs_fonts.js')}}"></script>
+<script src="{{asset('assets/dattables/buttons.html5.min.js')}}"></script>
+
+
+
 
 <!-- end - This is for export functionality only -->
 <script>
-
-var oTableListReport;
+    var oTableListReport;
 
     $(document).ready(function () {
         dataPoli();
 
-        oTableReport = $('#tableLaporan').DataTable({
-            responsive: true,
-            processing: true,
-            destroy: true,
-            serverSide: true,
-            ajax: "{{ route('Laporan_getList')}}",
-            columns: [
-                { data: 'id', name: 'id' },
-                { data: 'nomedis', name: 'nomedis' },
-                // { data: 'asuransi', name: 'iasuransid' },
-                { data: 'namapasien', name: 'namapasien' },
-                { data: 'jk', name: 'jk' },
-                { data: 'beratbadan', name: 'beratbadan' },
-                { data: 'poli', name: 'poli' },
-                { data: 'hasildiagnosa', name: 'hasildiagnosa' },
-                { data: 'status',
-                    render: function (data, type, row) {
-                        if (row.status === "0") {
-                            let bagess = '<div class="badge badge-warning">Menunggu</div>';
-                            return bagess;
-                        } else if (row.status === "1") {
-                            let bagess = '<div class="badge badge-info">Antrian</div>';
-                            return bagess;
-                        } else if (row.status === "2") {
-                            let bagess = '<div class="badge badge-success">Selesai</div>';
-                            return bagess;
-                        } else {
-                            let bagess = '<div class="badge badge-success">Selesai</div>';
-                            return bagess;
-                        }
-                    }
-                },
-                { data: 'tanggal', name: 'tanggal' },
-            ]
-        });
+
     });
 
     function dataPoli() {
-    $.ajax({
-        type: "GET",
-        url: "{{route('tipePoli_getData')}}",
-        //    data: {
-        //        'id': id
-        //    },
-        success: function (data) {
-            $.each(data, function (index, value) {
-                $('#poli').append('<option id=' + value.id + ' value=' + value
-                    .id +
-                    '>' + value.nama + '</option>')
+        $.ajax({
+            type: "GET",
+            url: "{{route('tipePoli_getData')}}",
+            //    data: {
+            //        'id': id
+            //    },
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#poli').append('<option id=' + value.id + ' value=' + value
+                        .id +
+                        '>' + value.nama + '</option>')
                 });
             }
         });
     }
 
-    $("#find").click(function(){
+    $("#find").click(function () {
         //alert("asdasdas");
         var poli = $('#poli').val();
         var from = $('#iFrom').val();
         var to = $('#iTo').val();
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            type: "GET",
-            url: "{{route('Laporan_getData')}}",
-            data: {
-                poli: poli,
-                dari: from,
-                sampai: to,
+
+        console.log(from);
+        oTableReport = $('#tableLaporan').DataTable({
+
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ],
+            responsive: true,
+            processing: true,
+            destroy: true,
+            serverSide: true,
+            ajax: {
+                "url": "{{route('Laporan_getData')}}",
+                "data": {
+                    'poli' : poli,
+                    'from' : from,
+                    'to' : to,
+                }
             },
-            success: function (response) {
-                //console.log(data); 
-                //window.location.href = "{{ url ('report/laporan/export') }}";
-                location.href = response.downloadUrl
-                              
-            }
+            columns: [{
+                    data: 'id',
+                    name: 'id'
+                },
+                {
+                    data: 'nomedis',
+                    name: 'nomedis'
+                },
+                // { data: 'asuransi', name: 'iasuransid' },
+                {
+                    data: 'namapasien',
+                    name: 'namapasien'
+                },
+                {
+                    data: 'jk',
+                    name: 'jk'
+                },
+                {
+                    data: 'beratbadan',
+                    name: 'beratbadan'
+                },
+                {
+                    data: 'poli',
+                    name: 'poli'
+                },
+                {
+                    data: 'hasildiagnosa',
+                    name: 'hasildiagnosa'
+                },
+                {
+                    data: 'status',
+                    render: function (data, type, row) {
+                        if (row.status === "0") {
+                            let bagess =
+                                '<div class="badge badge-warning">Menunggu</div>';
+                            return bagess;
+                        } else if (row.status === "1") {
+                            let bagess =
+                                '<div class="badge badge-info">Antrian</div>';
+                            return bagess;
+                        } else if (row.status === "2") {
+                            let bagess =
+                                '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        } else {
+                            let bagess =
+                                '<div class="badge badge-success">Selesai</div>';
+                            return bagess;
+                        }
+                    }
+                },
+                {
+                    data: 'tanggal',
+                    name: 'tanggal'
+                },
+            ]
         });
-    
-        
+
+
     });
 
-    $("#reset").click(function(){
+    $("#reset").click(function () {
         $('#iPoli').val("");
         $('#iFrom').val("");
         $('#iTo').val("");
