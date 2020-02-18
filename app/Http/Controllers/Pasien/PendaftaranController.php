@@ -210,6 +210,7 @@ class PendaftaranController extends Controller
         $penjamin->save();
 
         $pendaftaran = new pendaftaran;
+        $pendaftaran->id_pasien = $pasien->id;
         $pendaftaran->id_penjamin = $penjamin->id;
         $pendaftaran->id_tipe_poli = $request->input('poli');
         $pendaftaran->no_daftar = $nomor;

@@ -56,7 +56,7 @@
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="nik"
-                                            id="" value="{{ $pendaftaran[0]->penjamin->pasien->nik}}">
+                                            id="" value="{{ $pendaftaran[0]->pasien->nik}}">
                                     </div>
                                     <input type="hidden" class="form-control form-control-sm mb-3" name="iddaftar"
                                             id="" value="{{ $pendaftaran[0]->id}}">
@@ -79,13 +79,13 @@
                                         Lengkap <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="namaLengkap"
-                                            id="" required value ="{{ $pendaftaran[0]->penjamin->pasien->nama_lengkap }}">
+                                            id="" required value ="{{ $pendaftaran[0]->pasien->nama_lengkap }}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="umur"
-                                            id="" required value ="{{ $pendaftaran[0]->penjamin->pasien->usia }}">
+                                            id="" required value ="{{ $pendaftaran[0]->pasien->usia }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -93,7 +93,7 @@
                                         Lahir <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm mb-3" name="tempatLahir"
-                                            id="w2-last-name" requeired value ="{{ $pendaftaran[0]->penjamin->pasien->tempat_lahir }}">
+                                            id="w2-last-name" requeired value ="{{ $pendaftaran[0]->pasien->tempat_lahir }}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Propinsi
                                         <span class="required">*</span></label>

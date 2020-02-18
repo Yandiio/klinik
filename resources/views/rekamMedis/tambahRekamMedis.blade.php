@@ -163,7 +163,7 @@
                                     <div class="col-sm-4">
                                         <textarea class="form-control" rows="3" id="textareaAutosize" name="keluhan"
                                             data-plugin-textarea-autosize disabled
-                                            value="{{$pendaftaran[0]->keluhan}}"></textarea>
+                                            value="{{$pendaftaran[0]->keluhan}}">{{$pendaftaran[0]->keluhan}}</textarea>
                                     </div>
                                 </div>
                             </div>
