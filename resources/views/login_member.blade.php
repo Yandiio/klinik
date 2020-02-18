@@ -254,15 +254,8 @@
                 },
                 success: function (data) {
                     //console.log(data);
-                    if (data == 1) {
-                        window.location.href = "{{ url ('dashboard') }}";
-                    } else {
-                        new PNotify({
-                            title: 'Notif Login',
-                            text: 'Username atau Paswword salah',
-                            type: 'danger'
-                        });
-                    }
+                    window.location.href = "{{ url ('dashboard') }}";
+                    
 
                 }
             });

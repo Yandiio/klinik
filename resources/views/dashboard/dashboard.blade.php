@@ -18,218 +18,221 @@
         </div>
     </header>
 
-    <!-- start: page -->
-    <div class="row admin">
-        <div class="col-lg-12">
-            <div class="row mb-4">
-                <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-primary mb-3">
-                        <div class="card-body">
-                            <div class="widget-summary">
-                                <div class="widget-summary-col widget-summary-col-icon">
-                                    <div class="summary-icon bg-primary">
-                                        <i class="fas fa-life-ring"></i>
-                                    </div>
-                                </div>
-                                <div class="widget-summary-col">
-                                    <div class="summary">
-                                        <h4 class="title">Jumlah Pasien</h4>
-                                        <div class="info">
-                                            <strong class="amount" id="totalpasien">439</strong>
-                                        </div>
-                                    </div>
-                                    <div class="summary-footer">
-                                        <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-secondary">
-                        <div class="card-body">
-                            <div class="widget-summary">
-                                <div class="widget-summary-col widget-summary-col-icon">
-                                    <div class="summary-icon bg-secondary">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="widget-summary-col">
-                                    <div class="summary">
-                                        <h4 class="title">Jumlah Dokter</h4>
-                                        <div class="info">
-                                            <strong class="amount" id="totaldokter">23</strong>
-                                        </div>
-                                    </div>
-                                    <div class="summary-footer">
-                                        <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="row admin">
-                <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-tertiary mb-3">
-                        <div class="card-body">
-                            <div class="widget-summary">
-                                <div class="widget-summary-col widget-summary-col-icon">
-                                    <div class="summary-icon bg-tertiary">
-                                        <i class="fas fa-shopping-cart"></i>
-                                    </div>
-                                </div>
-                                <div class="widget-summary-col">
-                                    <div class="summary">
-                                        <h4 class="title">Total Rekam Medis</h4>
-                                        <div class="info">
-                                            <strong class="amount" id="totalmedis">38</strong>
-                                        </div>
-                                    </div>
-                                    <div class="summary-footer">
-                                        <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-xl-6">
-                    <section class="card card-featured-left card-featured-quaternary">
-                        <div class="card-body">
-                            <div class="widget-summary">
-                                <div class="widget-summary-col widget-summary-col-icon">
-                                    <div class="summary-icon bg-quaternary">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="widget-summary-col">
-                                    <div class="summary">
-                                        <h4 class="title">Total Poli</h4>
-                                        <div class="info">
-                                            <strong class="amount" id="totalpoli">15</strong>
-                                        </div>
-                                    </div>
-                                    <div class="summary-footer">
-                                        <a class="text-muted text-uppercase" href="#">(view all)</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row admin">
-        <div class="col-lg-12">
-            <section class="card">
-                <header class="card-header">
-                    <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-                    </div>
-                    <h2 class="card-title">Pendafataran Pasien Chart</h2>
-                    <!-- <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p> -->
-                </header>
-                <div class="card-body" id="cartdashboard">
-                    <!-- Flot: Bars -->
-                    <div class="chart chart-md" id="flotBars"></div>
-                    <script type="text/javascript">
-                        // See: js/examples/examples.charts.js for more settings.
-                    </script>
-                </div>
-            </section>
-        </div>
-    </div>
-    <div class="row pt-12 mt-1 admin">
-        <div class="col-xl-12">
-            <section class="card">
-                <header class="card-header card-header-transparent">
-                    <div class="card-actions">
-                        <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
-                        <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
-                    </div>
-                    <h2 class="card-title">Tindakan Pasien Yang Masuk Hari Ini</h2>
-                </header>
-                <div class="card-body">
-                    <table class="table table-responsive-md table-striped mb-0" id="tablePendaftaran">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nama Pasien</th>
-                                <th>Poli</th>
-                                <th>Asuransi</th>
-                                
-                                <th>Tanggal</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Helmay</td>
-                                <td>Dr.Lisa</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Agus</td>
-                                <td>Dr.Nisa</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Anto</td>
-                                <td>Drg.Intan</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Angeline</td>
-                                <td>Dr.Michael</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Cici</td>
-                                <td>Dr.Irfan</td>
-                                <td><span class="badge badge-warning">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Juminten</td>
-                                <td>Dr.Robby</td>
-                                <td><span class="badge badge-danger">Reject</span></td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Dian</td>
-                                <td>Dr.Doni</td>
-                                <td><span class="badge badge-success">Success</span></td>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </div>
-    </div>
-    <!-- end: page -->
-
-    <!-- start: page -->
-    <div class="row user">
+    <div class="row" id="dashboarduser">
         <div class="col-lg-12">
             <div class="card-body">
                 <div class="alert alert-primary">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <strong>KLINIK ABC !</strong> Login Sistem Berhasil ! <a href="" class="alert-link">
                     </a>
-                </div>                
+                </div>
             </div>
         </div>
+    </div>
+    <!-- start: page -->
+    <br>
+    <div id="dashboardadmin">
+        <div class="row dashboardadmin">
+            <div class="col-lg-12">
+                <div class="row mb-4">
+                    <div class="col-xl-6">
+                        <section class="card card-featured-left card-featured-primary mb-3">
+                            <div class="card-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-primary">
+                                            <i class="fas fa-life-ring"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Jumlah Pasien</h4>
+                                            <div class="info">
+                                                <strong class="amount" id="totalpasien">439</strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-xl-6">
+                        <section class="card card-featured-left card-featured-secondary">
+                            <div class="card-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-secondary">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Jumlah Dokter</h4>
+                                            <div class="info">
+                                                <strong class="amount" id="totaldokter">23</strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="row admin">
+                    <div class="col-xl-6">
+                        <section class="card card-featured-left card-featured-tertiary mb-3">
+                            <div class="card-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-tertiary">
+                                            <i class="fas fa-shopping-cart"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Total Rekam Medis</h4>
+                                            <div class="info">
+                                                <strong class="amount" id="totalmedis">38</strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <!-- <a class="text-muted text-uppercase" href="#">(view all)</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-xl-6">
+                        <section class="card card-featured-left card-featured-quaternary">
+                            <div class="card-body">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon bg-quaternary">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Total Poli</h4>
+                                            <div class="info">
+                                                <strong class="amount" id="totalpoli">15</strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-muted text-uppercase" href="#">(view all)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row dashboardadmin">
+            <div class="col-lg-12">
+                <section class="card">
+                    <header class="card-header">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title">Pendafataran Pasien Chart</h2>
+                        <!-- <p class="card-subtitle">With the categories plugin you can plot categories/textual data easily.</p> -->
+                    </header>
+                    <div class="card-body" id="cartdashboard">
+                        <!-- Flot: Bars -->
+                        <div class="chart chart-md" id="flotBars"></div>
+                        <script type="text/javascript">
+                            // See: js/examples/examples.charts.js for more settings.
+
+                        </script>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="row pt-12 mt-1 dashboardadmin">
+            <div class="col-xl-12">
+                <section class="card">
+                    <header class="card-header card-header-transparent">
+                        <div class="card-actions">
+                            <a href="#" class="card-action card-action-toggle" data-card-toggle></a>
+                            <a href="#" class="card-action card-action-dismiss" data-card-dismiss></a>
+                        </div>
+                        <h2 class="card-title">Tindakan Pasien Yang Masuk Hari Ini</h2>
+                    </header>
+                    <div class="card-body">
+                        <table class="table table-responsive-md table-striped mb-0" id="tablePendaftaran">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nama Pasien</th>
+                                    <th>Poli</th>
+                                    <th>Asuransi</th>
+
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Helmay</td>
+                                    <td>Dr.Lisa</td>
+                                    <td><span class="badge badge-success">Success</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Agus</td>
+                                    <td>Dr.Nisa</td>
+                                    <td><span class="badge badge-success">Success</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Anto</td>
+                                    <td>Drg.Intan</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Angeline</td>
+                                    <td>Dr.Michael</td>
+                                    <td><span class="badge badge-success">Success</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Cici</td>
+                                    <td>Dr.Irfan</td>
+                                    <td><span class="badge badge-warning">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Juminten</td>
+                                    <td>Dr.Robby</td>
+                                    <td><span class="badge badge-danger">Reject</span></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Dian</td>
+                                    <td>Dr.Doni</td>
+                                    <td><span class="badge badge-success">Success</span></td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- end: page -->
+        
     </div>
     <!-- end: page -->
 
@@ -240,13 +243,14 @@
 <script src="{{ asset('assets/node_modules/datatables/datatables.min.js') }}"></script>
 <script>
     $(document).ready(function () {
-        showbyrole();
+        hidealldashboard();
         totalPasien();
         totalDokter();
         totalMedis();
         totalPoli();
         cart();
-       
+        showbyrole();
+
 
         oTableData = $('#tablePendaftaran').DataTable({
             responsive: true,
@@ -274,21 +278,21 @@
                     data: 'tanggal',
                     name: 'tanggal'
                 },
-                
-                
+
+
                 {
                     data: 'status',
                     render: function (data, type, row) {
                         if (row.status === "0") {
                             let bagess = '<div class="badge badge-danger">Menunggu</div>';
                             return bagess;
-                        }else if(row.status === "1"){
+                        } else if (row.status === "1") {
                             let bagess = '<div class="badge badge-warning">Antrian</div>';
                             return bagess;
-                        }else if(row.status === "2"){
+                        } else if (row.status === "2") {
                             let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
-                        }else{
+                        } else {
                             let bagess = '<div class="badge badge-success">Selesai</div>';
                             return bagess;
                         }
@@ -429,26 +433,37 @@
             }
         });
     }
-    function filterInput(){
+
+    function filterInput() {
         $('#tablePendaftaran_filter').hide();
         $('#tablePendaftaran_paginate').addClass("float-right");
     }
 
-    function showbyrole(){
-    // console.log('tes');
-    var idRole = "{{ Auth::user()->id_role }}";  
-    // console.log(idRole);
-    hidealldashboard();
-    if (idRole == 2){
-        $('.admin').show();
-    } else {
-        $('.user').show();
+    function showbyrole() {
+
+        var idRole = "{{ Auth::user()->id_role }}";
+        console.log(idRole);
+        if (idRole == 1) {
+            $('#dashboarduser').show();
+        }else if(idRole == 2){
+            $('#dashboarduser').show();
+        }else if(idRole == 4 ){
+            $('.dashboardadmin').show();
+            
+        }else if(idRole == 3){
+            $('.dashboardadmin').show();
+        }else{
+            $('#dashboarduser').show();
         }
+
+        
+       
     }
 
-    function hidealldashboard(){
-    $('.admin').hide();
-    $('.user').hide();
-  }
+    function hidealldashboard() {
+        $('#dashboarduser').hide();
+        $('.dashboardadmin').hide();
+    }
+
 </script>
 @endsection

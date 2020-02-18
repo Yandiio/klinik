@@ -566,62 +566,12 @@
         $('#selanjutnya2').click(function (e) {
             //console.log('selanjutnya 1');
             e.preventDefault();
-            if ($('#nikAs').val() === '' ) {
-                $('#forNikAsEror').html('* Silahkan input data NIK penjamin');
-                $('#nikAs').focus();
-                return false;
-            }
-            if ($('#asuransi').val() === '' ) {
-                $('#forTipeAsuransiEror').html('* Silahkan pilih tipe asuransi');
-                $('#asuransi').focus();
-                return false;
-            }
-            if ($('#namaLengkapAs').val() === '' ) {
-                $('#forNamaLengkapAsEror').html('* Silahkan input nama lengkap penjamin');
-                $('#namaLengkapAs').focus();
-                return false;
-            }
-            if ($('#kodeKaryawan').val() === '' ) {
-                $('#forKdKaryawanEror').html('* Silahkan input kode karyawan penjamin');
-                $('#kodeKaryawan').focus();
-                return false;
-            }
-            if ($('#teleponAs').val() === '' ) {
-                $('#forTeleponAsEror').html('* Silahkan input telepon penjamin');
-                $('#teleponAs').focus();
-                return false;
-            }
-            if ($('#noPolis').val() === '' ) {
-                $('#forNoPolisEror').html('* Silahkan input no polis penjamin');
-                $('#noPolis').focus();
-                return false;
-            }
-            if ($('#noHP').val() === '' ) {
-                $('#forNoHpEror').html('* Silahkan input nama nomor handephone penjamin');
-                $('#noHP').focus();
-                return false;
-            }
-            if ($('#akhirPolis').val() === '' ) {
-                $('#forAkhirPolisEror').html('* Silahkan input tanggal akhir penjamin');
-                $('#akhirPolis').focus();
-                return false;
-            }
-            if ($('#keterangan').val() === '' ) {
-                $('#forKeteranganEror').html('* Silahkan input keterangan penjamin');
-                $('#keterangan').focus();
-                return false;
-            }
-            if ($('#hubungan').val() === '0' ) {
-                $('#forHubunganEror').html('* Silahkan pilih hubungan dengan penjamin');
-                $('#hubungan').focus();
-                return false;
-            }
-            else {
+
             $('#daftar').show();
             $(this).hide();
             $('#selesai').show();
             $('#daftar').click();
-            }
+            
         });
     }
 

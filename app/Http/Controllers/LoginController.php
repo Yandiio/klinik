@@ -13,10 +13,9 @@ class LoginController extends Controller
         
         if (Auth::attempt(['username' => $request->nama, 'password' => $request->password])) {
             # code...
-            return response(1);
-        }else{
-            return response(0);
+            return response('sucsesss');
         }
+           
        
 
        //dd(Auth::attempt(['username' => $request->nama, 'password' => $request->password]));

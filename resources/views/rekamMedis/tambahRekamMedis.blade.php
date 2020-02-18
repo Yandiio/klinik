@@ -91,14 +91,14 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="namaLengkap"
                                             id="w2-first-name" placeholder="Helmay cahyadi" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->nama_lengkap}}">
+                                            value="{{$pendaftaran[0]->pasien->nama_lengkap}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Usia
                                         <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="number" class="form-control form-control-sm mb-3" name="usia"
                                             id="w2-first-name" placeholder="23" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->usia}}">
+                                            value="{{$pendaftaran[0]->pasien->usia}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -107,14 +107,14 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="tempatlahir"
                                             id="w2-first-name" placeholder="Bekasi" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->tempat_lahir}}">
+                                            value="{{$pendaftaran[0]->pasien->tempat_lahir}}">
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Golongan
                                         Darah <span class="required">*</span></label>
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3"
                                             name="golonganDarah" id="w2-first-name" placeholder="B+" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->gd}}">
+                                            value="{{$pendaftaran[0]->pasien->gd}}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -130,7 +130,7 @@
                                             <input type="text" data-plugin-datepicker
                                                 class="form-control form-control-sm mb-3" placeholder="23/07/2019"
                                                 name="tglLahir" disabled
-                                                value="{{$pendaftaran[0]->penjamin->pasien->tanggal_lahir}}">
+                                                value="{{$pendaftaran[0]->pasien->tanggal_lahir}}">
                                         </div>
 
                                     </div>
@@ -139,7 +139,7 @@
                                     <div class="col-sm-4">
                                         <input type="Text" class="form-control form-control-sm mb-3" name="jenisKelamin"
                                             id="w2-first-name" placeholder="Laki-Laki" disabled
-                                            value="{{$pendaftaran[0]->penjamin->pasien->jk}}">
+                                            value="{{$pendaftaran[0]->pasien->jk}}">
                                     </div>
 
                                 </div>
@@ -155,7 +155,7 @@
                                             </span>
                                             <input type="text" data-plugin-datepicker
                                                 class="form-control form-control-sm mb-3" name="tglPendaftaran" disabled
-                                                value="{{$pendaftaran[0]->tgl_data}}">
+                                                value="{{$pendaftaran[0]->created_at}}">
                                         </div>
                                     </div>
                                     <label class="col-sm-2 control-label text-sm-right pt-1" for="w2-last-name">Keluhan

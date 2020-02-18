@@ -30,9 +30,9 @@ Route::get('/', function () {
 route::get('dashboard',function(){
     return view('dashboard.dashboard');
 });
-route::get('dashboard-user',function(){
+/* route::get('dashboard-user',function(){
     return view('dashboard.dashboarduser');
-});
+}); */
 
 route::post('login','LoginController@postLogin')->name('post_login');
 /* =========================================== dashboard ===================================== */

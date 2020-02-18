@@ -441,7 +441,7 @@
     });
 
     function loginMenu() {
-        // console.log(idRole);
+        console.log(idRole);
         if (idRole == 1) {
             petugasLoket();
         } else if (idRole == 2) {
@@ -450,8 +450,10 @@
             kepalaKlinik();
         } 
 		else if (idRole == 4) {
+            superAdmin();
+        } else{
             dokter();
-        } 
+        }
     }
 
     function allHide() {
@@ -468,7 +470,6 @@
     }
 
     function petugasLoket() {
-        $('#dashboarduser').show();
         $('#modulPasien').show();
     }
 
