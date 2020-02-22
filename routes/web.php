@@ -52,6 +52,9 @@ route::get('pasien/tipe-asuransi',function(){
     return view('pasien.tipeAsuransi');
 });
 
+route::get('notif/rekam','NotifikasiController@rekamnotifList')->name('notif_rekam');
+route::get('notif/dokter','NotifikasiController@dokternotifList')->name('notif_dokter');
+
 route::get('pasien/tipe-asuransi/list','Pasien\TipeAsuransiController@tipeAsuransiList')->name('list_tipe_asuransi');
 route::get('pasien/tipe-asuransi/data','Pasien\TipeAsuransiController@getAsuransiData')->name('get_asuransi_data');
 route::post('pasien/tipe-asuransi/tambah','Pasien\TipeAsuransiController@postTipeAsuransi')->name('post_tipe_asuransi');

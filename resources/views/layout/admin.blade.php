@@ -66,7 +66,7 @@
 
                 <span class="separator"></span>
 
-                <ul class="notifications">
+                <ul class="notifications" id="notif">
 
 
                     <li>
@@ -77,22 +77,16 @@
 
                         <div class="dropdown-menu notification-menu">
                             <div class="notification-title">
-                                <span class="float-right badge badge-default">2</span>
+                                <!-- <span class="float-right badge badge-default">2</span> -->
                                 Alerts
                             </div>
 
                             <div class="content">
                                 <ul>
-                                    <li>
-                                        <a href="" class="clearfix">
-                                            <div class="image">
-                                                <i class="fas fa-info bg-danger text-light"></i>
-                                            </div>
-                                            <span class="title">Obat Expired !</span>
-                                            <span class="message">Panadol</span>
-                                        </a>
+                                    <li id="notifR">
+                                        
                                     </li>
-                                    <li>
+                                    <!-- <li id="notifD">
                                         <a href="" class="clearfix">
                                             <div class="image">
                                                 <i class="fas fa-info bg-danger text-light"></i>
@@ -100,7 +94,7 @@
                                             <span class="title">Supplayer belum bayar !</span>
                                             <span class="message">Supplayer panadol </span>
                                         </a>
-                                    </li>
+                                    </li> -->
 
                                 </ul>
 
@@ -433,15 +427,16 @@
 
     allHide();
     loginMenu();
+    notifRekam();
     $(document).ready(function () {
-
+        
 
 
         // console.log('tessst aja');
     });
 
     function loginMenu() {
-        console.log(idRole);
+        //console.log(idRole);
         if (idRole == 1) {
             petugasLoket();
         } else if (idRole == 2) {
@@ -498,6 +493,54 @@
         $('#modulRekamMedis').show();
         $('#modulSetting').show();
         $('#modulReports').show();
+    }
+
+    function notifRekam(){
+        var idRole = "{{ Auth::user()->id_role }}";
+        var iddokter = "{{ Auth::user()->id_dokter }}";
+        if (idRole == 2) {
+            $.ajax({
+                type: "GET",
+                url: "{{route('notif_rekam')}}",
+                data : {idRole : idRole},
+                success: function (datax) {
+               
+                //console.log(datax);
+                    $('#notifR').append(
+                        '<a href="" class="clearfix">'+
+                            '<div class="image">'+
+                                '<i class="fas fa-info bg-danger text-light"></i>'+
+                            '</div>'+
+                                '<span class="title">Antrian !</span>'+
+                                '<span class="message">'+datax+'</span>'+
+                        '</a>'
+                    
+                    );
+                }
+            });
+        }else if(idRole == 5){
+            $.ajax({
+                type: "GET",
+                url: "{{route('notif_dokter')}}",
+                data : {iddokter : iddokter},
+                success: function (datax) {
+                ///console.log(datax);
+                    $('#notifR').append(
+                        '<a href="" class="clearfix">'+
+                            '<div class="image">'+
+                                '<i class="fas fa-info bg-danger text-light"></i>'+
+                            '</div>'+
+                                '<span class="title">Menunngu !</span>'+
+                                '<span class="message">'+datax+'</span>'+
+                        '</a>'
+                    
+                    );
+                }
+            });
+        }else{
+            $('#notif').hide();
+        }
+        
     }
 
 </script>

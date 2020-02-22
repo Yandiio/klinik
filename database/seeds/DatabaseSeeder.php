@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(tipeAsuransiSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(laboratoriumSeeder::class);
-        $this->call(DiagnosaSeeder::class);
+        //$this->call(DiagnosaSeeder::class);
         $this->call(alamatDokterSeeder::class);
         $this->call(DokterSeeder::class);
         $this->call(AlamatPasienSeeder::class);
@@ -26,6 +26,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PenjaminSeeder::class);
         $this->call(PendaftaranSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(RekammedisSeeder::class);
+        $this->call(TindakanLabSeeder::class);
+        $this->call(TindakanDiagnosaSeeder::class);
         
     }
 }

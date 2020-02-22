@@ -14,28 +14,25 @@ class laboratoriumSeeder extends Seeder
     {
         //
         $laboratorium = new laboratorium;
-        $laboratorium->nama = "laboratorium a";
-        $laboratorium->keterangan = "ketrangan laboratorium";
+        $laboratorium->nama = "IMMUNOLOGI";
+        $laboratorium->keterangan = "Infeksi virus,status imun,response pasca vaksinasi";
         $laboratorium->save();
 
         $laboratorium = new laboratorium;
-        $laboratorium->nama = "laboratorium b";
-        $laboratorium->keterangan = "ketrangan laboratorium";
+        $laboratorium->nama = "HEMATOLOGI";
+        $laboratorium->keterangan = "anemia,infeksi sel darah putih,alergri,pembekuan darah,trombosit";
         $laboratorium->save();
         
         $laboratorium = new laboratorium;
-        $laboratorium->nama = "laboratorium c";
-        $laboratorium->keterangan = "ketrangan laboratorium";
+        $laboratorium->nama = "PATOLOGI ANATOMI";
+        $laboratorium->keterangan = "mikrospik,molukuler organ,hispatologi dan sitologi";
         $laboratorium->save();
 
         $laboratorium = new laboratorium;
-        $laboratorium->nama = "laboratorium d";
-        $laboratorium->keterangan = "ketrangan laboratorium";
+        $laboratorium->nama = "MIKROBIOLOGI";
+        $laboratorium->keterangan = "tinja,air seni,darah,dahak.mikroba patogen";
         $laboratorium->save();
 
-        $laboratorium = new laboratorium;
-        $laboratorium->nama = "laboratorium f";
-        $laboratorium->keterangan = "ketrangan laboratorium";
-        $laboratorium->save();
+        
     }
 }

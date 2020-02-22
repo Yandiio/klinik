@@ -9,13 +9,16 @@ use App\Model\penjamin;
 use App\Model\rekamMedis;
 use App\Model\tindakanDiagnosa;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Auth;
 
 class PemeriksaanController extends Controller
 {
     //
 
     public function list(){
-        $daftar = rekamMedis::get()
+        $user = Auth::user()->id_dokter;
+        //dd($user);
+        $daftar = rekamMedis::where('id_dokter',$user)->get()
         ->map(function($key){
             $diagnosa = tindakanDiagnosa::select('hasil_diagnosa')->where('id_rekammedis',$key->id)->get();
             //dd($diagnosa);

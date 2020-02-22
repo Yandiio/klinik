@@ -238,34 +238,7 @@
                     data: 'id',
                     render: function (data, type, row) {
 
-                        if (row.status == 1) {
-                            var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
-                            url = url.replace('id', row.id);
-                            let buttonMedis =
-                                ' <a class="btn-sm btn-default" title="Buat Tindakan!" style="margin-right:5px" href="' +
-                                url +
-                                '" onclick="return false;"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>';
-                            let buttonView =
-                                ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
-                                row.id + ')"><i class="fa fa-eye"></i></button>';
-
-                            return buttonView + buttonMedis;
-
-                        } else if(row.status == 2){
-
-                            var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
-                            url = url.replace('id', row.id);
-                            let buttonMedis =
-                                ' <a class="btn-sm btn-default" title="Buat Tindakan!" style="margin-right:5px" href="' +
-                                url +
-                                '" onclick="return false;"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>';
-                            let buttonView =
-                                ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
-                                row.id + ')"><i class="fa fa-eye"></i></button>';
-
-                            return buttonView + buttonMedis;
-
-                        }else {
+                        if (row.status == 0) {
                             var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
                             url = url.replace('id', row.id);
                             let buttonMedis =
@@ -276,7 +249,21 @@
                                 ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
                                 row.id + ')" disabled><i class="fa fa-eye"></i></button>';
 
-                            return buttonView + buttonMedis;
+                            return buttonMedis;
+
+
+                        } else {
+                            var url = '{{ url("rekam-medis/edit-rekam-medis", "id") }}';
+                            url = url.replace('id', row.id);
+                            let buttonMedis =
+                                ' <a class="btn-sm btn-default" title="Buat Tindakan!" style="margin-right:5px" href="' +
+                                url +
+                                '" onclick="return false;"> <i class="fa fa-plus" aria-hidden="true"></i> Proses </a>';
+                            let buttonView =
+                                ' <button type="button" class="btn btn-light" data-toggle="modal" data-target="#modalTambah" id="tambah" style="margin-right:5px" onclick="buttonView(' +
+                                row.id + ')"><i class="fa fa-eye"></i></button>';
+
+                            return buttonMedis;
                         }
                         // console.log(type);
 
