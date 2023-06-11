@@ -21,7 +21,7 @@ class RekamMedisController extends Controller
     //
     public function rekamMedisList(){
 
-        $listPasien = pendaftaran::select('id','id_penjamin','id_pasien','id_tipe_poli','tgl_daftar','status','no_daftar')->get()
+        $listPasien = pendaftaran::get()
         ->map(function($key){
             return [
                 'id'            => $key->id,
@@ -34,10 +34,10 @@ class RekamMedisController extends Controller
                 'poli'          => $key->poli->nama,
                 'tanggalDaftar' => $key->tgl_daftar,
                 'asuransi'      => $key->penjamin->asuransi->nama,
-                'provinsi'      => $key->pasien->alamatpasien->prvns->name,
-                'kabupaten'     => $key->pasien->alamatpasien->kbptn->name,
-                'kecamatan'     => $key->pasien->alamatpasien->kcmtn->name,
-                'kelurahan'     => $key->pasien->alamatpasien->klrhn->name,
+                // 'provinsi'      => $key->pasien->alamatpasien->prvns->name,
+                // 'kabupaten'     => $key->pasien->alamatpasien->kbptn->name,
+                // 'kecamatan'     => $key->pasien->alamatpasien->kcmtn->name,
+                // 'kelurahan'     => $key->pasien->alamatpasien->klrhn->name,
                 'status'     => $key->status,
                 'sts'     => $key->ts,
                 'noDaftar'     => $key->no_daftar,
@@ -46,6 +46,8 @@ class RekamMedisController extends Controller
                 
             ];
         });
+        
+        // dd($listPasien);
         // $listPasien = pendaftaran::all();
         return Datatables::of($listPasien)->make(true);
         //return response()->json($listPasien);

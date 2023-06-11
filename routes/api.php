@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/pasien', 'rekamMedis\APIRekamMedisController@getPasien')->name('get-pasien');
+Route::get('/list-pasien', 'rekamMedis\APIRekamMedisController@selectPasienList')->name('list-pasien');
+Route::get('/detail-pasien', 'rekamMedis\APIRekamMedisController@detailPasien')->name('detail-pasien');

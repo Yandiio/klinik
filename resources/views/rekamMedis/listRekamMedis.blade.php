@@ -114,7 +114,7 @@
                                                 <th></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        {{-- <tbody>
                                             <tr>
                                                 <td>Kota :</td>
                                                 <td id="kota">Dki Jakarta</td>
@@ -131,7 +131,7 @@
                                                 <td>Kecamatan :</td>
                                                 <td id="kecamatan">Dki Jakarta</td>
                                             </tr>
-                                        </tbody>
+                                        </tbody> --}}
                                     </table>
                                     <p class="h4 title" id="alamat">Calendar</p>
                                 </div>
@@ -295,11 +295,11 @@
 
                 $('#nama').text(data[0].nama);
                 $('#jenisKelamin').text(data[0].jenisKelamin);
-                $('#kota').text(data[0].kabupaten);
-                $('#kecamatan').text(data[0].kecamatan);
-                $('#kelrahan').text(data[0].kelurahan);
-                $('#usia').text(data[0].usia);
-                $('#alamat').text(data[0].alamat);
+                // $('#kota').text(data[0].kabupaten);
+                // $('#kecamatan').text(data[0].kecamatan);
+                // $('#kelrahan').text(data[0].kelurahan);
+                // $('#usia').text(data[0].usia);
+                // $('#alamat').text(data[0].alamat);
             }
         });
 
