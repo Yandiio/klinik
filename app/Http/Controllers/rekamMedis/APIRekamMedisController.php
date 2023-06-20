@@ -15,7 +15,8 @@ class APIRekamMedisController extends Controller
     public function getPasien()
     {
         try {
-            $pasien = pasien::with('alamatPasien')->get();
+            $pasien = pasien::with('alamatPasien')
+                    ->get();
             $pasien->map(function ($item) {
                 $pendaftaran = pendaftaran::where('id_pasien', $item->id)->with('tindakanDiagnosa')->first();
                 
@@ -48,6 +49,12 @@ class APIRekamMedisController extends Controller
             $pasien = pasien::with('alamatPasien')
                         ->where('id', $request->id)
                         ->first();
+
+            $pendaftaran = pendaftaran::where('id_pasien', $pasien->id)->with('tindakanDiagnosa')->first();
+                
+
+            $pasien['pendaftaran'] = $pendaftaran;
+            $pasien['obat'] = obat::where('id', $pendaftaran->tindakanDiagnosa->id_obat)->first();
 
             return response()->json(['message' => 'SUCCESS', 'data' => $pasien]);
         } catch(\Exception $e) {
