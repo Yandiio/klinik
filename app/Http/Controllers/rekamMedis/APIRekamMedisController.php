@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Exception;
 use App\Model\pendaftaran;
 use App\Model\pasien;
+use App\Model\obat;
 use DB;
 
 class APIRekamMedisController extends Controller
@@ -16,7 +17,11 @@ class APIRekamMedisController extends Controller
         try {
             $pasien = pasien::with('alamatPasien')->get();
             $pasien->map(function ($item) {
-                $item['pendaftaran'] = pendaftaran::where('id_pasien', $item->id)->with('tindakanDiagnosa')->get();
+                $pendaftaran = pendaftaran::where('id_pasien', $item->id)->with('tindakanDiagnosa')->first();
+                
+
+                $item['pendaftaran'] = $pendaftaran;
+                $item['obat'] = obat::where('id', $pendaftaran->tindakanDiagnosa->id_obat)->first();
                 return $item;
             });
 

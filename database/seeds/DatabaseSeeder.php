@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RekammedisSeeder::class);
         $this->call(TindakanLabSeeder::class);
         $this->call(TindakanDiagnosaSeeder::class);
-        
+        $this->call(ObatSeeder::class);
     }
 }
