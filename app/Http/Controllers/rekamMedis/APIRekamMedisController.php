@@ -5,6 +5,7 @@ namespace App\Http\Controllers\rekamMedis;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use App\Model\pendaftaran;
 use App\Model\pasien;
 use DB;
 
@@ -14,6 +15,10 @@ class APIRekamMedisController extends Controller
     {
         try {
             $pasien = pasien::with('alamatPasien')->get();
+            $pasien->map(function ($item) {
+                $item['pendaftaran'] = pendaftaran::where('id_pasien', $item->id)->with('tindakanDiagnosa')->get();
+                return $item;
+            });
 
             return response()->json(['message' => 'SUCCESS', 'data' => $pasien]);
         } catch(\Exception $e) {

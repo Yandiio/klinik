@@ -56,6 +56,10 @@ class pasien extends Model
         return $this->ag[$this->agama];
     }
 
+    public function pendaftaran()
+    {
+        return $this->hasMany('App\Model\pendaftaran', 'id_pasien', 'id');
+    }
     
     public function alamatpasien(){
         return $this->belongsTo('App\Model\alamatPasien', 'alamat_pasien', 'id');

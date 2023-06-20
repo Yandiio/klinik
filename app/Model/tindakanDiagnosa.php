@@ -11,12 +11,18 @@ class tindakanDiagnosa extends Model
     public $fillable = [ 
         'id', 
         'hasil_diagnosa',
-        'id_rekammedis'
+        'id_rekammedis',
+        'harga',
+        'id_obat'
     ];
     public $timestamps = true;
 
     public function rekammedis(){
-        return $this->belongsTo('App\Model\rekamMedis', 'id_rekammedis', 'id');
+        return $this->hasMany('App\Model\rekamMedis', 'id_rekammedis', 'id');
+    }
+
+    public function pendaftaran(){
+        return $this->hasOne('App\Model\pendaftaran', 'id_pendaftaran', 'id');
     }
     
 }
